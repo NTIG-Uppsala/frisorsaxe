@@ -37,24 +37,12 @@ class TestHemsida(TestCase):
     def tearDown(self):
         self.browser.get('about:blank')  # gå till en tom sida för att undvika att tidigare test påverkar senare
 
-
+    #VARIABELN ÄR self.browser
     # HÄR BÖRJAR TESTERNA
-    def testPageText(self):
-        self.browser.get(path.join(getcwd(), "Estefans Hemsida", 'index.html'))
-        self.assertIn("Estefan", self.browser.page_source)
-        print("this is: "+ self.browser.title) #VARIABELN ÄR self.browser
 
     def testPageText(self):
-        self.browser.get(path.join(getcwd(), "Estefans Hemsida", 'index.html'))
-        self.assertIn("Estefan", self.browser.page_source)
-        print("this is: "+ self.browser.title) #VARIABELN ÄR self.browser
-        
+        self.browser.get(path.join(getcwd(), 'index.html'))
         self.assertEqual("hej1", self.browser.title)
-
-        if self.browser.title == "hej":
-            print("COMPLETED: TITLE")
-        else:
-            print("FAIL: TITLE")
 
     
 
