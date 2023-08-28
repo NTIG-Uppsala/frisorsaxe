@@ -57,13 +57,13 @@ class TestHemsida(TestCase):
         self.browser.get(path.join(getcwd(), 'index.html'))
         self.browser.find_element(By.LINK_TEXT, "Kontakt").click()
 
-        self.assertIn("kol", self.browser.page_source)
+        self.assertIn("Kontakta oss!", self.browser.page_source)
 
     def testknapp_hittaoss(self):
         self.browser.get(path.join(getcwd(), 'index.html'))
         self.browser.find_element(By.LINK_TEXT, "Hitta oss").click()
 
-        self.assertIn("polen", self.browser.page_source)
+        self.assertIn("Hitta oss!", self.browser.page_source)
 
         
     
