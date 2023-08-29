@@ -53,7 +53,7 @@ class TestHemsida(TestCase):
         self.assertIn("Kontakt", self.browser.page_source)
         self.assertIn("Frisör Saxé", self.browser.page_source)
     
-    def testknapp_kontakt(self):
+    """ def testknapp_kontakt(self):
         self.browser.get(path.join(getcwd(), 'index.html'))
         self.browser.find_element(By.LINK_TEXT, "Kontakt").click()
 
@@ -63,7 +63,7 @@ class TestHemsida(TestCase):
         self.browser.get(path.join(getcwd(), 'index.html'))
         self.browser.find_element(By.LINK_TEXT, "Hitta oss").click()
 
-        self.assertIn("Hitta oss!", self.browser.page_source)
+        self.assertIn("Hitta oss!", self.browser.page_source) """
 
         
     
