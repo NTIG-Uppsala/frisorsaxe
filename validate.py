@@ -23,16 +23,9 @@ tabs_open = 1
 
 # Loop through file paths and validate the files
 for path in paths:
-    mime_type = ""
-    if path.endswith("_error.html"):
+    if not (path.endswith(".html") or path.endswith(".css")):
         continue
-    if path.endswith(".html"):
-        mime_type = "text/html"
-    elif path.endswith(".css"):
-        mime_type = "text/css"
-    else:
-        continue
-
+    
     # Open a new tab and switch to it
     browser.execute_script("window.open('');")
     tabs_open += 1
@@ -54,4 +47,3 @@ for path in paths:
         print(path, "passed")
     else:
         print(path, "failed")
-
