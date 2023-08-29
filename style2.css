@@ -2,3 +2,19 @@ html
 {
     scroll-behavior: smooth;
 }
+.custom-list {
+    list-style-position: inside;
+    color: black;
+}
+
+footer {
+    background: rgb(255, 255, 255);
+}
+.no-text-decoration {
+    text-decoration: none;
+}
+.image-style {
+    height: 40vh;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
