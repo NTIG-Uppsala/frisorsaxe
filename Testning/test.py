@@ -7,14 +7,11 @@ from selenium.webdriver.common.keys import Keys
 
 
 class TestHemsida(TestCase):
+    # settings for the tests
+    stangintebrowsern = False # if True, keeps the browser open after the tests are finished
+    gomfonstret = False  # shows the browser while the tests run
 
-
-
-    # inställningar för hur testerna körs
-    stangintebrowsern = False  # om True så hålls webbläsaren öppen efter testerna är klara, annars stängs den
-    gomfonstret = False  # visar webbläsaren medan testerna körs
-
-    # setUpClass körs INNAN FÖRSTA testet
+    # setUpClass runs BEFORE THE FIRST test
     @classmethod
     def setUpClass(cls):
         chr_options = Options()
@@ -27,21 +24,23 @@ class TestHemsida(TestCase):
 
         cls.browser = webdriver.Chrome(options=chr_options)
 
-    # tearDownClass körs EFTER SISTA testet
+    # tearDownClass runs AFTER THE LAST test
     @classmethod
     def tearDownClass(cls):
-        pass  # gör ingenting
+        pass
 
-    # setUp körs INNAN VARJE TEST
+    # setUp runs BEFORE EACH TEST
     def setUp(self):
-        pass  # gör ingenting
+        pass
 
-    # tearDown körs EFTER VARJE TEST
+    # tearDown runs AFTER EACH TEST
     def tearDown(self):
-        self.browser.get('about:blank')  # gå till en tom sida för att undvika att tidigare test påverkar senare
+        # go to a blank page to prevent earlier test from affecting later tests
+        self.browser.get('about:blank')
 
-    #VARIABELN ÄR self.browser
-    # HÄR BÖRJAR TESTERNA
+
+    # the variable is self.browser
+    # TESTS BEGIN HERE
 
     def testPageText(self):
         self.browser.get(path.join(getcwd(), 'index.html'))
@@ -52,27 +51,8 @@ class TestHemsida(TestCase):
         self.assertIn("Hitta oss", self.browser.page_source)
         self.assertIn("Kontakt", self.browser.page_source)
         self.assertIn("Frisör Saxé", self.browser.page_source)
-    
-    """ def testknapp_kontakt(self):
-        self.browser.get(path.join(getcwd(), 'index.html'))
-        self.browser.find_element(By.LINK_TEXT, "Kontakt").click()
-
-        self.assertIn("Kontakta oss!", self.browser.page_source)
-
-    def testknapp_hittaoss(self):
-        self.browser.get(path.join(getcwd(), 'index.html'))
-        self.browser.find_element(By.LINK_TEXT, "Hitta oss").click()
-
-        self.assertIn("Hitta oss!", self.browser.page_source) """
-
-        
-    
 
 
-
-
-# denna bit finns här så att testerna körs om filen körs som vanligt python-program
+# this part makes it so that the tests run if the file runs as a normal python program
 if __name__ == '__main__':
     main(verbosity=2)
-
-
