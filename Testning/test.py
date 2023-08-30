@@ -49,6 +49,11 @@ class TestHemsida(TestCase):
     def testPageText(self):
         self.browser.get(path.join(getcwd(), 'index.html'))
         self.assertEqual("Frisör Saxé", self.browser.title)
+    
+    def testkontakttext(self):
+        self.browser.get(path.join(getcwd(), 'index.html'))
+        self.assertIn("Telefon: 0630-555-555", self.browser.page_source)
+        self.assertIn("Mail", self.browser.page_source)
 
     def testnavbar(self):
         self.browser.get(path.join(getcwd(), 'index.html'))
