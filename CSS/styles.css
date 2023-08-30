@@ -15,7 +15,8 @@ footer {
 }
 .image-style {
     height: 40vh;
-    background-position: bottom;
+    background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
