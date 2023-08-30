@@ -62,7 +62,7 @@ class TestHemsida(TestCase):
         self.assertIn("Priser", self.browser.page_source)
         self.assertIn("Möt vår personal", self.browser.page_source)
 
-    def testPagedividers(self):
+    def testdesktop_ss(self):
         
         self.browser.get(path.join(getcwd(), 'index.html'))
         self.browser.save_screenshot("ss_hem.png")
@@ -93,6 +93,14 @@ class TestHemsida(TestCase):
         # Continue with your mobile view testing
         self.browser.get(path.join(getcwd(), 'index.html'))
         self.browser.save_screenshot("ss_hem_mobil.png")
+
+    def testPagePictures(self):
+        self.browser.get(path.join(getcwd(), 'index.html'))
+        
+        self.assertIn('alt="orjan"', self.browser.page_source)
+        self.assertIn('alt="fredrik"', self.browser.page_source)
+        self.assertIn('alt="anna"', self.browser.page_source)
+        
         
         
         
