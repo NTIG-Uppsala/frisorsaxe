@@ -65,6 +65,7 @@ class TestHemsida(TestCase):
     def testdesktop_ss(self):
         
         self.browser.get(path.join(getcwd(), 'index.html'))
+        time.sleep(2)
         self.browser.save_screenshot("ss_hem.png")
         
         self.browser.get(path.join(getcwd(), 'index.html'))
