@@ -3,11 +3,6 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from os import path, getcwd
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from PIL import Image
-from Screenshot import *
-import shutil
-import os
 import time
 
 class TestHemsida(TestCase):
