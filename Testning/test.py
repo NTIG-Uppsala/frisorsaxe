@@ -52,6 +52,11 @@ class TestHemsida(TestCase):
         self.assertIn("Kontakt", self.browser.page_source)
         self.assertIn("Frisör Saxé", self.browser.page_source)
 
+    def testPagedividers(self):
+        self.browser.get(path.join(getcwd(), 'index.html'))
+        self.assertIn("Välkommen till Frisör Saxé", self.browser.page_source)
+        self.assertIn("Priser", self.browser.page_source)
+        self.assertIn("Möt vår personal", self.browser.page_source)
 
 # this part makes it so that the tests run if the file runs as a normal python program
 if __name__ == '__main__':
