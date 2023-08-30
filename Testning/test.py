@@ -4,7 +4,11 @@ from selenium.webdriver.chrome.options import Options
 from os import path, getcwd
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-
+from PIL import Image
+from Screenshot import *
+import shutil
+import os
+import time
 
 class TestHemsida(TestCase):
     # settings for the tests
@@ -57,6 +61,41 @@ class TestHemsida(TestCase):
         self.assertIn("Välkommen till Frisör Saxé", self.browser.page_source)
         self.assertIn("Priser", self.browser.page_source)
         self.assertIn("Möt vår personal", self.browser.page_source)
+
+    def testPagedividers(self):
+        
+        self.browser.get(path.join(getcwd(), 'index.html'))
+        self.browser.save_screenshot("ss_hem.png")
+        
+        self.browser.get(path.join(getcwd(), 'index.html'))
+        self.browser.find_element(By.LINK_TEXT, "Priser").click()
+        time.sleep(2)
+        self.browser.save_screenshot("ss_priser.png")
+
+        self.browser.get(path.join(getcwd(), 'index.html'))
+        self.browser.find_element(By.LINK_TEXT, "Personal").click()
+        time.sleep(2)
+        self.browser.save_screenshot("ss_personal.png")
+        
+    def testmobile_ss(self):
+
+        # Set the browser window size to simulate a mobile device (e.g., iPhone X dimensions)
+        mobile_emulation = {"deviceName": "iPhone X"}
+        chrome_options = webdriver.ChromeOptions()
+        chrome_options.add_experimental_option("mobileEmulation", mobile_emulation)
+
+        # Launch the browser with mobile emulation
+        self.browser = webdriver.Chrome(options=chrome_options)
+
+        # Open a website
+        self.browser.get(path.join(getcwd(), 'index.html'))  # Replace with the URL you want to visit
+
+        # Continue with your mobile view testing
+        self.browser.get(path.join(getcwd(), 'index.html'))
+        self.browser.save_screenshot("ss_hem_mobil.png")
+        
+        
+        
 
 # this part makes it so that the tests run if the file runs as a normal python program
 if __name__ == '__main__':
