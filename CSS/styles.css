@@ -1,3 +1,13 @@
+.text-primary {
+    color: #783F8E !important;
+    color: #2f6690 !important;
+    color: #00509d !important;
+}
+
+.social-icon {
+    color: #000000;
+}
+
 html
 {
     scroll-behavior: smooth;
