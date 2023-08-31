@@ -89,9 +89,6 @@ class TestHemsida(TestCase):
         self.browser = webdriver.Chrome(options=chrome_options)
 
         # Open a website
-        self.browser.get(path.join(getcwd(), 'index.html'))  # Replace with the URL you want to visit
-
-        # Continue with your mobile view testing
         self.browser.get(path.join(getcwd(), 'index.html'))
         self.browser.save_screenshot("ss_hem_mobil.png")
 
