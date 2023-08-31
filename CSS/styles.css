@@ -30,3 +30,17 @@ footer {
     background-size: cover;
 }
 
+
+/* Modify the background color */
+ 
+.navbar-custom {
+    background-color: rgb(253, 231, 120);
+}
+/* Modify brand and text color */
+ 
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: rgb(84, 84, 1);
+}
+
+
