@@ -97,6 +97,11 @@ class TestHemsida(TestCase):
         self.browser.find_element(By.LINK_TEXT, "Personal").click()
         time.sleep(2)
         self.browser.save_screenshot("ss_personal.png")
+
+        self.browser.get(path.join(getcwd(), 'index.html'))
+        self.browser.find_element(By.LINK_TEXT, "Hitta oss").click()
+        time.sleep(2)
+        self.browser.save_screenshot("ss_karta.png")
         
     def testmobile_ss(self):
 
