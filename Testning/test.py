@@ -41,14 +41,34 @@ class TestHemsida(TestCase):
     # the variable is self.browser
     # TESTS BEGIN HERE
 
-    def testPageText(self):
+    def testPagetitle(self):
         self.browser.get(path.join(getcwd(), 'index.html'))
         self.assertEqual("Frisör Saxé", self.browser.title)
     
-    def testkontakttext(self):
+    def testPagemap(self):
+        self.browser.get(path.join(getcwd(), 'index.html'))
+        self.assertIn("map", self.browser.page_source)
+
+    def testfirstpagetext(self):
+
         self.browser.get(path.join(getcwd(), 'index.html'))
         self.assertIn("Telefon: 0630-555-555", self.browser.page_source)
         self.assertIn("Mail", self.browser.page_source)
+        self.assertIn("Lördag", self.browser.page_source)
+        self.assertIn("Fjällgatan", self.browser.page_source)
+
+        self.assertIn("Öppettider", self.browser.page_source)
+        self.assertIn("Kontakta", self.browser.page_source)
+        self.assertIn("Hitta", self.browser.page_source)
+
+    def testsecondpagetext(self):
+
+        self.browser.get(path.join(getcwd(), 'index.html'))
+        self.assertIn("Klippning", self.browser.page_source)
+        self.assertIn("Långt", self.browser.page_source)
+        self.assertIn("Annat", self.browser.page_source)
+        self.assertIn("Färgning", self.browser.page_source)
+        
 
     def testnavbar(self):
         self.browser.get(path.join(getcwd(), 'index.html'))
@@ -89,9 +109,6 @@ class TestHemsida(TestCase):
         self.browser = webdriver.Chrome(options=chrome_options)
 
         # Open a website
-        self.browser.get(path.join(getcwd(), 'index.html'))  # Replace with the URL you want to visit
-
-        # Continue with your mobile view testing
         self.browser.get(path.join(getcwd(), 'index.html'))
         self.browser.save_screenshot("ss_hem_mobil.png")
 
