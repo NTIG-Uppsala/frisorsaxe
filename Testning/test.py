@@ -3,11 +3,6 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from os import path, getcwd
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from PIL import Image
-from Screenshot import *
-import shutil
-import os
 import time
 
 class TestHemsida(TestCase):
@@ -49,6 +44,11 @@ class TestHemsida(TestCase):
     def testPageText(self):
         self.browser.get(path.join(getcwd(), 'index.html'))
         self.assertEqual("Frisör Saxé", self.browser.title)
+    
+    def testkontakttext(self):
+        self.browser.get(path.join(getcwd(), 'index.html'))
+        self.assertIn("Telefon: 0630-555-555", self.browser.page_source)
+        self.assertIn("Mail", self.browser.page_source)
 
     def testnavbar(self):
         self.browser.get(path.join(getcwd(), 'index.html'))
@@ -62,9 +62,10 @@ class TestHemsida(TestCase):
         self.assertIn("Priser", self.browser.page_source)
         self.assertIn("Möt vår personal", self.browser.page_source)
 
-    def testPagedividers(self):
+    def testdesktop_ss(self):
         
         self.browser.get(path.join(getcwd(), 'index.html'))
+        time.sleep(2)
         self.browser.save_screenshot("ss_hem.png")
         
         self.browser.get(path.join(getcwd(), 'index.html'))
@@ -93,6 +94,14 @@ class TestHemsida(TestCase):
         # Continue with your mobile view testing
         self.browser.get(path.join(getcwd(), 'index.html'))
         self.browser.save_screenshot("ss_hem_mobil.png")
+
+    def testPagePictures(self):
+        self.browser.get(path.join(getcwd(), 'index.html'))
+        
+        self.assertIn('alt="orjan"', self.browser.page_source)
+        self.assertIn('alt="fredrik"', self.browser.page_source)
+        self.assertIn('alt="anna"', self.browser.page_source)
+        
         
         
         
