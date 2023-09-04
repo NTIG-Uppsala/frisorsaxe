@@ -1,9 +1,11 @@
+import time
+from os import getcwd, path
 from unittest import TestCase, main
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from os import path, getcwd
 from selenium.webdriver.common.by import By
-import time
+
 
 class TestHemsida(TestCase):
     # settings for the tests
@@ -33,23 +35,23 @@ class TestHemsida(TestCase):
         pass
 
     # tearDown runs AFTER EACH TEST
-    def tearDown(self):
+    def tear_down(self):
         # go to a blank page to prevent earlier test from affecting later tests
         self.browser.get('about:blank')
 
 
-    # the variable is self.browser
+    # the variable for selenium is self.browser
     # TESTS BEGIN HERE
 
-    def testPagetitle(self):
+    def test_page_title(self):
         self.browser.get(path.join(getcwd(), 'index.html'))
         self.assertEqual("Frisör Saxé", self.browser.title)
     
-    def testPagemap(self):
+    def test_page_map(self):
         self.browser.get(path.join(getcwd(), 'index.html'))
         self.assertIn("map", self.browser.page_source)
 
-    def testfirstpagetext(self):
+    def test_first_page_text(self):
 
         self.browser.get(path.join(getcwd(), 'index.html'))
         self.assertIn("Telefon: 0630-555-555", self.browser.page_source)
@@ -61,7 +63,7 @@ class TestHemsida(TestCase):
         self.assertIn("Kontakta", self.browser.page_source)
         self.assertIn("Hitta", self.browser.page_source)
 
-    def testsecondpagetext(self):
+    def test_second_page_text(self):
 
         self.browser.get(path.join(getcwd(), 'index.html'))
         self.assertIn("Klippning", self.browser.page_source)
@@ -70,19 +72,19 @@ class TestHemsida(TestCase):
         self.assertIn("Färgning", self.browser.page_source)
         
 
-    def testnavbar(self):
+    def test_navbar(self):
         self.browser.get(path.join(getcwd(), 'index.html'))
         self.assertIn("Hitta oss", self.browser.page_source)
         self.assertIn("Kontakt", self.browser.page_source)
         self.assertIn("Frisör Saxé", self.browser.page_source)
 
-    def testPagedividers(self):
+    def test_page_dividers(self):
         self.browser.get(path.join(getcwd(), 'index.html'))
         self.assertIn("Välkommen till Frisör Saxé", self.browser.page_source)
         self.assertIn("Priser", self.browser.page_source)
         self.assertIn("Möt vår personal", self.browser.page_source)
 
-    def testdesktop_ss(self):
+    def test_desktop_ss(self):
         
         self.browser.get(path.join(getcwd(), 'index.html'))
         time.sleep(2)
@@ -117,7 +119,7 @@ class TestHemsida(TestCase):
         self.browser.get(path.join(getcwd(), 'index.html'))
         self.browser.save_screenshot("ss_hem_mobil.png")
 
-    def testPagePictures(self):
+    def test_page_pictures(self):
         self.browser.get(path.join(getcwd(), 'index.html'))
         
         self.assertIn('alt="orjan"', self.browser.page_source)
