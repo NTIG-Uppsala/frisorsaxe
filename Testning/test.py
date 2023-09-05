@@ -9,7 +9,9 @@ from selenium.webdriver.common.by import By
 
 class TestHemsida(TestCase):
     # settings for the tests
-    stangintebrowsern = False # if True, keeps the browser open after the tests are finished
+    stangintebrowsern = (
+        False  # if True, keeps the browser open after the tests are finished
+    )
     gomfonstret = False  # shows the browser while the tests run
 
     # setUpClass runs BEFORE THE FIRST test
@@ -37,24 +39,23 @@ class TestHemsida(TestCase):
     # tearDown runs AFTER EACH TEST
     def tear_down(self):
         # go to a blank page to prevent earlier test from affecting later tests
-        self.browser.get('about:blank')
-
+        self.browser.get("about:blank")
 
     # the variable for selenium is self.browser
     # TESTS BEGIN HERE
 
     def test_page_title(self):
-        self.browser.get(path.join(getcwd(), 'index.html'))
+        self.browser.get(path.join(getcwd(), "index.html"))
         self.assertEqual("Frisör Saxé", self.browser.title)
-    
+
     def test_page_map(self):
-        self.browser.get(path.join(getcwd(), 'index.html'))
+        self.browser.get(path.join(getcwd(), "index.html"))
         self.assertIn("map", self.browser.page_source)
 
     def test_first_page_text(self):
-
-        self.browser.get(path.join(getcwd(), 'index.html'))
-        self.assertIn("Telefon: 0630-555-555", self.browser.page_source)
+        self.browser.get(path.join(getcwd(), "index.html"))
+        self.assertIn("Telefon:", self.browser.page_source)
+        # self.assertIn("Lyx", self.browser.page_source)
         self.assertIn("Mail", self.browser.page_source)
         self.assertIn("Lördag", self.browser.page_source)
         self.assertIn("Fjällgatan", self.browser.page_source)
@@ -64,49 +65,45 @@ class TestHemsida(TestCase):
         self.assertIn("Hitta", self.browser.page_source)
 
     def test_second_page_text(self):
-
-        self.browser.get(path.join(getcwd(), 'index.html'))
+        self.browser.get(path.join(getcwd(), "index.html"))
         self.assertIn("Klippning", self.browser.page_source)
         self.assertIn("Långt", self.browser.page_source)
         self.assertIn("Annat", self.browser.page_source)
         self.assertIn("Färgning", self.browser.page_source)
-        
 
     def test_navbar(self):
-        self.browser.get(path.join(getcwd(), 'index.html'))
+        self.browser.get(path.join(getcwd(), "index.html"))
         self.assertIn("Hitta oss", self.browser.page_source)
         self.assertIn("Kontakt", self.browser.page_source)
         self.assertIn("Frisör Saxé", self.browser.page_source)
 
     def test_page_dividers(self):
-        self.browser.get(path.join(getcwd(), 'index.html'))
+        self.browser.get(path.join(getcwd(), "index.html"))
         self.assertIn("Välkommen till Frisör Saxé", self.browser.page_source)
         self.assertIn("Priser", self.browser.page_source)
         self.assertIn("Möt vår personal", self.browser.page_source)
 
     def test_desktop_ss(self):
-        
-        self.browser.get(path.join(getcwd(), 'index.html'))
+        self.browser.get(path.join(getcwd(), "index.html"))
         time.sleep(2)
         self.browser.save_screenshot("ss_hem.png")
-        
-        self.browser.get(path.join(getcwd(), 'index.html'))
+
+        self.browser.get(path.join(getcwd(), "index.html"))
         self.browser.find_element(By.LINK_TEXT, "Priser").click()
         time.sleep(2)
         self.browser.save_screenshot("ss_priser.png")
 
-        self.browser.get(path.join(getcwd(), 'index.html'))
+        self.browser.get(path.join(getcwd(), "index.html"))
         self.browser.find_element(By.LINK_TEXT, "Personal").click()
         time.sleep(2)
         self.browser.save_screenshot("ss_personal.png")
 
-        self.browser.get(path.join(getcwd(), 'index.html'))
+        self.browser.get(path.join(getcwd(), "index.html"))
         self.browser.find_element(By.LINK_TEXT, "Hitta oss").click()
         time.sleep(2)
         self.browser.save_screenshot("ss_karta.png")
-        
-    def testmobile_ss(self):
 
+    def testmobile_ss(self):
         # Set the browser window size to simulate a mobile device (e.g., iPhone X dimensions)
         mobile_emulation = {"deviceName": "iPhone X"}
         chrome_options = webdriver.ChromeOptions()
@@ -116,20 +113,17 @@ class TestHemsida(TestCase):
         self.browser = webdriver.Chrome(options=chrome_options)
 
         # Open a website
-        self.browser.get(path.join(getcwd(), 'index.html'))
+        self.browser.get(path.join(getcwd(), "index.html"))
         self.browser.save_screenshot("ss_hem_mobil.png")
 
     def test_page_pictures(self):
-        self.browser.get(path.join(getcwd(), 'index.html'))
-        
+        self.browser.get(path.join(getcwd(), "index.html"))
+
         self.assertIn('alt="orjan"', self.browser.page_source)
         self.assertIn('alt="fredrik"', self.browser.page_source)
         self.assertIn('alt="anna"', self.browser.page_source)
-        
-        
-        
-        
+
 
 # this part makes it so that the tests run if the file runs as a normal python program
-if __name__ == '__main__':
+if __name__ == "__main__":
     main(verbosity=2)

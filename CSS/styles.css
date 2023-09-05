@@ -1,17 +1,17 @@
 .text-primary {
-    color: #783F8E !important;
-    color: #2f6690 !important;
-    color: #00509d !important;
+    color: #000000 !important;
+    color: #000000 !important;
+    color: #000000 !important;
 }
 
 .social-icon {
     color: #000000;
 }
 
-html
-{
+html {
     scroll-behavior: smooth;
 }
+
 .custom-list {
     list-style-position: inside;
     color: black;
@@ -20,9 +20,11 @@ html
 footer {
     background: rgb(255, 255, 255);
 }
+
 .no-text-decoration {
     text-decoration: none;
 }
+
 .image-style {
     height: 40vh;
     background-position: center;
@@ -32,15 +34,14 @@ footer {
 
 
 /* Modify the background color */
- 
+
 .navbar-custom {
-    background-color: rgb(253, 231, 120);
+    background-color: rgb(0, 0, 0);
 }
+
 /* Modify brand and text color */
- 
+
 .navbar-custom .navbar-brand,
 .navbar-custom .navbar-text {
-    color: rgb(84, 84, 1);
+    color: rgb(255, 16, 16);
 }
-
-
