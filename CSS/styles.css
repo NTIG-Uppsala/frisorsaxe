@@ -4,8 +4,13 @@
     color: #000000 !important;
 }
 
+.custom-bg {
+    background-color: rgba(255, 232, 152, 255);
+    /* Replace with your desired background color */
+}
+
 .social-icon {
-    color: #000000;
+    color: rgba(255, 255, 255, 0.5);
 }
 
 html {
