@@ -6,15 +6,14 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 
-
 class TestHemsida(TestCase):
-    # settings for the tests
+    # Inställningar för testerna
     stangintebrowsern = (
-        False  # if True, keeps the browser open after the tests are finished
+        False  # Om True, håller webbläsaren öppen efter att testerna är klara
     )
-    gomfonstret = False  # shows the browser while the tests run
+    gomfonstret = False  # Visar webbläsaren medan testerna körs
 
-    # setUpClass runs BEFORE THE FIRST test
+    # setUpClass körs FÖRE DET FÖRSTA testet
     @classmethod
     def setUpClass(cls):
         chr_options = Options()
@@ -27,44 +26,46 @@ class TestHemsida(TestCase):
 
         cls.browser = webdriver.Chrome(options=chr_options)
 
-    # tearDownClass runs AFTER THE LAST test
+    # tearDownClass körs EFTER DET SISTA testet
     @classmethod
     def tearDownClass(cls):
         pass
 
-    # setUp runs BEFORE EACH TEST
+    # setUp körs FÖRE VARJE TEST
     def setUp(self):
         pass
 
-    # tearDown runs AFTER EACH TEST
+    # tear_down körs EFTER VARJE TEST
     def tear_down(self):
-        # go to a blank page to prevent earlier test from affecting later tests
+        # Gå till en tom sida för att förhindra att tidigare tester påverkar senare tester
         self.browser.get("about:blank")
 
-    # the variable for selenium is self.browser
-    # TESTS BEGIN HERE
+    # Variabeln för Selenium är self.browser
+    # TESTER BÖRJAR HÄR
 
     def test_page_title(self):
+        # Besök webbsidan och kontrollera att sidtiteln är "Frisör Saxé"
         self.browser.get(path.join(getcwd(), "index.html"))
         self.assertEqual("Frisör Saxé", self.browser.title)
 
     def test_page_map(self):
+        # Besök webbsidan och kontrollera om texten "map" finns på sidan
         self.browser.get(path.join(getcwd(), "index.html"))
         self.assertIn("map", self.browser.page_source)
 
     def test_first_page_text(self):
+        # Besök webbsidan och kontrollera om olika textfragment finns på sidan
         self.browser.get(path.join(getcwd(), "index.html"))
         self.assertIn("Telefon:", self.browser.page_source)
-        # self.assertIn("Lyx", self.browser.page_source)
         self.assertIn("Mail", self.browser.page_source)
         self.assertIn("Lördag", self.browser.page_source)
         self.assertIn("Fjällgatan", self.browser.page_source)
-
         self.assertIn("Öppettider", self.browser.page_source)
         self.assertIn("Kontakta", self.browser.page_source)
         self.assertIn("Hitta", self.browser.page_source)
 
     def test_second_page_text(self):
+        # Besök webbsidan och kontrollera om olika textfragment finns på sidan
         self.browser.get(path.join(getcwd(), "index.html"))
         self.assertIn("Klippning", self.browser.page_source)
         self.assertIn("Långt", self.browser.page_source)
@@ -72,18 +73,21 @@ class TestHemsida(TestCase):
         self.assertIn("Färgning", self.browser.page_source)
 
     def test_navbar(self):
+        # Besök webbsidan och kontrollera om olika länkar finns i navigationsmenyn
         self.browser.get(path.join(getcwd(), "index.html"))
         self.assertIn("Hitta oss", self.browser.page_source)
         self.assertIn("Kontakt", self.browser.page_source)
         self.assertIn("Frisör Saxé", self.browser.page_source)
 
     def test_page_dividers(self):
+        # Besök webbsidan och kontrollera om olika avsnittsindelningar finns
         self.browser.get(path.join(getcwd(), "index.html"))
         self.assertIn("Välkommen till Frisör Saxé", self.browser.page_source)
         self.assertIn("Priser", self.browser.page_source)
         self.assertIn("Möt vår personal", self.browser.page_source)
 
     def test_desktop_ss(self):
+        # Besök webbsidan och ta skärmdumpar på olika delar
         self.browser.get(path.join(getcwd(), "index.html"))
         time.sleep(2)
         self.browser.save_screenshot("ss_hem.png")
@@ -104,26 +108,26 @@ class TestHemsida(TestCase):
         self.browser.save_screenshot("ss_karta.png")
 
     def testmobile_ss(self):
-        # Set the browser window size to simulate a mobile device (e.g., iPhone X dimensions)
+        # Ställ in webbläsarfönstrets storlek för att simulera en mobil enhet (t.ex. iPhone X-dimensioner)
         mobile_emulation = {"deviceName": "iPhone X"}
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_experimental_option("mobileEmulation", mobile_emulation)
 
-        # Launch the browser with mobile emulation
+        # Starta webbläsaren med mobilsimulering
         self.browser = webdriver.Chrome(options=chrome_options)
 
-        # Open a website
+        # Öppna en webbplats
         self.browser.get(path.join(getcwd(), "index.html"))
         self.browser.save_screenshot("ss_hem_mobil.png")
 
     def test_page_pictures(self):
+        # Besök webbsidan och kontrollera om olika bilder finns
         self.browser.get(path.join(getcwd(), "index.html"))
 
         self.assertIn('alt="orjan"', self.browser.page_source)
         self.assertIn('alt="fredrik"', self.browser.page_source)
         self.assertIn('alt="anna"', self.browser.page_source)
 
-
-# this part makes it so that the tests run if the file runs as a normal python program
+# Denna del gör att testerna körs om filen körs som ett vanligt Python-program
 if __name__ == "__main__":
     main(verbosity=2)
