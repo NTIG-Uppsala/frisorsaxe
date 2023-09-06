@@ -1,13 +1,5 @@
 .text-primary {
     color: #000000 !important;
-    color: #000000 !important;
-    color: #000000 !important;
-}
-
-.custom-bg {
-    background-color: #D2AC47;
-
-    /* Replace with your desired background color */
 }
 
 .social-icon {
@@ -57,11 +49,4 @@ footer {
     height: 100%;
     position: absolute !important;
     top: 0 !important;
-}
-
-@font-face {
-    font-family: 'smaragd-regular', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    src: local('smaragd-regular'), url(https://www.dafontfree.net/embed/c21hcmFnZC1yZWd1bGFyJmRhdGEvNTEvcy8yMDY4Ni9TbWFyYWdkLm90Zg) format('truetype');
 }
