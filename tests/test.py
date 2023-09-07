@@ -44,20 +44,6 @@ class TestHemsida(TestCase):
     # Variabeln för Selenium är self.browser
     # TESTER BÖRJAR HÄR
 
-    def test_ID(self):
-        # Besök webbsidan och kontrollera att sidtiteln är "Frisör Saxé"
-        self.browser.get(path.join(getcwd(), "index.html"))
-        element = 0
-        # Find the element by its ID
-
-        element = self.browser.find_element(By.ID, "bokatid")
-        element = self.browser.find_element(By.ID, "bokatid")
-
-        # If the element is found, you can perform actions on it
-        # For example, you can print its text
-        print("aaaahg")
-        print(element)
-
     def test_title(self):
         # Besök webbsidan och kontrollera att sidtiteln är "Frisör Saxé"
         self.browser.get(path.join(getcwd(), "index.html"))
