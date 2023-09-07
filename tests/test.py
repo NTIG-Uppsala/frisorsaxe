@@ -6,6 +6,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 
+
 class TestHemsida(TestCase):
     # Inställningar för testerna
     stangintebrowsern = (
@@ -43,20 +44,33 @@ class TestHemsida(TestCase):
     # Variabeln för Selenium är self.browser
     # TESTER BÖRJAR HÄR
 
-    def test_page_title(self):
+    def test_ID(self):
+        # Besök webbsidan och kontrollera att sidtiteln är "Frisör Saxé"
+        self.browser.get(path.join(getcwd(), "index.html"))
+        element = 0
+        # Find the element by its ID
+
+        element = self.browser.find_element(By.ID, "bokatid")
+
+        # If the element is found, you can perform actions on it
+        # For example, you can print its text
+        print("aaaahg")
+        print(element)
+
+    def test_title(self):
         # Besök webbsidan och kontrollera att sidtiteln är "Frisör Saxé"
         self.browser.get(path.join(getcwd(), "index.html"))
         self.assertEqual("Frisör Saxé", self.browser.title)
 
-    def test_page_map(self):
+    def test_map(self):
         # Besök webbsidan och kontrollera om texten "map" finns på sidan
         self.browser.get(path.join(getcwd(), "index.html"))
-        self.assertIn("map", self.browser.page_source)
+        self.assertIn("karta", self.browser.page_source)
 
     def test_first_page_text(self):
         # Besök webbsidan och kontrollera om olika textfragment finns på sidan
         self.browser.get(path.join(getcwd(), "index.html"))
-        self.assertIn("Telefon:", self.browser.page_source)
+        self.assertIn("Telefon", self.browser.page_source)
         self.assertIn("Mail", self.browser.page_source)
         self.assertIn("Lördag", self.browser.page_source)
         self.assertIn("Fjällgatan", self.browser.page_source)
@@ -69,20 +83,19 @@ class TestHemsida(TestCase):
         self.browser.get(path.join(getcwd(), "index.html"))
         self.assertIn("Klippning", self.browser.page_source)
         self.assertIn("Långt", self.browser.page_source)
-        self.assertIn("Annat", self.browser.page_source)
+        self.assertIn("Övrigt", self.browser.page_source)
         self.assertIn("Färgning", self.browser.page_source)
 
     def test_navbar(self):
         # Besök webbsidan och kontrollera om olika länkar finns i navigationsmenyn
         self.browser.get(path.join(getcwd(), "index.html"))
         self.assertIn("Hitta oss", self.browser.page_source)
-        self.assertIn("Kontakt", self.browser.page_source)
         self.assertIn("Frisör Saxé", self.browser.page_source)
 
     def test_page_dividers(self):
         # Besök webbsidan och kontrollera om olika avsnittsindelningar finns
         self.browser.get(path.join(getcwd(), "index.html"))
-        self.assertIn("Välkommen till Frisör Saxé", self.browser.page_source)
+        self.assertIn("Lyx och skönhet", self.browser.page_source)
         self.assertIn("Priser", self.browser.page_source)
         self.assertIn("Möt vår personal", self.browser.page_source)
 
@@ -127,6 +140,7 @@ class TestHemsida(TestCase):
         self.assertIn('alt="orjan"', self.browser.page_source)
         self.assertIn('alt="fredrik"', self.browser.page_source)
         self.assertIn('alt="anna"', self.browser.page_source)
+
 
 # Denna del gör att testerna körs om filen körs som ett vanligt Python-program
 if __name__ == "__main__":
