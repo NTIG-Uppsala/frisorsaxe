@@ -23,6 +23,7 @@ for root, dirs, files in os.walk(".", topdown=False):
         paths.append(os.path.join(root, name))
 
 TABS_OPEN = 1
+failed_validations_count = 0
 
 # loop through file paths and validate the files
 for path in paths:
@@ -50,3 +51,7 @@ for path in paths:
         print(path, "passed")
     else:
         print(path, "failed")
+        failed_validations_count += 1
+
+if failed_validations_count > 0:
+    raise Exception("validation failed")
