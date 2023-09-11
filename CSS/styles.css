@@ -50,3 +50,8 @@ footer {
     position: absolute !important;
     top: 0 !important;
 }
+
+.infoAboutLongHair{
+    font-size: 0.75rem;
+    font-weight: bold !important; 
+}
