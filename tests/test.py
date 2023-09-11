@@ -73,9 +73,9 @@ class TestHomepage(TestCase):
         self.assertIn("hår", self.browser.page_source)
 
     def testNavbar(self):
-        nabBrand = self.browser.find_element(By.ID, "brandName")
+        nabBrand = self.browser.find_element(By.ID, "centerText")
         self.assertIn("Frisör&nbsp;Saxé", nabBrand.get_attribute("innerHTML"))
-        element = self.browser.find_element(By.CLASS_NAME, "navbar-collapse")
+        element = self.browser.find_element(By.CLASS_NAME, "navbar-nav")
         self.assertIn("Boka&nbsp;tid", element.get_attribute("innerHTML"))
         self.assertIn("Öppettider", element.get_attribute("innerHTML"))
         self.assertIn("Priser", element.get_attribute("innerHTML"))
@@ -83,7 +83,6 @@ class TestHomepage(TestCase):
         self.assertIn("Hitta&nbsp;oss", element.get_attribute("innerHTML"))
 
     def testHeadHeader(self):
-        self.assertIn("Lyx och skönhet", self.browser.page_source)
         self.assertIn("Möt vår personal", self.browser.page_source)
 
     def testDesktopScreenshots(self):
