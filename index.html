@@ -25,7 +25,7 @@
     <link href="https://www.dafontfree.net/embed/c21hcmFnZC1yZWd1bGFyJmRhdGEvNTEvcy8yMDY4Ni9TbWFyYWdkLm90Zg"
         rel="stylesheet" type="text/css">
 </head>
-  
+
 <body>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
@@ -36,11 +36,13 @@
         integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
         </script>
 
+    <script src="script.js"></script>
+
     <!-- Start of page -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <h2 id="navbar-brandtext">Frisör Saxé</h2>
+                <h2 id="brandName">Frisör&nbsp;Saxé</h2>
             </a>
             <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -48,13 +50,11 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
                 <!-- Navbar -->
-
                 <ul class="navbar-nav ms-auto me-5 mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active text-decoration-none" aria-current="page" href="#appointment">Boka
-                            tid</a>
+                        <a class="nav-link active text-decoration-none" aria-current="page"
+                            href="#appointment">Boka&nbsp;tid</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#openingHours">Öppettider</a>
@@ -63,12 +63,11 @@
                         <a class="nav-link active" aria-current="page" href="#prices">Priser</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#Employee">Personal</a>
+                        <a class="nav-link active" aria-current="page" href="#employee">Personal</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#map">Hitta oss</a>
+                        <a class="nav-link active" aria-current="page" href="#map">Hitta&nbsp;oss</a>
                     </li>
-
                 </ul>
 
             </div>
@@ -78,7 +77,7 @@
     <div style="height: 100vh;">
         <video src="Bilder/rorande_bilder/background-video.mp4" style="width:100%; height:100%; object-fit: cover;"
             autoplay muted loop></video>
-        <div class="d-flex justify-content-center align-items-center video-overlay">x
+        <div class="d-flex justify-content-center align-items-center videoOverlay">x
             <h1 class="text-light" id="appointment">Lyx och skönhet
             </h1>
         </div>
@@ -124,10 +123,12 @@
                 <img class="w-100" src="Bilder/pris.jpg" alt="pris" style="border-radius: 7px;">
                 <!-- Prices -->
                 <h2 class="mb-4 my-5 text-body">Klippning</h2>
+                <p class="text-center infoAboutLongHair">Gränsen för långt hår går vid 20cm</p>
                 <table class="table table-sm" style="table-layout: fixed;">
                     <thead>
+
                         <tr>
-                            <th scope="col" class="text-start">Långt hår</th>
+                            <th scope="col" class="text-start">Långt hår (60 min)</th>
                             <th scope="col" class="text-end">600 kr</th>
                         </tr>
                     </thead>
@@ -137,7 +138,7 @@
                             <th scope="col" class="text-end">500 kr</th>
                         </tr>
                         <tr>
-                            <th scope="col" class="text-start">Kort hår</th>
+                            <th scope="col" class="text-start">Kort hår (30 min)</th>
                             <th scope="col" class="text-end">200 kr</th>
                         </tr>
                         <tr>
@@ -145,43 +146,47 @@
                             <th scope="col" class="text-end">150 kr</th>
                         </tr>
                         <tr>
-                            <th scope="col" class="text-start">Skägg</th>
+                            <th scope="col" class="text-start">Skägg (20 min)</th>
                             <th scope="col" class="text-end">150 kr</th>
                         </tr>
                         <tr>
-                            <th scope="col" class="text-start">Barn (0-13)</th>
+                            <th scope="col" class="text-start">Barn (0-13 år) (20 min)</th>
                             <th scope="col" class="text-end">150 kr</th>
                         </tr>
+
                     </tbody>
                 </table>
             </div>
             <div class="col-md-6 flex-column">
                 <img class="w-100" src="Bilder/ovrigt.jpg" alt="övrigt" style="border-radius: 7px;">
                 <h2 class="mb-4 my-5 text-body">Övrigt</h2>
+                <br>
                 <table class="table table-sm " style="table-layout: fixed;">
                     <thead>
+
                         <tr>
-                            <th scope="col" class="text-start">Toppning</th>
+                            <th scope="col" class="text-start">Toppning (15 min)</th>
                             <th scope="col" class="text-end">200 kr</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="col" class="text-start">Färgning</th>
+                            <th scope="col" class="text-start">Färgning (90 min)</th>
                             <th scope="col" class="text-end"> 560 kr</th>
                         </tr>
                         <tr>
-                            <th scope="col" class="text-start">Extensions kort</th>
+                            <th scope="col" class="text-start">Extensions kort (45 min)</th>
                             <th scope="col" class="text-end">300 kr</th>
                         </tr>
                         <tr>
-                            <th scope="col" class="text-start">Extensions normal</th>
+                            <th scope="col" class="text-start">Extensions normal (45 min)</th>
                             <th scope="col" class="text-end">400 kr</th>
                         </tr>
                         <tr>
-                            <th scope="col" class="text-start">Extensions lång</th>
+                            <th scope="col" class="text-start">Extensions lång (45 min)</th>
                             <th scope="col" class="text-end">500 kr</th>
                         </tr>
+
                     </tbody>
                 </table>
             </div>
@@ -189,9 +194,9 @@
     </div>
     <!-- Third page -->
 
-    <div class="bg-image d-flex justify-content-center align-items-center image-style container-xxl my-5"
+    <div class="bg-image d-flex justify-content-center align-items-center imageStyle container-xxl my-5"
         style="background-image: url('Bilder/bakgrund_3.jpg'); border-radius: 7px;">
-        <h2 class="text-light" id="Employee">Möt vår personal</h2>
+        <h2 class="text-light" id="employee">Möt vår personal</h2>
     </div>
 
     <div class="container my-5 text-center">
@@ -214,7 +219,6 @@
                 <div class="container d-flex justify-content-center">
                     <div class="card" style="width: 20rem; height: 70%;">
                         <img src="Bilder/PersonalBilder/fredrik_ortqvist.jpg" class="card-img-top" alt="Fredrik">
-                            alt="Fredrik">
                         <div class="card-body">
                             <h5 class="card-title">Fredrik Örtqvist</h5>
                             <p class="card-text mb-2">Barberare</p>
@@ -244,10 +248,12 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <h2 class="mb-4">Hitta oss</h2>
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1503.2583513342254!2d20.2337795!3d67.8660232!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x45d0ba6368d7c9a3%3A0xe3887ef038c559b0!2sFj%C3%A4llgatan%2032%2C%20981%2039%20Kiruna!5e0!3m2!1ssv!2sse!4v1693397051519!5m2!1ssv!2sse"
-                    width="450" height="450" style="border:0; width: 100%; max-width: 800px; border-radius: 7px;"
-                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="hasjs"> <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1503.2583513342254!2d20.2337795!3d67.8660232!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x45d0ba6368d7c9a3%3A0xe3887ef038c559b0!2sFj%C3%A4llgatan%2032%2C%20981%2039%20Kiruna!5e0!3m2!1ssv!2sse!4v1693397051519!5m2!1ssv!2sse"
+                        width="450" height="450" style="border:0; width: 100%; max-width: 800px; border-radius: 7px;"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+                <noscript><img src="Bilder/nojsmap.jpg" width="450" height="450"
+                        style="border: 0; width: 100%; max-width: 450px; border-radius: 7px;" alt="noJsMap"></noscript>
                 <h2 class="mb-4 my-3">Adress</h2>
                 <h6 class="text-black">Fjällgatan 32H</h6>
                 <h6 class="text-black">981 39 Kiruna</h6>
@@ -258,18 +264,17 @@
     </div>
 
     <footer class="bg-dark text-white-50 text-center mt-5 p-3">
-        Frisör Saxé | <a href="tel:0630555555" class="text-white-50">0630-555-555</a> |
+        <a href="tel:0630555555" class="text-white-50">0630-555-555</a> |
         <a href="mailto:info@ntig-uppsala.github.io" class="text-white-50">info@ntig&#8209;uppsala.github.io</a>
 
         <div class="container" style="padding: 20px 0;">
-            <a href="https://facebook.com/ntiuppsala" class="no-text-decoration social-icon" target="_blank">
+            <a href="https://facebook.com/ntiuppsala" class="noTextDecoration socialIcon" target="_blank">
                 <i class="fa-brands fa-facebook fa-2xl"></i>
             </a>
-            <a href="https://twitter.com/ntiuppsala?lang=en" class="no-text-decoration social-icon" target="_blank">
+            <a href="https://twitter.com/ntiuppsala?lang=en" class="noTextDecoration socialIcon" target="_blank">
                 <i class="fa-brands fa-x-twitter fa-2xl"></i>
             </a>
-            <a href="https://www.instagram.com/ntiuppsala/?hl=en" class="no-text-decoration social-icon"
-                target="_blank">
+            <a href="https://www.instagram.com/ntiuppsala/?hl=en" class="noTextDecoration socialIcon" target="_blank">
                 <i class="fa-brands fa-instagram fa-2xl"></i>
             </a>
         </div>
