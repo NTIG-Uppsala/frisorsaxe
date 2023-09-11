@@ -57,7 +57,7 @@ class TestHomepage(TestCase):
         self.assertIn("Lördag", self.browser.page_source)
         self.assertIn("Söndag", self.browser.page_source)
         self.assertIn("Stängt", self.browser.page_source)
-        element = self.browser.find_element(By.ID, "vardagar")
+        self.browser.find_element(By.ID, "vardagar")
 
     def testProducts(self):
         self.assertIn("Klippning", self.browser.page_source)
@@ -72,10 +72,19 @@ class TestHomepage(TestCase):
         self.assertIn("stamkund", self.browser.page_source)
         self.assertIn("hår", self.browser.page_source)
 
-    def test_navbar(self):
+    def testNavbar(self):
         self.assertIn("Hitta oss", self.browser.page_source)
         self.assertIn("Frisör Saxé", self.browser.page_source)
         element = self.browser.find_element(By.ID, "navbar-brandtext")
+        self.browser.get(path.join(getcwd(), "index.html"))
+        nabBrand = self.browser.find_element(By.ID, "navbar-brandtext")
+        self.assertIn("Frisör&nbsp;Saxé", nabBrand.get_attribute("innerHTML"))
+        element = self.browser.find_element(By.CLASS_NAME, "navbar-collapse")
+        self.assertIn("Boka&nbsp;tid", element.get_attribute("innerHTML"))
+        self.assertIn("Öppettider", element.get_attribute("innerHTML"))
+        self.assertIn("Priser", element.get_attribute("innerHTML"))
+        self.assertIn("Personal", element.get_attribute("innerHTML"))
+        self.assertIn("Hitta&nbsp;oss", element.get_attribute("innerHTML"))
 
     def testHeadHeader(self):
         self.assertIn("Lyx och skönhet", self.browser.page_source)

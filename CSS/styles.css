@@ -55,3 +55,6 @@ footer {
     font-size: 0.75rem;
     font-weight: bold !important; 
 }
+.hasjs{
+    display: none;
+}
