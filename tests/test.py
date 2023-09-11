@@ -62,7 +62,6 @@ class TestHemsida(TestCase):
         self.assertIn("Mail", self.browser.page_source)
         self.assertIn("0630-555-555", self.browser.page_source)
         self.assertIn("info@ntig-uppsala.github.io", self.browser.page_source)
-        
 
     def test_oppettider(self):
         # Besök webbsidan och kontrollera om olika textfragment finns på sidan
@@ -89,14 +88,18 @@ class TestHemsida(TestCase):
         self.assertIn("Toppning", self.browser.page_source)
         self.assertIn("stamkund", self.browser.page_source)
         self.assertIn("hår", self.browser.page_source)
-        
 
     def test_navbar(self):
         # Besök webbsidan och kontrollera om olika länkar finns i navigationsmenyn
         self.browser.get(path.join(getcwd(), "index.html"))
-        self.assertIn("Hitta oss", self.browser.page_source)
-        self.assertIn("Frisör Saxé", self.browser.page_source)
-        element = self.browser.find_element(By.ID, "navbar-brandtext")
+        nabBrand = self.browser.find_element(By.ID, "navbar-brandtext")
+        self.assertIn("Frisör&nbsp;Saxé", nabBrand.get_attribute("innerHTML"))
+        element = self.browser.find_element(By.CLASS_NAME, "navbar-collapse")
+        self.assertIn("Boka&nbsp;tid", element.get_attribute("innerHTML"))
+        self.assertIn("Öppettider", element.get_attribute("innerHTML"))
+        self.assertIn("Priser", element.get_attribute("innerHTML"))
+        self.assertIn("Personal", element.get_attribute("innerHTML"))
+        self.assertIn("Hitta&nbsp;oss", element.get_attribute("innerHTML"))
 
     def test_huvudrubriker(self):
         # Besök webbsidan och kontrollera om olika avsnittsindelningar finns
