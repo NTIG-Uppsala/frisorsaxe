@@ -92,7 +92,7 @@ class TestHemsida(TestCase):
     def test_navbar(self):
         # Besök webbsidan och kontrollera om olika länkar finns i navigationsmenyn
         self.browser.get(path.join(getcwd(), "index.html"))
-        nabBrand = self.browser.find_element(By.ID, "navbar-brandtext")
+        nabBrand = self.browser.find_element(By.ID, "brandName")
         self.assertIn("Frisör&nbsp;Saxé", nabBrand.get_attribute("innerHTML"))
         element = self.browser.find_element(By.CLASS_NAME, "navbar-collapse")
         self.assertIn("Boka&nbsp;tid", element.get_attribute("innerHTML"))
