@@ -7,6 +7,57 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 
 
+class TestHomepageNoScript(TestCase):
+    doNotCloseBrowser = False
+    hideWindow = False
+
+    # setUpClass körs FÖRE DET FÖRSTA testet
+    @classmethod
+    def setUpClass(cls):
+        chrome_options = webdriver.ChromeOptions()
+
+        chrome_options.add_experimental_option(
+            "prefs", {"profile.managed_default_content_settings.javascript": 2}
+        )
+
+        if cls.doNotCloseBrowser:
+            chrome_options.add_experimental_option("detach", True)
+
+        if cls.hideWindow:
+            chrome_options.add_argument("--headless")
+
+        cls.browser = webdriver.Chrome(options=chrome_options)
+
+    # After last test
+    @classmethod
+    def tearDownClass(cls):
+        pass
+
+    # Runs before every test
+    def setUp(self):
+        self.browser.get(path.join(getcwd(), "index.html"))
+
+    # After each test
+    def tear_down(self):
+        self.browser.get("about:blank")
+
+    def testNoScriptImage(self):
+        image_elements = self.browser.find_elements(By.TAG_NAME, "img")
+
+        for image_element in image_elements:
+            is_loaded = self.browser.execute_script(
+                "return arguments[0].complete && typeof arguments[0].naturalWidth != 'undefined' && arguments[0].naturalWidth > 0;",
+                image_element,
+            )
+
+            if is_loaded:
+                print(f"Image '{image_element.get_attribute('src')}' is loaded.")
+            else:
+                self.fail(
+                    f"Image '{image_element.get_attribute('src')}' is not loaded."
+                )
+
+
 class TestHomepage(TestCase):
     doNotCloseBrowser = False
     hideWindow = False
@@ -42,6 +93,26 @@ class TestHomepage(TestCase):
 
     def testMap(self):
         self.browser.find_element(By.ID, "map")
+        self.assertIn(
+            "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1503.2583513342254!2d20.2337795!3d67.8660232!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x45d0ba6368d7c9a3%3A0xe3887ef038c559b0!2sFj%C3%A4llgatan%2032%2C%20981%2039%20Kiruna!5e0!3m2!1ssv!2sse!4v1693397051519!5m2!1ssv!2sse",
+            self.browser.page_source,
+        )
+
+    def testImageLoading(self):
+        image_elements = self.browser.find_elements(By.TAG_NAME, "img")
+
+        for image_element in image_elements:
+            is_loaded = self.browser.execute_script(
+                "return arguments[0].complete && typeof arguments[0].naturalWidth != 'undefined' && arguments[0].naturalWidth > 0;",
+                image_element,
+            )
+
+            if is_loaded:
+                print(f"Image '{image_element.get_attribute('src')}' is loaded.")
+            else:
+                self.fail(
+                    f"Image '{image_element.get_attribute('src')}' is not loaded."
+                )
 
     def testBookedTime(self):
         self.assertIn("Boka tid", self.browser.page_source)
