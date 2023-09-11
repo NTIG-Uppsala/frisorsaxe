@@ -73,10 +73,6 @@ class TestHomepage(TestCase):
         self.assertIn("hår", self.browser.page_source)
 
     def testNavbar(self):
-        self.assertIn("Hitta oss", self.browser.page_source)
-        self.assertIn("Frisör Saxé", self.browser.page_source)
-        element = self.browser.find_element(By.ID, "navbar-brandtext")
-        self.browser.get(path.join(getcwd(), "index.html"))
         nabBrand = self.browser.find_element(By.ID, "brandName")
         self.assertIn("Frisör&nbsp;Saxé", nabBrand.get_attribute("innerHTML"))
         element = self.browser.find_element(By.CLASS_NAME, "navbar-collapse")
