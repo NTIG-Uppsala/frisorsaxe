@@ -1,17 +1,0 @@
-Adobe After Effects v23.6 Windows 64 render log for project “Untitled Project.aep”
-
-Rendering started on 05/09/2023 at 11:25:04
-
-  05/09/2023 11:25:05: Starting composition “Comp 1”.
-
-  Output To: C:\Users\estefan.reyeskomaro\Documents\GitHub\frisorsaxe.github.io\Bilder\rorande_bilder\Comp 1.mp4    05/09/2023 11:26:03: Finished composition “Comp 1”.
-
-
-  05/09/2023 11:26:03: Starting composition “Comp 1”.
-
-  Output To: C:\Users\estefan.reyeskomaro\Documents\GitHub\frisorsaxe.github.io\Bilder\rorande_bilder\Comp 1_1.mp4    05/09/2023 11:28:19: Finished composition “Comp 1”.
-
-
-  Total Time Elapsed: 3 Min, 15 Sec
-Log closed on 05/09/2023 at 11:28:19
-
