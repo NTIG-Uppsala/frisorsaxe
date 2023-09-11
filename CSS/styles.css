@@ -50,3 +50,7 @@ footer {
     position: absolute !important;
     top: 0 !important;
 }
+
+.hasjs{
+    display: none;
+}
