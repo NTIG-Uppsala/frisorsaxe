@@ -36,7 +36,8 @@ h2 {
     margin-top: 40vh;
     font-family: 'Italianno', cursive;
     font-size: 10rem;
-    text-shadow: 4px 4px black;
+    text-shadow: 2px 3px 3px rgb(61, 60, 60);
+    
 }
 
 .text-primary {
