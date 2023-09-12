@@ -26,6 +26,13 @@ h2 {
     font-family: 'Cinzel', serif;
 }
 
+#instagramGrid {
+    position: relative;
+    left: 23vw;
+    width: 50vw;
+    height: auto;
+}
+
 #homePage {
     background-image: url('pictures/Bakgrundstest1.jpg');
     background-position: center;
@@ -40,16 +47,16 @@ h2 {
 }
 
 @media screen and (max-width:800px) {
-    #centerText{
+    #centerText {
         font-size: 7rem !important;
     }
 }
 
 @media screen and (max-width:500px) {
-    #centerText{
+    #centerText {
         font-size: 5rem !important;
     }
-    
+
 }
 
 .text-primary {
@@ -101,12 +108,15 @@ footer {
     display: none;
 }
 
-.card-title{
+.card-title {
     font-size: 1.2rem !important;
 }
 
+
+
 @media screen and (max-width:767px) {
-    .marginTop{
+    .marginTop {
         margin-top: 5% !important;
+
     }
 }
