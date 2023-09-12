@@ -32,7 +32,7 @@ function dailySales(date) {
   const saleColoring = document.getElementsByClassName("saleColoring");
 
   switch (weekday) {
-    case 1:
+    case 1: //On Monday longhair is on sale
       for (const element of longHair) {
         element.style.textDecoration = "line-through";
       }
@@ -41,7 +41,7 @@ function dailySales(date) {
         element.style.color = "red";
       }
       break;
-    case 2:
+    case 2: //On Tuseday shorthair is on sale
       for (const element of shortHair) {
         element.style.textDecoration = "line-through";
       }
@@ -50,7 +50,7 @@ function dailySales(date) {
         element.style.color = "red";
       }
       break;
-    case 3:
+    case 3: //On Wednesday beard is on sale
       for (const element of beard) {
         element.style.textDecoration = "line-through";
       }
@@ -59,7 +59,7 @@ function dailySales(date) {
         element.style.color = "red";
       }
       break;
-    case 4:
+    case 4: //On Thursday coloring is on sale
       for (const element of coloring) {
         element.style.textDecoration = "line-through";
       }
