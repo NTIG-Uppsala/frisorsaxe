@@ -8,17 +8,15 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 var prevScrollPosition = window.pageYOffset;
-window.onscroll = function() {
+window.onscroll = function () {
   var currScrolPosition = window.pageYOffset;
   if (prevScrollPosition > currScrolPosition) {
-    console.log("penis")
     document.getElementById("navbar").style.top = "0";
   } else {
     document.getElementById("navbar").style.top = "-20vh";
   }
   prevScrollPosition = currScrolPosition;
-}
-
+};
 
 function dailySales(date) {
   let weekday = date.getDay();
