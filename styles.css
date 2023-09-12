@@ -112,12 +112,11 @@ footer {
     font-size: 1.2rem !important;
 }
 
-@media screen and (max-width:767px) {
-    .marginTop{
-        margin-top: 5% !important;
-    }
-}
 
-@media screen and (min-width:2000px) {
-   
+
+@media screen and (max-width:767px) {
+    .marginTop {
+        margin-top: 5% !important;
+
+    }
 }

@@ -3,10 +3,13 @@
 
 <head>
     <title>Frisör Saxé</title>
-    <!-- Required meta tags -->
+    <!-- Meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <link rel="icon" type="" href="pictures/icon.png">
+
 
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -53,10 +56,10 @@
             <div class="collapse navbar-collapse flex-grow-0 fs-2" id="navbarNav">
                 <ul class="navbar-nav ">
                     <li class="nav-item">
-                        <a class="nav-link me-5" href="#boka&öppetider">Boka&nbsp;tid</a>
+                        <a class="nav-link me-5" href="#boka&oppetider">Boka&nbsp;tid</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link me-5" href="#boka&öppetider">Öppettider</a>
+                        <a class="nav-link me-5" href="#boka&oppetider">Öppettider</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link me-5" href="#priser">Priser</a>
@@ -75,7 +78,7 @@
     <div style="height: 100vh;" id="homePage">
         <div class="d-flex justify-content-center align-items-center">
             <h1 class="text-light" id="centerText">Frisör&nbsp;Saxé</h1>
-            <h2 id="boka&öppetider"></h2>
+            <h2 id="boka&oppetider"></h2>
         </div>
     </div>
 
@@ -131,26 +134,34 @@
                     <thead>
 
                         <tr>
+
                             <th scope="col" class="text-start">Långt hår (60 min)</th>
-                            <th scope="col" class="text-end">600 kr</th>
+                            <th scope="col" class="text-end longHair"><span class="saleLongHair"></span>600 kr</th>
+
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <th scope="col" class="text-start">Långt hår stamkund</th>
-                            <th scope="col" class="text-end">500 kr</th>
+                            <th scope="col" class="text-end longHair"><span class="saleLongHair"></span>500 kr</th>
                         </tr>
                         <tr>
+
                             <th scope="col" class="text-start">Kort hår (30 min)</th>
-                            <th scope="col" class="text-end">200 kr</th>
+                            <th scope="col" class="text-end "><span class="saleShortHair"></span><span
+                                    class="shortHair">200 kr</span>
+                            </th>
+
                         </tr>
                         <tr>
                             <th scope="col" class="text-start">Kort hår stamkund</th>
-                            <th scope="col" class="text-end">150 kr</th>
+                            <th scope="col" class="text-end "><span class="saleShortHair"></span><span
+                                    class="shortHair">150 kr</span>
+                            </th>
                         </tr>
                         <tr>
-                            <th scope="col" class="text-start">Skägg (20 min)</th>
-                            <th scope="col" class="text-end">150 kr</th>
+                            <th scope="col" class="text-start">Skägg (20 min)</th><span class="saleBeard"></span>
+                            <th scope="col" class="text-end beard">150 kr</th>
                         </tr>
                         <tr>
                             <th scope="col" class="text-start">Barn (0-13 år) (20 min)</th>
@@ -174,7 +185,7 @@
                     <tbody>
                         <tr>
                             <th scope="col" class="text-start">Färgning (90 min)</th>
-                            <th scope="col" class="text-end"> 560 kr</th>
+                            <th scope="col" class="text-end coloring"><span class="saleColoring"></span>560 kr</th>
                         </tr>
                         <tr>
                             <th scope="col" class="text-start">Extensions kort (45 min)</th>
@@ -195,8 +206,13 @@
         </div>
     </div>
 
+    <!-- Daily discount  -->
+    <div>
+        <h1 id="dailyDisc"></h1>
 
-    <!-- Instagram Grid -->
+    </div>
+
+    <!-- Instagram grid -->
     <div id="instagramGrid">
         <div class="embedsocial-hashtag" data-ref="a5cc0c78b0aaf9424825c47d23e67fc9efd05234"> <a
                 class="feed-powered-by-es" href="https://embedsocial.com/social-media-aggregator/" target="_blank"
