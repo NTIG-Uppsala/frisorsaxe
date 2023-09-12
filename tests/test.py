@@ -187,23 +187,24 @@ class TestHomepage(TestCase):
 
     def testDailySales(self):
         self.helpTestDailySales(
-            "2023-09-11T10:00:00", "Idag är det 10% rea på klippning av långt hår"
+            "2023-09-11T10:00:00", "Idag är det 10% rea på klippning av långt hår."
         )  # Monday
         self.helpTestDailySales(
             "2023-09-12T10:00:00", "Idag är det 10% rea på klippning av kort hår"
         )  # Tuesday
         self.helpTestDailySales(
-            "2023-09-13T10:00:00", "Idag är det 10% rea på barbering"
+            "2023-09-13T10:00:00", "Idag är det 10% rea på barbering."
         )  # Wednesday
         self.helpTestDailySales(
-            "2023-09-14T10:00:00", "Idag är det 10% rea på färgning"
+            "2023-09-14T10:00:00",
+            "Idag är det 10% rea på färging av alla längder av hår.",
         )  # Thursday
         self.helpTestDailySales("2023-09-15T10:00:00", "")  # Friday
         self.helpTestDailySales("2023-09-16T10:00:00", "")  # Saturday
         self.helpTestDailySales("2023-09-17T10:00:00", "")  # Sunday
 
     def helpTestDailySales(self, date, result):
-        self.browser.execute_script("dailySale(new Date('" + date + "'))")
+        self.browser.execute_script("dailySales(new Date('" + date + "'))")
         element = self.browser.find_element(By.ID, "dailyDisc")
         self.assertIn(result, element.text)
 

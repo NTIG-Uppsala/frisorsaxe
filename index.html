@@ -38,7 +38,7 @@
     </style>
 </head>
 
-<body>
+<body onload="dailySales(new Date())">
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
@@ -140,14 +140,16 @@
                         <tr>
 
                             <th scope="col" class="text-start">Långt hår (60 min)</th>
-                            <th scope="col" class="text-end longHair"><span class="saleLongHair"></span>600 kr</th>
+                            <th scope="col" class="text-end"><span class="saleLongHair"></span><span
+                                    class="longHair">600 kr</span>
+                            </th>
 
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <th scope="col" class="text-start">Långt hår stamkund</th>
-                            <th scope="col" class="text-end longHair"><span class="saleLongHair"></span>500 kr</th>
+                            <th scope="col" class="text-end"></span>500 kr</th>
                         </tr>
                         <tr>
 
@@ -159,13 +161,13 @@
                         </tr>
                         <tr>
                             <th scope="col" class="text-start">Kort hår stamkund</th>
-                            <th scope="col" class="text-end "><span class="saleShortHair"></span><span
-                                    class="shortHair">150 kr</span>
+                            <th scope="col" class="text-end "><span>150 kr</span>
                             </th>
                         </tr>
                         <tr>
-                            <th scope="col" class="text-start">Skägg (20 min)</th><span class="saleBeard"></span>
-                            <th scope="col" class="text-end beard">150 kr</th>
+                            <th scope="col" class="text-start">Skägg (20 min)</th>
+                            <th scope="col" class="text-end"><span class="saleBeard"></span><span
+                                    class="beard">150kr</span></th>
                         </tr>
                         <tr>
                             <th scope="col" class="text-start">Barn (0-13 år) (20 min)</th>
@@ -189,7 +191,9 @@
                     <tbody>
                         <tr>
                             <th scope="col" class="text-start">Färgning (90 min)</th>
-                            <th scope="col" class="text-end coloring"><span class="saleColoring"></span>560 kr</th>
+                            <th scope="col" class="text-end"><span class="saleColoring"></span><span
+                                    class="coloring">560 kr</span>
+                            </th>
                         </tr>
                         <tr>
                             <th scope="col" class="text-start">Extensions kort (45 min)</th>

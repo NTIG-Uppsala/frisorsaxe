@@ -7,9 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-window.addEventListener("DOMContentLoaded", () => {
-  let dailyD = document.getElementById("dailyDisc");
-  let date = new Date();
+function dailySales(date) {
   let weekday = date.getDay();
   const longHair = document.getElementsByClassName("longHair");
   const saleLongHair = document.getElementsByClassName("saleLongHair");
@@ -20,42 +18,42 @@ window.addEventListener("DOMContentLoaded", () => {
   const coloring = document.getElementsByClassName("coloring");
   const saleColoring = document.getElementsByClassName("saleColoring");
 
-
   switch (weekday) {
-    case 1:
-      dailyD = longHair;
-      dailyD.innerText = "Idag är det 10% rea på klippning av långt hår.";
-      break;
-    case 2:
-      for (const element of shortHair) {
-        console.log(element.innerText)
-
-        element.style.textDecoration = "line-through"
+    case 1: //On Monday longhair is on sale
+      for (const element of longHair) {
+        element.style.textDecoration = "line-through";
       }
-      /*for (const element of saleShortHair) {
-        element.innerText = "180 kr" + ' '.repeat(5);
-        element.style.color = "red"
-
-      }*/
+      for (const element of saleLongHair) {
+        element.innerText = "Idag 540 kr ";
+        element.style.color = "red";
+      }
       break;
-    case 3:
-      dailyD.innerText = "Idag är det 10% rea på barbering.";
+    case 2: //On Tuseday shorthair is on sale
+      for (const element of shortHair) {
+        element.style.textDecoration = "line-through";
+      }
+      for (const element of saleShortHair) {
+        element.innerText = "Idag 180 kr ";
+        element.style.color = "red";
+      }
       break;
-    case 4:
-      dailyD.innerText = "Idag är det 10% rea på färging av alla längder av hår.";
+    case 3: //On Wednesday beard is on sale
+      for (const element of beard) {
+        element.style.textDecoration = "line-through";
+      }
+      for (const element of saleBeard) {
+        element.innerText = "Idag 135 kr ";
+        element.style.color = "red";
+      }
       break;
-
-
-
-
+    case 4: //On Thursday coloring is on sale
+      for (const element of coloring) {
+        element.style.textDecoration = "line-through";
+      }
+      for (const element of saleColoring) {
+        element.innerText = "Idag 504 kr ";
+        element.style.color = "red";
+      }
+      break;
   }
-
-})
-
-
-function saleCalc() {
-
-
-
-
 }
