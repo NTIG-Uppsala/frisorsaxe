@@ -7,9 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-window.addEventListener("DOMContentLoaded", () => {
+function dailySales(date) {
   let dailyD = document.getElementById("dailyDisc");
-  let date = new Date();
   let weekday = date.getDay();
   const longHair = document.getElementsByClassName("longHair");
   const saleLongHair = document.getElementsByClassName("saleLongHair");
@@ -20,13 +19,12 @@ window.addEventListener("DOMContentLoaded", () => {
   const coloring = document.getElementsByClassName("coloring");
   const saleColoring = document.getElementsByClassName("saleColoring");
 
-
   switch (weekday) {
     case 1:
       for (const element of longHair) {
-        console.log(element.innerText)
+        console.log(element.innerText);
 
-        element.style.textDecoration = "line-through"
+        element.style.textDecoration = "line-through";
       }
       for (const element of saleLongHair) {
         element.innerText = "Idag 540 kr" + ' '.repeat(5);
@@ -35,9 +33,9 @@ window.addEventListener("DOMContentLoaded", () => {
       break;
     case 2:
       for (const element of shortHair) {
-        console.log(element.innerText)
+        console.log(element.innerText);
 
-        element.style.textDecoration = "line-through"
+        element.style.textDecoration = "line-through";
       }
       for (const element of saleShortHair) {
         element.innerText = "Idag 180 kr" + ' '.repeat(5);
@@ -47,9 +45,9 @@ window.addEventListener("DOMContentLoaded", () => {
       break;
     case 3:
       for (const element of beard) {
-        console.log(element.innerText)
+        console.log(element.innerText);
 
-        element.style.textDecoration = "line-through"
+        element.style.textDecoration = "line-through";
       }
       for (const element of saleBeard) {
         element.innerText = "Idag 135 kr" + ' '.repeat(5);
@@ -59,9 +57,9 @@ window.addEventListener("DOMContentLoaded", () => {
       break;
     case 4:
       for (const element of coloring) {
-        console.log(element.innerText)
+        console.log(element.innerText);
 
-        element.style.textDecoration = "line-through"
+        element.style.textDecoration = "line-through";
       }
       for (const element of saleColoring) {
         element.innerText = "Idag 504 kr" + ' '.repeat(5);
@@ -70,5 +68,4 @@ window.addEventListener("DOMContentLoaded", () => {
       }
       break;
   }
-
-})
+}
