@@ -24,7 +24,7 @@ function dailySales(date) {
         element.style.textDecoration = "line-through";
       }
       for (const element of saleLongHair) {
-        element.innerText = "Idag 540 kr" + " ".repeat(5);
+        element.innerText = "Idag 540 kr ";
         element.style.color = "red";
       }
       break;
@@ -33,7 +33,7 @@ function dailySales(date) {
         element.style.textDecoration = "line-through";
       }
       for (const element of saleShortHair) {
-        element.innerText = "Idag 180 kr" + " ".repeat(5);
+        element.innerText = "Idag 180 kr ";
         element.style.color = "red";
       }
       break;
@@ -42,18 +42,16 @@ function dailySales(date) {
         element.style.textDecoration = "line-through";
       }
       for (const element of saleBeard) {
-        element.innerText = "Idag 135 kr" + " ".repeat(5);
+        element.innerText = "Idag 135 kr ";
         element.style.color = "red";
       }
       break;
     case 4:
       for (const element of coloring) {
-        console.log(element.innerText);
-
         element.style.textDecoration = "line-through";
       }
       for (const element of saleColoring) {
-        element.innerText = "Idag 504 kr" + " ".repeat(5);
+        element.innerText = "Idag 504 kr ";
         element.style.color = "red";
       }
       break;

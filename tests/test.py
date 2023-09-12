@@ -206,7 +206,6 @@ class TestHomepage(TestCase):
     def helpTestDailySales(self, date, result):
         self.browser.execute_script("dailySales(new Date('" + date + "'))")
         element = self.browser.find_element(By.ID, "dailyDisc")
-        print(element)
         self.assertIn(result, element.text)
 
 
