@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function dailySales(date) {
-  let dailyD = document.getElementById("dailyDisc");
   let weekday = date.getDay();
   const longHair = document.getElementsByClassName("longHair");
   const saleLongHair = document.getElementsByClassName("saleLongHair");
@@ -22,34 +21,28 @@ function dailySales(date) {
   switch (weekday) {
     case 1:
       for (const element of longHair) {
-        console.log(element.innerText);
-
         element.style.textDecoration = "line-through";
       }
       for (const element of saleLongHair) {
-        element.innerText = "540 kr" + " ".repeat(5);
+        element.innerText = "Idag 540 kr" + " ".repeat(5);
         element.style.color = "red";
       }
       break;
     case 2:
       for (const element of shortHair) {
-        console.log(element.innerText);
-
         element.style.textDecoration = "line-through";
       }
       for (const element of saleShortHair) {
-        element.innerText = "180 kr" + " ".repeat(5);
+        element.innerText = "Idag 180 kr" + " ".repeat(5);
         element.style.color = "red";
       }
       break;
     case 3:
       for (const element of beard) {
-        console.log(element.innerText);
-
         element.style.textDecoration = "line-through";
       }
       for (const element of saleBeard) {
-        element.innerText = "135 kr" + " ".repeat(5);
+        element.innerText = " Idag 135 kr" + " ".repeat(5);
         element.style.color = "red";
       }
       break;
@@ -60,7 +53,7 @@ function dailySales(date) {
         element.style.textDecoration = "line-through";
       }
       for (const element of saleColoring) {
-        element.innerText = "504 kr" + " ".repeat(5);
+        element.innerText = "Idag 504 kr" + " ".repeat(5);
         element.style.color = "red";
       }
       break;
