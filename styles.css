@@ -121,8 +121,7 @@ footer {
     top: 0 !important;
 }
 
-.infoAboutLongHair {
-    font-size: 0.75rem;
+#infoAboutLongHair {
     font-weight: bold !important;
 }
 
