@@ -29,7 +29,7 @@ window.addEventListener("DOMContentLoaded", () => {
         element.style.textDecoration = "line-through"
       }
       for (const element of saleLongHair) {
-        element.innerText = "540 kr" + ' '.repeat(5);
+        element.innerText = "Idag 540 kr" + ' '.repeat(5);
         element.style.color = "red"
       }
       break;
@@ -40,7 +40,7 @@ window.addEventListener("DOMContentLoaded", () => {
         element.style.textDecoration = "line-through"
       }
       for (const element of saleShortHair) {
-        element.innerText = "180 kr" + ' '.repeat(5);
+        element.innerText = "Idag 180 kr" + ' '.repeat(5);
         element.style.color = "red"
 
       }
@@ -52,7 +52,7 @@ window.addEventListener("DOMContentLoaded", () => {
         element.style.textDecoration = "line-through"
       }
       for (const element of saleBeard) {
-        element.innerText = "135 kr" + ' '.repeat(5);
+        element.innerText = "Idag 135 kr" + ' '.repeat(5);
         element.style.color = "red"
 
       }
@@ -64,7 +64,7 @@ window.addEventListener("DOMContentLoaded", () => {
         element.style.textDecoration = "line-through"
       }
       for (const element of saleColoring) {
-        element.innerText = "504 kr" + ' '.repeat(5);
+        element.innerText = "Idag 504 kr" + ' '.repeat(5);
         element.style.color = "red"
 
       }
