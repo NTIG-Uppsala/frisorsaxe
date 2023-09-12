@@ -21,8 +21,15 @@ function dailySales(date) {
 
   switch (weekday) {
     case 1:
-      dailyD = longHair;
-      dailyD.innerText = "Idag är det 10% rea på klippning av långt hår.";
+      for (const element of longHair) {
+        console.log(element.innerText);
+
+        element.style.textDecoration = "line-through";
+      }
+      for (const element of saleLongHair) {
+        element.innerText = "540 kr" + " ".repeat(5);
+        element.style.color = "red";
+      }
       break;
     case 2:
       for (const element of shortHair) {
@@ -30,20 +37,32 @@ function dailySales(date) {
 
         element.style.textDecoration = "line-through";
       }
-      /*for (const element of saleShortHair) {
-        element.innerText = "180 kr" + ' '.repeat(5);
-        element.style.color = "red"
-
-      }*/
+      for (const element of saleShortHair) {
+        element.innerText = "180 kr" + " ".repeat(5);
+        element.style.color = "red";
+      }
       break;
     case 3:
-      dailyD.innerText = "Idag är det 10% rea på barbering.";
+      for (const element of beard) {
+        console.log(element.innerText);
+
+        element.style.textDecoration = "line-through";
+      }
+      for (const element of saleBeard) {
+        element.innerText = "135 kr" + " ".repeat(5);
+        element.style.color = "red";
+      }
       break;
     case 4:
-      dailyD.innerText =
-        "Idag är det 10% rea på färging av alla längder av hår.";
+      for (const element of coloring) {
+        console.log(element.innerText);
+
+        element.style.textDecoration = "line-through";
+      }
+      for (const element of saleColoring) {
+        element.innerText = "504 kr" + " ".repeat(5);
+        element.style.color = "red";
+      }
       break;
   }
 }
-
-function saleCalc() {}
