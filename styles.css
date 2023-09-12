@@ -34,7 +34,7 @@ h2 {
 }
 
 #homePage {
-    background-image: url('Bilder/Bakgrundstest1.jpg');
+    background-image: url('pictures/Bakgrundstest1.jpg');
     background-position: center;
     background-size: cover;
 }
@@ -110,4 +110,10 @@ footer {
 
 .card-title {
     font-size: 1.2rem !important;
+}
+
+@media screen and (max-width:767px) {
+    .marginTop{
+        margin-top: 5% !important;
+    }
 }
