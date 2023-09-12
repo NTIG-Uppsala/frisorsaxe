@@ -37,6 +37,18 @@ h2 {
     font-family: 'Italianno', cursive;
     font-size: 10rem;
     text-shadow: 2px 3px 3px rgb(61, 60, 60);
+}
+
+@media screen and (max-width:800px) {
+    #centerText{
+        font-size: 7rem !important;
+    }
+}
+
+@media screen and (max-width:500px) {
+    #centerText{
+        font-size: 5rem !important;
+    }
     
 }
 
@@ -70,6 +82,7 @@ footer {
 
 .navbar-toggler {
     color: white !important;
+    background-color: rgba(211, 211, 211, 0.688) !important;
 }
 
 .videoOverlay {
