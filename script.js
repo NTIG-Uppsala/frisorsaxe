@@ -42,7 +42,7 @@ function dailySales(date) {
         element.style.textDecoration = "line-through";
       }
       for (const element of saleBeard) {
-        element.innerText = " Idag 135 kr" + " ".repeat(5);
+        element.innerText = "Idag 135 kr" + " ".repeat(5);
         element.style.color = "red";
       }
       break;
