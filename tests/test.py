@@ -92,7 +92,7 @@ class TestHomepage(TestCase):
         self.assertEqual("Frisör Saxé", self.browser.title)
 
     def testMap(self):
-        self.browser.find_element(By.ID, "map")
+        self.browser.find_element(By.ID, "hittaoss")
         self.assertIn(
             "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1503.2583513342254!2d20.2337795!3d67.8660232!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x45d0ba6368d7c9a3%3A0xe3887ef038c559b0!2sFj%C3%A4llgatan%2032%2C%20981%2039%20Kiruna!5e0!3m2!1ssv!2sse!4v1693397051519!5m2!1ssv!2sse",
             self.browser.page_source,
@@ -156,48 +156,18 @@ class TestHomepage(TestCase):
     def testHeadHeader(self):
         self.assertIn("Möt vår personal", self.browser.page_source)
 
-    def testDesktopScreenshots(self):
-        time.sleep(2)
-        self.browser.save_screenshot("../ss/ss_home.png")
-
-        self.browser.find_element(By.LINK_TEXT, "Priser").click()
-        time.sleep(2)
-        self.browser.save_screenshot("../ss/ss_prices.png")
-
-        self.browser.get(path.join(getcwd(), "index.html"))
-        self.browser.find_element(By.LINK_TEXT, "Hitta oss").click()
-        time.sleep(2)
-        self.browser.save_screenshot("../ss/ss_map.png")
-
-    def testMobileScreenshot(self):
-        mobile_emulation = {"deviceName": "iPhone X"}
-        chrome_options = webdriver.ChromeOptions()
-        chrome_options.add_experimental_option("mobileEmulation", mobile_emulation)
-
-        # Mobile simulation
-        self.browser = webdriver.Chrome(options=chrome_options)
-
-        self.browser.get(path.join(getcwd(), "index.html"))
-        self.browser.save_screenshot("../ss/ss_hem_mobil.png")
-
     def testEmployeePictures(self):
         self.assertIn('alt="Örjan"', self.browser.page_source)
         self.assertIn('alt="Fredrik"', self.browser.page_source)
         self.assertIn('alt="Anna"', self.browser.page_source)
 
     def testDailySales(self):
-        self.helpTestDailySales(
-            "2023-09-11T10:00:00", "Idag är det 10% rea på klippning av långt hår."
-        )  # Monday
-        self.helpTestDailySales(
-            "2023-09-12T10:00:00", "Idag är det 10% rea på klippning av kort hår"
-        )  # Tuesday
-        self.helpTestDailySales(
-            "2023-09-13T10:00:00", "Idag är det 10% rea på barbering."
-        )  # Wednesday
+        self.helpTestDailySales("2023-09-11T10:00:00", "Idag 540 kr")  # Monday
+        self.helpTestDailySales("2023-09-12T10:00:00", "Idag 180 kr")  # Tuesday
+        self.helpTestDailySales("2023-09-13T10:00:00", "Idag 135 kr")  # Wednesday
         self.helpTestDailySales(
             "2023-09-14T10:00:00",
-            "Idag är det 10% rea på färging av alla längder av hår.",
+            "Idag 504 kr",
         )  # Thursday
         self.helpTestDailySales("2023-09-15T10:00:00", "")  # Friday
         self.helpTestDailySales("2023-09-16T10:00:00", "")  # Saturday
@@ -205,8 +175,7 @@ class TestHomepage(TestCase):
 
     def helpTestDailySales(self, date, result):
         self.browser.execute_script("dailySales(new Date('" + date + "'))")
-        element = self.browser.find_element(By.ID, "dailyDisc")
-        self.assertIn(result, element.text)
+        self.assertIn(result, self.browser.page_source)
 
 
 if __name__ == "__main__":
