@@ -7,9 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-window.addEventListener("DOMContentLoaded", () => {
+function dailySales(date) {
   let dailyD = document.getElementById("dailyDisc");
-  let date = new Date();
   let weekday = date.getDay();
   const longHair = document.getElementsByClassName("longHair");
   const saleLongHair = document.getElementsByClassName("saleLongHair");
@@ -20,7 +19,6 @@ window.addEventListener("DOMContentLoaded", () => {
   const coloring = document.getElementsByClassName("coloring");
   const saleColoring = document.getElementsByClassName("saleColoring");
 
-
   switch (weekday) {
     case 1:
       dailyD = longHair;
@@ -28,9 +26,9 @@ window.addEventListener("DOMContentLoaded", () => {
       break;
     case 2:
       for (const element of shortHair) {
-        console.log(element.innerText)
+        console.log(element.innerText);
 
-        element.style.textDecoration = "line-through"
+        element.style.textDecoration = "line-through";
       }
       /*for (const element of saleShortHair) {
         element.innerText = "180 kr" + ' '.repeat(5);
@@ -42,20 +40,10 @@ window.addEventListener("DOMContentLoaded", () => {
       dailyD.innerText = "Idag är det 10% rea på barbering.";
       break;
     case 4:
-      dailyD.innerText = "Idag är det 10% rea på färging av alla längder av hår.";
+      dailyD.innerText =
+        "Idag är det 10% rea på färging av alla längder av hår.";
       break;
-
-
-
-
   }
-
-})
-
-
-function saleCalc() {
-
-
-
-
 }
+
+function saleCalc() {}
