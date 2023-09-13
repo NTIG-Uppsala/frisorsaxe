@@ -65,25 +65,31 @@ h2 {
     h2 {
         font-size: 3rem;
     }
+
     h6 {
         font-size: 1.5rem;
     }
-    .col-3{
+
+    .col-3 {
         font-size: 1.5rem;
     }
-    .table{
+
+    .table {
         font-size: 1.5rem;
     }
-    #infoAboutLongHair{
+
+    #infoAboutLongHair {
         font-size: 1rem;
     }
 }
+
 @media screen and (max-width: 992px) {
-    .navButtonLeft{
-    justify-content: end !important;
-    margin-right: 20px;
+    .navButtonLeft {
+        justify-content: end !important;
+        margin-right: 20px;
+    }
 }
-}
+
 .text-primary {
     color: #000000 !important;
 }
@@ -137,8 +143,19 @@ footer {
 }
 
 
+#langMenu {
+    position: absolute;
+    left: 0vh;
 
-@media screen and (max-width:767px) {
+
+
+}
+
+#flagmenu img {
+    width: 5vh;
+}
+
+#flagmenu :hover @media screen and (max-width:767px) {
     .marginTop {
         margin-top: 5% !important;
 
