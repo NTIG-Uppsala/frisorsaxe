@@ -78,9 +78,12 @@ h2 {
         font-size: 1rem;
     }
 }
-
-
-
+@media screen and (max-width: 992px) {
+    .navButtonLeft{
+    justify-content: end !important;
+    margin-right: 20px;
+}
+}
 .text-primary {
     color: #000000 !important;
 }
