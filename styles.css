@@ -28,6 +28,12 @@ h2 {
     font-family: 'Cinzel', serif;
 }
 
+@media screen and (max-width:991px) {
+    .nav-link{
+        text-align: center;
+    }
+}
+
 #instagramGrid {
     position: relative;
     left: 23vw;
@@ -153,11 +159,4 @@ footer {
 
 #flagmenu img {
     width: 5vh;
-}
-
-#flagmenu :hover @media screen and (max-width:767px) {
-    .marginTop {
-        margin-top: 5% !important;
-
-    }
 }
