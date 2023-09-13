@@ -142,10 +142,13 @@ footer {
     font-size: 1.2rem !important;
 }
 
-
 #langMenu {
     position: absolute;
-    left: 0vh;
+    left: 0vw;
+}
+
+#flagmenu {
+    list-style: none;
 
 
 
@@ -155,9 +158,13 @@ footer {
     width: 5vh;
 }
 
-#flagmenu :hover @media screen and (max-width:767px) {
-    .marginTop {
-        margin-top: 5% !important;
 
-    }
+#flagmenu:hover .enMenu {
+    transition: 0.3;
+    display: block !important;
+}
+
+
+#flagmenu .enMenu {
+    display: none;
 }
