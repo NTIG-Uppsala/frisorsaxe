@@ -56,14 +56,12 @@ class screenshotNoJs(TestCase):
             for i in range(num_scrolls):
                 scroll_position = i * height
                 self.browser.execute_script(f"window.scrollTo(0, {scroll_position});")
-                time.sleep(1)  # Adjust the sleep duration if needed
                 self.browser.save_screenshot(
                     f"screenshotsnojs/{width}-{height}-{i}a.png"
                 )
 
                 scroll_position = (i * height) + (height / 2)
                 self.browser.execute_script(f"window.scrollTo(0, {scroll_position});")
-                time.sleep(1)  # Adjust the sleep duration if needed
                 self.browser.save_screenshot(
                     f"screenshotsnojs/{width}-{height}-{i}b.png"
                 )
