@@ -34,6 +34,19 @@ h2 {
     }
 }
 
+
+@media screen and (max-width:1360px) {
+    .nav-link{
+        font-size: 1.5rem !important;
+    }
+}
+
+@media screen and (max-width:1110px) {
+    .nav-link{
+        font-size: 1.2rem !important;
+    }
+}
+
 #instagramGrid {
     position: relative;
     left: 23vw;
@@ -155,9 +168,6 @@ footer {
 
 #flagmenu {
     list-style: none;
-
-
-
 }
 
 #flagmenu img {
