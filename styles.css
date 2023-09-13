@@ -34,6 +34,16 @@ h2 {
     }
 }
 
+@media screen and (max-width:600px) {
+    .me-5{
+        margin-right: 0 !important;
+    }
+    .nav-link{
+        text-align: end !important;
+        margin-right: 0;
+    }
+}
+
 
 @media screen and (max-width:1360px) {
     .nav-link{
@@ -163,24 +173,28 @@ footer {
 
 #langMenu {
     position: absolute;
-    left: 0vw;
+    left: 0px;
 }
 
-#flagmenu {
+#flagMenu {
     list-style: none;
+
 }
 
-#flagmenu img {
-    width: 5vh;
+#flagMenu img {
+    width: 2rem;
 }
 
 
-#flagmenu:hover .enMenu {
-    transition: 0.3;
+#flagMenu:active .inActiveMenu {
+    transition: 0.3s;
     display: block !important;
 }
 
-
-#flagmenu .enMenu {
+#flagMenu .inActiveMenu {
     display: none;
+}
+
+#activeMenu{
+    cursor:pointer;
 }

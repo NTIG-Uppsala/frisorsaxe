@@ -7,18 +7,28 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+var navBarOpen = false;
+
+function navBarToggled() {
+  navBarOpen = !navBarOpen;
+}
+
 var prevScrollPosition = window.pageYOffset;
 window.onscroll = function () {
-  var currScrolPosition = window.pageYOffset;
-  if (prevScrollPosition > currScrolPosition) {
-    document.getElementById("navbar").style.top = "0";
-  } else {
-    document.getElementById("navbar").style.top = "-20vh";
+  if (navBarOpen === false) {
+    var currScrolPosition = window.pageYOffset;
+    if (prevScrollPosition > currScrolPosition) {
+      document.getElementById("navbar").style.top = "0";
+    } else {
+      document.getElementById("navbar").style.top = "-20vh";
+    }
+    prevScrollPosition = currScrolPosition;
   }
-  prevScrollPosition = currScrolPosition;
 };
 
 function dailySales(date) {
+  const lang = document.getElementById("language").lang;
+
   let weekday = date.getDay();
   const longHair = document.getElementsByClassName("longHair");
   const saleLongHair = document.getElementsByClassName("saleLongHair");
@@ -29,22 +39,25 @@ function dailySales(date) {
   const coloring = document.getElementsByClassName("coloring");
   const saleColoring = document.getElementsByClassName("saleColoring");
 
+  // Check the language and set the text accordingly
+  const todayText = lang === "en" ? "Today" : "Idag";
+
   switch (weekday) {
     case 1: //On Monday longhair is on sale
       for (const element of longHair) {
         element.style.textDecoration = "line-through";
       }
       for (const element of saleLongHair) {
-        element.innerText = "Idag 540 kr ";
+        element.innerText = `${todayText} 540 kr `;
         element.style.color = "red";
       }
       break;
-    case 2: //On Tuseday shorthair is on sale
+    case 2: //On Tuesday shorthair is on sale
       for (const element of shortHair) {
         element.style.textDecoration = "line-through";
       }
       for (const element of saleShortHair) {
-        element.innerText = "Idag 180 kr ";
+        element.innerText = `${todayText} 180 kr `;
         element.style.color = "red";
       }
       break;
@@ -53,7 +66,7 @@ function dailySales(date) {
         element.style.textDecoration = "line-through";
       }
       for (const element of saleBeard) {
-        element.innerText = "Idag 135 kr ";
+        element.innerText = `${todayText} 135 kr `;
         element.style.color = "red";
       }
       break;
@@ -62,9 +75,20 @@ function dailySales(date) {
         element.style.textDecoration = "line-through";
       }
       for (const element of saleColoring) {
-        element.innerText = "Idag 504 kr ";
+        element.innerText = `${todayText} 504 kr `;
         element.style.color = "red";
       }
       break;
+  }
+}
+
+function showFlags() {
+  document.getElementById("activeMenu").style.display = "none";
+
+  const languages = document.getElementsByClassName("inActiveMenu");
+
+  //Show the langs that the user can select
+  for (const element of languages) {
+    element.style.display = "block";
   }
 }
