@@ -27,5 +27,5 @@ EXTENSIONSLONG=Extensions long (45 min)
 MEETEMPLOYEES=Meet our staff
 FINDUS=Find us
 ADDRESS=Address
-HAIRSTYLIST=Hairsylist
+HAIRSTYLIST=Hairstylist
 BARBER=Barber

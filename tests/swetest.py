@@ -60,7 +60,7 @@ class TestHomepageNoScript(TestCase):
 
 class TestHomepage(TestCase):
     doNotCloseBrowser = False
-    hideWindow = False
+    hideWindow = True
 
     # setUpClass körs FÖRE DET FÖRSTA testet
     @classmethod
@@ -160,6 +160,15 @@ class TestHomepage(TestCase):
         self.assertIn('alt="Örjan"', self.browser.page_source)
         self.assertIn('alt="Fredrik"', self.browser.page_source)
         self.assertIn('alt="Anna"', self.browser.page_source)
+
+    def testEmployeeJobs(self):
+        self.assertIn("Gränsen för långt hår går vid 20cm", self.browser.page_source)
+        self.assertIn("Skägg (20 min)", self.browser.page_source)
+        self.assertIn("Hårstylist", self.browser.page_source)
+        self.assertIn("Barberare", self.browser.page_source)
+
+    def testAddress(self):
+        self.assertIn("Address", self.browser.page_source)
 
     def testDailySales(self):
         self.helpTestDailySales("2023-09-11T10:00:00", "Idag 540 kr")  # Monday
