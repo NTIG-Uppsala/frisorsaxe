@@ -133,7 +133,7 @@ class TestHomepage(TestCase):
     def testProducts(self):
         self.assertIn("Klippning", self.browser.page_source)
         self.assertIn("Långt", self.browser.page_source)
-        self.assertIn("Övrigt", self.browser.page_source)
+        self.assertIn("Annat", self.browser.page_source)
         self.assertIn("Färgning", self.browser.page_source)
         self.assertIn("Extensions", self.browser.page_source)
         self.assertIn("Kort", self.browser.page_source)
