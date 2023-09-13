@@ -52,16 +52,16 @@
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg" id="navbar">
-        <div class="container-fluid justify-content-center">
+        <div class="container-fluid justify-content-center navButtonLeft">
             <button class="navbar-toggler justify-content-end" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Toggle navigation">
+                aria-label="Toggle navigation" onclick="navBarToggled()">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse flex-grow-0 fs-2" id="navbarNav">
                 <ul class="navbar-nav ">
                     <li class="nav-item">
-                        <a class="nav-link me-5" href="#boka&oppetider">Boka&nbsp;tid</a>
+                        <a class="nav-link me-5" href="#boka&oppetider">Boka tid</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link me-5" href="#boka&oppetider">Öppettider</a>
@@ -73,7 +73,23 @@
                         <a class="nav-link me-5" href="#personal">Personal</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#hittaoss">Hitta&nbsp;oss</a>
+                        <a class="nav-link me-5" href="#hittaoss">Hitta oss</a>
+                    </li>
+                    <li id="langMenu">
+                        <div>
+                            <ul id="flagmenu">
+                                <li>
+                                    <a class="activeMenu" href="/index.html"><img src="/pictures/svFLag.png"
+                                            alt="svenskaflaggan"></a>
+                                </li>
+                                <li>
+                                    <a href="/eng.html" class="inActiveMenu"><img src="/pictures/engFlag.png"
+                                            alt="engelskaflaggan"></a>
+                                </li>
+
+                            </ul>
+
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -87,6 +103,8 @@
         </div>
     </div>
 
+
+
     <div class="container my-5 text-center">
         <div class="row justify-content-center text-center">
             <div class="col-md-6 flex-column">
@@ -94,7 +112,7 @@
                 <div class="row justify-content-center">
                     <div class="col-3 p-3 mb-2">
                         <p>Telefon</p>
-                        <p>Mail</p>
+                        <p>E-post</p>
                     </div>
                     <div class="col-3 p-3 mb-2">
                         <p><a href="tel:0630555555">0630&#8209;555&#8209;555</a></p>
@@ -107,7 +125,7 @@
                 <h2 class="mb-2" id="openingHours">Öppettider</h2>
                 <div class="row justify-content-center">
                     <div class="col-3 p-3 mb-2">
-                        <p>Mån&nbsp;&#8209;&nbsp;Fre</p>
+                        <p>Mån - Fre</p>
                         <p>Lördag</p>
                         <p>Söndag</p>
                     </div>
@@ -130,7 +148,7 @@
                 <h2 class="mb-4 my-5 text-body">Klippning</h2>
                 <table>
                     <tr>
-                        <td class="text-center " id="infoAboutLongHair">Gränsen för långt hår går vid 20cm</td>
+                        <td class="text-center " id="infoAboutLongHair">Gränsen för långt hår är 20 cm</td>
                     </tr>
                 </table>
                 <table class="table table-sm" style="table-layout: fixed;">
@@ -147,7 +165,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="col" class="text-start">Långt hår stamkund</th>
+                            <th scope="col" class="text-start">Långt hår, stamkund</th>
                             <th scope="col" class="text-end"></span>500 kr</th>
                         </tr>
                         <tr>
@@ -159,7 +177,7 @@
 
                         </tr>
                         <tr>
-                            <th scope="col" class="text-start">Kort hår stamkund</th>
+                            <th scope="col" class="text-start">Kort hår, stamkund</th>
                             <th scope="col" class="text-end "><span>150 kr</span>
                             </th>
                         </tr>
@@ -178,12 +196,12 @@
             </div>
             <div class="col-md-6 flex-column marginTop">
                 <img class="w-100" src="pictures/ovrigt.jpg" alt="övrigt" style="border-radius: 7px;">
-                <h2 class="mb-4 my-5 text-body">Övrigt</h2>
+                <h2 class="mb-4 my-5 text-body">Annat</h2>
                 <br>
                 <table class="table table-sm " style="table-layout: fixed;">
                     <thead>
                         <tr>
-                            <th scope="col" class="text-start">Toppning (15 min)</th>
+                            <th scope="col" class="text-start">Trimning (15 min)</th>
                             <th scope="col" class="text-end">200 kr</th>
                         </tr>
                     </thead>
@@ -195,15 +213,15 @@
                             </th>
                         </tr>
                         <tr>
-                            <th scope="col" class="text-start">Extensions kort (45 min)</th>
+                            <th scope="col" class="text-start">Förlängningar, kort&nbsp;(45&nbsp;min)</th>
                             <th scope="col" class="text-end">300 kr</th>
                         </tr>
                         <tr>
-                            <th scope="col" class="text-start">Extensions normal (45 min)</th>
+                            <th scope="col" class="text-start">Förlängningar, standard&nbsp;(45&nbsp;min)</th>
                             <th scope="col" class="text-end">400 kr</th>
                         </tr>
                         <tr>
-                            <th scope="col" class="text-start">Extensions lång (45 min)</th>
+                            <th scope="col" class="text-start">Förlängningar, långt&nbsp;(45&nbsp;min)</th>
                             <th scope="col" class="text-end">500 kr</th>
                         </tr>
 
@@ -235,7 +253,7 @@
 
     <div class="bg-image d-flex justify-content-center align-items-center imageStyle container-xxl my-5"
         style="background-image: url('pictures/bakgrund_1.jpg'); border-radius: 7px;">
-        <h2 class="text-light" id="personal">Möt vår personal</h2>
+        <h2 class="text-light" id="personal">Möt vår personal </h2>
 
     </div>
 
@@ -247,7 +265,7 @@
                         <img src="pictures/employeePictures/anna_pettersson.jpg" class="card-img-top" alt="Anna">
                         <div class="card-body">
                             <h5 class="card-title">Anna Pettersson</h5>
-                            <p class="card-text mb-2">Hairstylist</p>
+                            <p class="card-text mb-2">Hårstylist</p>
                             <a href="#"></a>
                         </div>
                     </div>
@@ -294,7 +312,7 @@
                         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
                 <noscript><img src="pictures/nojsmap.jpg" width="450" height="450"
                         style="border: 0; width: 100%; max-width: 450px; border-radius: 7px;"></noscript>
-                <h2 class="mb-4 my-3">Adress</h2>
+                <h2 class="mb-4 my-3">Adress </h2>
                 <h6 class="text-black">Fjällgatan 32H</h6>
                 <h6 class="text-black">981 39 Kiruna</h6>
 

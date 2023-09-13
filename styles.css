@@ -175,12 +175,13 @@ footer {
 }
 
 
-#flagmenu:hover .enMenu {
-    transition: 0.3;
+#flagmenu:hover .inActiveMenu {
+    transition: 0.3s;
     display: block !important;
 }
 
-
-#flagmenu .enMenu {
+#flagmenu .inActiveMenu {
     display: none;
 }
+
+

@@ -7,15 +7,23 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+var navBarOpen = false;
+
+function navBarToggled() {
+  navBarOpen = !navBarOpen;
+}
+
 var prevScrollPosition = window.pageYOffset;
 window.onscroll = function () {
-  var currScrolPosition = window.pageYOffset;
-  if (prevScrollPosition > currScrolPosition) {
-    document.getElementById("navbar").style.top = "0";
-  } else {
-    document.getElementById("navbar").style.top = "-20vh";
+  if (navBarOpen === false) {
+    var currScrolPosition = window.pageYOffset;
+    if (prevScrollPosition > currScrolPosition) {
+      document.getElementById("navbar").style.top = "0";
+    } else {
+      document.getElementById("navbar").style.top = "-20vh";
+    }
+    prevScrollPosition = currScrolPosition;
   }
-  prevScrollPosition = currScrolPosition;
 };
 
 function dailySales(date) {
@@ -66,5 +74,16 @@ function dailySales(date) {
         element.style.color = "red";
       }
       break;
+  }
+}
+function changeFlag() {
+  const lang = document.getElementById("language").lang;
+  const en = document.getElementsByClassName("enMenu");
+  const sv = document.getElementsByClassName("svMenu");
+
+  if (lang === "en") {
+    console.log("en");
+  } else if (lang === "sv") {
+    console.log("sv");
   }
 }
