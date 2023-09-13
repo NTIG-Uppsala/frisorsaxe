@@ -87,3 +87,14 @@ function changeFlag() {
     console.log("sv");
   }
 }
+
+function showFlags() {
+  document.getElementById("activeMenu").style.display = "none";
+
+  const languages = document.getElementsByClassName("inActiveMenu");
+
+  //Show the langs that the user can select
+  for (const element of languages) {
+    element.style.display = "block";
+  }
+}

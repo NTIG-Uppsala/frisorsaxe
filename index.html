@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <script src="script.js"></script>
-    <link rel="icon" type="" href="pictures/icon.png">
+    <link rel="icon" href="pictures/icon.png">
 
 
     <!-- Bootstrap CSS v5.2.1 -->
@@ -77,13 +77,18 @@
                     </li>
                     <li id="langMenu">
                         <div>
-                            <ul id="flagmenu">
+                            <ul id="flagMenu">
                                 <li>
-                                    <a class="activeMenu" href="/index.html"><img src="/pictures/svFLag.png"
+                                    <a id="activeMenu" class="flag" onclick="showFlags()"><img
+                                            src="/pictures/svFLag.png" alt="svenskaflaggan"></a>
+                                </li>
+
+                                <li>
+                                    <a class="inActiveMenu flag" href="/index.html"><img src="/pictures/svFLag.png"
                                             alt="svenskaflaggan"></a>
                                 </li>
                                 <li>
-                                    <a href="/eng.html" class="inActiveMenu"><img src="/pictures/engFlag.png"
+                                    <a href="/eng.html" class="inActiveMenu flag"><img src="/pictures/engFlag.png"
                                             alt="engelskaflaggan"></a>
                                 </li>
 
@@ -99,7 +104,7 @@
     <div style="height: 100vh;" id="homePage">
         <div class="d-flex justify-content-center align-items-center">
             <h1 class="text-light" id="centerText">Frisör&nbsp;Saxé</h1>
-            <h2 id="boka&oppetider"></h2>
+            <div id="boka&oppetider"></div>
         </div>
     </div>
 
@@ -166,7 +171,7 @@
                     <tbody>
                         <tr>
                             <th scope="col" class="text-start">Långt hår, stamkund</th>
-                            <th scope="col" class="text-end"></span>500 kr</th>
+                            <th scope="col" class="text-end">500 kr</th>
                         </tr>
                         <tr>
 
@@ -229,12 +234,6 @@
                 </table>
             </div>
         </div>
-    </div>
-
-    <!-- Daily discount  -->
-    <div>
-        <h1 id="dailyDisc"></h1>
-
     </div>
 
     <!-- Instagram grid -->
@@ -310,7 +309,7 @@
                         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1503.2583513342254!2d20.2337795!3d67.8660232!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x45d0ba6368d7c9a3%3A0xe3887ef038c559b0!2sFj%C3%A4llgatan%2032%2C%20981%2039%20Kiruna!5e0!3m2!1ssv!2sse!4v1693397051519!5m2!1ssv!2sse"
                         width="450" height="450" style="border:0; width: 100%; max-width: 800px; border-radius: 7px;"
                         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-                <noscript><img src="pictures/nojsmap.jpg" width="450" height="450"
+                <noscript><img src="pictures/nojsmap.jpg" width="450" height="450" alt="noMapForNoJs"
                         style="border: 0; width: 100%; max-width: 450px; border-radius: 7px;"></noscript>
                 <h2 class="mb-4 my-3">Adress </h2>
                 <h6 class="text-black">Fjällgatan 32H</h6>
