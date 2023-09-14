@@ -75,7 +75,7 @@ function dailySales(date) {
         element.style.textDecoration = "line-through";
       }
       for (const element of saleColoring) {
-        element.innerText = `${todayText} 504 kr `;
+        element.innerText = `${todayText} 500 kr `;
         element.style.color = "red";
       }
       break;

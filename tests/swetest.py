@@ -46,7 +46,7 @@ class TestHomepageNoScript(TestCase):
 
         for image_element in image_elements:
             is_loaded = self.browser.execute_script(
-                "return arguments[0].complete && typeof arguments[0].naturalWidth != 'undefined' && arguments[0].naturalWidth > 0;",
+                "return arguments[0].complete && typeof arguments[0].naturalWidth != 'undefined' && arguments[0].naturalWidth > 0;",  ##The pictures exists, has a naturalwidth and its longer then 0
                 image_element,
             )
 
@@ -162,7 +162,7 @@ class TestHomepage(TestCase):
         self.assertIn('alt="Anna"', self.browser.page_source)
 
     def testEmployeeJobs(self):
-        self.assertIn("Gränsen för långt hår är 20 cm", self.browser.page_source)
+        self.assertIn("Gränsen för långt hår går vid 20 cm", self.browser.page_source)
         self.assertIn("Skägg (20 min)", self.browser.page_source)
         self.assertIn("Hårstylist", self.browser.page_source)
         self.assertIn("Barberare", self.browser.page_source)

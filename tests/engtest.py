@@ -41,7 +41,7 @@ class TestHomepageNoScriptENG(TestCase):
 
         for image_element in image_elements:
             is_loaded = self.browser.execute_script(
-                "return arguments[0].complete && typeof arguments[0].naturalWidth != 'undefined' && arguments[0].naturalWidth > 0;",
+                "return arguments[0].complete && typeof arguments[0].naturalWidth != 'undefined' && arguments[0].naturalWidth > 0;",  ##The pictures exists, has a naturalwidth and its longer then 0
                 image_element,
             )
 
@@ -153,7 +153,9 @@ class TestHomepageENG(TestCase):
         self.assertIn('alt="Anna"', self.browser.page_source)
 
     def testEmployeeJobs(self):
-        self.assertIn("The limit for long hair is 20cm", self.browser.page_source)
+        self.assertIn(
+            "The limit for long hair starts at 20cm", self.browser.page_source
+        )
         self.assertIn("Beard (20 min)", self.browser.page_source)
         self.assertIn("Hairstylist", self.browser.page_source)
         self.assertIn("Barber", self.browser.page_source)

@@ -65,7 +65,6 @@ class screenshotNoJs(TestCase):
                 self.browser.save_screenshot(
                     f"screenshotsnojs/{width}-{height}-{i}b.png"
                 )
-
         else:
             # If the page content fits in a single view, capture a screenshot of the entire page.
             self.browser.save_screenshot(f"screenshotsnojs/{width}-{height}-0.png")
