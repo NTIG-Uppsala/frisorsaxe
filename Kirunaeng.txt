@@ -14,11 +14,11 @@ SUNDAY|Sunday
 CLOSED|Closed
 HAIRCUT|Haircut
 LIMITFORLONGHAIR|The limit for long hair is 20cm
-LONGHAIR|Long hair (60 min)
+LONGHAIR|Long hair (60&nbsp;min)
 LONGHAIRREGULAR|Long hair regular customer
-SHORTHAIR|Short hair (30 min)
+SHORTHAIR|Short hair (30&nbsp;min)
 SHORTHAIRREGULAR|Short hair regular customer
-BEARD|Beard (20 min)
+BEARD|Beard (20&nbsp;min)
 CHILD|Children&nbsp;(0&#8209;13&nbsp;years)&nbsp;(20&nbsp;min)
 OTHER|Other
 TRIMMING|Trimming (15&nbsp;min)

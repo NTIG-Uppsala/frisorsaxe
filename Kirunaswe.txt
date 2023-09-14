@@ -14,15 +14,15 @@ SUNDAY|Söndag
 CLOSED|Stängt
 HAIRCUT|Klippning
 LIMITFORLONGHAIR|Gränsen för långt hår är 20 cm
-LONGHAIR|Långt hår (60 min)
+LONGHAIR|Långt hår (60&nbsp;min)
 LONGHAIRREGULAR|Långt hår, stamkund
-SHORTHAIR|Kort hår (30 min)
+SHORTHAIR|Kort hår (30&nbsp;min)
 SHORTHAIRREGULAR|Kort hår, stamkund
-BEARD|Skägg (20 min)
-CHILD|Barn (0-13 år) (20 min)
+BEARD|Skägg (20&nbsp;min)
+CHILD|Barn (0-13&nbsp;år) (20&nbsp;min)
 OTHER|Annat
-TRIMMING|Trimning (15 min)
-COLORING|Färgning (90 min)
+TRIMMING|Trimning (15&nbsp;min)
+COLORING|Färgning (90&nbsp;min)
 EXTENSIONSSHORT|Förlängningar, kort&nbsp;(45&nbsp;min)
 EXTENSIONSNORMAL|Förlängningar, standard&nbsp;(45&nbsp;min)
 EXTENSIONSLONG|Förlängningar, långt&nbsp;(45&nbsp;min)
