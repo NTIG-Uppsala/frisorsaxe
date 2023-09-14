@@ -105,6 +105,16 @@ class TestHomepageENG(TestCase):
                     f"Image '{image_element.get_attribute('src')}' is not loaded."
                 )
 
+    def testPrices(self):
+        self.assertIn("600 kr", self.browser.page_source)
+        self.assertIn("500 kr", self.browser.page_source)
+        self.assertIn("200 kr", self.browser.page_source)
+        self.assertIn("150 kr", self.browser.page_source)
+        self.assertIn("200 kr", self.browser.page_source)
+        self.assertIn("560 kr", self.browser.page_source)
+        self.assertIn("300 kr", self.browser.page_source)
+        self.assertIn("500 kr", self.browser.page_source)
+
     def testBookedTime(self):
         self.assertIn("Appointment", self.browser.page_source)
         self.assertIn("Phone", self.browser.page_source)
