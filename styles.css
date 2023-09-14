@@ -28,6 +28,38 @@ h2 {
     font-family: 'Cinzel', serif;
 }
 
+
+
+@media screen and (max-width:991px) {
+    .nav-link {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .me-5 {
+        margin-right: 0 !important;
+    }
+
+    .nav-link {
+        text-align: end !important;
+        margin-right: 0;
+    }
+}
+
+
+@media screen and (max-width:1360px) {
+    .nav-link {
+        font-size: 1.5rem !important;
+    }
+}
+
+@media screen and (max-width:1110px) {
+    .nav-link {
+        font-size: 1.2rem !important;
+    }
+}
+
 #instagramGrid {
     position: relative;
     left: 23vw;
@@ -54,6 +86,12 @@ h2 {
     }
 }
 
+@media screen and (max-width:1200px) {
+    .col-3 {
+        font-size: 1.2rem !important;
+    }
+}
+
 @media screen and (max-width:500px) {
     #centerText {
         font-size: 5rem !important;
@@ -65,25 +103,53 @@ h2 {
     h2 {
         font-size: 3rem;
     }
+
     h6 {
         font-size: 1.5rem;
     }
-    .col-3{
+
+    .col-3 {
         font-size: 1.5rem;
     }
-    .table{
+
+    .table {
         font-size: 1.5rem;
     }
-    #infoAboutLongHair{
+
+    #infoAboutLongHair {
         font-size: 1rem;
     }
 }
+
+@media screen and (max-width: 500px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    h6 {
+        font-size: 1rem;
+    }
+
+    .col-3 {
+        font-size: 1rem !important;
+    }
+
+    .table {
+        font-size: 1rem;
+    }
+
+    #infoAboutLongHair {
+        font-size: 0.7rem;
+    }
+}
+
 @media screen and (max-width: 992px) {
-    .navButtonLeft{
-    justify-content: end !important;
-    margin-right: 20px;
+    .navButtonLeft {
+        justify-content: end !important;
+        margin-right: 20px;
+    }
 }
-}
+
 .text-primary {
     color: #000000 !important;
 }
@@ -136,11 +202,35 @@ footer {
     font-size: 1.2rem !important;
 }
 
+#langMenu {
+    position: absolute;
+    left: 0px;
+}
+
+#flagMenu {
+    list-style: none;
+
+}
+
+#flagMenu img {
+    width: 2rem;
+}
+
+#flagMenu .inActiveMenu {
+    display: none;
+}
+
+#activeMenu {
+    cursor: pointer;
+}
 
 
-@media screen and (max-width:767px) {
-    .marginTop {
-        margin-top: 5% !important;
+#personal {
+    text-align: center;
+}
 
-    }
+.openHours {
+    flex-direction: column;
+    display: flex !important;
+    justify-content: space-between !important;
 }

@@ -32,7 +32,7 @@ class screenshotNoJs(TestCase):
         pass
 
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "index.html"))
+        self.browser.get(path.join(getcwd(), "kirunaswe.html"))
 
     def tearDown(self):
         self.browser.get("about:blank")
@@ -56,18 +56,15 @@ class screenshotNoJs(TestCase):
             for i in range(num_scrolls):
                 scroll_position = i * height
                 self.browser.execute_script(f"window.scrollTo(0, {scroll_position});")
-                time.sleep(1)  # Adjust the sleep duration if needed
                 self.browser.save_screenshot(
                     f"screenshotsnojs/{width}-{height}-{i}a.png"
                 )
 
                 scroll_position = (i * height) + (height / 2)
                 self.browser.execute_script(f"window.scrollTo(0, {scroll_position});")
-                time.sleep(1)  # Adjust the sleep duration if needed
                 self.browser.save_screenshot(
                     f"screenshotsnojs/{width}-{height}-{i}b.png"
                 )
-
         else:
             # If the page content fits in a single view, capture a screenshot of the entire page.
             self.browser.save_screenshot(f"screenshotsnojs/{width}-{height}-0.png")
@@ -97,7 +94,7 @@ class screenshot(TestCase):
         cls.browser = webdriver.Chrome(options=chr_options)
 
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "index.html"))
+        self.browser.get(path.join(getcwd(), "kirunaswe.html"))
 
     def tearDown(self):
         self.browser.get("about:blank")

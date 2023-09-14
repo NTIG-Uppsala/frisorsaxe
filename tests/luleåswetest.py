@@ -35,7 +35,7 @@ class TestHomepageNoScript(TestCase):
 
     # Runs before every test
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "index.html"))
+        self.browser.get(path.join(getcwd(), "luleaswe.html"))
 
     # After each test
     def tear_down(self):
@@ -60,7 +60,7 @@ class TestHomepageNoScript(TestCase):
 
 class TestHomepage(TestCase):
     doNotCloseBrowser = False
-    hideWindow = False
+    hideWindow = True
 
     # setUpClass körs FÖRE DET FÖRSTA testet
     @classmethod
@@ -82,7 +82,7 @@ class TestHomepage(TestCase):
 
     # Runs before every test
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "index.html"))
+        self.browser.get(path.join(getcwd(), "luleaswe.html"))
 
     # After each test
     def tear_down(self):
@@ -94,7 +94,7 @@ class TestHomepage(TestCase):
     def testMap(self):
         self.browser.find_element(By.ID, "hittaoss")
         self.assertIn(
-            "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1503.2583513342254!2d20.2337795!3d67.8660232!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x45d0ba6368d7c9a3%3A0xe3887ef038c559b0!2sFj%C3%A4llgatan%2032%2C%20981%2039%20Kiruna!5e0!3m2!1ssv!2sse!4v1693397051519!5m2!1ssv!2sse",
+            "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1643.085861319367!2d21.851066699999997!3d65.68080189999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x467f677c34b6b1af%3A0x493f441e2dee92f!2sF%C3%A4rjledsv%C3%A4gen%2038%2C%20961%2093%20S%C3%B6dra%20Sunderbyn!5e0!3m2!1ssv!2sse!4v1694676621148!5m2!1ssv!2sse",
             self.browser.page_source,
         )
 
@@ -115,11 +115,11 @@ class TestHomepage(TestCase):
                 )
 
     def testBookedTime(self):
-        self.assertIn("Boka tid", self.browser.page_source)
+        self.assertIn("Boka&nbsp;tid", self.browser.page_source)
         self.assertIn("Telefon", self.browser.page_source)
-        self.assertIn("Mail", self.browser.page_source)
-        self.assertIn("0630-555-555", self.browser.page_source)
-        self.assertIn("info@ntig-uppsala.github.io", self.browser.page_source)
+        self.assertIn("E‑post", self.browser.page_source)
+        self.assertIn("0640‑555‑333", self.browser.page_source)
+        self.assertIn("lulea@ntig-uppsala.github.io", self.browser.page_source)
 
     def testOppeningHours(self):
         self.assertIn("Öppettider", self.browser.page_source)
@@ -128,14 +128,13 @@ class TestHomepage(TestCase):
         self.assertIn("Lördag", self.browser.page_source)
         self.assertIn("Söndag", self.browser.page_source)
         self.assertIn("Stängt", self.browser.page_source)
-        self.browser.find_element(By.ID, "vardagar")
 
     def testProducts(self):
         self.assertIn("Klippning", self.browser.page_source)
         self.assertIn("Långt", self.browser.page_source)
-        self.assertIn("Övrigt", self.browser.page_source)
+        self.assertIn("Annat", self.browser.page_source)
         self.assertIn("Färgning", self.browser.page_source)
-        self.assertIn("Extensions", self.browser.page_source)
+        self.assertIn("Förlängningar", self.browser.page_source)
         self.assertIn("Kort", self.browser.page_source)
         self.assertIn("Skägg", self.browser.page_source)
         self.assertIn("Barn", self.browser.page_source)
@@ -157,25 +156,18 @@ class TestHomepage(TestCase):
         self.assertIn("Möt vår personal", self.browser.page_source)
 
     def testEmployeePictures(self):
-        self.assertIn('alt="Örjan"', self.browser.page_source)
-        self.assertIn('alt="Fredrik"', self.browser.page_source)
-        self.assertIn('alt="Anna"', self.browser.page_source)
+        self.assertIn('alt="Johan Olsson"', self.browser.page_source)
+        self.assertIn('alt="Anna Andersson"', self.browser.page_source)
+        self.assertIn('alt="Elin Nygård"', self.browser.page_source)
 
-    def testDailySales(self):
-        self.helpTestDailySales("2023-09-11T10:00:00", "Idag 540 kr")  # Monday
-        self.helpTestDailySales("2023-09-12T10:00:00", "Idag 180 kr")  # Tuesday
-        self.helpTestDailySales("2023-09-13T10:00:00", "Idag 135 kr")  # Wednesday
-        self.helpTestDailySales(
-            "2023-09-14T10:00:00",
-            "Idag 504 kr",
-        )  # Thursday
-        self.helpTestDailySales("2023-09-15T10:00:00", "")  # Friday
-        self.helpTestDailySales("2023-09-16T10:00:00", "")  # Saturday
-        self.helpTestDailySales("2023-09-17T10:00:00", "")  # Sunday
+    def testEmployeeJobs(self):
+        self.assertIn("Gränsen för långt hår går vid 20 cm", self.browser.page_source)
+        self.assertIn("Skägg (20 min)", self.browser.page_source)
+        self.assertIn("Hårstylist", self.browser.page_source)
+        self.assertIn("Barberare", self.browser.page_source)
 
-    def helpTestDailySales(self, date, result):
-        self.browser.execute_script("dailySales(new Date('" + date + "'))")
-        self.assertIn(result, self.browser.page_source)
+    def testAddress(self):
+        self.assertIn("Adress", self.browser.page_source)
 
 
 if __name__ == "__main__":
