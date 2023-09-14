@@ -5,7 +5,7 @@ BOOK|Appointment
 OPENHOURS|Opening hours
 PRICES|Prices
 EMPLOYEES|Staff
-FINDUS|Find us
+FINDUS|Find&nbsp;us
 PHONE|Phone
 MAIL|Email
 DAY1|Monday
@@ -35,7 +35,6 @@ EXTENSIONSSHORT|Extensions short&nbsp;(45&nbsp;min)
 EXTENSIONSNORMAL|Extensions standard&nbsp;(45&nbsp;min)
 EXTENSIONSLONG|Extensions long&nbsp;(45&nbsp;min)
 MEETEMPLOYEES|Meet our staff
-FINDUS|Find us
 ADDRESS|Address
 PERS1|Johan Olsson
 PERS1JOB|Hairstylist
