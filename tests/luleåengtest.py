@@ -178,6 +178,16 @@ class TestHomepageENG(TestCase):
         self.browser.execute_script("dailySales(new Date('" + date + "'))")
         self.assertIn(result, self.browser.page_source)
 
+    def testPrices(self):
+        self.assertIn("600 kr", self.browser.page_source)
+        self.assertIn("500 kr", self.browser.page_source)
+        self.assertIn("200 kr", self.browser.page_source)
+        self.assertIn("150 kr", self.browser.page_source)
+        self.assertIn("200 kr", self.browser.page_source)
+        self.assertIn("560 kr", self.browser.page_source)
+        self.assertIn("300 kr", self.browser.page_source)
+        self.assertIn("500 kr", self.browser.page_source)
+
 
 if __name__ == "__main__":
     main(verbosity=2)

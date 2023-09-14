@@ -169,6 +169,16 @@ class TestHomepage(TestCase):
     def testAddress(self):
         self.assertIn("Adress", self.browser.page_source)
 
+    def testPrices(self):
+        self.assertIn("600 kr", self.browser.page_source)
+        self.assertIn("500 kr", self.browser.page_source)
+        self.assertIn("200 kr", self.browser.page_source)
+        self.assertIn("150 kr", self.browser.page_source)
+        self.assertIn("200 kr", self.browser.page_source)
+        self.assertIn("560 kr", self.browser.page_source)
+        self.assertIn("300 kr", self.browser.page_source)
+        self.assertIn("500 kr", self.browser.page_source)
+
     def testDailySales(self):
         self.helpTestDailySales("2023-09-11T10:00:00", "Idag 540 kr")  # Monday
         self.helpTestDailySales("2023-09-12T10:00:00", "Idag 180 kr")  # Tuesday

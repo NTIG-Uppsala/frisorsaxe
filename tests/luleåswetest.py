@@ -121,6 +121,16 @@ class TestHomepage(TestCase):
         self.assertIn("0640‑555‑333", self.browser.page_source)
         self.assertIn("lulea@ntig-uppsala.github.io", self.browser.page_source)
 
+    def testPrices(self):
+        self.assertIn("600 kr", self.browser.page_source)
+        self.assertIn("500 kr", self.browser.page_source)
+        self.assertIn("200 kr", self.browser.page_source)
+        self.assertIn("150 kr", self.browser.page_source)
+        self.assertIn("200 kr", self.browser.page_source)
+        self.assertIn("560 kr", self.browser.page_source)
+        self.assertIn("300 kr", self.browser.page_source)
+        self.assertIn("500 kr", self.browser.page_source)
+
     def testOppeningHours(self):
         self.assertIn("Öppettider", self.browser.page_source)
         self.assertIn("Mån", self.browser.page_source)
