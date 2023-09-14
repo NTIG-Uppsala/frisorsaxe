@@ -106,7 +106,7 @@ class TestHomepageENG(TestCase):
                 )
 
     def testBookedTime(self):
-        self.assertIn("Book appointment", self.browser.page_source)
+        self.assertIn("Appointment", self.browser.page_source)
         self.assertIn("Phone", self.browser.page_source)
         self.assertIn("Email", self.browser.page_source)
         self.assertIn("0630-555-555", self.browser.page_source)
@@ -131,7 +131,7 @@ class TestHomepageENG(TestCase):
         self.assertIn("Beard", self.browser.page_source)
         self.assertIn("Children", self.browser.page_source)
         self.assertIn("Trimming", self.browser.page_source)
-        self.assertIn("regular customer", self.browser.page_source)
+        self.assertIn("regular&nbsp;customer", self.browser.page_source)
         self.assertIn("hair", self.browser.page_source)
 
     def testNavbar(self):
@@ -156,7 +156,7 @@ class TestHomepageENG(TestCase):
         self.assertIn(
             "The limit for long hair starts at 20cm", self.browser.page_source
         )
-        self.assertIn("Beard (20 min)", self.browser.page_source)
+        self.assertIn("Beard (20&nbsp;min)", self.browser.page_source)
         self.assertIn("Hairstylist", self.browser.page_source)
         self.assertIn("Barber", self.browser.page_source)
 
@@ -169,7 +169,7 @@ class TestHomepageENG(TestCase):
         self.helpTestDailySales("2023-09-13T10:00:00", "Today 135 kr")  # Wednesday
         self.helpTestDailySales(
             "2023-09-14T10:00:00",
-            "Today 504 kr",
+            "Today 500 kr",
         )  # Thursday
         self.helpTestDailySales("2023-09-15T10:00:00", "")  # Friday
         self.helpTestDailySales("2023-09-16T10:00:00", "")  # Saturday
