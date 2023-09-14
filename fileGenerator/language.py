@@ -3,7 +3,7 @@ with open("template.html", "r", encoding="utf-8") as html_file:
     html_content = html_file.read()
 
 # Step 2: Read the text document with variable replacements
-with open("Luleåswe.txt", "r", encoding="utf-8") as variables_file:
+with open("Kirunaeng.txt", "r", encoding="utf-8") as variables_file:
     variables = {}
     for line in variables_file:
         key, value = line.strip().split("|")

@@ -31,7 +31,7 @@ class TestHomepageNoScriptENG(TestCase):
         pass
 
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "index.html"))
+        self.browser.get(path.join(getcwd(), "luleaeng.html"))
 
     def tear_down(self):
         self.browser.get("about:blank")
@@ -74,7 +74,7 @@ class TestHomepageENG(TestCase):
         pass
 
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "eng.html"))
+        self.browser.get(path.join(getcwd(), "luleaeng.html"))
 
     def tear_down(self):
         self.browser.get("about:blank")
@@ -83,9 +83,9 @@ class TestHomepageENG(TestCase):
         self.assertEqual("Frisör Saxé", self.browser.title)
 
     def testMap(self):
-        self.browser.find_element(By.ID, "hittaoss")
+        self.browser.find_element(By.ID, "findus")
         self.assertIn(
-            "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1503.2583513342254!2d20.2337795!3d67.8660232!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x45d0ba6368d7c9a3%3A0xe3887ef038c559b0!2sFj%C3%A4llgatan%2032%2C%20981%2039%20Kiruna!5e0!3m2!1ssv!2sse!4v1693397051519!5m2!1ssv!2sse",
+            "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1643.085861319367!2d21.851066699999997!3d65.68080189999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x467f677c34b6b1af%3A0x493f441e2dee92f!2sF%C3%A4rjledsv%C3%A4gen%2038%2C%20961%2093%20S%C3%B6dra%20Sunderbyn!5e0!3m2!1ssv!2sse!4v1694676621148!5m2!1ssv!2sse",
             self.browser.page_source,
         )
 
@@ -109,8 +109,8 @@ class TestHomepageENG(TestCase):
         self.assertIn("Appointment", self.browser.page_source)
         self.assertIn("Phone", self.browser.page_source)
         self.assertIn("Email", self.browser.page_source)
-        self.assertIn("0630-555-555", self.browser.page_source)
-        self.assertIn("info@ntig-uppsala.github.io", self.browser.page_source)
+        self.assertIn("0640‑555‑333", self.browser.page_source)
+        self.assertIn("lulea@ntig-uppsala.github.io", self.browser.page_source)
 
     def testOpeningHours(self):
         self.assertIn("Opening hours", self.browser.page_source)
@@ -119,7 +119,6 @@ class TestHomepageENG(TestCase):
         self.assertIn("Saturday", self.browser.page_source)
         self.assertIn("Sunday", self.browser.page_source)
         self.assertIn("Closed", self.browser.page_source)
-        self.browser.find_element(By.ID, "vardagar")
 
     def testProducts(self):
         self.assertIn("Haircut", self.browser.page_source)
@@ -142,7 +141,7 @@ class TestHomepageENG(TestCase):
         self.assertIn("Opening hours", element.get_attribute("innerHTML"))
         self.assertIn("Prices", element.get_attribute("innerHTML"))
         self.assertIn("Staff", element.get_attribute("innerHTML"))
-        self.assertIn("Find us", element.get_attribute("innerHTML"))
+        self.assertIn("Find&nbsp;us", element.get_attribute("innerHTML"))
 
     def testHeadHeader(self):
         self.assertIn("Meet our staff", self.browser.page_source)

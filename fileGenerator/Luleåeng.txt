@@ -1,4 +1,4 @@
-OPENDAYS|<p>DAY1</p><p>DAY2</p><p>DAY3</p><p>*THUFRI*</p><p>*SATURDAY*</p><p>*SUNDAY*</p>
+OPENDAYS|<p>*DAY1*</p><p>*DAY2*</p><p>*DAY3*</p><p>*THUFRI*</p><p>*SATURDAY*</p><p>*SUNDAY*</p>
 OPENDAYSTIME|<p>*DAY1TIME*</p><p>*DAY2TIME*</p><p>*DAY3TIME*</p><p>*THUFRITIME*</p><p>*SATURDAYTIME*</p><p>*CLOSED*</p>
 HTMLLANGUAGE|en
 BOOK|Appointment
@@ -40,7 +40,7 @@ PERS1|Johan Olsson
 PERS1JOB|Hairstylist
 PERS1IMG|johan_olsson
 PERS2|Anna Andersson
-PERS2JOB|Barberare
+PERS2JOB|Barber
 PERS2IMG|anna_andersson
 PERS3|Elin Nygård
 PERS3JOB|Hairstylist

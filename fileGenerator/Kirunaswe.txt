@@ -7,7 +7,7 @@ PRICES|Priser
 EMPLOYEES|Personal
 FINDUS|Hitta oss
 PHONE|Telefon
-MAIL|E-post
+MAIL|E&#8209;post
 MONFRI|Mån - Fre
 SATURDAY|Lördag
 SUNDAY|Söndag

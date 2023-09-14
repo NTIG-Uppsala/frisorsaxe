@@ -35,7 +35,7 @@ class TestHomepageNoScript(TestCase):
 
     # Runs before every test
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "output.html"))
+        self.browser.get(path.join(getcwd(), "luleaswe.html"))
 
     # After each test
     def tear_down(self):
@@ -82,7 +82,7 @@ class TestHomepage(TestCase):
 
     # Runs before every test
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "output.html"))
+        self.browser.get(path.join(getcwd(), "luleaswe.html"))
 
     # After each test
     def tear_down(self):
@@ -117,7 +117,7 @@ class TestHomepage(TestCase):
     def testBookedTime(self):
         self.assertIn("Boka&nbsp;tid", self.browser.page_source)
         self.assertIn("Telefon", self.browser.page_source)
-        self.assertIn("E-post", self.browser.page_source)
+        self.assertIn("E‑post", self.browser.page_source)
         self.assertIn("0640‑555‑333", self.browser.page_source)
         self.assertIn("lulea@ntig-uppsala.github.io", self.browser.page_source)
 
@@ -128,7 +128,6 @@ class TestHomepage(TestCase):
         self.assertIn("Lördag", self.browser.page_source)
         self.assertIn("Söndag", self.browser.page_source)
         self.assertIn("Stängt", self.browser.page_source)
-        
 
     def testProducts(self):
         self.assertIn("Klippning", self.browser.page_source)
@@ -157,20 +156,18 @@ class TestHomepage(TestCase):
         self.assertIn("Möt vår personal", self.browser.page_source)
 
     def testEmployeePictures(self):
-        self.assertIn('alt="Örjan"', self.browser.page_source)
-        self.assertIn('alt="Fredrik"', self.browser.page_source)
-        self.assertIn('alt="Anna"', self.browser.page_source)
+        self.assertIn('alt="Johan Olsson"', self.browser.page_source)
+        self.assertIn('alt="Anna Andersson"', self.browser.page_source)
+        self.assertIn('alt="Elin Nygård"', self.browser.page_source)
 
     def testEmployeeJobs(self):
-        self.assertIn("Gränsen för långt hår är 20 cm", self.browser.page_source)
+        self.assertIn("Gränsen för långt hår går vid 20 cm", self.browser.page_source)
         self.assertIn("Skägg (20 min)", self.browser.page_source)
         self.assertIn("Hårstylist", self.browser.page_source)
         self.assertIn("Barberare", self.browser.page_source)
 
     def testAddress(self):
         self.assertIn("Adress", self.browser.page_source)
-
-
 
 
 if __name__ == "__main__":

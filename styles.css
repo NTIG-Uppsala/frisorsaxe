@@ -131,7 +131,7 @@ h2 {
     }
 
     .col-3 {
-        font-size: 1rem;
+        font-size: 1rem !important;
     }
 
     .table {

@@ -7,7 +7,7 @@ PRICES|Priser
 EMPLOYEES|Personal
 FINDUS|Hitta&nbsp;oss
 PHONE|Telefon
-MAIL|E-post
+MAIL|E&#8209;post
 DAY1|Måndag
 DAY1TIME|10&nbsp;&#8209;&nbsp;17
 DAY2|Tisdag

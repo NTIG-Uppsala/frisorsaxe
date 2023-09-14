@@ -35,7 +35,7 @@ class TestHomepageNoScript(TestCase):
 
     # Runs before every test
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "index.html"))
+        self.browser.get(path.join(getcwd(), "kirunaswe.html"))
 
     # After each test
     def tear_down(self):
@@ -82,7 +82,7 @@ class TestHomepage(TestCase):
 
     # Runs before every test
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "output.html"))
+        self.browser.get(path.join(getcwd(), "kirunaswe.html"))
 
     # After each test
     def tear_down(self):
@@ -117,7 +117,7 @@ class TestHomepage(TestCase):
     def testBookedTime(self):
         self.assertIn("Boka tid", self.browser.page_source)
         self.assertIn("Telefon", self.browser.page_source)
-        self.assertIn("E-post", self.browser.page_source)
+        self.assertIn("E‑post", self.browser.page_source)
         self.assertIn("0630‑555‑555", self.browser.page_source)
         self.assertIn("info@ntig-uppsala.github.io", self.browser.page_source)
 
@@ -128,7 +128,6 @@ class TestHomepage(TestCase):
         self.assertIn("Lördag", self.browser.page_source)
         self.assertIn("Söndag", self.browser.page_source)
         self.assertIn("Stängt", self.browser.page_source)
-        
 
     def testProducts(self):
         self.assertIn("Klippning", self.browser.page_source)
@@ -162,8 +161,8 @@ class TestHomepage(TestCase):
         self.assertIn('alt="Anna"', self.browser.page_source)
 
     def testEmployeeJobs(self):
-        self.assertIn("Gränsen för långt hår är 20 cm", self.browser.page_source)
-        self.assertIn("Skägg (20 min)", self.browser.page_source)
+        self.assertIn("Gränsen för långt hår går vid 20 cm", self.browser.page_source)
+        self.assertIn("Skägg (20&nbsp;min)", self.browser.page_source)
         self.assertIn("Hårstylist", self.browser.page_source)
         self.assertIn("Barberare", self.browser.page_source)
 
@@ -176,7 +175,7 @@ class TestHomepage(TestCase):
         self.helpTestDailySales("2023-09-13T10:00:00", "Idag 135 kr")  # Wednesday
         self.helpTestDailySales(
             "2023-09-14T10:00:00",
-            "Idag 504 kr",
+            "Idag 500 kr",
         )  # Thursday
         self.helpTestDailySales("2023-09-15T10:00:00", "")  # Friday
         self.helpTestDailySales("2023-09-16T10:00:00", "")  # Saturday

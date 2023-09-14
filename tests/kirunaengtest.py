@@ -7,15 +7,13 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 
 
-class TestHomepageNoScript(TestCase):
+class TestHomepageNoScriptENG(TestCase):
     doNotCloseBrowser = False
     hideWindow = False
 
-    # setUpClass körs FÖRE DET FÖRSTA testet
     @classmethod
     def setUpClass(cls):
         chrome_options = webdriver.ChromeOptions()
-
         chrome_options.add_experimental_option(
             "prefs", {"profile.managed_default_content_settings.javascript": 2}
         )
@@ -28,16 +26,13 @@ class TestHomepageNoScript(TestCase):
 
         cls.browser = webdriver.Chrome(options=chrome_options)
 
-    # After last test
     @classmethod
     def tearDownClass(cls):
         pass
 
-    # Runs before every test
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "index.html"))
+        self.browser.get(path.join(getcwd(), "kirunaeng.html"))
 
-    # After each test
     def tear_down(self):
         self.browser.get("about:blank")
 
@@ -58,11 +53,10 @@ class TestHomepageNoScript(TestCase):
                 )
 
 
-class TestHomepage(TestCase):
+class TestHomepageENG(TestCase):
     doNotCloseBrowser = False
     hideWindow = True
 
-    # setUpClass körs FÖRE DET FÖRSTA testet
     @classmethod
     def setUpClass(cls):
         chr_options = Options()
@@ -75,16 +69,13 @@ class TestHomepage(TestCase):
 
         cls.browser = webdriver.Chrome(options=chr_options)
 
-    # After last test
     @classmethod
     def tearDownClass(cls):
         pass
 
-    # Runs before every test
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "index.html"))
+        self.browser.get(path.join(getcwd(), "kirunaeng.html"))
 
-    # After each test
     def tear_down(self):
         self.browser.get("about:blank")
 
@@ -92,7 +83,7 @@ class TestHomepage(TestCase):
         self.assertEqual("Frisör Saxé", self.browser.title)
 
     def testMap(self):
-        self.browser.find_element(By.ID, "hittaoss")
+        self.browser.find_element(By.ID, "findus")
         self.assertIn(
             "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1503.2583513342254!2d20.2337795!3d67.8660232!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x45d0ba6368d7c9a3%3A0xe3887ef038c559b0!2sFj%C3%A4llgatan%2032%2C%20981%2039%20Kiruna!5e0!3m2!1ssv!2sse!4v1693397051519!5m2!1ssv!2sse",
             self.browser.page_source,
@@ -115,45 +106,45 @@ class TestHomepage(TestCase):
                 )
 
     def testBookedTime(self):
-        self.assertIn("Boka tid", self.browser.page_source)
-        self.assertIn("Telefon", self.browser.page_source)
-        self.assertIn("post", self.browser.page_source)
-        self.assertIn("0630-555-555", self.browser.page_source)
+        self.assertIn("Appointment", self.browser.page_source)
+        self.assertIn("Phone", self.browser.page_source)
+        self.assertIn("Email", self.browser.page_source)
+        self.assertIn("0630‑555‑555", self.browser.page_source)
         self.assertIn("info@ntig-uppsala.github.io", self.browser.page_source)
 
-    def testOppeningHours(self):
-        self.assertIn("Öppettider", self.browser.page_source)
-        self.assertIn("Mån", self.browser.page_source)
-        self.assertIn("Fre", self.browser.page_source)
-        self.assertIn("Lördag", self.browser.page_source)
-        self.assertIn("Söndag", self.browser.page_source)
-        self.assertIn("Stängt", self.browser.page_source)
+    def testOpeningHours(self):
+        self.assertIn("Opening hours", self.browser.page_source)
+        self.assertIn("Mon", self.browser.page_source)
+        self.assertIn("Fri", self.browser.page_source)
+        self.assertIn("Saturday", self.browser.page_source)
+        self.assertIn("Sunday", self.browser.page_source)
+        self.assertIn("Closed", self.browser.page_source)
 
     def testProducts(self):
-        self.assertIn("Klippning", self.browser.page_source)
-        self.assertIn("Långt", self.browser.page_source)
-        self.assertIn("Annat", self.browser.page_source)
-        self.assertIn("Färgning", self.browser.page_source)
-        self.assertIn("Förlängningar", self.browser.page_source)
-        self.assertIn("Kort", self.browser.page_source)
-        self.assertIn("Skägg", self.browser.page_source)
-        self.assertIn("Barn", self.browser.page_source)
-        self.assertIn("Toppning", self.browser.page_source)
-        self.assertIn("stamkund", self.browser.page_source)
-        self.assertIn("hår", self.browser.page_source)
+        self.assertIn("Haircut", self.browser.page_source)
+        self.assertIn("Long", self.browser.page_source)
+        self.assertIn("Other", self.browser.page_source)
+        self.assertIn("Coloring", self.browser.page_source)
+        self.assertIn("Extensions", self.browser.page_source)
+        self.assertIn("Short", self.browser.page_source)
+        self.assertIn("Beard", self.browser.page_source)
+        self.assertIn("Children", self.browser.page_source)
+        self.assertIn("Trimming", self.browser.page_source)
+        self.assertIn("regular&nbsp;customer", self.browser.page_source)
+        self.assertIn("hair", self.browser.page_source)
 
     def testNavbar(self):
-        nabBrand = self.browser.find_element(By.ID, "centerText")
-        self.assertIn("Frisör&nbsp;Saxé", nabBrand.get_attribute("innerHTML"))
+        navBrand = self.browser.find_element(By.ID, "centerText")
+        self.assertIn("Frisör&nbsp;Saxé", navBrand.get_attribute("innerHTML"))
         element = self.browser.find_element(By.CLASS_NAME, "navbar-nav")
-        self.assertIn("Boka&nbsp;tid", element.get_attribute("innerHTML"))
-        self.assertIn("Öppettider", element.get_attribute("innerHTML"))
-        self.assertIn("Priser", element.get_attribute("innerHTML"))
-        self.assertIn("Personal", element.get_attribute("innerHTML"))
-        self.assertIn("Hitta&nbsp;oss", element.get_attribute("innerHTML"))
+        self.assertIn("Appointment", element.get_attribute("innerHTML"))
+        self.assertIn("Opening hours", element.get_attribute("innerHTML"))
+        self.assertIn("Prices", element.get_attribute("innerHTML"))
+        self.assertIn("Staff", element.get_attribute("innerHTML"))
+        self.assertIn("Find us", element.get_attribute("innerHTML"))
 
     def testHeadHeader(self):
-        self.assertIn("Möt vår personal", self.browser.page_source)
+        self.assertIn("Meet our staff", self.browser.page_source)
 
     def testEmployeePictures(self):
         self.assertIn('alt="Örjan"', self.browser.page_source)
@@ -161,21 +152,23 @@ class TestHomepage(TestCase):
         self.assertIn('alt="Anna"', self.browser.page_source)
 
     def testEmployeeJobs(self):
-        self.assertIn("Gränsen för långt hår går vid 20 cm", self.browser.page_source)
-        self.assertIn("Skägg (20&nbsp;min)", self.browser.page_source)
-        self.assertIn("Hårstylist", self.browser.page_source)
-        self.assertIn("Barberare", self.browser.page_source)
+        self.assertIn(
+            "The limit for long hair starts at 20cm", self.browser.page_source
+        )
+        self.assertIn("Beard (20&nbsp;min)", self.browser.page_source)
+        self.assertIn("Hairstylist", self.browser.page_source)
+        self.assertIn("Barber", self.browser.page_source)
 
     def testAddress(self):
-        self.assertIn("Adress", self.browser.page_source)
+        self.assertIn("Address", self.browser.page_source)
 
     def testDailySales(self):
-        self.helpTestDailySales("2023-09-11T10:00:00", "Idag 540 kr")  # Monday
-        self.helpTestDailySales("2023-09-12T10:00:00", "Idag 180 kr")  # Tuesday
-        self.helpTestDailySales("2023-09-13T10:00:00", "Idag 135 kr")  # Wednesday
+        self.helpTestDailySales("2023-09-11T10:00:00", "Today 540 kr")  # Monday
+        self.helpTestDailySales("2023-09-12T10:00:00", "Today 180 kr")  # Tuesday
+        self.helpTestDailySales("2023-09-13T10:00:00", "Today 135 kr")  # Wednesday
         self.helpTestDailySales(
             "2023-09-14T10:00:00",
-            "Idag 500 kr",
+            "Today 500 kr",
         )  # Thursday
         self.helpTestDailySales("2023-09-15T10:00:00", "")  # Friday
         self.helpTestDailySales("2023-09-16T10:00:00", "")  # Saturday

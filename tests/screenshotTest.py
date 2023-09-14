@@ -32,7 +32,7 @@ class screenshotNoJs(TestCase):
         pass
 
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "index.html"))
+        self.browser.get(path.join(getcwd(), "kirunaswe.html"))
 
     def tearDown(self):
         self.browser.get("about:blank")
@@ -94,7 +94,7 @@ class screenshot(TestCase):
         cls.browser = webdriver.Chrome(options=chr_options)
 
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "index.html"))
+        self.browser.get(path.join(getcwd(), "kirunaswe.html"))
 
     def tearDown(self):
         self.browser.get("about:blank")
