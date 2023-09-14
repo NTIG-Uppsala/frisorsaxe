@@ -21,7 +21,7 @@ SHORTHAIRREGULAR|Kort hår, stamkund
 BEARD|Skägg (20&nbsp;min)
 CHILD|Barn (0-13&nbsp;år) (20&nbsp;min)
 OTHER|Annat
-TRIMMING|Trimning (15&nbsp;min)
+TRIMMING|Toppning (15&nbsp;min)
 COLORING|Färgning (90&nbsp;min)
 EXTENSIONSSHORT|Förlängningar, kort&nbsp;(45&nbsp;min)
 EXTENSIONSNORMAL|Förlängningar, standard&nbsp;(45&nbsp;min)
@@ -30,7 +30,7 @@ MEETEMPLOYEES|Möt vår personal
 FINDUS|Hitta oss
 ADDRESS|Adress
 PERS1|Anna Pettersson
-PERS1JOB|Hairstylist
+PERS1JOB|Hårstylist
 PERS1IMG|anna_pettersson
 PERS2|Fredrik Örtqvist
 PERS2JOB|Barberare
