@@ -18,16 +18,18 @@ var prevScrollPosition = window.pageYOffset;
 
 window.onscroll = function () {
   if (navBarOpen === false) {
-    var currScrollPosition = window.pageYOffset;
+    var currentScrollPosition = window.pageYOffset;
     // Compare scroll positions to show or hide the navbar
-    if (prevScrollPosition > currScrollPosition) {
+    if (currentScrollPosition === 0) {
+      document.getElementById("navbar").style.top = "0";
+    } else if (prevScrollPosition > currentScrollPosition) {
       document.getElementById("navbar").style.top = "0";
     } else {
       document.getElementById("navbar").style.top = "-20vh";
     }
 
     // Update the previous scroll position
-    prevScrollPosition = currScrollPosition;
+    prevScrollPosition = currentScrollPosition;
   }
 };
 
