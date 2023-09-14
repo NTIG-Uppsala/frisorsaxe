@@ -77,13 +77,18 @@
                     </li>
                     <li id="langMenu">
                         <div>
-                            <ul id="flagmenu">
+                            <ul id="flagMenu">
                                 <li>
-                                    <a class="svMenu" href="/sv.html"><img src="/pictures/svFLag.png"
+                                    <a id="activeMenu" class="flag" onclick="showFlags()"><img src="pictures/svFLag.png"
+                                            alt="svenskaflaggan"></a>
+                                </li>
+
+                                <li>
+                                    <a class="inActiveMenu flag" href="/index.html"><img src="pictures/svFLag.png"
                                             alt="svenskaflaggan"></a>
                                 </li>
                                 <li>
-                                    <a href="/eng.html" class="enMenu"><img src="/pictures/engFlag.png"
+                                    <a href="/eng.html" class="inActiveMenu flag"><img src="pictures/engFlag.png"
                                             alt="engelskaflaggan"></a>
                                 </li>
 
@@ -115,9 +120,9 @@
                         <p>*MAIL*</p>
                     </div>
                     <div class="col-3 p-3 mb-2">
-                        <p><a href="tel:0630555555">0630&#8209;555&#8209;555</a></p>
-                        <p><a href="mailto:info@ntig-uppsala.github.io">
-                                info@ntig-uppsala.github.io</a></p>
+                        <p><a href="tel:*NUMBERLINK*">*NUMBER*</a></p>
+                        <p><a href="mailto:*@MAIL*">
+                                *@MAIL*</a></p>
                     </div>
                 </div>
             </div>
@@ -125,14 +130,12 @@
                 <h2 class="mb-2" id="openingHours">*OPENHOURS*</h2>
                 <div class="row justify-content-center">
                     <div class="col-3 p-3 mb-2">
-                        <p>*MONFRI*</p>
-                        <p>*SATURDAY*</p>
-                        <p>*SUNDAY*</p>
+                        ^OPENDAYS^
+                        
+                        
                     </div>
                     <div class="col-3 p-3 mb-2">
-                        <p id="vardagar">10&nbsp;&#8209;&nbsp;16</p>
-                        <p>12&nbsp;&#8209;&nbsp;15</p>
-                        <p>*CLOSED*</p>
+                        ^OPENDAYSTIME^
                     </div>
                 </div>
             </div>
@@ -255,10 +258,10 @@
             <div class="col-xl-4 col-md-6 my-5">
                 <div class="container d-flex justify-content-center">
                     <div class="card" style="width: 20rem; height: 70%;">
-                        <img src="pictures/employeePictures/anna_pettersson.jpg" class="card-img-top" alt="Anna">
+                        <img src="pictures/employeePictures/*PERS1IMG*.jpg" class="card-img-top" alt="Anna">
                         <div class="card-body">
-                            <h5 class="card-title">Anna Pettersson</h5>
-                            <p class="card-text mb-2">*HAIRSTYLIST*</p>
+                            <h5 class="card-title">*PERS1*</h5>
+                            <p class="card-text mb-2">*PERS1JOB*</p>
                             <a href="#"></a>
                         </div>
                     </div>
@@ -269,10 +272,10 @@
             <div class="col-xl-4 col-md-6 my-5">
                 <div class="container d-flex justify-content-center">
                     <div class="card" style="width: 20rem; height: 70%;">
-                        <img src="pictures//employeePictures/fredrik_ortqvist.jpg" class="card-img-top" alt="Fredrik">
+                        <img src="pictures//employeePictures/*PERS2IMG*.jpg" class="card-img-top" alt="Fredrik">
                         <div class="card-body">
-                            <h5 class="card-title">Fredrik Örtqvist</h5>
-                            <p class="card-text mb-2">*BARBER*</p>
+                            <h5 class="card-title">*PERS2*</h5>
+                            <p class="card-text mb-2">*PERS2JOB*</p>
                         </div>
                     </div>
                 </div>
@@ -282,10 +285,10 @@
             <div class="col-xl-4 col-md-6 my-5 ">
                 <div class="container d-flex justify-content-center">
                     <div class="card" style="width: 20rem; height: 70%;">
-                        <img src="pictures/employeePictures/orjan_johansson.jpg" class="card-img-top" alt="Örjan">
+                        <img src="pictures/employeePictures/*PERS3IMG*.jpg" class="card-img-top" alt="Örjan">
                         <div class="card-body">
-                            <h5 class="card-title">Örjan Johansson</h5>
-                            <p class="card-text mb-2">*BARBER*</p>
+                            <h5 class="card-title">*PERS3*</h5>
+                            <p class="card-text mb-2">*PERS3JOB*</p>
                         </div>
                     </div>
                 </div>
@@ -299,15 +302,14 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <h2 class="mb-4">*FINDUS*</h2>
-                <div class="hasjs"><iframe
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1503.2583513342254!2d20.2337795!3d67.8660232!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x45d0ba6368d7c9a3%3A0xe3887ef038c559b0!2sFj%C3%A4llgatan%2032%2C%20981%2039%20Kiruna!5e0!3m2!1ssv!2sse!4v1693397051519!5m2!1ssv!2sse"
-                        width="450" height="450" style="border:0; width: 100%; max-width: 800px; border-radius: 7px;"
-                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-                <noscript><img src="pictures/nojsmap.jpg" width="450" height="450" alt="noMapForNoJs"
+                <div class="hasjs"><iframe src="*MAP*" width="450" height="450"
+                        style="border:0; width: 100%; max-width: 800px; border-radius: 7px;" allowfullscreen=""
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+                <noscript><img src="pictures/*NOJSMAP*.jpg" width="450" height="450" alt="noMapForNoJs"
                         style="border: 0; width: 100%; max-width: 450px; border-radius: 7px;"></noscript>
                 <h2 class="mb-4 my-3">*ADDRESS* </h2>
-                <h6 class="text-black">Fjällgatan 32H</h6>
-                <h6 class="text-black">981 39 Kiruna</h6>
+                <h6 class="text-black">*STREET*</h6>
+                <h6 class="text-black">*ZIPCODE*</h6>
 
 
             </div>
@@ -315,8 +317,8 @@
     </div>
 
     <footer class="bg-dark text-white-50 text-center mt-5 p-3">
-        <a href="tel:0630555555" class="text-white-50">0630-555-555</a> |
-        <a href="mailto:info@ntig-uppsala.github.io" class="text-white-50">info@ntig&#8209;uppsala.github.io</a>
+        <a href="tel:*NUMBERLINK*" class="text-white-50">*NUMBER*</a> |
+        <a href="mailto:*@MAIL*" class="text-white-50">*@BRMAIL*</a>
 
         <div class="container" style="padding: 20px 0;">
             <a href="https://facebook.com/ntiuppsala" class="no-text-decoration social-icon" target="_blank">

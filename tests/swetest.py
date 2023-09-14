@@ -128,7 +128,7 @@ class TestHomepage(TestCase):
         self.assertIn("Lördag", self.browser.page_source)
         self.assertIn("Söndag", self.browser.page_source)
         self.assertIn("Stängt", self.browser.page_source)
-        self.browser.find_element(By.ID, "vardagar")
+        
 
     def testProducts(self):
         self.assertIn("Klippning", self.browser.page_source)
