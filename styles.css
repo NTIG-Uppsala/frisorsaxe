@@ -29,20 +29,20 @@ h2 {
 }
 
 @media screen and (max-width:991px) {
-    .nav-link{
+    .nav-link {
         text-align: center;
     }
 }
 
 
 @media screen and (max-width:1360px) {
-    .nav-link{
+    .nav-link {
         font-size: 1.5rem !important;
     }
 }
 
 @media screen and (max-width:1110px) {
-    .nav-link{
+    .nav-link {
         font-size: 1.2rem !important;
     }
 }
@@ -183,5 +183,3 @@ footer {
 #flagmenu .inActiveMenu {
     display: none;
 }
-
-
