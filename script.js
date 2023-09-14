@@ -10,19 +10,24 @@ document.addEventListener("DOMContentLoaded", function () {
 var navBarOpen = false;
 
 function navBarToggled() {
-  navBarOpen = !navBarOpen;
+  navBarOpen = !navBarOpen; //If called it will switch the variable, if true to false and if false to true
 }
 
+// Store the previous scroll position
 var prevScrollPosition = window.pageYOffset;
+
 window.onscroll = function () {
   if (navBarOpen === false) {
-    var currScrolPosition = window.pageYOffset;
-    if (prevScrollPosition > currScrolPosition) {
+    var currScrollPosition = window.pageYOffset;
+    // Compare scroll positions to show or hide the navbar
+    if (prevScrollPosition > currScrollPosition) {
       document.getElementById("navbar").style.top = "0";
     } else {
       document.getElementById("navbar").style.top = "-20vh";
     }
-    prevScrollPosition = currScrolPosition;
+
+    // Update the previous scroll position
+    prevScrollPosition = currScrollPosition;
   }
 };
 
