@@ -138,7 +138,7 @@ class TestHomepageENG(TestCase):
         navBrand = self.browser.find_element(By.ID, "centerText")
         self.assertIn("Frisör&nbsp;Saxé", navBrand.get_attribute("innerHTML"))
         element = self.browser.find_element(By.CLASS_NAME, "navbar-nav")
-        self.assertIn("Book appointment", element.get_attribute("innerHTML"))
+        self.assertIn("Appointment", element.get_attribute("innerHTML"))
         self.assertIn("Opening hours", element.get_attribute("innerHTML"))
         self.assertIn("Prices", element.get_attribute("innerHTML"))
         self.assertIn("Staff", element.get_attribute("innerHTML"))
