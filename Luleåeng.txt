@@ -1,7 +1,7 @@
 OPENDAYS|<p>DAY1</p><p>DAY2</p><p>DAY3</p><p>*THUFRI*</p><p>*SATURDAY*</p><p>*SUNDAY*</p>
 OPENDAYSTIME|<p>*DAY1TIME*</p><p>*DAY2TIME*</p><p>*DAY3TIME*</p><p>*THUFRITIME*</p><p>*SATURDAYTIME*</p><p>*CLOSED*</p>
 HTMLLANGUAGE|en
-BOOK|Book appointment
+BOOK|Appointment
 OPENHOURS|Opening hours
 PRICES|Prices
 EMPLOYEES|Staff
@@ -21,12 +21,12 @@ SATURDAYTIME|12&nbsp;&#8209;&nbsp;15
 SUNDAY|Sunday
 CLOSED|Closed
 HAIRCUT|Haircut
-LIMITFORLONGHAIR|The limit for long hair is 20cm
-LONGHAIR|Long hair (60 min)
+LIMITFORLONGHAIR|The limit for long hair starts at 20cm
+LONGHAIR|Long hair (60&nbsp;min)
 LONGHAIRREGULAR|Long hair regular customer
-SHORTHAIR|Short hair (30 min)
+SHORTHAIR|Short hair (30&nbsp;min)
 SHORTHAIRREGULAR|Short hair regular customer
-BEARD|Beard (20 min)
+BEARD|Beard (20&nbsp;min)
 CHILD|Children&nbsp;(0&#8209;13&nbsp;years)&nbsp;(20&nbsp;min)
 OTHER|Other
 TRIMMING|Trimming (15&nbsp;min)

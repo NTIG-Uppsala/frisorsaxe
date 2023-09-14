@@ -1,7 +1,7 @@
 OPENDAYS|<p>*MONFRI*</p><p>*SATURDAY*</p><p>*SUNDAY*</p>
 OPENDAYSTIME|<p>10&nbsp;&#8209;&nbsp;16</p><p>12&nbsp;&#8209;&nbsp;15</p><p>*CLOSED*</p>
 HTMLLANGUAGE|en
-BOOK|Book appointment
+BOOK|Appointment
 OPENHOURS|Opening hours
 PRICES|Prices
 EMPLOYEES|Staff
@@ -13,7 +13,7 @@ SATURDAY|Saturday
 SUNDAY|Sunday
 CLOSED|Closed
 HAIRCUT|Haircut
-LIMITFORLONGHAIR|The limit for long hair is 20cm
+LIMITFORLONGHAIR|The limit for long hair starts at 20cm
 LONGHAIR|Long hair (60&nbsp;min)
 LONGHAIRREGULAR|Long hair regular customer
 SHORTHAIR|Short hair (30&nbsp;min)
