@@ -1,0 +1,48 @@
+OPENDAYS|<p>*MONFRI*</p><p>*SATURDAY*</p><p>*SUNDAY*</p>
+OPENDAYSTIME|<p>10&nbsp;&#8209;&nbsp;16</p><p>12&nbsp;&#8209;&nbsp;15</p><p>*CLOSED*</p>
+HTMLLANGUAGE|sv
+BOOK|Boka tid
+OPENHOURS|Öppettider
+PRICES|Priser
+EMPLOYEES|Personal
+FINDUS|Hitta oss
+PHONE|Telefon
+MAIL|E-post
+MONFRI|Mån - Fre
+SATURDAY|Lördag
+SUNDAY|Söndag
+CLOSED|Stängt
+HAIRCUT|Klippning
+LIMITFORLONGHAIR|Gränsen för långt hår är 20 cm
+LONGHAIR|Långt hår (60 min)
+LONGHAIRREGULAR|Långt hår, stamkund
+SHORTHAIR|Kort hår (30 min)
+SHORTHAIRREGULAR|Kort hår, stamkund
+BEARD|Skägg (20 min)
+CHILD|Barn (0-13 år) (20 min)
+OTHER|Annat
+TRIMMING|Trimning (15 min)
+COLORING|Färgning (90 min)
+EXTENSIONSSHORT|Förlängningar, kort&nbsp;(45&nbsp;min)
+EXTENSIONSNORMAL|Förlängningar, standard&nbsp;(45&nbsp;min)
+EXTENSIONSLONG|Förlängningar, långt&nbsp;(45&nbsp;min)
+MEETEMPLOYEES|Möt vår personal
+FINDUS|Hitta oss
+ADDRESS|Adress
+PERS1|Anna Pettersson
+PERS1JOB|Hairstylist
+PERS1IMG|anna_pettersson
+PERS2|Fredrik Örtqvist
+PERS2JOB|Barberare
+PERS2IMG|fredrik_ortqvist
+PERS3|Örjan Johansson
+PERS3JOB|Barberare
+PERS3IMG|orjan_johansson
+STREET|Fjällgatan 32H
+ZIPCODE|981 39 Kiruna
+NUMBER|0630&#8209;555&#8209;555
+NUMBERLINK|0630555555
+MAP|https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1503.2583513342254!2d20.2337795!3d67.8660232!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x45d0ba6368d7c9a3%3A0xe3887ef038c559b0!2sFj%C3%A4llgatan%2032%2C%20981%2039%20Kiruna!5e0!3m2!1ssv!2sse!4v1693397051519!5m2!1ssv!2sse
+NOJSMAP|nojsmapkiruna
+@MAIL|info@ntig-uppsala.github.io
+@BRMAIL|info@ntig&#8209;uppsala.github.io
