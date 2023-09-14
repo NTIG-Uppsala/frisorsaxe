@@ -28,9 +28,22 @@ h2 {
     font-family: 'Cinzel', serif;
 }
 
+
+
 @media screen and (max-width:991px) {
     .nav-link {
         text-align: center;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .me-5 {
+        margin-right: 0 !important;
+    }
+
+    .nav-link {
+        text-align: end !important;
+        margin-right: 0;
     }
 }
 
@@ -73,6 +86,12 @@ h2 {
     }
 }
 
+@media screen and (max-width:1200px) {
+    .col-3 {
+        font-size: 1.2rem !important;
+    }
+}
+
 @media screen and (max-width:500px) {
     #centerText {
         font-size: 5rem !important;
@@ -99,6 +118,28 @@ h2 {
 
     #infoAboutLongHair {
         font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    h6 {
+        font-size: 1rem;
+    }
+
+    .col-3 {
+        font-size: 1rem;
+    }
+
+    .table {
+        font-size: 1rem;
+    }
+
+    #infoAboutLongHair {
+        font-size: 0.7rem;
     }
 }
 
@@ -163,23 +204,33 @@ footer {
 
 #langMenu {
     position: absolute;
-    left: 0vw;
+    left: 0px;
 }
 
-#flagmenu {
+#flagMenu {
     list-style: none;
+
 }
 
-#flagmenu img {
-    width: 5vh;
+#flagMenu img {
+    width: 2rem;
 }
 
-
-#flagmenu:hover .inActiveMenu {
-    transition: 0.3s;
-    display: block !important;
-}
-
-#flagmenu .inActiveMenu {
+#flagMenu .inActiveMenu {
     display: none;
+}
+
+#activeMenu {
+    cursor: pointer;
+}
+
+
+#personal {
+    text-align: center;
+}
+
+.openHours {
+    flex-direction: column;
+    display: flex !important;
+    justify-content: space-between !important;
 }

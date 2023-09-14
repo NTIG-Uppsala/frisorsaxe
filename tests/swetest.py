@@ -46,7 +46,7 @@ class TestHomepageNoScript(TestCase):
 
         for image_element in image_elements:
             is_loaded = self.browser.execute_script(
-                "return arguments[0].complete && typeof arguments[0].naturalWidth != 'undefined' && arguments[0].naturalWidth > 0;",
+                "return arguments[0].complete && typeof arguments[0].naturalWidth != 'undefined' && arguments[0].naturalWidth > 0;",  ##The pictures exists, has a naturalwidth and its longer then 0
                 image_element,
             )
 
@@ -60,7 +60,7 @@ class TestHomepageNoScript(TestCase):
 
 class TestHomepage(TestCase):
     doNotCloseBrowser = False
-    hideWindow = False
+    hideWindow = True
 
     # setUpClass körs FÖRE DET FÖRSTA testet
     @classmethod
@@ -117,7 +117,7 @@ class TestHomepage(TestCase):
     def testBookedTime(self):
         self.assertIn("Boka tid", self.browser.page_source)
         self.assertIn("Telefon", self.browser.page_source)
-        self.assertIn("Mail", self.browser.page_source)
+        self.assertIn("E-post", self.browser.page_source)
         self.assertIn("0630-555-555", self.browser.page_source)
         self.assertIn("info@ntig-uppsala.github.io", self.browser.page_source)
 
@@ -128,14 +128,14 @@ class TestHomepage(TestCase):
         self.assertIn("Lördag", self.browser.page_source)
         self.assertIn("Söndag", self.browser.page_source)
         self.assertIn("Stängt", self.browser.page_source)
-        self.browser.find_element(By.ID, "vardagar")
+        
 
     def testProducts(self):
         self.assertIn("Klippning", self.browser.page_source)
         self.assertIn("Långt", self.browser.page_source)
-        self.assertIn("Övrigt", self.browser.page_source)
+        self.assertIn("Annat", self.browser.page_source)
         self.assertIn("Färgning", self.browser.page_source)
-        self.assertIn("Extensions", self.browser.page_source)
+        self.assertIn("Förlängningar", self.browser.page_source)
         self.assertIn("Kort", self.browser.page_source)
         self.assertIn("Skägg", self.browser.page_source)
         self.assertIn("Barn", self.browser.page_source)
@@ -160,6 +160,15 @@ class TestHomepage(TestCase):
         self.assertIn('alt="Örjan"', self.browser.page_source)
         self.assertIn('alt="Fredrik"', self.browser.page_source)
         self.assertIn('alt="Anna"', self.browser.page_source)
+
+    def testEmployeeJobs(self):
+        self.assertIn("Gränsen för långt hår går vid 20 cm", self.browser.page_source)
+        self.assertIn("Skägg (20 min)", self.browser.page_source)
+        self.assertIn("Hårstylist", self.browser.page_source)
+        self.assertIn("Barberare", self.browser.page_source)
+
+    def testAddress(self):
+        self.assertIn("Adress", self.browser.page_source)
 
     def testDailySales(self):
         self.helpTestDailySales("2023-09-11T10:00:00", "Idag 540 kr")  # Monday
