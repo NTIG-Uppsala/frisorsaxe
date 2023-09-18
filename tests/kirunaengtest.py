@@ -176,10 +176,7 @@ class TestHomepageENG(TestCase):
         self.helpTestDailySales("2023-09-11T10:00:00", "Today 540 kr")  # Monday
         self.helpTestDailySales("2023-09-12T10:00:00", "Today 180 kr")  # Tuesday
         self.helpTestDailySales("2023-09-13T10:00:00", "Today 135 kr")  # Wednesday
-        self.helpTestDailySales(
-            "2023-09-14T10:00:00",
-            "Today 500 kr",
-        )  # Thursday
+        self.helpTestDailySales("2023-09-14T10:00:00", "Today 500 kr")  # Thursday
         self.helpTestDailySales("2023-09-15T10:00:00", "")  # Friday
         self.helpTestDailySales("2023-09-16T10:00:00", "")  # Saturday
         self.helpTestDailySales("2023-09-17T10:00:00", "")  # Sunday
