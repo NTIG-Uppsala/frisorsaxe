@@ -14,7 +14,7 @@ DAY2|Tuesday
 DAY2TIME|10&nbsp;&#8209;&nbsp;16
 DAY3|Wednesday
 DAY3TIME|10&nbsp;&#8209;&nbsp;15
-THUFRI|Thu - Fri
+THUFRI|Thu&nbsp;-&nbsp;Fri
 THUFRITIME|10&nbsp;&#8209;&nbsp;16
 SATURDAY|Saturday
 SATURDAYTIME|12&nbsp;&#8209;&nbsp;15

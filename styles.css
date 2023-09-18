@@ -30,9 +30,18 @@ h2 {
 
 
 
-@media screen and (max-width:991px) {
+@media screen and (max-width:993px) {
     .nav-link {
         text-align: center;
+    }
+    .col-3{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width:360px) {
+    .col-3{
+        font-size: 0.80rem !important;
     }
 }
 
@@ -88,7 +97,8 @@ h2 {
 
 @media screen and (max-width:1200px) {
     .col-3 {
-        font-size: 1.2rem !important;
+        font-size: 1.2rem;
+
     }
 }
 
@@ -131,7 +141,7 @@ h2 {
     }
 
     .col-3 {
-        font-size: 1rem !important;
+        font-size: 1rem;
     }
 
     .table {
@@ -231,6 +241,7 @@ footer {
 
 .openHours {
     flex-direction: column;
+    text-align: end;
     display: flex !important;
     justify-content: space-between !important;
 }
