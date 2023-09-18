@@ -3,7 +3,7 @@ Repository for Frisör Saxé worked on 2023-2024.
 
 [Link to live server](https://ntig-uppsala.github.io/frisorsaxe/)
 
-Our website uses bootstrap Version 5.3.1 for CSS. 
+Our website uses bootstrap Version 5.2.1 for CSS. 
 
 
 
@@ -25,6 +25,6 @@ Our website uses the software Selenium and Python's unittest library to run test
 
 #### Programming languages
 - HTML5 for creating websites
-- CSS3 and Bootstrap 5.2.3 for styling
+- CSS3 and Bootstrap 5.2.1 for styling
 - Javascript
 - Python 3.11.5 and Selenium 4.11.2 for testing
