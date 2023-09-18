@@ -37,7 +37,33 @@ window.onscroll = function () {
 function dailySales(date) {
   const lang = document.getElementById("language").lang;
 
+  console.log(window.location.pathname);
+
+  const openHours = {
+    kiruna: {
+      weekdayOpen: 10,
+      mondayClose: 16,
+      tusedayClose: 16,
+      wednesdayClose: 16,
+      thursdayClose: 16,
+    },
+    lulea: {
+      weekdayOpen: 10,
+      mondayClose: 17,
+      tusedayClose: 16,
+      wednesdayClose: 15,
+      thursdayClose: 16,
+    },
+  };
+
+  const locationHours = window.location.pathname.includes("lulea")
+    ? openHours.lulea
+    : window.location.pathname.includes("kiruna")
+    ? openHours.kiruna
+    : console.log("location does not have openingHours for dailysailes");
+
   const weekday = date.getDay();
+  const hour = date.getHours();
   const longHair = document.getElementsByClassName("longHair");
   const saleLongHair = document.getElementsByClassName("saleLongHair");
   const shortHair = document.getElementsByClassName("shortHair");
@@ -52,39 +78,59 @@ function dailySales(date) {
 
   switch (weekday) {
     case 1: //On Monday longhair is on sale
-      for (const element of longHair) {
-        element.style.textDecoration = "line-through";
-      }
-      for (const element of saleLongHair) {
-        element.innerText = `${todayText} 540 kr `;
-        element.style.color = "red";
+      if (
+        hour >= locationHours.weekdayOpen &&
+        locationHours.mondayClose >= hour
+      ) {
+        for (const element of longHair) {
+          element.style.textDecoration = "line-through";
+        }
+        for (const element of saleLongHair) {
+          element.innerText = `${todayText} 540 kr `;
+          element.style.color = "red";
+        }
       }
       break;
     case 2: //On Tuesday shorthair is on sale
-      for (const element of shortHair) {
-        element.style.textDecoration = "line-through";
-      }
-      for (const element of saleShortHair) {
-        element.innerText = `${todayText} 180 kr `;
-        element.style.color = "red";
+      if (
+        hour >= locationHours.weekdayOpen &&
+        locationHours.tusedayClose >= hour
+      ) {
+        for (const element of shortHair) {
+          element.style.textDecoration = "line-through";
+        }
+        for (const element of saleShortHair) {
+          element.innerText = `${todayText} 180 kr `;
+          element.style.color = "red";
+        }
       }
       break;
     case 3: //On Wednesday beard is on sale
-      for (const element of beard) {
-        element.style.textDecoration = "line-through";
-      }
-      for (const element of saleBeard) {
-        element.innerText = `${todayText} 135 kr `;
-        element.style.color = "red";
+      if (
+        hour >= locationHours.weekdayOpen &&
+        locationHours.wednesdayClose >= hour
+      ) {
+        for (const element of beard) {
+          element.style.textDecoration = "line-through";
+        }
+        for (const element of saleBeard) {
+          element.innerText = `${todayText} 135 kr `;
+          element.style.color = "red";
+        }
       }
       break;
     case 4: //On Thursday coloring is on sale
-      for (const element of coloring) {
-        element.style.textDecoration = "line-through";
-      }
-      for (const element of saleColoring) {
-        element.innerText = `${todayText} 500 kr `;
-        element.style.color = "red";
+      if (
+        hour >= locationHours.weekdayOpen &&
+        locationHours.wednesdayClose >= hour
+      ) {
+        for (const element of coloring) {
+          element.style.textDecoration = "line-through";
+        }
+        for (const element of saleColoring) {
+          element.innerText = `${todayText} 500 kr `;
+          element.style.color = "red";
+        }
       }
       break;
   }
