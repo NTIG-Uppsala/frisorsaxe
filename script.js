@@ -1,9 +1,10 @@
+//Displays all elemnt with class name "hasjs"
 document.addEventListener("DOMContentLoaded", function () {
-  var hasjs = document.getElementsByClassName("hasjs");
+  let hasjs = document.getElementsByClassName("hasjs");
 
   // Loop through each element with the class "hasjs"
-  for (var i = 0; i < hasjs.length; i++) {
-    hasjs[i].style.display = "block";
+  for (let i = 0; i < hasjs.length; i++) {
+    hasjs[i].style.display = "block"; //Block shows element
   }
 });
 
@@ -20,7 +21,7 @@ var prevScrollPosition = window.scrollY;
 window.onscroll = function () {
   //Will not hide navbar if its active on smaller screen
   if (navBarOpen === false) {
-    var currentScrollPosition = window.scrollY;
+    let currentScrollPosition = window.scrollY;
     // Compare scroll positions to show or hide the navbar
     if (currentScrollPosition === 0) {
       document.getElementById("navbar").style.top = "0";
@@ -54,7 +55,8 @@ function dailySales(date) {
     },
   };
 
-  const locationHours = window.location.pathname.includes("lulea")
+  //variable is dependent on the url, includes check if the url containts a word
+  const locationOpeningHours = window.location.pathname.includes("lulea")
     ? openHours.lulea
     : window.location.pathname.includes("kiruna")
     ? openHours.kiruna
@@ -77,8 +79,8 @@ function dailySales(date) {
   switch (weekday) {
     case 1: //On Monday longhair is on sale
       if (
-        hour >= locationHours.weekdayOpen &&
-        locationHours.mondayClose > hour
+        hour >= locationOpeningHours.weekdayOpen &&
+        locationOpeningHours.mondayClose > hour
       ) {
         for (const element of longHair) {
           element.style.textDecoration = "line-through";
@@ -91,8 +93,8 @@ function dailySales(date) {
       break;
     case 2: //On Tuesday shorthair is on sale
       if (
-        hour >= locationHours.weekdayOpen &&
-        locationHours.tuesdayClose > hour
+        hour >= locationOpeningHours.weekdayOpen &&
+        locationOpeningHours.tuesdayClose > hour
       ) {
         for (const element of shortHair) {
           element.style.textDecoration = "line-through";
@@ -105,8 +107,8 @@ function dailySales(date) {
       break;
     case 3: //On Wednesday beard is on sale
       if (
-        hour >= locationHours.weekdayOpen &&
-        locationHours.wednesdayClose > hour
+        hour >= locationOpeningHours.weekdayOpen &&
+        locationOpeningHours.wednesdayClose > hour
       ) {
         for (const element of beard) {
           element.style.textDecoration = "line-through";
@@ -119,8 +121,8 @@ function dailySales(date) {
       break;
     case 4: //On Thursday coloring is on sale
       if (
-        hour >= locationHours.weekdayOpen &&
-        locationHours.wednesdayClose > hour
+        hour >= locationOpeningHours.weekdayOpen &&
+        locationOpeningHours.wednesdayClose > hour
       ) {
         for (const element of coloring) {
           element.style.textDecoration = "line-through";
@@ -134,6 +136,7 @@ function dailySales(date) {
   }
 }
 
+//show the different flags for each lang
 function showFlags() {
   document.getElementById("activeMenu").style.display = "none";
 

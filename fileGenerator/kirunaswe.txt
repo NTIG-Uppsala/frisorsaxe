@@ -13,7 +13,7 @@ SATURDAY|Lördag
 SUNDAY|Söndag
 CLOSED|Stängt
 HAIRCUT|Klippning
-LIMITFORLONGHAIR|Gränsen för långt hår går vid 20 cm
+LIMITFORLONGHAIR|Gränsen för långt hår går vid 20cm
 LONGHAIR|Långt hår (60&nbsp;min)
 LONGHAIRREGULAR|Långt hår, stamkund
 SHORTHAIR|Kort hår (30&nbsp;min)
