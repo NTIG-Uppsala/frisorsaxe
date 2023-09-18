@@ -131,6 +131,9 @@ class TestHomepageENG(TestCase):
         self.assertIn("Closed", self.browser.page_source)
 
     def testProducts(self):
+        self.assertIn(
+            "The limit for long hair starts at 20cm", self.browser.page_source
+        )
         self.assertIn("Haircut", self.browser.page_source)
         self.assertIn("Long", self.browser.page_source)
         self.assertIn("Other", self.browser.page_source)
@@ -162,9 +165,6 @@ class TestHomepageENG(TestCase):
         self.assertIn('alt="Anna"', self.browser.page_source)
 
     def testEmployeeJobs(self):
-        self.assertIn(
-            "The limit for long hair starts at 20cm", self.browser.page_source
-        )
         self.assertIn("Beard (20&nbsp;min)", self.browser.page_source)
         self.assertIn("Hairstylist", self.browser.page_source)
         self.assertIn("Barber", self.browser.page_source)
