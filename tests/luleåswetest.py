@@ -131,6 +131,19 @@ class TestHomepage(TestCase):
         self.assertIn("300 kr", self.browser.page_source)
         self.assertIn("500 kr", self.browser.page_source)
 
+    def helpTestDailySales(self, date, result):
+        self.browser.execute_script("dailySales(new Date('" + date + "'))")
+        self.assertIn(result, self.browser.page_source)
+
+    def testDailySales(self):
+        self.helpTestDailySales("2023-09-11T10:00:00", "Idag 540&nbsp;kr")  # Monday
+        self.helpTestDailySales("2023-09-12T10:00:00", "Idag 180&nbsp;kr")  # Tuesday
+        self.helpTestDailySales("2023-09-13T10:00:00", "Idag 135&nbsp;kr")  # Wednesday
+        self.helpTestDailySales("2023-09-14T10:00:00", "Idag 500&nbsp;kr")  # Thursday
+        self.helpTestDailySales("2023-09-15T10:00:00", "")  # Friday
+        self.helpTestDailySales("2023-09-16T10:00:00", "")  # Saturday
+        self.helpTestDailySales("2023-09-17T10:00:00", "")  # Sunday
+
     def testOppeningHours(self):
         self.assertIn("Öppettider", self.browser.page_source)
         self.assertIn("Mån", self.browser.page_source)
@@ -140,6 +153,7 @@ class TestHomepage(TestCase):
         self.assertIn("Stängt", self.browser.page_source)
 
     def testProducts(self):
+        self.assertIn("Gränsen för långt hår går vid 20cm", self.browser.page_source)
         self.assertIn("Klippning", self.browser.page_source)
         self.assertIn("Långt", self.browser.page_source)
         self.assertIn("Annat", self.browser.page_source)
@@ -171,7 +185,6 @@ class TestHomepage(TestCase):
         self.assertIn('alt="Elin Nygård"', self.browser.page_source)
 
     def testEmployeeJobs(self):
-        self.assertIn("Gränsen för långt hår går vid 20 cm", self.browser.page_source)
         self.assertIn("Skägg (20 min)", self.browser.page_source)
         self.assertIn("Hårstylist", self.browser.page_source)
         self.assertIn("Barberare", self.browser.page_source)

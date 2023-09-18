@@ -11,5 +11,6 @@
     "doki.background.enabled": true,
     "doki.wallpaper.enabled": true,
     "doki.wallpaper.path": "",
-    "doki.sticker.path": "C:\\Users\\robin.ofverbergrund\\Downloads\\mommy.jpg"
+    "doki.sticker.path": "C:\\Users\\robin.ofverbergrund\\Downloads\\mommy.jpg",
+    "liveServer.settings.port": 5501
 }

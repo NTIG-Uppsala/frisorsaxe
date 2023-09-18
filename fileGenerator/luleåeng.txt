@@ -1,46 +1,46 @@
 OPENDAYS|<p>*DAY1*</p><p>*DAY2*</p><p>*DAY3*</p><p>*THUFRI*</p><p>*SATURDAY*</p><p>*SUNDAY*</p>
 OPENDAYSTIME|<p>*DAY1TIME*</p><p>*DAY2TIME*</p><p>*DAY3TIME*</p><p>*THUFRITIME*</p><p>*SATURDAYTIME*</p><p>*CLOSED*</p>
-HTMLLANGUAGE|sv
-BOOK|Boka&nbsp;tid
-OPENHOURS|Öppettider
-PRICES|Priser
-EMPLOYEES|Personal
-FINDUS|Hitta&nbsp;oss
-PHONE|Telefon
-MAIL|E&#8209;post
-DAY1|Måndag
+HTMLLANGUAGE|en
+BOOK|Appointment
+OPENHOURS|Opening hours
+PRICES|Prices
+EMPLOYEES|Staff
+FINDUS|Find&nbsp;us
+PHONE|Phone
+MAIL|Email
+DAY1|Monday
 DAY1TIME|10&nbsp;&#8209;&nbsp;17
-DAY2|Tisdag
+DAY2|Tuesday
 DAY2TIME|10&nbsp;&#8209;&nbsp;16
-DAY3|Onsdag
+DAY3|Wednesday
 DAY3TIME|10&nbsp;&#8209;&nbsp;15
-THUFRI|Tor - Fre
+THUFRI|Thu&nbsp;-&nbsp;Fri
 THUFRITIME|10&nbsp;&#8209;&nbsp;16
-SATURDAY|Lördag
+SATURDAY|Saturday
 SATURDAYTIME|12&nbsp;&#8209;&nbsp;15
-SUNDAY|Söndag
-CLOSED|Stängt
-HAIRCUT|Klippning
-LIMITFORLONGHAIR|Gränsen för långt hår går vid 20 cm
-LONGHAIR|Långt hår (60&nbsp;min)
-LONGHAIRREGULAR|Långt hår, stamkund
-SHORTHAIR|Kort hår (30&nbsp;min)
-SHORTHAIRREGULAR|Kort hår, stamkund
-BEARD|Skägg (20 min)
-CHILD|Barn (0-13&nbsp;år) (20&nbsp;min)
-OTHER|Annat
-TRIMMING|Toppning (15&nbsp;min)
-COLORING|Färgning (90&nbsp;min)
-EXTENSIONSSHORT|Förlängningar, kort&nbsp;(45&nbsp;min)
-EXTENSIONSNORMAL|Förlängningar, standard&nbsp;(45&nbsp;min)
-EXTENSIONSLONG|Förlängningar, långt&nbsp;(45&nbsp;min)
-MEETEMPLOYEES|Möt vår personal
-ADDRESS|Adress
+SUNDAY|Sunday
+CLOSED|Closed
+HAIRCUT|Haircut
+LIMITFORLONGHAIR|The limit for long hair starts at 20cm
+LONGHAIR|Long hair (60&nbsp;min)
+LONGHAIRREGULAR|Long hair regular customer
+SHORTHAIR|Short hair (30&nbsp;min)
+SHORTHAIRREGULAR|Short hair regular customer
+BEARD|Beard (20&nbsp;min)
+CHILD|Children&nbsp;(0&#8209;13&nbsp;years)&nbsp;(20&nbsp;min)
+OTHER|Other
+TRIMMING|Trimming (15&nbsp;min)
+COLORING|Coloring (90&nbsp;min)
+EXTENSIONSSHORT|Extensions short&nbsp;(45&nbsp;min)
+EXTENSIONSNORMAL|Extensions standard&nbsp;(45&nbsp;min)
+EXTENSIONSLONG|Extensions long&nbsp;(45&nbsp;min)
+MEETEMPLOYEES|Meet our staff
+ADDRESS|Address
 PERS1|Johan Olsson
-PERS1JOB|Hårstylist
+PERS1JOB|Hairstylist
 PERS1IMG|johan_olsson
 PERS2|Anna Andersson
-PERS2JOB|Barberare
+PERS2JOB|Barber
 PERS2IMG|anna_andersson
 PERS3|Elin Nygård
 PERS3JOB|Hairstylist
