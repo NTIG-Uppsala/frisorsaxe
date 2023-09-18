@@ -37,20 +37,18 @@ window.onscroll = function () {
 function dailySales(date) {
   const lang = document.getElementById("language").lang;
 
-  console.log(window.location.pathname);
-
   const openHours = {
     kiruna: {
       weekdayOpen: 10,
       mondayClose: 16,
-      tusedayClose: 16,
+      tuesdayClose: 16,
       wednesdayClose: 16,
       thursdayClose: 16,
     },
     lulea: {
       weekdayOpen: 10,
       mondayClose: 17,
-      tusedayClose: 16,
+      tuesdayClose: 16,
       wednesdayClose: 15,
       thursdayClose: 16,
     },
@@ -80,7 +78,7 @@ function dailySales(date) {
     case 1: //On Monday longhair is on sale
       if (
         hour >= locationHours.weekdayOpen &&
-        locationHours.mondayClose >= hour
+        locationHours.mondayClose > hour
       ) {
         for (const element of longHair) {
           element.style.textDecoration = "line-through";
@@ -94,7 +92,7 @@ function dailySales(date) {
     case 2: //On Tuesday shorthair is on sale
       if (
         hour >= locationHours.weekdayOpen &&
-        locationHours.tusedayClose >= hour
+        locationHours.tuesdayClose > hour
       ) {
         for (const element of shortHair) {
           element.style.textDecoration = "line-through";
@@ -108,7 +106,7 @@ function dailySales(date) {
     case 3: //On Wednesday beard is on sale
       if (
         hour >= locationHours.weekdayOpen &&
-        locationHours.wednesdayClose >= hour
+        locationHours.wednesdayClose > hour
       ) {
         for (const element of beard) {
           element.style.textDecoration = "line-through";
@@ -122,7 +120,7 @@ function dailySales(date) {
     case 4: //On Thursday coloring is on sale
       if (
         hour >= locationHours.weekdayOpen &&
-        locationHours.wednesdayClose >= hour
+        locationHours.wednesdayClose > hour
       ) {
         for (const element of coloring) {
           element.style.textDecoration = "line-through";
