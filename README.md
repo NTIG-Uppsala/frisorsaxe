@@ -3,8 +3,6 @@ Repository for Frisör Saxé worked on 2023-2024.
 
 [Link to live server](https://ntig-uppsala.github.io/frisorsaxe/)
 
-Our website uses bootstrap Version 5.2.1 for CSS. 
-
 
 
 ### Coding standard
