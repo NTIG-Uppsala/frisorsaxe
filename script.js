@@ -14,11 +14,13 @@ function navBarToggled() {
 }
 
 // Store the previous scroll position
-var prevScrollPosition = window.pageYOffset;
+var prevScrollPosition = window.scrollY;
 
+//Hides the navbar when scrolling down, shows when scrolling up.
 window.onscroll = function () {
+  //Will not hide navbar if its active on smaller screen
   if (navBarOpen === false) {
-    var currentScrollPosition = window.pageYOffset;
+    var currentScrollPosition = window.scrollY;
     // Compare scroll positions to show or hide the navbar
     if (currentScrollPosition === 0) {
       document.getElementById("navbar").style.top = "0";
@@ -27,7 +29,6 @@ window.onscroll = function () {
     } else {
       document.getElementById("navbar").style.top = "-20vh";
     }
-
     // Update the previous scroll position
     prevScrollPosition = currentScrollPosition;
   }
@@ -36,7 +37,7 @@ window.onscroll = function () {
 function dailySales(date) {
   const lang = document.getElementById("language").lang;
 
-  let weekday = date.getDay();
+  const weekday = date.getDay();
   const longHair = document.getElementsByClassName("longHair");
   const saleLongHair = document.getElementsByClassName("saleLongHair");
   const shortHair = document.getElementsByClassName("shortHair");
