@@ -147,12 +147,12 @@ class TestHomepageENG(TestCase):
         self.assertIn("Find&nbsp;us", element.get_attribute("innerHTML"))
 
     def testHeadHeader(self):
-        self.assertIn("Meet our staff", self.browser.page_source)
+        self.assertIn("Meet Our Staff", self.browser.page_source)
 
     def testEmployeePictures(self):
-        self.assertIn('alt="Örjan"', self.browser.page_source)
-        self.assertIn('alt="Fredrik"', self.browser.page_source)
+        self.assertIn('alt="Johan"', self.browser.page_source)
         self.assertIn('alt="Anna"', self.browser.page_source)
+        self.assertIn('alt="Elin"', self.browser.page_source)
 
     def testEmployeeJobs(self):
         self.assertIn("Beard (20&nbsp;min)", self.browser.page_source)

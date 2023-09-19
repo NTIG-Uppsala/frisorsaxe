@@ -129,6 +129,10 @@ h2 {
     #infoAboutLongHair {
         font-size: 1rem;
     }
+
+    #regularCustomerInfo {
+        font-size: 1rem;
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -149,6 +153,10 @@ h2 {
     }
 
     #infoAboutLongHair {
+        font-size: 0.7rem;
+    }
+
+    #regularCustomerInfo {
         font-size: 0.7rem;
     }
 }
@@ -194,6 +202,14 @@ footer {
     font-weight: bold !important;
 }
 
+#regularCustomerInfo {
+    font-weight: bold;
+}
+
+#regularCustomerInfoOther {
+    font-weight: bold;
+}
+
 .hasjs {
     display: none;
 }
@@ -210,6 +226,11 @@ footer {
 #flagMenu {
     list-style: none;
 
+}
+
+.sale{
+    color: red;
+    display: none;
 }
 
 #flagMenu img {

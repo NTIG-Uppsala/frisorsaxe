@@ -160,19 +160,21 @@
                 <h2 class="mb-4 my-5 text-body">Haircut</h2>
                 <table>
                     <tr>
-                        <td class="text-center " id="infoAboutLongHair">The limit for long hair starts at 20cm</td>
+                        <td class="text-start ps-2" id="infoAboutLongHair">The limit for long hair starts at 20cm</td>
+                    </tr>
+                    <tr>
+                        <td class="text-start ps-2" id="regularCustomerInfo">After 3 visits within 12 months you are
+                            considerd a regular</td>
                     </tr>
                 </table>
                 <table class="table table-sm" style="table-layout: fixed;">
                     <thead>
 
                         <tr>
-
                             <th scope="col" class="text-start">Long hair (60&nbsp;min)</th>
-                            <th scope="col" class="text-end"><span class="saleLongHair"></span><span
-                                    class="longHair">600&nbsp;kr</span>
+                            <th scope="col" class="text-end"><span id="saleLongHair" class="sale">Today
+                                    540&nbsp;kr</span><span id="longHair"> 600&nbsp;kr</span>
                             </th>
-
                         </tr>
                     </thead>
                     <tbody>
@@ -183,8 +185,9 @@
                         <tr>
 
                             <th scope="col" class="text-start">Short hair (30&nbsp;min)</th>
-                            <th scope="col" class="text-end "><span class="saleShortHair"></span><span
-                                    class="shortHair">200&nbsp;kr</span>
+                            <th scope="col" class="text-end ">
+                                <span id="saleShortHair" class="sale">Today 180&nbsp;kr</span>
+                                <span id="shortHair"> 200&nbsp;kr</span>
                             </th>
 
                         </tr>
@@ -195,8 +198,9 @@
                         </tr>
                         <tr>
                             <th scope="col" class="text-start">Beard (20&nbsp;min)</th>
-                            <th scope="col" class="text-end"><span class="saleBeard"></span><span
-                                    class="beard">150&nbsp;kr</span></th>
+                            <th scope="col" class="text-end"><span id="saleBeard" class="sale">Today
+                                    35&nbsp;kr</span><span id="beard"></span>
+                                150&nbsp;kr</span></th>
                         </tr>
                         <tr>
                             <th scope="col" class="text-start">Children&nbsp;(0&#8209;13&nbsp;years) (20&nbsp;min)
@@ -210,7 +214,13 @@
             <div class="col-md-6 flex-column marginTop">
                 <img class="w-100" src="pictures/ovrigt.jpg" alt="övrigt" style="border-radius: 7px;">
                 <h2 class="mb-4 my-5 text-body">Other</h2>
-                <br>
+                <table>
+                    <tr>
+                        <td class="text-start ps-2" id="regularCustomerInfoOther">After 3 visits within 12 months you
+                            are
+                            considerd a regular</td>
+                    </tr>
+                </table>
                 <table class="table table-sm " style="table-layout: fixed;">
                     <thead>
                         <tr>
@@ -221,8 +231,8 @@
                     <tbody>
                         <tr>
                             <th scope="col" class="text-start">Coloring (90&nbsp;min)</th>
-                            <th scope="col" class="text-end"><span class="saleColoring"></span><span
-                                    class="coloring">560 kr</span>
+                            <th scope="col" class="text-end"><span class="sale" id="sale">Today 500&nbsp;kr</span><span
+                                    id="coloring"> 560 kr</span>
                             </th>
                         </tr>
                         <tr>

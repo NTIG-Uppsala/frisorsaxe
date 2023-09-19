@@ -36,8 +36,6 @@ window.onscroll = function () {
 };
 
 function dailySales(date) {
-  const lang = document.getElementById("language").lang;
-
   const openHours = {
     kiruna: {
       weekdayOpen: 10,
@@ -57,82 +55,67 @@ function dailySales(date) {
 
   //variable is dependent on the url, includes check if the url containts a word
   const locationOpeningHours = window.location.pathname.includes("lulea")
-    ? openHours.lulea
+    ? openHours.lulea //In Luleas website
     : window.location.pathname.includes("kiruna")
-    ? openHours.kiruna
+    ? openHours.kiruna //In Kirunas website
     : console.log("location does not have openingHours for dailysailes");
 
   const weekday = date.getDay();
   const hour = date.getHours();
-  const longHair = document.getElementsByClassName("longHair");
-  const saleLongHair = document.getElementsByClassName("saleLongHair");
-  const shortHair = document.getElementsByClassName("shortHair");
-  const saleShortHair = document.getElementsByClassName("saleShortHair");
-  const beard = document.getElementsByClassName("beard");
-  const saleBeard = document.getElementsByClassName("saleBeard");
-  const coloring = document.getElementsByClassName("coloring");
-  const saleColoring = document.getElementsByClassName("saleColoring");
 
-  // Check the language and set the text accordingly
-  const todayText = lang === "en" ? "Today" : "Idag";
+  const saleLongHair = document.getElementById("saleLongHair");
+  const longHair = document.getElementById("longHair");
+
+  const saleShorthair = document.getElementById("saleShortHair");
+  const shortHair = document.getElementById("shortHair");
+
+  const saleBeard = document.getElementById("saleBeard");
+  const beard = document.getElementById("beard");
+
+  const saleColoring = document.getElementById("saleColoring");
+  const coloring = document.getElementById("coloring");
 
   switch (weekday) {
     case 1: //On Monday longhair is on sale
       if (
+        //If we are open
         hour >= locationOpeningHours.weekdayOpen &&
         locationOpeningHours.mondayClose > hour
       ) {
-        for (const element of longHair) {
-          element.style.textDecoration = "line-through";
-        }
-        for (const element of saleLongHair) {
-          element.innerText = `${todayText} 540 kr `;
-          element.style.color = "red";
-        }
+        saleLongHair.style.display = "block";
+        longHair.style.textDecoration = "line-through";
       }
       break;
     case 2: //On Tuesday shorthair is on sale
       if (
+        //If we are open
         hour >= locationOpeningHours.weekdayOpen &&
         locationOpeningHours.tuesdayClose > hour
       ) {
-        for (const element of shortHair) {
-          element.style.textDecoration = "line-through";
-        }
-        for (const element of saleShortHair) {
-          element.innerText = `${todayText} 180 kr `;
-          element.style.color = "red";
-        }
+        saleShorthair.style.display = "block";
+        shortHair.style.textDecoration = "line-through";
       }
       break;
     case 3: //On Wednesday beard is on sale
       if (
+        //If we are open
         hour >= locationOpeningHours.weekdayOpen &&
-        locationOpeningHours.wednesdayClose > hour
+        locationOpeningHours.tuesdayClose > hour
       ) {
-        for (const element of beard) {
-          element.style.textDecoration = "line-through";
-        }
-        for (const element of saleBeard) {
-          element.innerText = `${todayText} 135 kr `;
-          element.style.color = "red";
-        }
+        saleBeard.style.display = "block";
+        beard.style.textDecoration = "line-through";
       }
       break;
     case 4: //On Thursday coloring is on sale
       if (
+        //If we are open
         hour >= locationOpeningHours.weekdayOpen &&
-        locationOpeningHours.wednesdayClose > hour
+        locationOpeningHours.tuesdayClose > hour
       ) {
-        for (const element of coloring) {
-          element.style.textDecoration = "line-through";
-        }
-        for (const element of saleColoring) {
-          element.innerText = `${todayText} 500 kr `;
-          element.style.color = "red";
-        }
+        saleColoring.style.display = "block";
+        coloring.style.textDecoration = "line-through";
+        break;
       }
-      break;
   }
 }
 
@@ -148,6 +131,7 @@ function showFlags() {
   }
 }
 
+//Only breads the mail if the screen is smaller then 700px
 function mailLineBreak() {
   const mail = document.getElementById("mailLink");
   if (window.innerWidth <= 700) {
@@ -156,5 +140,22 @@ function mailLineBreak() {
     mail.innerHTML = "info@ntig&#8209;uppsala.github.io";
   }
 }
+
+function regularCustomerInfo() {
+  const regularInfo = document.getElementById("regularCustomerInfo");
+  const regularInfoOther = document.getElementById("regularCustomerInfoOther");
+
+  if (window.innerWidth <= 767) {
+    regularInfo.style.display = "block";
+    regularInfoOther.style.display = "none";
+  } else {
+    regularInfo.style.display = "none";
+    regularInfoOther.style.display = "block";
+  }
+}
+
+// Call the function when the page loads and when the window is resized
+window.addEventListener("load", regularCustomerInfo);
+window.addEventListener("resize", regularCustomerInfo);
 
 window.onresize = mailLineBreak;

@@ -114,11 +114,11 @@
                 <h2 class="mb-2" id="makeAppoitment">Boka tid</h2>
                 <div class="row justify-content-center">
                     <div class="col-3 p-3 mb-2 text-start">
-                        <p>Phone</p>
-                        <p>Email</p>
+                        <p>Telefon</p>
+                        <p>E‑post</p>
                     </div>
                     <div class="col-3 p-3 mb-2 text-start">
-                        <p><a href="tel:0630555555">0630&#8209;555&#8209;555</a></p>
+                        <p><a name="phoneNumber" href="tel:0630555555">0630&#8209;555&#8209;555</a></p>
                         <p><a id="mailLink" href="mailto:info@ntig-uppsala.github.io">
                                 info@ntig&#8209;uppsala.github.io</a></p>
                     </div>
@@ -155,15 +155,17 @@
                     <tr>
                         <td class="text-center " id="infoAboutLongHair">Gränsen för långt hår går vid 20cm</td>
                     </tr>
+                    <tr>
+                        <td class="text-start ps-2" id="regularCustomerInfo">Man blir stamkund efter tre besök under 12
+                            månader</td>
+                    </tr>
                 </table>
                 <table class="table table-sm" style="table-layout: fixed;">
                     <thead>
-
                         <tr>
-
                             <th scope="col" class="text-start">Långt hår (60&nbsp;min)</th>
-                            <th scope="col" class="text-end"><span class="saleLongHair"></span><span
-                                    class="longHair">600&nbsp;kr</span>
+                            <th scope="col" class="text-end"><span id="saleLongHair"
+                                    class="sale">Idag540&nbsp;kr</span><span id="longHair"> 600&nbsp;kr</span>
                             </th>
 
                         </tr>
@@ -176,8 +178,9 @@
                         <tr>
 
                             <th scope="col" class="text-start">Kort hår (30&nbsp;min)</th>
-                            <th scope="col" class="text-end "><span class="saleShortHair"></span><span
-                                    class="shortHair">200&nbsp;kr</span>
+                            <th scope="col" class="text-end ">
+                                <span id="saleShortHair" class="sale">Idag 180&nbsp;kr</span>
+                                <span id="shortHair"> 200&nbsp;kr</span>
                             </th>
 
                         </tr>
@@ -188,8 +191,9 @@
                         </tr>
                         <tr>
                             <th scope="col" class="text-start">Skägg (20&nbsp;min)</th>
-                            <th scope="col" class="text-end"><span class="saleBeard"></span><span
-                                    class="beard">150&nbsp;kr</span></th>
+                            <th scope="col" class="text-end"><span id="saleBeard" class="sale">Idag
+                                    35&nbsp;kr</span><span id="beard"></span>
+                                150&nbsp;kr</span></th>
                         </tr>
                         <tr>
                             <th scope="col" class="text-start">Barn (0-13&nbsp;år) (20&nbsp;min)</th>
@@ -202,7 +206,13 @@
             <div class="col-md-6 flex-column marginTop">
                 <img class="w-100" src="pictures/ovrigt.jpg" alt="övrigt" style="border-radius: 7px;">
                 <h2 class="mb-4 my-5 text-body">Annat</h2>
-                <br>
+                <table>
+                    <tr>
+                        <td class="text-start ps-2" id="regularCustomerInfoOther">Man blir stamkund efter tre besök
+                            under 12
+                            månader</td>
+                    </tr>
+                </table>
                 <table class="table table-sm " style="table-layout: fixed;">
                     <thead>
                         <tr>
@@ -213,8 +223,8 @@
                     <tbody>
                         <tr>
                             <th scope="col" class="text-start">Färgning (90&nbsp;min)</th>
-                            <th scope="col" class="text-end"><span class="saleColoring"></span><span
-                                    class="coloring">560 kr</span>
+                            <th scope="col" class="text-end"><span class="sale" id="sale">Idag 500&nbsp;kr</span><span
+                                    id="coloring"> 560 kr</span>
                             </th>
                         </tr>
                         <tr>
@@ -229,7 +239,6 @@
                             <th scope="col" class="text-start">Förlängningar, långt&nbsp;(45&nbsp;min)</th>
                             <th scope="col" class="text-end">500 kr</th>
                         </tr>
-
                     </tbody>
                 </table>
             </div>

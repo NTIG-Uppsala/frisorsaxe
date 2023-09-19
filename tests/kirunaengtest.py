@@ -157,7 +157,7 @@ class TestHomepageENG(TestCase):
         self.assertIn("Find us", element.get_attribute("innerHTML"))
 
     def testHeadHeader(self):
-        self.assertIn("Meet our staff", self.browser.page_source)
+        self.assertIn("Meet Our Staff", self.browser.page_source)
 
     def testEmployeePictures(self):
         self.assertIn('alt="Örjan"', self.browser.page_source)
@@ -170,10 +170,9 @@ class TestHomepageENG(TestCase):
         self.assertIn("Barber", self.browser.page_source)
 
     def testAddress(self):
-        self.assertIn("Address", self.browser.page_source)
-
-    def testDailySales(self):
-        self.helpTestDailySales("2023-09-11T10:00:00", "Today 540&nbsp;kr")  # Monday
+        self.helpTestDailySales(
+            "2023-09-11T10:00:00", "Today 540&nbsp;kr", "saleLongHair"
+        )  # Monday
         self.helpTestDailySales("2023-09-12T10:00:00", "Today 180&nbsp;kr")  # Tuesday
         self.helpTestDailySales("2023-09-13T10:00:00", "Today 135&nbsp;kr")  # Wednesday
         self.helpTestDailySales("2023-09-14T10:00:00", "Today 500&nbsp;kr")  # Thursday
@@ -181,9 +180,10 @@ class TestHomepageENG(TestCase):
         self.helpTestDailySales("2023-09-16T10:00:00", "")  # Saturday
         self.helpTestDailySales("2023-09-17T10:00:00", "")  # Sunday
 
-    def helpTestDailySales(self, date, result):
+    def helpTestDailySales(self, date, result, id):
         self.browser.execute_script("dailySales(new Date('" + date + "'))")
-        self.assertIn(result, self.browser.page_source)
+        element = self.browser.find_element(By.ID, id)
+        self.assertIn(result, element)
 
 
 if __name__ == "__main__":
