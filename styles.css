@@ -8,7 +8,7 @@ html {
 }
 
 h2 {
-    font-family: 'Cinzel', serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #makeAppoitment,
@@ -49,10 +49,12 @@ h2 {
 
 .nav-link {
     color: white !important;
-    font-family: 'Cinzel', serif;
-    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
 }
 
+#thirdPage {
+    background-color: #bab6ae;
+}
 
 
 @media screen and (max-width:993px) {
@@ -97,7 +99,7 @@ h2 {
 
 #instagramGrid {
     position: relative;
-    left: 23vw;
+    left: 25vw;
     width: 50vw;
     height: auto;
 }
@@ -126,12 +128,20 @@ h2 {
         font-size: 1.2rem;
 
     }
+
+    #instagramGrid {
+        position: relative;
+        left: 0;
+        width: 100vw;
+        height: auto;
+    }
 }
 
 @media screen and (max-width:500px) {
     #centerText {
         font-size: 5rem !important;
     }
+
 
 }
 
@@ -208,6 +218,7 @@ h2 {
 }
 
 footer {
+    padding-top: 20px;
     background: rgb(255, 255, 255);
 }
 
@@ -242,6 +253,10 @@ footer {
 
 .card-title {
     font-size: 1.2rem !important;
+}
+
+.card {
+    box-shadow: 0px 3px 8px #888888;
 }
 
 #langMenu {

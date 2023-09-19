@@ -35,6 +35,9 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
     </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+    </style>
 </head>
 
 <body onload="dailySales(new Date()), mailLineBreak()">
@@ -72,7 +75,7 @@
                         <a class="nav-link me-5" href="#employees">Staff</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link me-5" href="#findus">Find us</a>
+                        <a class="nav-link me-5" href="#findus">Find Us</a>
                     </li>
                     <li id="langMenu">
                         <div>
@@ -122,7 +125,7 @@
                 </div>
             </div>
             <div class="col-md-6 flex-column">
-                <h2 class="mb-2" id="openingHours">Opening hours</h2>
+                <h2 class="mb-2" id="openingHours">Opening Hours</h2>
                 <div class="row justify-content-center">
                     <div class="col-3 p-3 mb-2 text-start">
                         <p>Mon - Fri</p>
@@ -241,106 +244,111 @@
             </div>
         </div>
     </div>
-    <!-- Instagram grid -->
-    <div id="instagramGrid">
-        <div class="embedsocial-hashtag" data-ref="a5cc0c78b0aaf9424825c47d23e67fc9efd05234"> <a
-                class="feed-powered-by-es" href="https://embedsocial.com/social-media-aggregator/" target="_blank"
-                title="Widget by EmbedSocial"> </a> </div>
-        <script> (function (d, s, id) { var js; if (d.getElementById(id)) { return; } js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/cdn/ht.js"; d.getElementsByTagName("head")[0].appendChild(js); }(document, "script", "EmbedSocialHashtagScript")); </script>
-    </div>
-
-
-
-
 
     <!-- Third page -->
+    <div id="thirdPage" class="pt-3">
+        <div class="bg-image d-flex justify-content-center align-items-center imageStyle container-xxl mt-5"
+            style="background-image: url('pictures/salonDARK.jpg'); border-radius: 10px;">
+            <h2 class="text-light" id="employees">Meet Our Staff</h2>
 
-    <div class="bg-image d-flex justify-content-center align-items-center imageStyle container-xxl my-5"
-        style="background-image: url('pictures/bakgrund_1.jpg'); border-radius: 7px;">
-        <h2 class="text-light" id="employees">Meet our staff</h2>
+        </div>
 
-    </div>
-
-    <div class="container my-5 text-center">
-        <div class="row">
-            <div class="col-xl-4 col-md-6 my-5">
-                <div class="container d-flex justify-content-center">
-                    <div class="card" style="width: 20rem; height: 70%;">
-                        <img src="pictures/employeePictures/anna_pettersson.jpg" class="card-img-top" alt="Anna">
-                        <div class="card-body">
-                            <h5 class="card-title">Anna Pettersson</h5>
-                            <p class="card-text mb-2">Hairstylist</p>
-                            <a href="#"></a>
+        <div class="container pt-3 text-center">
+            <div class="row">
+                <div class="col-xl-4 col-md-6 my-5">
+                    <div class="container d-flex justify-content-center">
+                        <div class="card" style="width: 20rem; height: 70%;">
+                            <img src="pictures/employeePictures/anna_pettersson.jpg" class="card-img-top" alt="Anna">
+                            <div class="card-body">
+                                <h5 class="card-title">Anna Pettersson</h5>
+                                <p class="card-text mb-2">Hairstylist</p>
+                                <a href="#"></a>
+                            </div>
                         </div>
                     </div>
+
+
                 </div>
-
-
-            </div>
-            <div class="col-xl-4 col-md-6 my-5">
-                <div class="container d-flex justify-content-center">
-                    <div class="card" style="width: 20rem; height: 70%;">
-                        <img src="pictures//employeePictures/fredrik_ortqvist.jpg" class="card-img-top" alt="Fredrik">
-                        <div class="card-body">
-                            <h5 class="card-title">Fredrik Örtqvist</h5>
-                            <p class="card-text mb-2">Barber</p>
+                <div class="col-xl-4 col-md-6 my-5">
+                    <div class="container d-flex justify-content-center">
+                        <div class="card" style="width: 20rem; height: 70%;">
+                            <img src="pictures//employeePictures/fredrik_ortqvist.jpg" class="card-img-top"
+                                alt="Fredrik">
+                            <div class="card-body">
+                                <h5 class="card-title">Fredrik Örtqvist</h5>
+                                <p class="card-text mb-2">Barber</p>
+                            </div>
                         </div>
                     </div>
+
+
                 </div>
-
-
-            </div>
-            <div class="col-xl-4 col-md-6 my-5 ">
-                <div class="container d-flex justify-content-center">
-                    <div class="card" style="width: 20rem; height: 70%;">
-                        <img src="pictures/employeePictures/orjan_johansson.jpg" class="card-img-top" alt="Örjan">
-                        <div class="card-body">
-                            <h5 class="card-title">Örjan Johansson</h5>
-                            <p class="card-text mb-2">Barber</p>
+                <div class="col-xl-4 col-md-6 my-5 ">
+                    <div class="container d-flex justify-content-center">
+                        <div class="card" style="width: 20rem; height: 70%;">
+                            <img src="pictures/employeePictures/orjan_johansson.jpg" class="card-img-top" alt="Örjan">
+                            <div class="card-body">
+                                <h5 class="card-title">Örjan Johansson</h5>
+                                <p class="card-text mb-2">Barber</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- Info -->
-
-    <div class="container my-5" id="findus">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <h2 class="mb-4">Find us</h2>
-                <div class="hasjs"><iframe
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1503.2583513342254!2d20.2337795!3d67.8660232!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x45d0ba6368d7c9a3%3A0xe3887ef038c559b0!2sFj%C3%A4llgatan%2032%2C%20981%2039%20Kiruna!5e0!3m2!1ssv!2sse!4v1693397051519!5m2!1ssv!2sse"
-                        width="450" height="450" style="border:0; width: 100%; max-width: 800px; border-radius: 7px;"
-                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-                <noscript><img src="pictures/nojsmapkiruna.jpg" width="450" height="450" alt="noMapForNoJs"
-                        style="border: 0; width: 100%; max-width: 450px; border-radius: 7px;"></noscript>
-                <h2 class="mb-4 my-3">Address </h2>
-                <h6 class="text-black">Fjällgatan 32H</h6>
-                <h6 class="text-black">981 39 Kiruna</h6>
 
 
+
+
+
+        <!-- Instagram grid -->
+        <div id="instagramGrid" class="mb-5 mt-0">
+            <div class="embedsocial-hashtag" data-ref="a5cc0c78b0aaf9424825c47d23e67fc9efd05234"> <a
+                    class="feed-powered-by-es" href="https://embedsocial.com/social-media-aggregator/" target="_blank"
+                    title="Widget by EmbedSocial"> </a> </div>
+            <script> (function (d, s, id) { var js; if (d.getElementById(id)) { return; } js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/cdn/ht.js"; d.getElementsByTagName("head")[0].appendChild(js); }(document, "script", "EmbedSocialHashtagScript")); </script>
+        </div>
+        <!-- Info -->
+
+        <div class="container my-5" id="findus">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2 class="mb-4" style="color: white;">Find&nbsp;Us</h2>
+                    <div class="hasjs"><iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1503.2583513342254!2d20.2337795!3d67.8660232!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x45d0ba6368d7c9a3%3A0xe3887ef038c559b0!2sFj%C3%A4llgatan%2032%2C%20981%2039%20Kiruna!5e0!3m2!1ssv!2sse!4v1693397051519!5m2!1ssv!2sse"
+                            width="450" height="450"
+                            style="border:0; width: 100%; max-width: 800px; border-radius: 7px;" allowfullscreen=""
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+                    <noscript><img src="pictures/nojsmapkiruna.jpg" width="450" height="450" alt="noMapForNoJs"
+                            style="border: 0; width: 100%; max-width: 450px; border-radius: 7px;"></noscript>
+                    <h2 class="mb-4 my-3" style="color: white;">Address </h2>
+                    <h6 class=" text-black">Fjällgatan 32H</h6>
+                    <h6 class="text-black">981 39 Kiruna</h6>
+
+
+                </div>
             </div>
         </div>
+
+
+
+        <footer class="bg-dark text-white-50 text-center">
+            <a href="tel:0630555555" class="text-white-50">0630&#8209;555&#8209;555</a> |
+            <a href="mailto:info@ntig-uppsala.github.io" class="text-white-50">info@ntig&#8209;uppsala.github.io</a>
+
+            <div class="container" style="padding: 20px 0;">
+                <a href="https://facebook.com/ntiuppsala" class="no-text-decoration social-icon" target="_blank">
+                    <i class="fa-brands fa-facebook fa-2xl"></i>
+                </a>
+                <a href="https://twitter.com/ntiuppsala?lang=en" class="no-text-decoration social-icon" target="_blank">
+                    <i class="fa-brands fa-x-twitter fa-2xl"></i>
+                </a>
+                <a href="https://www.instagram.com/frisorsaxe/" class="no-text-decoration social-icon" target="_blank">
+                    <i class="fa-brands fa-instagram fa-2xl"></i>
+                </a>
+            </div>
+        </footer>
     </div>
-
-    <footer class="bg-dark text-white-50 text-center mt-5 p-3">
-        <a href="tel:0630555555" class="text-white-50">0630&#8209;555&#8209;555</a> |
-        <a href="mailto:info@ntig-uppsala.github.io" class="text-white-50">info@ntig&#8209;uppsala.github.io</a>
-
-        <div class="container" style="padding: 20px 0;">
-            <a href="https://facebook.com/ntiuppsala" class="no-text-decoration social-icon" target="_blank">
-                <i class="fa-brands fa-facebook fa-2xl"></i>
-            </a>
-            <a href="https://twitter.com/ntiuppsala?lang=en" class="no-text-decoration social-icon" target="_blank">
-                <i class="fa-brands fa-x-twitter fa-2xl"></i>
-            </a>
-            <a href="https://www.instagram.com/frisorsaxe/" class="no-text-decoration social-icon" target="_blank">
-                <i class="fa-brands fa-instagram fa-2xl"></i>
-            </a>
-        </div>
-    </footer>
 
 </body>
 
