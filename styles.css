@@ -8,9 +8,33 @@ html {
 }
 
 h2 {
-    font-family: 'Cinzel', serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
+#makeAppoitment,
+#boka {
+    scroll-margin-top: 100px;
+}
+
+#openingHours,
+#oppettider {
+    scroll-margin-top: 100px;
+}
+
+#prices,
+#priser {
+    scroll-margin-top: -150px;
+}
+
+#employees,
+#personal {
+    scroll-margin-top: 100px;
+}
+
+#findus,
+#hittaOss {
+    scroll-margin-top: 30px;
+}
 
 #navbar {
     background-color: rgba(0, 0, 0, 0.671);
@@ -25,22 +49,26 @@ h2 {
 
 .nav-link {
     color: white !important;
-    font-family: 'Cinzel', serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
+#thirdPage {
+    background-color: #bab6ae;
+}
 
 
 @media screen and (max-width:993px) {
     .nav-link {
         text-align: center;
     }
-    .col-3{
+
+    .col-3 {
         font-size: 1rem;
     }
 }
 
 @media screen and (max-width:360px) {
-    .col-3{
+    .col-3 {
         font-size: 0.80rem !important;
     }
 }
@@ -71,7 +99,7 @@ h2 {
 
 #instagramGrid {
     position: relative;
-    left: 23vw;
+    left: 25vw;
     width: 50vw;
     height: auto;
 }
@@ -100,12 +128,20 @@ h2 {
         font-size: 1.2rem;
 
     }
+
+    #instagramGrid {
+        position: relative;
+        left: 0;
+        width: 100vw;
+        height: auto;
+    }
 }
 
 @media screen and (max-width:500px) {
     #centerText {
         font-size: 5rem !important;
     }
+
 
 }
 
@@ -174,6 +210,7 @@ h2 {
 }
 
 footer {
+    padding-top: 20px;
     background: rgb(255, 255, 255);
 }
 
@@ -200,6 +237,10 @@ footer {
 
 .card-title {
     font-size: 1.2rem !important;
+}
+
+.card {
+    box-shadow: 0px 3px 8px #888888;
 }
 
 #langMenu {
