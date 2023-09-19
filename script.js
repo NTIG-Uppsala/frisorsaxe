@@ -59,8 +59,8 @@ function dailySales(date) {
   const locationOpeningHours = window.location.pathname.includes("lulea")
     ? openHours.lulea
     : window.location.pathname.includes("kiruna")
-      ? openHours.kiruna
-      : console.log("location does not have openingHours for dailysailes");
+    ? openHours.kiruna
+    : console.log("location does not have openingHours for dailysailes");
 
   const weekday = date.getDay();
   const hour = date.getHours();
@@ -149,8 +149,8 @@ function showFlags() {
 }
 
 function mailLineBreak() {
-  const mail = document.getElementById("mailLink")
-  if (window.innerWidth <= 550) {
+  const mail = document.getElementById("mailLink");
+  if (window.innerWidth <= 700) {
     mail.innerHTML = "info@ntig-uppsala.github.io";
   } else {
     mail.innerHTML = "info@ntig&#8209;uppsala.github.io";

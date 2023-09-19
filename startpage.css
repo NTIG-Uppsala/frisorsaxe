@@ -3,6 +3,30 @@
     align-items: center;
     display: flex;
     justify-content: center;
+    font-family: Italianno;
+}
+
+@font-face {
+    font-family: Italianno;
+    src: url("fonts/Italianno-Regular.ttf");
+}
+
+@media screen and (max-width:450px){
+    .card-group{
+    width: 80% !important;
+    }
+}
+
+@media screen and (max-width:575px) {
+    .card-group{
+        width: 60% !important;
+    }
+    .bigTitle{
+        font-size: 3rem;
+    }
+    .card-text{
+        font-size: 0.7rem;
+    }
 }
 
 @media screen and (max-width:750px) {
@@ -14,39 +38,22 @@
     }
 }
 
-@media screen and (max-width:575px) {
+@media screen and (max-width:1000px){
     .card-group{
-        width: 50% !important;
-    }
-    .bigTitle{
-        font-size: 3rem;
-    }
-    .card-text{
-        font-size: 0.7rem;
+        width: 70% !important;
     }
 }
 
-@media screen and (max-width:450px){
-    .card-group{
-    width: 60% !important;
-    }
-}
 
 .card-group{
-    width: 50%;
+    width: 50%  ;
     margin: 0 auto;
     margin-bottom: 9%;
 }
 
-@media screen and (max-width:1920px) {
-    .card-group{
-        width: 65%;
-    }
-}
-
 .card{
     border-radius: 20px;
-  
+    cursor: pointer;
     padding: 20px;
     border: none !important;
 }
@@ -60,9 +67,19 @@ img{
 .card-title{
     text-align: center;
     font-size: 1.7rem;
+    color: black !important;
+    text-decoration:none !important;
+
 }
 
 .card-text{
     text-align: center;
+    text-decoration:none !important;
+    color: black;
     font-size: 1.2rem;
 }
+
+a{
+    text-decoration: none !important;
+}
+
