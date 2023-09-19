@@ -28,7 +28,7 @@ window.onscroll = function () {
     } else if (prevScrollPosition > currentScrollPosition) {
       document.getElementById("navbar").style.top = "0";
     } else {
-      document.getElementById("navbar").style.top = "-20vh";
+      document.getElementById("navbar").style.top = "-35vh";
     }
     // Update the previous scroll position
     prevScrollPosition = currentScrollPosition;
@@ -59,8 +59,8 @@ function dailySales(date) {
   const locationOpeningHours = window.location.pathname.includes("lulea")
     ? openHours.lulea
     : window.location.pathname.includes("kiruna")
-    ? openHours.kiruna
-    : console.log("location does not have openingHours for dailysailes");
+      ? openHours.kiruna
+      : console.log("location does not have openingHours for dailysailes");
 
   const weekday = date.getDay();
   const hour = date.getHours();
@@ -156,5 +156,4 @@ function mailLineBreak() {
     mail.innerHTML = "info@ntig&#8209;uppsala.github.io";
   }
 }
-
 window.onresize = mailLineBreak;
