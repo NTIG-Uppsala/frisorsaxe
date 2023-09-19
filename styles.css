@@ -155,6 +155,10 @@ h2 {
     #infoAboutLongHair {
         font-size: 1rem;
     }
+
+    #regularCustomerInfo {
+        font-size: 1rem;
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -175,6 +179,10 @@ h2 {
     }
 
     #infoAboutLongHair {
+        font-size: 0.7rem;
+    }
+
+    #regularCustomerInfo {
         font-size: 0.7rem;
     }
 }
@@ -218,6 +226,14 @@ footer {
 
 #infoAboutLongHair {
     font-weight: bold !important;
+}
+
+#regularCustomerInfo {
+    font-weight: bold;
+}
+
+#regularCustomerInfoOther {
+    font-weight: bold;
 }
 
 .hasjs {

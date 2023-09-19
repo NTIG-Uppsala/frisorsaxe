@@ -156,4 +156,22 @@ function mailLineBreak() {
     mail.innerHTML = "info@ntig&#8209;uppsala.github.io";
   }
 }
+
+function regularCustomerInfo() {
+  const regularInfo = document.getElementById("regularCustomerInfo");
+  const regularInfoOther = document.getElementById("regularCustomerInfoOther");
+
+  if (window.innerWidth <= 767) {
+    regularInfo.style.display = "block";
+    regularInfoOther.style.display = "none";
+  } else {
+    regularInfo.style.display = "none";
+    regularInfoOther.style.display = "block";
+  }
+}
+
+// Call the function when the page loads and when the window is resized
+window.addEventListener("load", regularCustomerInfo);
+window.addEventListener("resize", regularCustomerInfo);
+
 window.onresize = mailLineBreak;
