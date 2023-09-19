@@ -58,6 +58,10 @@
     border: none !important;
 }
 
+.card:hover{
+    transform: scale(1.08);
+}
+
 img{
     width: auto !important;
     height: auto !important;
