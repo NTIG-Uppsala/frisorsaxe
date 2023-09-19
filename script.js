@@ -147,3 +147,14 @@ function showFlags() {
     element.style.display = "block";
   }
 }
+
+function mailLineBreak() {
+  const mail = document.getElementById("mailLink");
+  if (window.innerWidth <= 700) {
+    mail.innerHTML = "info@ntig-uppsala.github.io";
+  } else {
+    mail.innerHTML = "info@ntig&#8209;uppsala.github.io";
+  }
+}
+
+window.onresize = mailLineBreak;
