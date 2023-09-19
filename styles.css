@@ -269,6 +269,11 @@ footer {
 
 }
 
+.sale{
+    color: red;
+    display: none;
+}
+
 #flagMenu img {
     width: 2rem;
 }

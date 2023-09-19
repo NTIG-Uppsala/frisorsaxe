@@ -180,16 +180,17 @@ class TestHomepage(TestCase):
         self.assertIn("500 kr", self.browser.page_source)
 
     def testDailySales(self):
-        self.helpTestDailySales("2023-09-11T10:00:00", "Idag 540&nbsp;kr")  # Monday
-        self.helpTestDailySales("2023-09-12T10:00:00", "Idag 180&nbsp;kr")  # Tuesday
-        self.helpTestDailySales("2023-09-13T10:00:00", "Idag 135&nbsp;kr")  # Wednesday
-        self.helpTestDailySales("2023-09-14T10:00:00", "Idag 500&nbsp;kr")  # Thursday
+        self.helpTestDailySales("2023-09-11T11:00:00", "Idag540&nbsp;kr")  # Monday
+        self.helpTestDailySales("2023-09-12T11:00:00", "Idag 180&nbsp;kr")  # Tuesday
+        self.helpTestDailySales("2023-09-13T11:00:00", "Idag 135&nbsp;kr")  # Wednesday
+        self.helpTestDailySales("2023-09-14T11:00:00", "Idag 500&nbsp;kr")  # Thursday
         self.helpTestDailySales("2023-09-15T10:00:00", "")  # Friday
         self.helpTestDailySales("2023-09-16T10:00:00", "")  # Saturday
         self.helpTestDailySales("2023-09-17T10:00:00", "")  # Sunday
 
     def helpTestDailySales(self, date, result):
         self.browser.execute_script("dailySales(new Date('" + date + "'))")
+        time.sleep(2)
         self.assertIn(result, self.browser.page_source)
 
 
