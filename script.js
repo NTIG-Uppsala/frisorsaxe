@@ -28,7 +28,7 @@ window.onscroll = function () {
     } else if (prevScrollPosition > currentScrollPosition) {
       document.getElementById("navbar").style.top = "0";
     } else {
-      document.getElementById("navbar").style.top = "-20vh";
+      document.getElementById("navbar").style.top = "-35vh";
     }
     // Update the previous scroll position
     prevScrollPosition = currentScrollPosition;
@@ -149,12 +149,11 @@ function showFlags() {
 }
 
 function mailLineBreak() {
-  const mail = document.getElementById("mailLink")
-  if (window.innerWidth <= 550) {
+  const mail = document.getElementById("mailLink");
+  if (window.innerWidth <= 700) {
     mail.innerHTML = "info@ntig-uppsala.github.io";
   } else {
     mail.innerHTML = "info@ntig&#8209;uppsala.github.io";
   }
 }
-
 window.onresize = mailLineBreak;

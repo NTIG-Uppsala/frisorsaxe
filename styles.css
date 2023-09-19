@@ -11,6 +11,30 @@ h2 {
     font-family: 'Montserrat', sans-serif;
 }
 
+#makeAppoitment,
+#boka {
+    scroll-margin-top: 100px;
+}
+
+#openingHours,
+#oppettider {
+    scroll-margin-top: 100px;
+}
+
+#prices,
+#priser {
+    scroll-margin-top: -150px;
+}
+
+#employees,
+#personal {
+    scroll-margin-top: 100px;
+}
+
+#findus,
+#hittaOss {
+    scroll-margin-top: 30px;
+}
 
 #navbar {
     background-color: rgba(0, 0, 0, 0.671);
@@ -190,10 +214,6 @@ footer {
     background: rgb(255, 255, 255);
 }
 
-.noTextDecoration {
-    text-decoration: none;
-}
-
 .imageStyle {
     height: 40vh;
     background-position: center;
@@ -206,12 +226,6 @@ footer {
     background-color: rgba(211, 211, 211, 0.688) !important;
 }
 
-.videoOverlay {
-    width: 100%;
-    height: 100%;
-    position: absolute !important;
-    top: 0 !important;
-}
 
 #infoAboutLongHair {
     font-weight: bold !important;
