@@ -117,9 +117,9 @@ class TestHomepage(TestCase):
     def testBookedTime(self):
         self.assertIn("Boka&nbsp;tid", self.browser.page_source)
         self.assertIn("Telefon", self.browser.page_source)
-        self.assertIn("E-post", self.browser.page_source)
-        self.browser.find_element(By.NAME, "phoneNumber")
-        self.browser.find_element(By.ID, "mailLink")
+        self.assertIn("E‑post", self.browser.page_source)
+        self.assertIn("0640‑555‑333", self.browser.page_source)
+        self.assertIn("lulea@ntig-uppsala.github.io", self.browser.page_source)
 
     def testPrices(self):
         self.assertIn("600", self.browser.page_source)

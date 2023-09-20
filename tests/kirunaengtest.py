@@ -162,8 +162,7 @@ class TestHomepageENG(TestCase):
         self.assertIn("Find Us", element.get_attribute("innerHTML"))
 
     def testEmplyoeeHeader(self):
-            self.assertIn("Meet Our Staff", self.browser.page_source)
-
+        self.assertIn("Meet Our Staff", self.browser.page_source)
 
     def testEmployeePictures(self):
         self.assertIn('alt="Örjan"', self.browser.page_source)

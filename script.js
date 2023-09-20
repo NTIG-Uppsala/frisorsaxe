@@ -28,7 +28,7 @@ window.onscroll = function () {
     } else if (prevScrollPosition > currentScrollPosition) {
       document.getElementById("navbar").style.top = "0";
     } else {
-      document.getElementById("navbar").style.top = "-20vh";
+      document.getElementById("navbar").style.top = "-35vh";
     }
     // Update the previous scroll position
     prevScrollPosition = currentScrollPosition;
