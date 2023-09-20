@@ -112,9 +112,14 @@ h2 {
 
 #centerText {
     margin-top: 40vh;
-    font-family: 'Italianno', cursive;
+    font-family: Title;
     font-size: 10rem;
     text-shadow: 2px 3px 3px rgb(61, 60, 60);
+}
+
+@font-face {
+    font-family: Title;
+    src: url("fonts/Italianno-Regular.ttf");
 }
 
 @media screen and (max-width:800px) {
