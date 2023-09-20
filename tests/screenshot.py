@@ -39,7 +39,7 @@ class screenshotNoJs(TestCase):
 
     def screenshotHelper(
         self, width, height
-    ):  # function that defines resolution and takes screenshot.
+    ):  # Function that defines resolution and takes screenshot.
         self.browser.set_window_size(width, height)
 
         scroll_height = self.browser.execute_script("return document.body.scrollHeight")
@@ -74,10 +74,10 @@ class screenshotNoJs(TestCase):
     ):
         if not path.exists("screenshotsnojs/"):
             mkdir("screenshotsnojs/")
-        # phones and tablets
+        # Phones and tablets
         self.screenshotHelper(360, 740)
         self.screenshotHelper(414, 896)
-        # desktop
+        # Desktop
         self.screenshotHelper(1024, 768)
         self.screenshotHelper(1920, 1080)
         self.screenshotHelper(3840, 2160)
@@ -101,7 +101,7 @@ class screenshot(TestCase):
 
     def screenshotHelper(
         self, width, height
-    ):  # includes essential values for taking screenshots. to not have repetetive code.
+    ):  # Includes essential values for taking screenshots. to not have repetetive code.
         self.browser.set_window_size(width, height)
         p_height = self.browser.execute_script("return document.body.scrollHeight")
         if p_height > height:
@@ -113,13 +113,13 @@ class screenshot(TestCase):
             time.sleep(1)
             self.browser.save_screenshot(f"screenshots/{width}-{height}-{i}.png")
 
-    def testScreenshots(self):  # function that defines resolution and takes screenshot.
+    def testScreenshots(self):  # Function that defines resolution and takes screenshot.
         if not path.exists("screenshots/"):
             mkdir("screenshots/")
-        # phones and tablets
+        # Phones and tablets
         self.screenshotHelper(360, 740)
         self.screenshotHelper(414, 896)
-        # desktop
+        # Desktop
         self.screenshotHelper(1024, 768)
         self.screenshotHelper(1920, 1080)
         self.screenshotHelper(3840, 2160)

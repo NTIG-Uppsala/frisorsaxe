@@ -11,7 +11,7 @@ class TestHomepageNoScriptENG(TestCase):
     doNotCloseBrowser = False
     hideWindow = True
 
-    # runs before the first test
+    # Runs before the first test
     @classmethod
     def setUpClass(cls):
         chrome_options = webdriver.ChromeOptions()
@@ -34,7 +34,7 @@ class TestHomepageNoScriptENG(TestCase):
     def setUp(self):
         self.browser.get(path.join(getcwd(), "luleaeng.html"))
 
-    # after each test
+    # After each test
     def tearDown(self):
         self.browser.get("about:blank")
 
@@ -75,11 +75,11 @@ class TestHomepageENG(TestCase):
     def tearDownClass(cls):
         pass
 
-    # before each test
+    # Before each test
     def setUp(self):
         self.browser.get(path.join(getcwd(), "luleaeng.html"))
 
-    # after each test
+    # After each test
     def tearDown(self):
         self.browser.get("about:blank")
 
