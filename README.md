@@ -9,7 +9,7 @@ Repository for Frisör Saxé worked on 2023-2024.
 - All variables are in English, start with lowercase letters and subsequent words start with uppercase letters (camelCase). Eventual snake_case is from/for bootstrap.
 - We use four blank spaces for indentation.
 - All test functions have to start with "test".
-- English file names only contain lowercase letters.
+- English file names only contain lowercase letters. Except for pictures, which have no standard.
 - Comments are positioned above the code it describes, are only in English and start with lowercase letters in Python but start with uppercase letters in HTML and CSS.
 - Python files follow the Black Formatter standard and Pylint with the exception of C0111 and method-naming-style=camelCase.
 
