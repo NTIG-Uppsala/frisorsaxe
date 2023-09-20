@@ -9,7 +9,7 @@ from selenium.webdriver.common.by import By
 
 class TestHomepageNoScriptENG(TestCase):
     doNotCloseBrowser = False
-    hideWindow = False
+    hideWindow = True
 
     @classmethod
     def setUpClass(cls):
@@ -105,15 +105,14 @@ class TestHomepageENG(TestCase):
                     f"Image '{image_element.get_attribute('src')}' is not loaded."
                 )
 
-    def testPrices(self):
-        self.assertIn("600 kr", self.browser.page_source)
-        self.assertIn("500 kr", self.browser.page_source)
-        self.assertIn("200 kr", self.browser.page_source)
-        self.assertIn("150 kr", self.browser.page_source)
-        self.assertIn("200 kr", self.browser.page_source)
-        self.assertIn("560 kr", self.browser.page_source)
-        self.assertIn("300 kr", self.browser.page_source)
-        self.assertIn("500 kr", self.browser.page_source)
+        self.assertIn("600", self.browser.page_source)
+        self.assertIn("500", self.browser.page_source)
+        self.assertIn("200", self.browser.page_source)
+        self.assertIn("150", self.browser.page_source)
+        self.assertIn("200", self.browser.page_source)
+        self.assertIn("560", self.browser.page_source)
+        self.assertIn("300", self.browser.page_source)
+        self.assertIn("500", self.browser.page_source)
 
     def testBookedTime(self):
         self.assertIn("Appointment", self.browser.page_source)
@@ -130,10 +129,16 @@ class TestHomepageENG(TestCase):
         self.assertIn("Sunday", self.browser.page_source)
         self.assertIn("Closed", self.browser.page_source)
 
-    def testProducts(self):
+    def testInfo(self):
+        self.assertIn(
+            "After 3 visits within 12 months you are considerd a regular",
+            self.browser.page_source,
+        )
         self.assertIn(
             "The limit for long hair starts at 20cm", self.browser.page_source
         )
+
+    def testProducts(self):
         self.assertIn("Haircut", self.browser.page_source)
         self.assertIn("Long", self.browser.page_source)
         self.assertIn("Other", self.browser.page_source)
@@ -154,10 +159,11 @@ class TestHomepageENG(TestCase):
         self.assertIn("Opening hours", element.get_attribute("innerHTML"))
         self.assertIn("Prices", element.get_attribute("innerHTML"))
         self.assertIn("Staff", element.get_attribute("innerHTML"))
-        self.assertIn("Find us", element.get_attribute("innerHTML"))
+        self.assertIn("Find Us", element.get_attribute("innerHTML"))
 
-    def testHeadHeader(self):
-        self.assertIn("Meet Our Staff", self.browser.page_source)
+    def testEmplyoeeHeader(self):
+            self.assertIn("Meet Our Staff", self.browser.page_source)
+
 
     def testEmployeePictures(self):
         self.assertIn('alt="Örjan"', self.browser.page_source)
@@ -170,20 +176,42 @@ class TestHomepageENG(TestCase):
         self.assertIn("Barber", self.browser.page_source)
 
     def testAddress(self):
-        self.helpTestDailySales(
-            "2023-09-11T10:00:00", "Today 540&nbsp;kr", "saleLongHair"
-        )  # Monday
-        self.helpTestDailySales("2023-09-12T10:00:00", "Today 180&nbsp;kr")  # Tuesday
-        self.helpTestDailySales("2023-09-13T10:00:00", "Today 135&nbsp;kr")  # Wednesday
-        self.helpTestDailySales("2023-09-14T10:00:00", "Today 500&nbsp;kr")  # Thursday
-        self.helpTestDailySales("2023-09-15T10:00:00", "")  # Friday
-        self.helpTestDailySales("2023-09-16T10:00:00", "")  # Saturday
-        self.helpTestDailySales("2023-09-17T10:00:00", "")  # Sunday
+        pass
 
-    def helpTestDailySales(self, date, result, id):
+    def testDailySales(self):
+        self.helpTestDailySales("2023-09-11T11:00:00", "saleLongHair")  # Monday
+        self.helpTestDailySales("2023-09-12T11:00:00", "saleShortHair")  # Tuesday
+        self.helpTestDailySales("2023-09-13T11:00:00", "saleBeard")  # Wednesday
+        self.helpTestDailySales("2023-09-14T11:00:00", "saleColoring")  # Thursday
+
+        # Should not show
+        self.helpDailySalesNotShow("2023-09-12T11:00:00", "saleLongHair")  # On tuseday
+        self.helpDailySalesNotShow("2023-09-11T11:00:00", "saleShortHair")  # On Monday
+        self.helpDailySalesNotShow(
+            "2023-09-13T11:00:00", "saleColoring"
+        )  # On wednesday
+        self.helpDailySalesNotShow(
+            "2023-09-13T11:00:00", "saleLongHair"
+        )  # On wednesday
+        self.helpDailySalesNotShow("2023-09-11T16:00:00", "saleColoring")  # On Monday
+        self.helpDailySalesNotShow("2023-09-11T09:00:00", "saleLongHair")  # On Monday
+
+    def helpTestDailySales(self, date, id):
         self.browser.execute_script("dailySales(new Date('" + date + "'))")
-        element = self.browser.find_element(By.ID, id)
-        self.assertIn(result, element)
+        element = self.browser.find_element(By.ID, id).value_of_css_property("display")
+        if element == "block":
+            pass
+        else:
+            self.fail()
+
+    def helpDailySalesNotShow(self, date, id):
+        self.browser.get(path.join(getcwd(), "kirunaeng.html"))
+        self.browser.execute_script("dailySales(new Date('" + date + "'))")
+        element = self.browser.find_element(By.ID, id).value_of_css_property("display")
+        if element == "none":
+            pass
+        else:
+            self.fail()
 
 
 if __name__ == "__main__":

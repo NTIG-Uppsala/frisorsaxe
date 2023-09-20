@@ -134,10 +134,18 @@ function showFlags() {
 //Only breads the mail if the screen is smaller then 700px
 function mailLineBreak() {
   const mail = document.getElementById("mailLink");
-  if (window.innerWidth <= 700) {
-    mail.innerHTML = "info@ntig-uppsala.github.io";
-  } else {
-    mail.innerHTML = "info@ntig&#8209;uppsala.github.io";
+  if (window.location.pathname.includes("kiruna")) {
+    if (window.innerWidth <= 700) {
+      mail.innerHTML = "info@ntig-uppsala.github.io";
+    } else {
+      mail.innerHTML = "info@ntig&#8209;uppsala.github.io";
+    }
+  } else if (window.location.pathname.includes("lulea")) {
+    if (window.innerWidth <= 700) {
+      mail.innerHTML = "lulea@ntig-uppsala.github.io";
+    } else {
+      mail.innerHTML = "lulea@ntig&#8209;uppsala.github.io";
+    }
   }
 }
 
