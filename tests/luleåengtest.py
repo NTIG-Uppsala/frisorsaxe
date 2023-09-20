@@ -9,8 +9,9 @@ from selenium.webdriver.common.by import By
 
 class TestHomepageNoScriptENG(TestCase):
     doNotCloseBrowser = False
-    hideWindow = False
+    hideWindow = True
 
+    # runs before the first test
     @classmethod
     def setUpClass(cls):
         chrome_options = webdriver.ChromeOptions()
@@ -33,7 +34,8 @@ class TestHomepageNoScriptENG(TestCase):
     def setUp(self):
         self.browser.get(path.join(getcwd(), "luleaeng.html"))
 
-    def tear_down(self):
+    # after each test
+    def tearDown(self):
         self.browser.get("about:blank")
 
     def testNoScriptImage(self):
@@ -73,10 +75,12 @@ class TestHomepageENG(TestCase):
     def tearDownClass(cls):
         pass
 
+    # before each test
     def setUp(self):
         self.browser.get(path.join(getcwd(), "luleaeng.html"))
 
-    def tear_down(self):
+    # after each test
+    def tearDown(self):
         self.browser.get("about:blank")
 
     def testTitle(self):
@@ -141,6 +145,7 @@ class TestHomepageENG(TestCase):
         self.assertIn("Trimming", self.browser.page_source)
         self.assertIn("regular&nbsp;customer", self.browser.page_source)
         self.assertIn("hair", self.browser.page_source)
+        self.assertIn("beard", self.browser.page_source)
 
     def testNavbar(self):
         navBrand = self.browser.find_element(By.ID, "centerText")
@@ -161,7 +166,6 @@ class TestHomepageENG(TestCase):
         self.assertIn('alt="Anna"', self.browser.page_source)
 
     def testEmployeeJobs(self):
-        self.assertIn("Beard (20&nbsp;min)", self.browser.page_source)
         self.assertIn("Hairstylist", self.browser.page_source)
         self.assertIn("Barber", self.browser.page_source)
 
