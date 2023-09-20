@@ -9,7 +9,7 @@ from selenium.webdriver.common.by import By
 
 class TestHomepageNoScript(TestCase):
     doNotCloseBrowser = False
-    hideWindow = False
+    hideWindow = True
 
     # setUpClass körs FÖRE DET FÖRSTA testet
     @classmethod
@@ -129,8 +129,14 @@ class TestHomepage(TestCase):
         self.assertIn("Söndag", self.browser.page_source)
         self.assertIn("Stängt", self.browser.page_source)
 
-    def testProducts(self):
+    def testInfo(self):
         self.assertIn("Gränsen för långt hår går vid 20cm", self.browser.page_source)
+        self.assertIn(
+            "Man blir stamkund efter tre besök under 12 månader",
+            self.browser.page_source,
+        )
+
+    def testProducts(self):
         self.assertIn("Klippning", self.browser.page_source)
         self.assertIn("Långt", self.browser.page_source)
         self.assertIn("Annat", self.browser.page_source)
@@ -170,28 +176,49 @@ class TestHomepage(TestCase):
         self.assertIn("Adress", self.browser.page_source)
 
     def testPrices(self):
-        self.assertIn("600 kr", self.browser.page_source)
-        self.assertIn("500 kr", self.browser.page_source)
-        self.assertIn("200 kr", self.browser.page_source)
-        self.assertIn("150 kr", self.browser.page_source)
-        self.assertIn("200 kr", self.browser.page_source)
-        self.assertIn("560 kr", self.browser.page_source)
-        self.assertIn("300 kr", self.browser.page_source)
-        self.assertIn("500 kr", self.browser.page_source)
+        self.assertIn("600", self.browser.page_source)
+        self.assertIn("500", self.browser.page_source)
+        self.assertIn("200", self.browser.page_source)
+        self.assertIn("150", self.browser.page_source)
+        self.assertIn("200", self.browser.page_source)
+        self.assertIn("560", self.browser.page_source)
+        self.assertIn("300", self.browser.page_source)
+        self.assertIn("500", self.browser.page_source)
 
     def testDailySales(self):
-        self.helpTestDailySales("2023-09-11T11:00:00", "Idag540&nbsp;kr")  # Monday
-        self.helpTestDailySales("2023-09-12T11:00:00", "Idag 180&nbsp;kr")  # Tuesday
-        self.helpTestDailySales("2023-09-13T11:00:00", "Idag 135&nbsp;kr")  # Wednesday
-        self.helpTestDailySales("2023-09-14T11:00:00", "Idag 500&nbsp;kr")  # Thursday
-        self.helpTestDailySales("2023-09-15T10:00:00", "")  # Friday
-        self.helpTestDailySales("2023-09-16T10:00:00", "")  # Saturday
-        self.helpTestDailySales("2023-09-17T10:00:00", "")  # Sunday
+        self.helpTestDailySales("2023-09-11T11:00:00", "saleLongHair")  # Monday
+        self.helpTestDailySales("2023-09-12T11:00:00", "saleShortHair")  # Tuesday
+        self.helpTestDailySales("2023-09-13T11:00:00", "saleBeard")  # Wednesday
+        self.helpTestDailySales("2023-09-14T11:00:00", "saleColoring")  # Thursday
 
-    def helpTestDailySales(self, date, result):
+        # Should not show
+        self.helpDailySalesNotShow("2023-09-12T11:00:00", "saleLongHair")  # On tuseday
+        self.helpDailySalesNotShow("2023-09-11T11:00:00", "saleShortHair")  # On Monday
+        self.helpDailySalesNotShow(
+            "2023-09-13T11:00:00", "saleColoring"
+        )  # On wednesday
+        self.helpDailySalesNotShow(
+            "2023-09-13T11:00:00", "saleLongHair"
+        )  # On wednesday
+        self.helpDailySalesNotShow("2023-09-11T16:00:00", "saleColoring")  # On Monday
+        self.helpDailySalesNotShow("2023-09-11T09:00:00", "saleLongHair")  # On Monday
+
+    def helpTestDailySales(self, date, id):
         self.browser.execute_script("dailySales(new Date('" + date + "'))")
-        time.sleep(2)
-        self.assertIn(result, self.browser.page_source)
+        element = self.browser.find_element(By.ID, id).value_of_css_property("display")
+        if element == "block":
+            pass
+        else:
+            self.fail()
+
+    def helpDailySalesNotShow(self, date, id):
+        self.browser.get(path.join(getcwd(), "kirunaswe.html"))
+        self.browser.execute_script("dailySales(new Date('" + date + "'))")
+        element = self.browser.find_element(By.ID, id).value_of_css_property("display")
+        if element == "none":
+            pass
+        else:
+            self.fail()
 
 
 if __name__ == "__main__":
