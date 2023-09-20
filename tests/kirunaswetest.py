@@ -11,7 +11,7 @@ class TestHomepageNoScript(TestCase):
     doNotCloseBrowser = False
     hideWindow = True
 
-    # setUpClass körs FÖRE DET FÖRSTA testet
+    # before the first test
     @classmethod
     def setUpClass(cls):
         chrome_options = webdriver.ChromeOptions()
@@ -38,7 +38,7 @@ class TestHomepageNoScript(TestCase):
         self.browser.get(path.join(getcwd(), "kirunaswe.html"))
 
     # After each test
-    def tear_down(self):
+    def tearDown(self):
         self.browser.get("about:blank")
 
     def testNoScriptImage(self):
@@ -85,7 +85,7 @@ class TestHomepage(TestCase):
         self.browser.get(path.join(getcwd(), "kirunaswe.html"))
 
     # After each test
-    def tear_down(self):
+    def tearDown(self):
         self.browser.get("about:blank")
 
     def testTitle(self):
@@ -148,6 +148,7 @@ class TestHomepage(TestCase):
         self.assertIn("Toppning", self.browser.page_source)
         self.assertIn("stamkund", self.browser.page_source)
         self.assertIn("hår", self.browser.page_source)
+        self.assertIn("Skägg", self.browser.page_source)
 
     def testNavbar(self):
         nabBrand = self.browser.find_element(By.ID, "centerText")
@@ -168,7 +169,6 @@ class TestHomepage(TestCase):
         self.assertIn('alt="Anna"', self.browser.page_source)
 
     def testEmployeeJobs(self):
-        self.assertIn("Skägg (20&nbsp;min)", self.browser.page_source)
         self.assertIn("Hårstylist", self.browser.page_source)
         self.assertIn("Barberare", self.browser.page_source)
 

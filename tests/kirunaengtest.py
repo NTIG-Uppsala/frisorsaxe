@@ -30,10 +30,12 @@ class TestHomepageNoScriptENG(TestCase):
     def tearDownClass(cls):
         pass
 
+    # before each test
     def setUp(self):
         self.browser.get(path.join(getcwd(), "kirunaeng.html"))
 
-    def tear_down(self):
+    # after each test
+    def tearDown(self):
         self.browser.get("about:blank")
 
     def testNoScriptImage(self):
@@ -76,7 +78,7 @@ class TestHomepageENG(TestCase):
     def setUp(self):
         self.browser.get(path.join(getcwd(), "kirunaeng.html"))
 
-    def tear_down(self):
+    def tearDown(self):
         self.browser.get("about:blank")
 
     def testTitle(self):
@@ -150,6 +152,7 @@ class TestHomepageENG(TestCase):
         self.assertIn("Trimming", self.browser.page_source)
         self.assertIn("regular&nbsp;customer", self.browser.page_source)
         self.assertIn("hair", self.browser.page_source)
+        self.assertIn("Beard (20&nbsp;min)", self.browser.page_source)
 
     def testNavbar(self):
         navBrand = self.browser.find_element(By.ID, "centerText")
@@ -170,12 +173,11 @@ class TestHomepageENG(TestCase):
         self.assertIn('alt="Anna"', self.browser.page_source)
 
     def testEmployeeJobs(self):
-        self.assertIn("Beard (20&nbsp;min)", self.browser.page_source)
         self.assertIn("Hairstylist", self.browser.page_source)
         self.assertIn("Barber", self.browser.page_source)
 
     def testAddress(self):
-        pass
+        self.assertIn("Address", self.browser.page_source)
 
     def testDailySales(self):
         self.helpTestDailySales("2023-09-11T11:00:00", "saleLongHair")  # Monday
