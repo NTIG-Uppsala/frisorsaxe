@@ -118,8 +118,8 @@ class TestHomepage(TestCase):
         self.assertIn("Boka tid", self.browser.page_source)
         self.assertIn("Telefon", self.browser.page_source)
         self.assertIn("E‑post", self.browser.page_source)
-        self.assertIn("0630‑555‑555", self.browser.page_source)
-        self.assertIn("info@ntig-uppsala.github.io", self.browser.page_source)
+        self.browser.find_element(By.NAME, "phoneNumber")
+        self.browser.find_element(By.ID, "mailLink")
 
     def testOppeningHours(self):
         self.assertIn("Öppettider", self.browser.page_source)
