@@ -25,28 +25,28 @@ for root, dirs, files in os.walk(".", topdown=False):
 TABS_OPEN = 1
 failed_validations_count = 0
 
-# loop through file paths and validate the files
+# Loop through file paths and validate the files
 for path in paths:
     if not (path.endswith(".html") or path.endswith(".css")):
         continue
 
-    # open a new tab and switch to it
+    # Open a new tab and switch to it
     browser.execute_script("window.open('');")
     TABS_OPEN += 1
     browser.switch_to.window(browser.window_handles[TABS_OPEN - 1])
-    # open the validation website
+    # Open the validation website
     browser.get(URL)
-    # change dropdown to "file upload"
+    # Change dropdown to "file upload"
     docselector = browser.find_element(By.ID, "docselect")
     select = Select(docselector)
     select.select_by_visible_text("file upload")
-    # upload and submit file
+    # Upload and submit file
     file_upload_button = browser.find_element(By.ID, "doc")
     file_upload_button.send_keys(os.path.abspath(path))
     check_button = browser.find_element(By.ID, "submit")
     check_button.click()
 
-    # check if the uploaded file passed the validation
+    # Check if the uploaded file passed the validation
     if '<div id="results"><p class="success">' in browser.page_source:
         print(path, "passed")
     else:

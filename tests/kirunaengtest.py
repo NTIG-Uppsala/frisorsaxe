@@ -30,11 +30,11 @@ class TestHomepageNoScriptENG(TestCase):
     def tearDownClass(cls):
         pass
 
-    # before each test
+    # Before each test
     def setUp(self):
         self.browser.get(path.join(getcwd(), "kirunaeng.html"))
 
-    # after each test
+    # After each test
     def tearDown(self):
         self.browser.get("about:blank")
 

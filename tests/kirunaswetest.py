@@ -11,7 +11,7 @@ class TestHomepageNoScript(TestCase):
     doNotCloseBrowser = False
     hideWindow = True
 
-    # before the first test
+    # Before the first test
     @classmethod
     def setUpClass(cls):
         chrome_options = webdriver.ChromeOptions()
@@ -62,7 +62,7 @@ class TestHomepage(TestCase):
     doNotCloseBrowser = False
     hideWindow = True
 
-    # setUpClass körs FÖRE DET FÖRSTA testet
+    # Runs before the first test
     @classmethod
     def setUpClass(cls):
         chr_options = Options()
