@@ -10,7 +10,7 @@ Repository for Frisör Saxé worked on 2023-2024.
 - We use four blank spaces for indentation.
 - All test functions have to start with "test".
 - English file names only contain lowercase letters. Except for pictures, which have no standard.
-- Comments are positioned above the code it describes, are only in English and start with lowercase letters in Python but start with uppercase letters in HTML and CSS.
+- Comments are positioned above the or next to the code depending on how the formatter formats it, are only in English and start with Uppercase.
 - Python files follow the Black Formatter standard and Pylint with the exception of C0111 and method-naming-style=camelCase.
 
 ### Testing
