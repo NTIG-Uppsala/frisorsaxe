@@ -178,17 +178,14 @@ class TestHomepageENG(TestCase):
         self.helpTestDailySales("2023-09-13T11:00:00", "saleBeard")  # Wednesday
         self.helpTestDailySales("2023-09-14T11:00:00", "saleColoring")  # Thursday
 
-        # Should not show
-        self.helpDailySalesNotShow("2023-09-12T11:00:00", "saleLongHair")  # On tuseday
-        self.helpDailySalesNotShow("2023-09-11T11:00:00", "saleShortHair")  # On Monday
-        self.helpDailySalesNotShow(
-            "2023-09-13T11:00:00", "saleColoring"
-        )  # On wednesday
-        self.helpDailySalesNotShow(
-            "2023-09-13T11:00:00", "saleLongHair"
-        )  # On wednesday
-        self.helpDailySalesNotShow("2023-09-11T16:00:00", "saleColoring")  # On Monday
-        self.helpDailySalesNotShow("2023-09-11T09:00:00", "saleLongHair")  # On Monday
+        # Put in the id of the sale that is supposed to show, in the second parameter.
+        self.helpDailySalesNotShow("2023-09-11T11:00:00", "saleLongHair")  # On Monday
+        self.helpDailySalesNotShow("2023-09-12T11:00:00", "saleShortHair")  # On Tuesday
+        self.helpDailySalesNotShow("2023-09-13T11:00:00", "saleBeard")  # On Wednesday
+        self.helpDailySalesNotShow("2023-09-14T11:00:00", "saleColoring")  # On Thursday
+        self.helpDailySalesNotShow("2023-09-15T11:00:00", "")  # On Friday
+        self.helpDailySalesNotShow("2023-09-15T11:00:00", "")  # On Saturday
+        self.helpDailySalesNotShow("2023-09-15T11:00:00", "")  # On Saturday
 
     def helpTestDailySales(self, date, id):
         self.browser.execute_script("dailySales(new Date('" + date + "'))")
@@ -198,14 +195,24 @@ class TestHomepageENG(TestCase):
         else:
             self.fail()
 
-    def helpDailySalesNotShow(self, date, id):
+    def helpDailySalesNotShow(self, date, idToRemove):
         self.browser.get(path.join(getcwd(), "luleaeng.html"))
         self.browser.execute_script("dailySales(new Date('" + date + "'))")
-        element = self.browser.find_element(By.ID, id).value_of_css_property("display")
-        if element == "none":
+        ids = ["saleBeard", "saleColoring", "saleLongHair", "saleShortHair"]
+        if idToRemove in ids:
+            ids.remove(idToRemove)
+        elif idToRemove == "":
             pass
         else:
             self.fail()
+        for id in ids:
+            element = self.browser.find_element(By.ID, id).value_of_css_property(
+                "display"
+            )
+            if element == "none":
+                pass
+            else:
+                self.fail(element)
 
     def testPrices(self):
         self.assertIn("600", self.browser.page_source)
@@ -216,6 +223,45 @@ class TestHomepageENG(TestCase):
         self.assertIn("560", self.browser.page_source)
         self.assertIn("300", self.browser.page_source)
         self.assertIn("500", self.browser.page_source)
+
+    def helperZipCode(self, zipCodeList, message):
+        for currentZip in zipCodeList:
+            self.browser.find_element(By.ID, "zipNumber").send_keys(currentZip)
+            time.sleep(0.5)
+            self.browser.find_element(By.ID, "submit").click()
+            zipOutput = self.browser.find_element(By.ID, "zipCodeCheck")
+            self.assertIn(message, zipOutput.text)
+            self.browser.get("about:blank")
+            self.browser.get(path.join((getcwd()), "index.html"))
+
+    def testZipCodes(self):
+        validZipcodes = [
+            "98132",
+            "98135",
+            "98136",
+            "98137",
+            "98138",
+            "98139",
+            "98140",
+            "98142",
+            "98143",
+            "98144",
+            "98146",
+            "98147",
+        ]
+        notAcceptedZipcodes = [
+            "12345",
+            "55555",
+            "92347",
+        ]
+        nonWorkingZipcodes = [
+            "1234",
+            "hej",
+            "xxxxx",
+        ]
+        self.helperZipCode(validZipcodes, "Vi kör ut, ring telefonnumret ovan!")
+        self.helperZipCode(notAcceptedZipcodes, "Vi kör tyvärr inte ut till dig.")
+        self.helperZipCode(nonWorkingZipcodes, "Inte ett giltigt postnummer.")
 
 
 if __name__ == "__main__":

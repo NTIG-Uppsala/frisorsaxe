@@ -254,15 +254,26 @@
         </div>
     </div>
 
+    <div id="zipCodeCheck" class="zipInput container-fluid pb-2 mt-4 mb-2" style="text-align: center;">
+        <div id="jsCheck">
+            <h2>Vill du boka hembesök?</h2>
+            <p>Kolla om vi kör ut till dig</p>
+            <form><input class="zipCodeInput" type="text" inputmode="numeric" id="zipNumber"
+                    placeholder="Postnummer"><input class="checkNumber" id="submit" type="submit" value="Kolla">
+            </form>
+            <p class="output" id="outputValid">Ring oss för att boka tid!</p>
+            <p class="output" id="outputNoDrive">Du bor tyvärr för långt bort.</p>
+            <p class="output" id="outputNotValid">Inte ett riktigt postnummer.</p>
+
+        </div>
+    </div>
 
     <!-- Employees -->
     <div id="thirdPage" class="mt-5">
-        <div class="bg-image d-flex justify-content-center align-items-center imageStyle"
-            style="border-radius: 10px; height: 20%;">
-            <h2 class="text-light mt-4" id="personal">Möt vår personal</h2>
-        </div>
+        <h2 class="text-light mt-5 pt-4 mb-0" id="personal">Möt vår personal</h2>
 
-        <div class="container my-5 text-center">
+
+        <div class="container mb-5 mt-0 text-center">
             <div class="row">
                 <div class="col-xl-4 col-md-6 my-5">
                     <div class="container d-flex justify-content-center">

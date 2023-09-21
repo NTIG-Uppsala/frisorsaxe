@@ -57,8 +57,8 @@ function dailySales(date) {
   const locationOpeningHours = window.location.pathname.includes("lulea")
     ? openHours.lulea //In Luleas website
     : window.location.pathname.includes("kiruna")
-    ? openHours.kiruna //In Kirunas website
-    : console.log("location does not have openingHours for dailysailes");
+      ? openHours.kiruna //In Kirunas website
+      : console.log("location does not have openingHours for dailysailes");
 
   const weekday = date.getDay();
   const hour = date.getHours();
@@ -74,6 +74,11 @@ function dailySales(date) {
 
   const saleColoring = document.getElementById("saleColoring");
   const coloring = document.getElementById("coloring");
+
+  saleColoring.style.display = "none";
+  saleBeard.style.display = "none";
+  saleLongHair.style.display = "none";
+  saleShorthair.style.display = "none";
 
   switch (weekday) {
     case 1: //On Monday longhair is on sale
@@ -167,3 +172,70 @@ window.addEventListener("load", regularCustomerInfo);
 window.addEventListener("resize", regularCustomerInfo);
 
 window.onresize = mailLineBreak;
+
+// List of accepted zip codes
+zipCodeListKiruna = [
+  "98132",
+  "98135",
+  "98136",
+  "98138",
+  "98137",
+  "98139",
+  "98140",
+  "98142",
+  "98143",
+  "98144",
+  "98146",
+  "98147"
+];
+zipCodeListLulea = [
+  "96193",
+  "96194",
+  "96190",
+  "96191"
+
+]
+
+//  Runs when the document is fully loaded
+document.addEventListener("DOMContentLoaded", (event) => {
+  document
+    .querySelector("#zipCodeCheck form")
+    .addEventListener("submit", (event) => {
+      event.preventDefault(); // Prevents the default action
+      document.getElementById("outputValid").style.display =
+        "none";
+      document.getElementById("outputNotValid").style.display =
+        "none";
+      document.getElementById("outputNoDrive").style.display =
+        "none";
+
+      // event.submitter.parentNode.querySelector("#number").value
+      // Is what is written in the input
+      let zipInput =
+        event.submitter.parentNode.querySelector("#zipNumber").value;
+      zipInput = zipInput.split(" ").join(""); //removes spaces from string
+
+
+      if (zipInput.match(/\D/) != null) {
+        // If there are no numbers
+        document.getElementById("outputNotValid").style.display =
+          "block";
+      } else if (zipInput.length != 5) {
+        // If there are more or less then 5 numbers
+        document.getElementById("outputNotValid").style.display =
+          "block";
+      } else if (zipCodeListKiruna.includes(zipInput) && window.location.pathname.includes("kiruna")) {
+        // If the zip code is valid in kiruna
+        document.getElementById("outputValid").style.display =
+          "block";
+      } else if (zipCodeListLulea.includes(zipInput) && window.location.pathname.includes("lulea")) {
+        // If the zip code is valid in lulea
+        document.getElementById("outputValid").style.display =
+          "block";
+      } else {
+        // If the zip code is invalid
+        document.getElementById("outputNoDrive").style.display =
+          "block";
+      }
+    });
+});
