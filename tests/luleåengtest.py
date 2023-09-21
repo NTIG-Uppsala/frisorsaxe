@@ -227,28 +227,15 @@ class TestHomepageENG(TestCase):
     def helperZipCode(self, zipCodeList, message):
         for currentZip in zipCodeList:
             self.browser.find_element(By.ID, "zipNumber").send_keys(currentZip)
-            time.sleep(0.5)
+            time.sleep(2)
             self.browser.find_element(By.ID, "submit").click()
             zipOutput = self.browser.find_element(By.ID, "zipCodeCheck")
             self.assertIn(message, zipOutput.text)
             self.browser.get("about:blank")
-            self.browser.get(path.join((getcwd()), "index.html"))
+            self.browser.get(path.join((getcwd()), "luleaeng.html"))
 
     def testZipCodes(self):
-        validZipcodes = [
-            "98132",
-            "98135",
-            "98136",
-            "98137",
-            "98138",
-            "98139",
-            "98140",
-            "98142",
-            "98143",
-            "98144",
-            "98146",
-            "98147",
-        ]
+        zipCodeListLulea = ["96193", "96194", "96190", "96191"]
         notAcceptedZipcodes = [
             "12345",
             "55555",
@@ -259,9 +246,9 @@ class TestHomepageENG(TestCase):
             "hej",
             "xxxxx",
         ]
-        self.helperZipCode(validZipcodes, "Vi kör ut, ring telefonnumret ovan!")
-        self.helperZipCode(notAcceptedZipcodes, "Vi kör tyvärr inte ut till dig.")
-        self.helperZipCode(nonWorkingZipcodes, "Inte ett giltigt postnummer.")
+        self.helperZipCode(zipCodeListLulea, "Call us to book a house appointment!")
+        self.helperZipCode(notAcceptedZipcodes, "Too far away, come closer.")
+        self.helperZipCode(nonWorkingZipcodes, "Not a valid zip-code.")
 
 
 if __name__ == "__main__":
