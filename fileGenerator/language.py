@@ -30,7 +30,7 @@ for language in languages:
         html_content = html_content.replace(f"*{variable}*", value)
 
     # Step 4: Write the modified HTML content to a new HTML file
-    with open(output[i], "w", encoding="utf-8") as output_file:
+    with open(output[outputNumber], "w", encoding="utf-8") as output_file:
         output_file.write(html_content)
     outputNumber += 1
 
