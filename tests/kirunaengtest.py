@@ -9,7 +9,7 @@ from selenium.webdriver.common.by import By
 
 class TestHomepageNoScriptENG(TestCase):
     doNotCloseBrowser = False
-    hideWindow = True
+    hideWindow = False
 
     @classmethod
     def setUpClass(cls):
@@ -124,7 +124,7 @@ class TestHomepageENG(TestCase):
         self.assertIn("info@ntig-uppsala.github.io", self.browser.page_source)
 
     def testOpeningHours(self):
-        self.assertIn("Opening hours", self.browser.page_source)
+        self.assertIn("Opening Hours", self.browser.page_source)
         self.assertIn("Mon", self.browser.page_source)
         self.assertIn("Fri", self.browser.page_source)
         self.assertIn("Saturday", self.browser.page_source)
@@ -133,7 +133,7 @@ class TestHomepageENG(TestCase):
 
     def testInfo(self):
         self.assertIn(
-            "After 3 visits within 12 months you are considerd a regular",
+            "After 3 visits within 12 months you are considered a regular customer",
             self.browser.page_source,
         )
         self.assertIn(
@@ -229,7 +229,7 @@ class TestHomepageENG(TestCase):
             zipOutput = self.browser.find_element(By.ID, "zipCodeCheck")
             self.assertIn(message, zipOutput.text)
             self.browser.get("about:blank")
-            self.browser.get(path.join((getcwd()), "index.html"))
+            self.browser.get(path.join((getcwd()), "kirunaeng.html"))
 
     def testZipCodes(self):
         validZipcodes = [
@@ -256,9 +256,9 @@ class TestHomepageENG(TestCase):
             "hej",
             "xxxxx",
         ]
-        self.helperZipCode(validZipcodes, "Vi kör ut, ring telefonnumret ovan!")
-        self.helperZipCode(notAcceptedZipcodes, "Vi kör tyvärr inte ut till dig.")
-        self.helperZipCode(nonWorkingZipcodes, "Inte ett giltigt postnummer.")
+        self.helperZipCode(validZipcodes, "Call us to book a house appointment!")
+        self.helperZipCode(notAcceptedZipcodes, "Too far away, come closer.")
+        self.helperZipCode(nonWorkingZipcodes, "Not a valid zip-code.")
 
 
 if __name__ == "__main__":

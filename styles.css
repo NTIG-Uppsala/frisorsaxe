@@ -32,8 +32,21 @@ h2 {
     font-family: Title;
     font-size: 8rem;
     text-shadow: 2px 2px 2px rgb(61, 60, 60);
+    text-align: center;
+}
 
 
+@media screen and (max-width:750px) {
+    #personal{
+        font-size: 5rem;
+    }
+}
+
+
+@media screen and (max-width:400px) {
+    #personal{
+        font-size: 3rem;
+    }
 }
 
 #findus,
@@ -281,6 +294,7 @@ footer {
 #langMenu {
     position: absolute;
     left: 0px;
+    margin-top: 6.5px;
 }
 
 @media screen and (max-width:991px) {
@@ -310,11 +324,6 @@ footer {
 
 #activeMenu {
     cursor: pointer;
-}
-
-
-#personal {
-    text-align: center;
 }
 
 .openHours {
@@ -354,3 +363,18 @@ input[type=submit] {
 #outputNoDrive {
     display: none;
 }
+
+#homeButton {
+    color: grey;
+    font-size: 2rem;
+    padding-right: 10px;
+
+}
+@media screen and (min-width:991px) {
+    #homeButton{
+        position: absolute;
+        right: 0;
+    }
+    
+}
+

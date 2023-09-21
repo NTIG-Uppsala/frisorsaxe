@@ -235,7 +235,7 @@ class TestHomepage(TestCase):
             zipOutput = self.browser.find_element(By.ID, "zipCodeCheck")
             self.assertIn(message, zipOutput.text)
             self.browser.get("about:blank")
-            self.browser.get(path.join((getcwd()), "index.html"))
+            self.browser.get(path.join((getcwd()), "kirunaswe.html"))
 
     def testZipCodes(self):
         validZipcodes = [
@@ -262,9 +262,9 @@ class TestHomepage(TestCase):
             "hej",
             "xxxxx",
         ]
-        self.helperZipCode(validZipcodes, "Vi kör ut, ring telefonnumret ovan!")
-        self.helperZipCode(notAcceptedZipcodes, "Vi kör tyvärr inte ut till dig.")
-        self.helperZipCode(nonWorkingZipcodes, "Inte ett giltigt postnummer.")
+        self.helperZipCode(validZipcodes, "Ring oss för att boka tid!")
+        self.helperZipCode(notAcceptedZipcodes, "Du bor tyvärr för långt bort.")
+        self.helperZipCode(nonWorkingZipcodes, "Inte ett riktigt postnummer.")
 
 
 if __name__ == "__main__":
