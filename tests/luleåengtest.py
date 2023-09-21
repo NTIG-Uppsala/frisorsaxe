@@ -117,7 +117,7 @@ class TestHomepageENG(TestCase):
         self.assertIn("lulea@ntig-uppsala.github.io", self.browser.page_source)
 
     def testOpeningHours(self):
-        self.assertIn("Opening hours", self.browser.page_source)
+        self.assertIn("Opening Hours", self.browser.page_source)
         self.assertIn("Mon", self.browser.page_source)
         self.assertIn("Fri", self.browser.page_source)
         self.assertIn("Saturday", self.browser.page_source)
@@ -126,7 +126,7 @@ class TestHomepageENG(TestCase):
 
     def testInfo(self):
         self.assertIn(
-            "After 3 visits within 12 months you are considerd a regular",
+            "After 3 visits within 12 months you are considered a regular customer",
             self.browser.page_source,
         )
         self.assertIn(
