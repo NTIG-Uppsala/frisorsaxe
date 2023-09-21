@@ -93,3 +93,20 @@ a{
     background-color: transparent !important;
 }
 
+#arrowForPhonesDown{
+    display: none;
+}
+
+@media screen and (max-width:576px) {
+    #arrowForPhonesDown{
+        display: block !important;
+        position: fixed;
+        color:red;
+        width: 50px;
+        margin-top: 5px;
+        margin-right: 5px;
+        height: 50px;
+        bottom: 0;
+        right: 0;
+    }  
+}
