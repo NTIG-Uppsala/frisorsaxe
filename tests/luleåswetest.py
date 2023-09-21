@@ -137,17 +137,14 @@ class TestHomepage(TestCase):
         self.helpTestDailySales("2023-09-13T11:00:00", "saleBeard")  # Wednesday
         self.helpTestDailySales("2023-09-14T11:00:00", "saleColoring")  # Thursday
 
-        # Should not show
-        self.helpDailySalesNotShow("2023-09-12T11:00:00", "saleLongHair")  # On tuseday
-        self.helpDailySalesNotShow("2023-09-11T11:00:00", "saleShortHair")  # On Monday
-        self.helpDailySalesNotShow(
-            "2023-09-13T11:00:00", "saleColoring"
-        )  # On wednesday
-        self.helpDailySalesNotShow(
-            "2023-09-13T11:00:00", "saleLongHair"
-        )  # On wednesday
-        self.helpDailySalesNotShow("2023-09-11T16:00:00", "saleColoring")  # On Monday
-        self.helpDailySalesNotShow("2023-09-11T09:00:00", "saleLongHair")  # On Monday
+        # Put in the id of the sale that is supposed to show, in the second parameter.
+        self.helpDailySalesNotShow("2023-09-11T11:00:00", "saleLongHair")  # On Monday
+        self.helpDailySalesNotShow("2023-09-12T11:00:00", "saleShortHair")  # On Tuesday
+        self.helpDailySalesNotShow("2023-09-13T11:00:00", "saleBeard")  # On Wednesday
+        self.helpDailySalesNotShow("2023-09-14T11:00:00", "saleColoring")  # On Thursday
+        self.helpDailySalesNotShow("2023-09-15T11:00:00", "")  # On Friday
+        self.helpDailySalesNotShow("2023-09-15T11:00:00", "")  # On Saturday
+        self.helpDailySalesNotShow("2023-09-15T11:00:00", "")  # On Saturday
 
     def helpTestDailySales(self, date, id):
         self.browser.execute_script("dailySales(new Date('" + date + "'))")
@@ -157,14 +154,24 @@ class TestHomepage(TestCase):
         else:
             self.fail()
 
-    def helpDailySalesNotShow(self, date, id):
+    def helpDailySalesNotShow(self, date, idToRemove):
         self.browser.get(path.join(getcwd(), "luleaswe.html"))
         self.browser.execute_script("dailySales(new Date('" + date + "'))")
-        element = self.browser.find_element(By.ID, id).value_of_css_property("display")
-        if element == "none":
+        ids = ["saleBeard", "saleColoring", "saleLongHair", "saleShortHair"]
+        if idToRemove in ids:
+            ids.remove(idToRemove)
+        elif idToRemove == "":
             pass
         else:
             self.fail()
+        for id in ids:
+            element = self.browser.find_element(By.ID, id).value_of_css_property(
+                "display"
+            )
+            if element == "none":
+                pass
+            else:
+                self.fail(element)
 
     def testOppeningHours(self):
         self.assertIn("Öppettider", self.browser.page_source)
