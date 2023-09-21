@@ -355,3 +355,8 @@ input[type=submit] {
 #outputNoDrive {
     display: none;
 }
+
+#homeButton {
+    color: grey;
+    font-size: 2rem;
+}
