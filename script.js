@@ -57,8 +57,8 @@ function dailySales(date) {
   const locationOpeningHours = window.location.pathname.includes("lulea")
     ? openHours.lulea //In Luleas website
     : window.location.pathname.includes("kiruna")
-    ? openHours.kiruna //In Kirunas website
-    : console.log("location does not have openingHours for dailysailes");
+      ? openHours.kiruna //In Kirunas website
+      : console.log("location does not have openingHours for dailysailes");
 
   const weekday = date.getDay();
   const hour = date.getHours();
@@ -167,3 +167,63 @@ window.addEventListener("load", regularCustomerInfo);
 window.addEventListener("resize", regularCustomerInfo);
 
 window.onresize = mailLineBreak;
+
+// List of accepted zip codes
+zipCodeListKiruna = [
+  "98132",
+  "98135",
+  "98136",
+  "98138",
+  "98137",
+  "98139",
+  "98140",
+  "98142",
+  "98143",
+  "98144",
+  "98146",
+  "98147"
+];
+zipCodeListLulea = [
+  "96193",
+  "96194",
+  "96190",
+  "96191"
+
+]
+
+//  Runs when the document is fully loaded
+document.addEventListener("DOMContentLoaded", (event) => {
+  document
+    .querySelector("#zipCodeCheck form")
+    .addEventListener("submit", (event) => {
+      event.preventDefault(); // Prevents the default action
+
+      // event.submitter.parentNode.querySelector("#number").value
+      // Is what is written in the input
+      let zipInput =
+        event.submitter.parentNode.querySelector("#zipNumber").value;
+      zipInput = zipInput.split(" ").join(""); //removes spaces from string
+
+      if (zipInput.match(/\D/) != null) {
+        // If there are no numbers
+        document.querySelector("#output").innerHTML =
+          "Inte ett giltigt postnummer.";
+      } else if (zipInput.length != 5) {
+        // If there are more or less then 5 numbers
+        document.querySelector("#output").innerHTML =
+          "Inte ett giltigt postnummer.";
+      } else if (zipCodeListKiruna.includes(zipInput) && window.location.pathname.includes("kiruna")) {
+        // If the zip code is valid in kiruna
+        document.querySelector("#output").innerHTML =
+          "Vi kör ut, ring telefonnumret ovan!";
+      } else if (zipCodeListLulea.includes(zipInput) && window.location.pathname.includes("lulea")) {
+        // If the zip code is valid in lulea
+        document.querySelector("#output").innerHTML =
+          "Vi kör ut, ring telefonnumret ovan!";
+      } else {
+        // If the zip code is invalid
+        document.querySelector("#output").innerHTML =
+          "Vi kör tyvärr inte ut till dig.";
+      }
+    });
+});

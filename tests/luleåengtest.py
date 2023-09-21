@@ -217,6 +217,45 @@ class TestHomepageENG(TestCase):
         self.assertIn("300", self.browser.page_source)
         self.assertIn("500", self.browser.page_source)
 
+    def helperZipCode(self, zipCodeList, message):
+        for currentZip in zipCodeList:
+            self.browser.find_element(By.ID, "zipNumber").send_keys(currentZip)
+            time.sleep(0.5)
+            self.browser.find_element(By.ID, "submit").click()
+            zipOutput = self.browser.find_element(By.ID, "zipCodeCheck")
+            self.assertIn(message, zipOutput.text)
+            self.browser.get("about:blank")
+            self.browser.get(path.join((getcwd()), "index.html"))
+
+    def testZipCodes(self):
+        validZipcodes = [
+            "98132",
+            "98135",
+            "98136",
+            "98137",
+            "98138",
+            "98139",
+            "98140",
+            "98142",
+            "98143",
+            "98144",
+            "98146",
+            "98147",
+        ]
+        notAcceptedZipcodes = [
+            "12345",
+            "55555",
+            "92347",
+        ]
+        nonWorkingZipcodes = [
+            "1234",
+            "hej",
+            "xxxxx",
+        ]
+        self.helperZipCode(validZipcodes, "Vi kör ut, ring telefonnumret ovan!")
+        self.helperZipCode(notAcceptedZipcodes, "Vi kör tyvärr inte ut till dig.")
+        self.helperZipCode(nonWorkingZipcodes, "Inte ett giltigt postnummer.")
+
 
 if __name__ == "__main__":
     main(verbosity=2)
