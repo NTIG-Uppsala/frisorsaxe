@@ -281,6 +281,7 @@ footer {
 #langMenu {
     position: absolute;
     left: 0px;
+    margin-top: 6.5px;
 }
 
 @media screen and (max-width:991px) {
@@ -353,4 +354,9 @@ input[type=submit] {
 #outputNotValid,
 #outputNoDrive {
     display: none;
+}
+
+#homeButton {
+    color: grey;
+    font-size: 2rem;
 }
