@@ -23,12 +23,17 @@ h2 {
 
 #prices,
 #priser {
-    scroll-margin-top: -150px;
+    scroll-margin-top: -20px;
 }
 
 #employees,
 #personal {
-    scroll-margin-top: 100px;
+    scroll-margin-top: 185px;
+    font-family: Title;
+    font-size: 8rem;
+    text-shadow: 2px 2px 2px rgb(61, 60, 60);
+
+    
 }
 
 #findus,
@@ -42,14 +47,15 @@ h2 {
     top: 0;
     left: 0;
     right: 0;
-    margin: 0 auto;
     z-index: 1000;
     transition: top 0.3s;
+    float:right;
 }
 
 .nav-link {
     color: white !important;
     font-family: 'Montserrat', sans-serif;
+    margin: 0 10px;
 }
 
 #thirdPage {
@@ -142,12 +148,6 @@ h2 {
     }
 }
 
-@media screen and (max-width:500px) {
-   
-
-
-}
-
 @media screen and (min-width: 1081px) {
     h2 {
         font-size: 3rem;
@@ -203,10 +203,13 @@ h2 {
     }
 }
 
+.navButtonRight{
+justify-content: center !important;
+}
+
 @media screen and (max-width: 992px) {
-    .navButtonLeft {
-        justify-content: end !important;
-        margin-right: 20px;
+    .navButtonRight {
+     justify-content: end !important;
     }
 }
 
@@ -233,6 +236,12 @@ footer {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+@media screen and(max-width:991px) {
+    .justify-content-center{
+        justify-content: end !important;
+    }
 }
 
 .navbar-toggler {
@@ -268,6 +277,13 @@ footer {
 #langMenu {
     position: absolute;
     left: 0px;
+}
+
+@media screen and (max-width:991px) {
+    #langMenu{
+        top: 0;
+        left:-15px;
+    }
 }
 
 #flagMenu {
