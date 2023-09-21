@@ -26,3 +26,10 @@ Our website uses the software Selenium and Python's unittest library to run test
 - CSS3 and Bootstrap 5.2.1 for styling
 - Javascript
 - Python 3.11.5 and Selenium 4.11.2 for testing
+
+### Documentation
+- Translation system: https://docs.google.com/document/d/1U-YQvHS_xkbIePATmTBONHyNHUcq_NshLaLkbljwM7k/edit
+
+### License
+- Licenses for google fonts exist in the "licenses" folder located in the root folder.
+- All of the photos are from either Unsplash and Pexels
