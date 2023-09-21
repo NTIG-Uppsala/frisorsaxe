@@ -202,6 +202,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
     .querySelector("#zipCodeCheck form")
     .addEventListener("submit", (event) => {
       event.preventDefault(); // Prevents the default action
+      document.getElementById("outputValid").style.display =
+        "none";
+      document.getElementById("outputNotValid").style.display =
+        "none";
+      document.getElementById("outputNoDrive").style.display =
+        "none";
 
       // event.submitter.parentNode.querySelector("#number").value
       // Is what is written in the input
@@ -209,26 +215,27 @@ document.addEventListener("DOMContentLoaded", (event) => {
         event.submitter.parentNode.querySelector("#zipNumber").value;
       zipInput = zipInput.split(" ").join(""); //removes spaces from string
 
+
       if (zipInput.match(/\D/) != null) {
         // If there are no numbers
-        document.querySelector("#output").innerHTML =
-          "Inte ett giltigt postnummer.";
+        document.getElementById("outputNotValid").style.display =
+          "block";
       } else if (zipInput.length != 5) {
         // If there are more or less then 5 numbers
-        document.querySelector("#output").innerHTML =
-          "Inte ett giltigt postnummer.";
+        document.getElementById("outputNotValid").style.display =
+          "block";
       } else if (zipCodeListKiruna.includes(zipInput) && window.location.pathname.includes("kiruna")) {
         // If the zip code is valid in kiruna
-        document.querySelector("#output").innerHTML =
-          "Vi kör ut, ring telefonnumret ovan!";
+        document.getElementById("outputValid").style.display =
+          "block";
       } else if (zipCodeListLulea.includes(zipInput) && window.location.pathname.includes("lulea")) {
         // If the zip code is valid in lulea
-        document.querySelector("#output").innerHTML =
-          "Vi kör ut, ring telefonnumret ovan!";
+        document.getElementById("outputValid").style.display =
+          "block";
       } else {
         // If the zip code is invalid
-        document.querySelector("#output").innerHTML =
-          "Vi kör tyvärr inte ut till dig.";
+        document.getElementById("outputNoDrive").style.display =
+          "block";
       }
     });
 });

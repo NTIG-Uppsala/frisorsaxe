@@ -33,7 +33,7 @@ h2 {
     font-size: 8rem;
     text-shadow: 2px 2px 2px rgb(61, 60, 60);
 
-    
+
 }
 
 #findus,
@@ -49,7 +49,7 @@ h2 {
     right: 0;
     z-index: 1000;
     transition: top 0.3s;
-    float:right;
+    float: right;
 }
 
 .nav-link {
@@ -61,6 +61,7 @@ h2 {
 
 #thirdPage {
     background-color: #bab6ae;
+    text-align: center;
 }
 
 
@@ -179,6 +180,7 @@ h2 {
     #centerText {
         font-size: 5rem !important;
     }
+
     h2 {
         font-size: 2rem;
     }
@@ -204,13 +206,13 @@ h2 {
     }
 }
 
-.navButtonRight{
-justify-content: center !important;
+.navButtonRight {
+    justify-content: center !important;
 }
 
 @media screen and (max-width: 992px) {
     .navButtonRight {
-     justify-content: end !important;
+        justify-content: end !important;
     }
 }
 
@@ -239,8 +241,8 @@ footer {
     background-size: cover;
 }
 
-@media screen and(max-width:991px) {
-    .justify-content-center{
+@media screen and (max-width: 991px) {
+    .justify-content-center {
         justify-content: end !important;
     }
 }
@@ -249,6 +251,7 @@ footer {
     color: white !important;
     background-color: rgba(211, 211, 211, 0.688) !important;
 }
+
 
 
 #infoAboutLongHair {
@@ -281,9 +284,9 @@ footer {
 }
 
 @media screen and (max-width:991px) {
-    #langMenu{
+    #langMenu {
         top: 0;
-        left:-15px;
+        left: -15px;
     }
 }
 
@@ -292,7 +295,7 @@ footer {
 
 }
 
-.sale{
+.sale {
     color: red;
     display: none;
 }
@@ -319,4 +322,35 @@ footer {
     text-align: end;
     display: flex !important;
     justify-content: space-between !important;
+}
+
+input[type=text] {
+    padding: 10px;
+    border: 0;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    margin-right: 2vw;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    color: #000000;
+}
+
+input[type=submit] {
+    padding: 10px;
+    border: 0;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    background-color: white;
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 10px;
+}
+
+.output {
+    margin-top: 1vh;
+    margin-bottom: 0;
+}
+
+#outputValid,
+#outputNotValid,
+#outputNoDrive {
+    display: none;
 }
