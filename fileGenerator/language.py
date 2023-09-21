@@ -33,5 +33,3 @@ for language in languages:
     with open(output[outputNumber], "w", encoding="utf-8") as output_file:
         output_file.write(html_content)
     outputNumber += 1
-
-print("HTML file with variables replaced has been generated as 'output.html'")
