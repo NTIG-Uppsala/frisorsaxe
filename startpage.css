@@ -44,6 +44,10 @@
     }
 }
 
+*{
+    transition: 0.2s ease-in-out;
+}
+
 
 .card-group{
     width: 50%  ;
@@ -58,8 +62,9 @@
     border: none !important;
 }
 
+
 .card:hover{
-    transform: scale(1.08);
+    transform: scale(1.04);
 }
 
 img{
@@ -85,5 +90,6 @@ img{
 
 a{
     text-decoration: none !important;
+    background-color: transparent !important;
 }
 

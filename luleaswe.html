@@ -52,7 +52,7 @@
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg" id="navbar">
-        <div class="container-fluid justify-content-center navButtonLeft">
+        <div class="container-fluid navButtonRight">
             <button class="navbar-toggler justify-content-end" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                 aria-label="Toggle navigation" onclick="navBarToggled()">
@@ -61,19 +61,19 @@
             <div class="collapse navbar-collapse flex-grow-0 fs-2" id="navbarNav">
                 <ul class="navbar-nav ">
                     <li class="nav-item">
-                        <a class="nav-link me-5" href="#boka">Boka&nbsp;tid</a>
+                        <a class="nav-link" href="#boka">Boka&nbsp;tid</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link me-5" href="#oppettider">Öppettider</a>
+                        <a class="nav-link" href="#oppettider">Öppettider</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link me-5" href="#priser">Priser</a>
+                        <a class="nav-link" href="#priser">Priser</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link me-5" href="#personal">Personal</a>
+                        <a class="nav-link" href="#personal">Personal</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link me-5" href="#hittaoss">Hitta&nbsp;oss</a>
+                        <a class="nav-link" href="#hittaoss">Hitta&nbsp;oss</a>
                     </li>
                     <li id="langMenu">
                         <div>
@@ -93,7 +93,6 @@
                                 </li>
 
                             </ul>
-
                         </div>
                     </li>
                 </ul>
@@ -257,10 +256,10 @@
 
 
     <!-- Employees -->
-    <div id="thirdPage" class="pt-3">
-        <div class="bg-image d-flex justify-content-center align-items-center imageStyle container-xxl mt-5"
-            style="background-image: url('pictures/salonDARK.jpg'); border-radius: 10px;">
-            <h2 class="text-light" id="personal">Möt vår personal</h2>
+    <div id="thirdPage" class="mt-5">
+        <div class="bg-image d-flex justify-content-center align-items-center imageStyle"
+            style="border-radius: 10px; height: 20%;">
+            <h2 class="text-light mt-4" id="personal">Möt vår personal</h2>
         </div>
 
         <div class="container my-5 text-center">
@@ -307,51 +306,50 @@
                 </div>
             </div>
         </div>
-
-        <!-- Instagram grid -->
-        <div id="instagramGrid">
-            <div class="embedsocial-hashtag" data-ref="a5cc0c78b0aaf9424825c47d23e67fc9efd05234"> <a
-                    class="feed-powered-by-es" href="https://embedsocial.com/social-media-aggregator/" target="_blank"
-                    title="Widget by EmbedSocial"> </a> </div>
-            <script> (function (d, s, id) { var js; if (d.getElementById(id)) { return; } js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/cdn/ht.js"; d.getElementsByTagName("head")[0].appendChild(js); }(document, "script", "EmbedSocialHashtagScript")); </script>
-        </div>
-
-        <!-- Footer with info -->
-        <div class="container my-5" id="hittaoss">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <h2 class="mb-4">Hitta&nbsp;oss</h2>
-                    <div class="hasjs"><iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1643.085861319367!2d21.851066699999997!3d65.68080189999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x467f677c34b6b1af%3A0x493f441e2dee92f!2sF%C3%A4rjledsv%C3%A4gen%2038%2C%20961%2093%20S%C3%B6dra%20Sunderbyn!5e0!3m2!1ssv!2sse!4v1694676621148!5m2!1ssv!2sse"
-                            width="450" height="450"
-                            style="border:0; width: 100%; max-width: 800px; border-radius: 7px;" allowfullscreen=""
-                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-                    <noscript><img src="pictures/nojsmaplulea.jpg" width="450" height="450" alt="noMapForNoJs"
-                            style="border: 0; width: 100%; max-width: 450px; border-radius: 7px;"></noscript>
-                    <h2 class="mb-4 my-3">Adress </h2>
-                    <h6 class="text-black">Färjledsvägen 38</h6>
-                    <h6 class="text-black">961 93 Luleå</h6>
-                </div>
-            </div>
-        </div>
-
-        <footer class="bg-dark text-white-50 text-center">
-            <a href="tel:0640555333" class="text-white-50">0640&#8209;555&#8209;333</a> |
-            <a href="mailto:lulea@ntig-uppsala.github.io" class="text-white-50">lulea@ntig&#8209;uppsala.github.io</a>
-
-            <div class="container" style="padding: 20px 0;">
-                <a href="https://facebook.com/ntiuppsala" class="no-text-decoration social-icon" target="_blank">
-                    <i class="fa-brands fa-facebook fa-2xl"></i>
-                </a>
-                <a href="https://twitter.com/ntiuppsala?lang=en" class="no-text-decoration social-icon" target="_blank">
-                    <i class="fa-brands fa-x-twitter fa-2xl"></i>
-                </a>
-                <a href="https://www.instagram.com/frisorsaxe/" class="no-text-decoration social-icon" target="_blank">
-                    <i class="fa-brands fa-instagram fa-2xl"></i>
-                </a>
-            </div>
-        </footer>
     </div>
+
+    <!-- Instagram grid -->
+    <div id="instagramGrid">
+        <div class="embedsocial-hashtag" data-ref="a5cc0c78b0aaf9424825c47d23e67fc9efd05234"> <a
+                class="feed-powered-by-es" href="https://embedsocial.com/social-media-aggregator/" target="_blank"
+                title="Widget by EmbedSocial"> </a> </div>
+        <script> (function (d, s, id) { var js; if (d.getElementById(id)) { return; } js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/cdn/ht.js"; d.getElementsByTagName("head")[0].appendChild(js); }(document, "script", "EmbedSocialHashtagScript")); </script>
+    </div>
+
+    <!-- Footer with info -->
+    <div class="container my-5" id="hittaoss">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2 class="mb-4">Hitta&nbsp;oss</h2>
+                <div class="hasjs"><iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1643.085861319367!2d21.851066699999997!3d65.68080189999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x467f677c34b6b1af%3A0x493f441e2dee92f!2sF%C3%A4rjledsv%C3%A4gen%2038%2C%20961%2093%20S%C3%B6dra%20Sunderbyn!5e0!3m2!1ssv!2sse!4v1694676621148!5m2!1ssv!2sse"
+                        width="450" height="450" style="border:0; width: 100%; max-width: 800px; border-radius: 7px;"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+                <noscript><img src="pictures/nojsmaplulea.jpg" width="450" height="450" alt="noMapForNoJs"
+                        style="border: 0; width: 100%; max-width: 450px; border-radius: 7px;"></noscript>
+                <h2 class="mb-4 my-3">Adress </h2>
+                <h6 class="text-black">Färjledsvägen 38</h6>
+                <h6 class="text-black">961 93 Luleå</h6>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white-50 text-center">
+        <a href="tel:0640555333" class="text-white-50">0640&#8209;555&#8209;333</a> |
+        <a href="mailto:lulea@ntig-uppsala.github.io" class="text-white-50">lulea@ntig&#8209;uppsala.github.io</a>
+
+        <div class="container" style="padding: 20px 0;">
+            <a href="https://facebook.com/ntiuppsala" class="no-text-decoration social-icon" target="_blank">
+                <i class="fa-brands fa-facebook fa-2xl"></i>
+            </a>
+            <a href="https://twitter.com/ntiuppsala?lang=en" class="no-text-decoration social-icon" target="_blank">
+                <i class="fa-brands fa-x-twitter fa-2xl"></i>
+            </a>
+            <a href="https://www.instagram.com/frisorsaxe/" class="no-text-decoration social-icon" target="_blank">
+                <i class="fa-brands fa-instagram fa-2xl"></i>
+            </a>
+        </div>
+    </footer>
 
 </body>
 
