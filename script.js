@@ -8,8 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-var navBarOpen = false;
+var navBarOpen = false; // Collapses the dropdown menu on the navbar in the mobile-port 
 
+// Toggles the visibility of the navbar as needed
 function navBarToggled() {
   navBarOpen = !navBarOpen; // If called it will switch the variable, if true to false and if false to true
 }
@@ -168,8 +169,8 @@ zipCodeListKiruna = [
   "98132",
   "98135",
   "98136",
-  "98138",
   "98137",
+  "98138",
   "98139",
   "98140",
   "98142",
@@ -178,7 +179,7 @@ zipCodeListKiruna = [
   "98146",
   "98147",
 ];
-zipCodeListLulea = ["96193", "96194", "96190", "96191"];
+zipCodeListLulea = ["96190", "96191", "96193", "96194"];
 
 // Runs when the document is fully loaded
 document.addEventListener("DOMContentLoaded", (event) => {
@@ -212,7 +213,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         document.getElementById("outputAcceptedZipCode").style.display =
           "block";
       } else {
-        // If the zip code is invalid
+        // If zipcode is valid but out of range for house appointment
         document.getElementById("outputNonAcceptedZipCode").style.display =
           "block";
       }
