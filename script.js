@@ -8,8 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-var navBarOpen = false;
+var navBarOpen = false; // Collapses the dropdown menu on the navbar in the mobile-port 
 
+// Toggles the visibility of the navbar as needed
 function navBarToggled() {
   navBarOpen = !navBarOpen; // If called it will switch the variable, if true to false and if false to true
 }
