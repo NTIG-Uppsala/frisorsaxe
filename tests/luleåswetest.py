@@ -239,7 +239,7 @@ class TestHomepage(TestCase):
             self.browser.get(path.join((getcwd()), "luleaswe.html"))
 
     def testZipCodes(self):
-        zipCodeListLulea = ["96193", "96194", "96190", "96191"]
+        zipCodeListLulea = ["96190", "96191", "96193", "96194"]
 
         notAcceptedZipcodes = [
             "12345",

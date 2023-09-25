@@ -168,8 +168,8 @@ zipCodeListKiruna = [
   "98132",
   "98135",
   "98136",
-  "98138",
   "98137",
+  "98138",
   "98139",
   "98140",
   "98142",
@@ -178,7 +178,7 @@ zipCodeListKiruna = [
   "98146",
   "98147",
 ];
-zipCodeListLulea = ["96193", "96194", "96190", "96191"];
+zipCodeListLulea = ["96190", "96191", "96193", "96194"];
 
 // Runs when the document is fully loaded
 document.addEventListener("DOMContentLoaded", (event) => {
