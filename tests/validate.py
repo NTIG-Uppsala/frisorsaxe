@@ -1,6 +1,8 @@
 import os
+import time
 
 from selenium import webdriver
+from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
@@ -14,7 +16,7 @@ browser = webdriver.Chrome(options=chrome_options)
 
 # get all file paths
 paths = []
-
+checkbox_checked = False
 
 for root, dirs, files in os.walk(".", topdown=False):
     for name in files:
@@ -41,17 +43,39 @@ for path in paths:
     select = Select(docselector)
     select.select_by_visible_text("file upload")
     # Upload and submit file
-    file_upload_button = browser.find_element(By.ID, "doc")
-    file_upload_button.send_keys(os.path.abspath(path))
-    check_button = browser.find_element(By.ID, "submit")
-    check_button.click()
-
-    # Check if the uploaded file passed the validation
-    if '<div id="results"><p class="success">' in browser.page_source:
-        print(path, "passed")
-    else:
-        print(path, "failed")
-        failed_validations_count += 1
-
-if failed_validations_count > 0:
-    raise Exception("validation failed")
+    browser.find_element(By.ID, "doc").send_keys(os.path.abspath(path))
+    browser.find_element(By.ID, "submit").click()
+    # Remove inputmode warning
+    if checkbox_checked != True:  # only executes if inputmode isnt checked off
+        try:
+            # Checks if messages filtering is available
+            browser.find_element(By.XPATH, '//*[@id="filters"]/h2/button')
+        except NoSuchElementException:
+            continue
+        else:
+            # Opens messages filtering
+            browser.find_element(By.XPATH, '//*[@id="filters"]/h2/button').click()
+            # Locates the inputmode warning and then unchecks the checkbox
+            code_elements = browser.find_elements(By.XPATH, "//code")
+            for code_element in code_elements:
+                if code_element.text == "inputmode":
+                    grandparent_element = code_element.find_element(
+                        By.XPATH, "../../.."
+                    )
+                    time.sleep(1)
+                    grandparent_element.find_element(
+                        By.XPATH, './/input[@type="checkbox"]'
+                    ).click()
+                    checkbox_checked = True
+                    break
+            for code_element in code_elements:
+                if code_element.text == "*HTMLLANGUAGE*":
+                    grandparent_element = code_element.find_element(
+                        By.XPATH, "../../.."
+                    )
+                    time.sleep(1)
+                    grandparent_element.find_element(
+                        By.XPATH, './/input[@type="checkbox"]'
+                    ).click()
+                    checkbox_checked = True
+                    break

@@ -145,24 +145,6 @@ function showFlags() {
   }
 }
 
-// Only breads the mail if the screen is smaller then 700px
-function mailLineBreak() {
-  const mail = document.getElementById("mailLink");
-  if (window.location.pathname.includes("kiruna")) {
-    if (window.innerWidth <= 700) {
-      mail.innerHTML = "info@ntig-uppsala.github.io";
-    } else {
-      mail.innerHTML = "info@ntig&#8209;uppsala.github.io";
-    }
-  } else if (window.location.pathname.includes("lulea")) {
-    if (window.innerWidth <= 700) {
-      mail.innerHTML = "lulea@ntig-uppsala.github.io";
-    } else {
-      mail.innerHTML = "lulea@ntig&#8209;uppsala.github.io";
-    }
-  }
-}
-
 // Moves the table for prices when the window is smaller than 767px to haircut section
 function regularCustomerInfo() {
   const regularInfo = document.getElementById("regularCustomerInfo");
@@ -180,8 +162,6 @@ function regularCustomerInfo() {
 // Call the function when the page loads and when the window is resized
 window.addEventListener("load", regularCustomerInfo);
 window.addEventListener("resize", regularCustomerInfo);
-
-window.onresize = mailLineBreak;
 
 // List of accepted zip codes
 zipCodeListKiruna = [
@@ -232,7 +212,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         document.getElementById("outputAcceptedZipCode").style.display =
           "block";
       } else {
-        // If the zip code is invalid
+        // If zipcode is valid but out of range for house appointment
         document.getElementById("outputNonAcceptedZipCode").style.display =
           "block";
       }
