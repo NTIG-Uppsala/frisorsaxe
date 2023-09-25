@@ -204,10 +204,7 @@ class TestHomepage(TestCase):
         self.browser.execute_script("dailySales(new Date('" + date + "'))")
         element = self.browser.find_element(By.ID, id).value_of_css_property("display")
         # Checks if the element is displayed
-        if element == "block":
-            pass
-        else:
-            self.fail()
+        self.assertEqual("block", element)
 
     def helpDailySalesNotShow(self, date, expectedToShow):
         self.browser.get(path.join(getcwd(), "kirunaswe.html"))
@@ -225,10 +222,7 @@ class TestHomepage(TestCase):
             element = self.browser.find_element(By.ID, id).value_of_css_property(
                 "display"
             )
-            if element == "none":
-                pass
-            else:
-                self.fail(element)
+            self.assertEqual("none", element)
 
     def helperZipCode(self, zipCodeList, message):
         for currentZip in zipCodeList:
