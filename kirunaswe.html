@@ -23,8 +23,9 @@
         crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <!-- Google icons -->
+    <!-- House icon -->
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css" rel="stylesheet">
@@ -52,7 +53,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg" id="navbar">
         <div class="container-fluid navButtonRight">
-            <a class="material-symbols-outlined navbar-brand" id="homeButton" href="index.html">pin_drop</a>
+            <a class="material-symbols-outlined navbar-brand" id="homeButton" href="index.html">wifi_home</a>
             <button class="navbar-toggler justify-content-end" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                 aria-label="Toggle navigation" onclick="navBarToggled()">
@@ -118,8 +119,8 @@
                     </div>
                     <div class="col-3 p-3 mb-2 text-start">
                         <p><a href="tel:0630555555">0630&#8209;555&#8209;555</a></p>
-                        <p><a id="mailLink" href="mailto:info@ntig-uppsala.github.io">
-                                info@ntig&#8209;uppsala.github.io</a></p>
+                        <p><a id="mailLink" href="mailto:saxefrisor@gmail.com">
+                                saxefrisor@gmail.com</a></p>
                     </div>
                 </div>
             </div>
@@ -140,16 +141,17 @@
             </div>
         </div>
     </div>
-    <div id="zipCodeCheck" class="zipInput container-fluid pb-5 mt-0 mb-5" style="text-align: center;">
+    <div id="zipCodeCheck" class="zipInput container-fluid mt-0 mb-5" style="text-align: center;">
         <div id="jsCheck">
             <h2>Proffsiga klippningar hemma - Boka din stil nu</h2>
             <p>Kolla om vi når ut till dig.</p>
             <form><input class="zipCodeInput" type="text" inputmode="numeric" id="zipNumber"
                     placeholder="Postnummer"><input class="checkNumber" id="submit" type="submit" value="Kolla">
             </form>
-            <p class="output" id="outputValid">Vi kör ut till dig. Ring oss för att boka tid!</p>
-            <p class="output" id="outputNoDrive">Vi kan tyvärr inte erbjuda denna service för detta postnummer.</p>
-            <p class="output" id="outputNotValid">Inte ett riktigt postnummer.</p>
+            <p class="output" id="outputAcceptedZipCode">Vi kör ut till dig. Ring oss för att boka tid!</p>
+            <p class="output" id="outputNonAcceptedZipCode">Vi kan tyvärr inte erbjuda denna service för detta
+                postnummer.</p>
+            <p class="output" id="outputNotValidZipCode">Inte ett riktigt postnummer.</p>
 
         </div>
     </div>
@@ -157,14 +159,14 @@
     <div class="container">
         <div class="row justify-content-center text-center">
             <div class="col-md-6 flex-column">
-                <img class="w-100 pricesAnchor" id="priser" src="pictures/pris.jpg" alt="pris"
+                <img class="w-100 pricesAnchor" id="priser" src="pictures/prices.jpg" alt="pris"
                     style="border-radius: 7px;">
 
                 <!-- Prices -->
                 <h2 class="mb-4 my-5 text-body">Klippning</h2>
                 <table>
                     <tr>
-                        <td class="text-start ps-2" id="infoAboutLongHair">Gränsen för långt hår går vid 20cm</td>
+                        <td class="text-start ps-2" id="infoAboutLongHair">Gränsen för långt hår går vid 20 cm</td>
                     </tr>
                     <tr>
                         <td class="text-start ps-2" id="regularCustomerInfo">Man blir stamkund efter tre besök under 12
@@ -217,7 +219,7 @@
                 </table>
             </div>
             <div class="col-md-6 flex-column marginTop">
-                <img class="w-100" src="pictures/ovrigt.jpg" alt="övrigt" style="border-radius: 7px;">
+                <img class="w-100" src="pictures/other.jpg" alt="övrigt" style="border-radius: 7px;">
                 <h2 class="mb-4 my-5 text-body">Annat</h2>
                 <table>
                     <tr>
@@ -269,7 +271,7 @@
                 <div class="col-xl-4 col-md-6 my-5">
                     <div class="container d-flex justify-content-center">
                         <div class="card" style="width: 20rem; height: 70%;">
-                            <img src="pictures/employeePictures/anna_pettersson.jpg" class="card-img-top" alt="Anna">
+                            <img src="pictures/employeePictures/annaPettersson.jpg" class="card-img-top" alt="Anna">
                             <div class="card-body">
                                 <h5 class="card-title">Anna Pettersson</h5>
                                 <p class="card-text mb-2">Hårstylist</p>
@@ -283,7 +285,7 @@
                 <div class="col-xl-4 col-md-6 my-5">
                     <div class="container d-flex justify-content-center">
                         <div class="card" style="width: 20rem; height: 70%;">
-                            <img src="pictures//employeePictures/fredrik_ortqvist.jpg" class="card-img-top"
+                            <img src="pictures//employeePictures/fredrikOrtqvist.jpg" class="card-img-top"
                                 alt="Fredrik">
                             <div class="card-body">
                                 <h5 class="card-title">Fredrik Örtqvist</h5>
@@ -297,7 +299,7 @@
                 <div class="col-xl-4 col-md-6 my-5 ">
                     <div class="container d-flex justify-content-center">
                         <div class="card" style="width: 20rem; height: 70%;">
-                            <img src="pictures/employeePictures/orjan_johansson.jpg" class="card-img-top" alt="Örjan">
+                            <img src="pictures/employeePictures/orjanJohansson.jpg" class="card-img-top" alt="Örjan">
                             <div class="card-body">
                                 <h5 class="card-title">Örjan Johansson</h5>
                                 <p class="card-text mb-2">Barberare</p>
@@ -326,7 +328,7 @@
                         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1503.2583513342254!2d20.2337795!3d67.8660232!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x45d0ba6368d7c9a3%3A0xe3887ef038c559b0!2sFj%C3%A4llgatan%2032%2C%20981%2039%20Kiruna!5e0!3m2!1ssv!2sse!4v1693397051519!5m2!1ssv!2sse"
                         width="450" height="450" style="border:0; width: 100%; max-width: 800px; border-radius: 7px;"
                         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-                <noscript><img src="pictures/nojsmapkiruna.jpg" width="450" height="450" alt="noMapForNoJs"
+                <noscript><img src="pictures/nojsmapKiruna.jpg" width="450" height="450" alt="noMapForNoJs"
                         style="border: 0; width: 100%; max-width: 450px; border-radius: 7px;"></noscript>
                 <h2 class="mb-4 my-3">Adress </h2>
                 <h6 class="text-black">Fjällgatan 32H</h6>
@@ -337,7 +339,7 @@
 
     <footer class="bg-dark text-white-50 text-center">
         <a href="tel:0630555555" class="text-white-50">0630&#8209;555&#8209;555</a> |
-        <a href="mailto:info@ntig-uppsala.github.io" class="text-white-50">info@ntig&#8209;uppsala.github.io</a>
+        <a href="mailto:saxefrisor@gmail.com" class="text-white-50">saxefrisor@gmail.com</a>
 
         <div class="container" style="padding: 20px 0;">
             <a href="https://facebook.com/ntiuppsala" class="no-text-decoration social-icon" target="_blank">

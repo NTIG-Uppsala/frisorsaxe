@@ -125,7 +125,7 @@ h2 {
 }
 
 #homePage {
-    background-image: url('pictures/Bakgrundstest1.jpg');
+    background-image: url('pictures/mainBackground.jpg');
     background-position: center;
     background-size: cover;
 }
@@ -135,6 +135,13 @@ h2 {
     font-family: Title;
     font-size: 10rem;
     text-shadow: 2px 3px 3px rgb(61, 60, 60);
+}
+
+
+#zipCodeCheck {
+    padding-top: 40px;
+    background-color: #bab6ae;
+    padding-bottom: 40px;
 }
 
 @font-face {
@@ -357,9 +364,9 @@ input[type=submit] {
     margin-bottom: 0;
 }
 
-#outputValid,
-#outputNotValid,
-#outputNoDrive {
+#outputAcceptedZipCode,
+#outputNonAcceptedZipCode,
+#outputNotValidZipCode {
     display: none;
 }
 
