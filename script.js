@@ -38,6 +38,17 @@ window.onscroll = function () {
   }
 };
 
+document.addEventListener("DOMContentLoaded", function () {
+  const Currentlanguage = document.getElementById("activeLang").alt;
+  if (Currentlanguage === "svenskaflaggan") {
+    localStorage.setItem("language", "swe");
+  } else if (Currentlanguage === "englishflag") {
+    localStorage.setItem("language", "eng");
+  }
+
+  const flagMenu = document.getElementById("flagMenu");
+});
+
 function dailySales(date) {
   const openHours = {
     kiruna: {
@@ -76,13 +87,13 @@ function dailySales(date) {
   const saleColoring = document.getElementById("saleColoring");
   const coloring = document.getElementById("coloring");
 
+  //Hide all elements so the tests can work
   saleColoring.style.display = "none";
   saleBeard.style.display = "none";
   saleLongHair.style.display = "none";
   saleShorthair.style.display = "none";
 
-  // Checks what day of the week it is and sets sales
-
+  // Checks what day of the week it is and sets sales for that day
   switch (weekday) {
     case 1: // On Monday longhair is on sale
       if (
@@ -135,24 +146,6 @@ function showFlags() {
   }
 }
 
-// Only breads the mail if the screen is smaller then 700px
-function mailLineBreak() {
-  const mail = document.getElementById("mailLink");
-  if (window.location.pathname.includes("kiruna")) {
-    if (window.innerWidth <= 700) {
-      mail.innerHTML = "info@ntig-uppsala.github.io";
-    } else {
-      mail.innerHTML = "info@ntig&#8209;uppsala.github.io";
-    }
-  } else if (window.location.pathname.includes("lulea")) {
-    if (window.innerWidth <= 700) {
-      mail.innerHTML = "lulea@ntig-uppsala.github.io";
-    } else {
-      mail.innerHTML = "lulea@ntig&#8209;uppsala.github.io";
-    }
-  }
-}
-
 // Moves the table for prices when the window is smaller than 767px to haircut section
 function regularCustomerInfo() {
   const regularInfo = document.getElementById("regularCustomerInfo");
@@ -171,15 +164,13 @@ function regularCustomerInfo() {
 window.addEventListener("load", regularCustomerInfo);
 window.addEventListener("resize", regularCustomerInfo);
 
-window.onresize = mailLineBreak;
-
 // List of accepted zip codes
 zipCodeListKiruna = [
   "98132",
   "98135",
   "98136",
-  "98138",
   "98137",
+  "98138",
   "98139",
   "98140",
   "98142",
@@ -188,7 +179,7 @@ zipCodeListKiruna = [
   "98146",
   "98147",
 ];
-zipCodeListLulea = ["96193", "96194", "96190", "96191"];
+zipCodeListLulea = ["96190", "96191", "96193", "96194"];
 
 // Runs when the document is fully loaded
 document.addEventListener("DOMContentLoaded", (event) => {
@@ -222,7 +213,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         document.getElementById("outputAcceptedZipCode").style.display =
           "block";
       } else {
-        // If the zip code is invalid
+        // If zipcode is valid but out of range for house appointment
         document.getElementById("outputNonAcceptedZipCode").style.display =
           "block";
       }
