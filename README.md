@@ -10,6 +10,7 @@ Repository for Frisör Saxé worked on 2023-2024.
 - We use four blank spaces for indentation.
 - All test functions have to start with "test".
 - English file names only contain lowercase letters.
+- Image names are written in english and should follow the camelCase standard.
 - Comments are positioned above the code it describes, are only in English and start with lowercase letters in Python but start with uppercase letters in HTML and CSS.
 - Python files follow the Black Formatter standard and Pylint with the exception of C0111 and method-naming-style=camelCase.
 
@@ -17,7 +18,7 @@ Repository for Frisör Saxé worked on 2023-2024.
 Our website uses the software Selenium and Python's unittest library to run tests. 
 
 ### Development environment
-- Code Editor: Visual Studio Code Version 1.8.1
+- Code Editor: Visual Studio Code Version 1.81
 - Google Chrome is the browser we use for testing.
 - We use Windows 10 as our operating system.
 
