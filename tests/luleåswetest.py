@@ -143,8 +143,8 @@ class TestHomepage(TestCase):
         self.helpDailySalesNotShow("2023-09-13T11:00:00", "saleBeard")  # On Wednesday
         self.helpDailySalesNotShow("2023-09-14T11:00:00", "saleColoring")  # On Thursday
         self.helpDailySalesNotShow("2023-09-15T11:00:00", "")  # On Friday
-        self.helpDailySalesNotShow("2023-09-15T11:00:00", "")  # On Saturday
-        self.helpDailySalesNotShow("2023-09-15T11:00:00", "")  # On Saturday
+        self.helpDailySalesNotShow("2023-09-16T11:00:00", "")  # On Saturday
+        self.helpDailySalesNotShow("2023-09-17T11:00:00", "")  # On Saturday
 
     def helpTestDailySales(self, date, id):
         self.browser.execute_script("dailySales(new Date('" + date + "'))")
@@ -154,16 +154,18 @@ class TestHomepage(TestCase):
         else:
             self.fail()
 
-    def helpDailySalesNotShow(self, date, idToRemove):
+    def helpDailySalesNotShow(self, date, expectedToShow):
         self.browser.get(path.join(getcwd(), "luleaswe.html"))
         self.browser.execute_script("dailySales(new Date('" + date + "'))")
         ids = ["saleBeard", "saleColoring", "saleLongHair", "saleShortHair"]
-        if idToRemove in ids:
-            ids.remove(idToRemove)
-        elif idToRemove == "":
+        # Removes the id that is supposed to be showing from the list
+        if expectedToShow in ids:
+            ids.remove(expectedToShow)
+        elif expectedToShow == "":
             pass
         else:
             self.fail()
+        # Checks that non of the ids in the list is showing
         for id in ids:
             element = self.browser.find_element(By.ID, id).value_of_css_property(
                 "display"
