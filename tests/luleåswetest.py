@@ -249,8 +249,13 @@ class TestHomepage(TestCase):
             "hej",
             "xxxxx",
         ]
-        self.helperZipCode(zipCodeListLulea, "Ring oss för att boka tid!")
-        self.helperZipCode(notAcceptedZipcodes, "Du bor tyvärr för långt bort.")
+        self.helperZipCode(
+            zipCodeListLulea, "Vi kör ut till dig. Ring oss för att boka tid!"
+        )
+        self.helperZipCode(
+            notAcceptedZipcodes,
+            "Vi kan tyvärr inte erbjuda denna service för detta postnummer.",
+        )
         self.helperZipCode(nonWorkingZipcodes, "Inte ett riktigt postnummer.")
 
 

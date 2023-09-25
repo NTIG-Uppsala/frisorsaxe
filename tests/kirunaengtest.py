@@ -159,7 +159,7 @@ class TestHomepageENG(TestCase):
         self.assertIn("Frisör&nbsp;Saxé", navBrand.get_attribute("innerHTML"))
         element = self.browser.find_element(By.CLASS_NAME, "navbar-nav")
         self.assertIn("Appointment", element.get_attribute("innerHTML"))
-        self.assertIn("Opening hours", element.get_attribute("innerHTML"))
+        self.assertIn("Opening Hours", element.get_attribute("innerHTML"))
         self.assertIn("Prices", element.get_attribute("innerHTML"))
         self.assertIn("Staff", element.get_attribute("innerHTML"))
         self.assertIn("Find Us", element.get_attribute("innerHTML"))
@@ -256,9 +256,12 @@ class TestHomepageENG(TestCase):
             "hej",
             "xxxxx",
         ]
-        self.helperZipCode(zipCodeListKiruna, "Call us to book a house appointment!")
-        self.helperZipCode(notAcceptedZipcodes, "Too far away, come closer.")
-        self.helperZipCode(nonWorkingZipcodes, "Not a valid zip-code.")
+        self.helperZipCode(
+            zipCodeListKiruna,
+            "You are within reach. Call us to book a house appointment!",
+        )
+        self.helperZipCode(notAcceptedZipcodes, "we cant offer this service to you.")
+        self.helperZipCode(nonWorkingZipcodes, "Not a valid zipcode.")
 
 
 if __name__ == "__main__":

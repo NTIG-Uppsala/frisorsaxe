@@ -364,9 +364,9 @@ input[type=submit] {
     margin-bottom: 0;
 }
 
-#outputValid,
-#outputNotValid,
-#outputNoDrive {
+#outputAcceptedZipCode,
+#outputNonAcceptedZipCode,
+#outputNotValidZipCode {
     display: none;
 }
 

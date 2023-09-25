@@ -156,9 +156,9 @@
             <p>Check if you are within reach of a house appointment.</p>
             <form><input class="zipCodeInput" type="text" inputmode="numeric" id="zipNumber"
                     placeholder="Zip Code"><input class="checkNumber" id="submit" type="submit" value="Check"></form>
-            <p class="output" id="outputValid">You are within reach. Call us to book a house appointment!</p>
-            <p class="output" id="outputNoDrive">Sorry, we cant offer this service to you.</p>
-            <p class="output" id="outputNotValid">Not a valid zipcode.</p>
+            <p class="output" id="outputAcceptedZipCode">You are within reach. Call us to book a house appointment!</p>
+            <p class="output" id="outputNonAcceptedZipCode">Sorry, we cant offer this service to you.</p>
+            <p class="output" id="outputNotValidZipCode">Not a valid zipcode.</p>
 
         </div>
     </div>
@@ -230,8 +230,8 @@
                 <h2 class="mb-4 my-5 text-body">Other</h2>
                 <table>
                     <tr>
-                        <td class="text-start ps-2" id="regularCustomerInfoOther">After 3 visits within 12 months you
-                            are considered a regular customer</td>
+                        <td class="text-start ps-2" id="regularCustomerInfoOther">
+                            After 3 visits within 12 months you are considered a regular customer</td>
                     </tr>
                 </table>
                 <table class="table table-sm " style="table-layout: fixed;">
@@ -268,7 +268,18 @@
         </div>
     </div>
 
+    <div id="zipCodeCheck" class="zipInput container-fluid pb-5 mt-0 mb-5" style="text-align: center;">
+        <div id="jsCheck">
+            <h2>Bring the Salon to Your Home</h2>
+            <p>Check if you are within reach of a house appointment.</p>
+            <form><input class="zipCodeInput" type="text" inputmode="numeric" id="zipNumber"
+                    placeholder="Zip Code"><input class="checkNumber" id="submit" type="submit" value="Check"></form>
+            <p class="output" id="outputAcceptedZipCode">You are within reach. Call us to book a house appointment!</p>
+            <p class="output" id="outputNonAcceptedZipCode">Sorry, we cant offer this service to you.</p>
+            <p class="output" id="outputNotValidZipCode">Not a valid zipcode.</p>
 
+        </div>
+    </div>
 
     <!-- Employees -->
     <div id="thirdPage" class="pt-3">
