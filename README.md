@@ -28,8 +28,11 @@ Our website uses the software Selenium and Python's unittest library to run test
 - Python 3.11.5 and Selenium 4.11.2 for testing
 
 ### Documentation
-- Translation system: https://docs.google.com/document/d/1U-YQvHS_xkbIePATmTBONHyNHUcq_NshLaLkbljwM7k/edit
+- Translation system documentation: https://docs.google.com/document/d/1U-YQvHS_xkbIePATmTBONHyNHUcq_NshLaLkbljwM7k/edit
 
 ### License
+-  All images should be linked under the "licences" folder in "licenseLinks".
+
 - Licenses for google fonts exist in the "licenses" folder located in the root folder.
-- All of the photos are from either Unsplash and Pexels
+
+- All of the photos are from either Unsplash and Pexels. Both of these websites exclusively have open licenses. (As long as you use the free version which we do.)

@@ -121,7 +121,7 @@ class TestHomepageENG(TestCase):
         self.assertIn("Phone", self.browser.page_source)
         self.assertIn("Email", self.browser.page_source)
         self.assertIn("0630‑555‑555", self.browser.page_source)
-        self.assertIn("info@ntig-uppsala.github.io", self.browser.page_source)
+        self.assertIn("saxefrisor@gmail.com", self.browser.page_source)
 
     def testOpeningHours(self):
         self.assertIn("Opening Hours", self.browser.page_source)
@@ -137,7 +137,7 @@ class TestHomepageENG(TestCase):
             self.browser.page_source,
         )
         self.assertIn(
-            "The limit for long hair starts at 20cm", self.browser.page_source
+            "The limit for long hair starts at 20 cm", self.browser.page_source
         )
 
     def testProducts(self):
@@ -191,8 +191,8 @@ class TestHomepageENG(TestCase):
         self.helpDailySalesNotShow("2023-09-13T11:00:00", "saleBeard")  # On Wednesday
         self.helpDailySalesNotShow("2023-09-14T11:00:00", "saleColoring")  # On Thursday
         self.helpDailySalesNotShow("2023-09-15T11:00:00", "")  # On Friday
-        self.helpDailySalesNotShow("2023-09-15T11:00:00", "")  # On Saturday
-        self.helpDailySalesNotShow("2023-09-15T11:00:00", "")  # On Saturday
+        self.helpDailySalesNotShow("2023-09-16T11:00:00", "")  # On Saturday
+        self.helpDailySalesNotShow("2023-09-17T11:00:00", "")  # On Saturday
 
     def helpTestDailySales(self, date, id):
         self.browser.execute_script("dailySales(new Date('" + date + "'))")
@@ -202,16 +202,18 @@ class TestHomepageENG(TestCase):
         else:
             self.fail()
 
-    def helpDailySalesNotShow(self, date, idToRemove):
+    def helpDailySalesNotShow(self, date, expectedToShow):
         self.browser.get(path.join(getcwd(), "kirunaeng.html"))
         self.browser.execute_script("dailySales(new Date('" + date + "'))")
         ids = ["saleBeard", "saleColoring", "saleLongHair", "saleShortHair"]
-        if idToRemove in ids:
-            ids.remove(idToRemove)
-        elif idToRemove == "":
+        # Removes the id that is supposed to be showing from the list
+        if expectedToShow in ids:
+            ids.remove(expectedToShow)
+        elif expectedToShow == "":
             pass
         else:
             self.fail()
+        # Checks that non of the ids in the list is showing
         for id in ids:
             element = self.browser.find_element(By.ID, id).value_of_css_property(
                 "display"
