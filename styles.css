@@ -72,6 +72,8 @@ h2 {
 }
 
 #thirdPage {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
     background-color: #bab6ae;
     text-align: center;
 }
@@ -139,6 +141,8 @@ h2 {
 
 
 #zipCodeCheck {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
     padding-top: 40px;
     background-color: #bab6ae;
     padding-bottom: 40px;
