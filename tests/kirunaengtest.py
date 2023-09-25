@@ -121,7 +121,7 @@ class TestHomepageENG(TestCase):
         self.assertIn("Phone", self.browser.page_source)
         self.assertIn("Email", self.browser.page_source)
         self.assertIn("0630‑555‑555", self.browser.page_source)
-        self.assertIn("info@ntig-uppsala.github.io", self.browser.page_source)
+        self.assertIn("saxefrisor@gmail.com", self.browser.page_source)
 
     def testOpeningHours(self):
         self.assertIn("Opening Hours", self.browser.page_source)
@@ -137,7 +137,7 @@ class TestHomepageENG(TestCase):
             self.browser.page_source,
         )
         self.assertIn(
-            "The limit for long hair starts at 20cm", self.browser.page_source
+            "The limit for long hair starts at 20 cm", self.browser.page_source
         )
 
     def testProducts(self):
