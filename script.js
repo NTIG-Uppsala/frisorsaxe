@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         document.getElementById("outputAcceptedZipCode").style.display =
           "block";
       } else {
-        // If the zip code is invalid
+        // If zipcode is valid but out of range for house appointment
         document.getElementById("outputNonAcceptedZipCode").style.display =
           "block";
       }
