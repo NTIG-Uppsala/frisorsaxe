@@ -137,6 +137,13 @@ h2 {
     text-shadow: 2px 3px 3px rgb(61, 60, 60);
 }
 
+
+#zipCodeCheck {
+    padding-top: 40px;
+    background-color: #bab6ae;
+    padding-bottom: 40px;
+}
+
 @font-face {
     font-family: Title;
     src: url("fonts/Italianno-Regular.ttf");
