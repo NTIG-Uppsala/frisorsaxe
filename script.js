@@ -1,25 +1,25 @@
-//Displays all elemnt with class name "hasjs"
+// Displays all elements with class name "hasjs"
 document.addEventListener("DOMContentLoaded", function () {
   let hasjs = document.getElementsByClassName("hasjs");
 
   // Loop through each element with the class "hasjs"
   for (let i = 0; i < hasjs.length; i++) {
-    hasjs[i].style.display = "block"; //Block shows element
+    hasjs[i].style.display = "block"; // Block shows element
   }
 });
 
 var navBarOpen = false;
 
 function navBarToggled() {
-  navBarOpen = !navBarOpen; //If called it will switch the variable, if true to false and if false to true
+  navBarOpen = !navBarOpen; // If called it will switch the variable, if true to false and if false to true
 }
 
 // Store the previous scroll position
 var prevScrollPosition = window.scrollY;
 
-//Hides the navbar when scrolling down, shows when scrolling up.
+// Hides the navbar when scrolling down, shows when scrolling up.
 window.onscroll = function () {
-  //Will not hide navbar if its active on smaller screen
+  // Will not hide navbar if its active on smaller screen
   if (navBarOpen === false) {
     let currentScrollPosition = window.scrollY;
     // Compare scroll positions to show or hide the navbar
@@ -53,11 +53,12 @@ function dailySales(date) {
     },
   };
 
-  //variable is dependent on the url, includes check if the url containts a word
+  // Checks if website is in Luleå or Kiruna and then changes the opening hours accordingly
+  // Variable is dependent on the url, includes check if the url containts a word
   const locationOpeningHours = window.location.pathname.includes("lulea")
-    ? openHours.lulea //In Luleas website
+    ? openHours.lulea // In Luleas website
     : window.location.pathname.includes("kiruna")
-      ? openHours.kiruna //In Kirunas website
+      ? openHours.kiruna // In Kirunas website
       : console.log("location does not have openingHours for dailysailes");
 
   const weekday = date.getDay();
@@ -80,10 +81,12 @@ function dailySales(date) {
   saleLongHair.style.display = "none";
   saleShorthair.style.display = "none";
 
+  // Checks what day of the week it is and sets sales
+
   switch (weekday) {
-    case 1: //On Monday longhair is on sale
+    case 1: // On Monday longhair is on sale
       if (
-        //If we are open
+        // If we are open
         hour >= locationOpeningHours.weekdayOpen &&
         locationOpeningHours.mondayClose > hour
       ) {
@@ -91,9 +94,9 @@ function dailySales(date) {
         longHair.style.textDecoration = "line-through";
       }
       break;
-    case 2: //On Tuesday shorthair is on sale
+    case 2: // On Tuesday shorthair is on sale
       if (
-        //If we are open
+        // If we are open
         hour >= locationOpeningHours.weekdayOpen &&
         locationOpeningHours.tuesdayClose > hour
       ) {
@@ -101,9 +104,9 @@ function dailySales(date) {
         shortHair.style.textDecoration = "line-through";
       }
       break;
-    case 3: //On Wednesday beard is on sale
+    case 3: // On Wednesday beard is on sale
       if (
-        //If we are open
+        // If we are open
         hour >= locationOpeningHours.weekdayOpen &&
         locationOpeningHours.tuesdayClose > hour
       ) {
@@ -111,9 +114,9 @@ function dailySales(date) {
         beard.style.textDecoration = "line-through";
       }
       break;
-    case 4: //On Thursday coloring is on sale
+    case 4: // On Thursday coloring is on sale
       if (
-        //If we are open
+        // If we are open
         hour >= locationOpeningHours.weekdayOpen &&
         locationOpeningHours.tuesdayClose > hour
       ) {
@@ -124,19 +127,19 @@ function dailySales(date) {
   }
 }
 
-//show the different flags for each lang
+// Show the different flags for each language
 function showFlags() {
   document.getElementById("activeMenu").style.display = "none";
 
   const languages = document.getElementsByClassName("inActiveMenu");
 
-  //Show the langs that the user can select
+  // Show the languages that the user can select
   for (const element of languages) {
     element.style.display = "block";
   }
 }
 
-//Only breads the mail if the screen is smaller then 700px
+// Only breads the mail if the screen is smaller then 700px
 function mailLineBreak() {
   const mail = document.getElementById("mailLink");
   if (window.location.pathname.includes("kiruna")) {
@@ -154,6 +157,8 @@ function mailLineBreak() {
   }
 }
 
+
+// Moves the table for prices when the window is smaller than 767px
 function regularCustomerInfo() {
   const regularInfo = document.getElementById("regularCustomerInfo");
   const regularInfoOther = document.getElementById("regularCustomerInfoOther");
@@ -202,11 +207,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
     .querySelector("#zipCodeCheck form")
     .addEventListener("submit", (event) => {
       event.preventDefault(); // Prevents the default action
-      document.getElementById("outputValid").style.display =
+      document.getElementById("outputAcceptedZipCode").style.display =
         "none";
-      document.getElementById("outputNotValid").style.display =
+      document.getElementById("outputNotValidZipCode").style.display =
         "none";
-      document.getElementById("outputNoDrive").style.display =
+      document.getElementById("outputNonAcceptedZipCode").style.display =
         "none";
 
       // event.submitter.parentNode.querySelector("#number").value
@@ -218,23 +223,23 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
       if (zipInput.match(/\D/) != null) {
         // If there are no numbers
-        document.getElementById("outputNotValid").style.display =
+        document.getElementById("outputNotValidZipCode").style.display =
           "block";
       } else if (zipInput.length != 5) {
         // If there are more or less then 5 numbers
-        document.getElementById("outputNotValid").style.display =
+        document.getElementById("outputNotValidZipCode").style.display =
           "block";
       } else if (zipCodeListKiruna.includes(zipInput) && window.location.pathname.includes("kiruna")) {
         // If the zip code is valid in kiruna
-        document.getElementById("outputValid").style.display =
+        document.getElementById("outputAcceptedZipCode").style.display =
           "block";
       } else if (zipCodeListLulea.includes(zipInput) && window.location.pathname.includes("lulea")) {
         // If the zip code is valid in lulea
-        document.getElementById("outputValid").style.display =
+        document.getElementById("outputAcceptedZipCode").style.display =
           "block";
       } else {
         // If the zip code is invalid
-        document.getElementById("outputNoDrive").style.display =
+        document.getElementById("outputNonAcceptedZipCode").style.display =
           "block";
       }
     });

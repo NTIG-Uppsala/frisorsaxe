@@ -238,7 +238,7 @@ class TestHomepage(TestCase):
             self.browser.get(path.join((getcwd()), "kirunaswe.html"))
 
     def testZipCodes(self):
-        validZipcodes = [
+        zipCodeListKiruna = [
             "98132",
             "98135",
             "98136",
@@ -262,7 +262,7 @@ class TestHomepage(TestCase):
             "hej",
             "xxxxx",
         ]
-        self.helperZipCode(validZipcodes, "Ring oss för att boka tid!")
+        self.helperZipCode(zipCodeListKiruna, "Ring oss för att boka tid!")
         self.helperZipCode(notAcceptedZipcodes, "Du bor tyvärr för långt bort.")
         self.helperZipCode(nonWorkingZipcodes, "Inte ett riktigt postnummer.")
 
