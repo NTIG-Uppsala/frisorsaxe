@@ -24,11 +24,13 @@ window.onscroll = function () {
     let currentScrollPosition = window.scrollY;
     // Compare scroll positions to show or hide the navbar
     if (currentScrollPosition === 0) {
+      // If the user at the top of the website show navbar
       document.getElementById("navbar").style.top = "0";
     } else if (prevScrollPosition > currentScrollPosition) {
+      // Show navbar if user is scrolling up
       document.getElementById("navbar").style.top = "0";
     } else {
-      document.getElementById("navbar").style.top = "-35vh";
+      document.getElementById("navbar").style.top = "-35vh"; // Hide navbar if user is scrolling down
     }
     // Update the previous scroll position
     prevScrollPosition = currentScrollPosition;
@@ -38,14 +40,12 @@ window.onscroll = function () {
 function dailySales(date) {
   const openHours = {
     kiruna: {
-      weekdayOpen: 10,
       mondayClose: 16,
       tuesdayClose: 16,
       wednesdayClose: 16,
       thursdayClose: 16,
     },
     lulea: {
-      weekdayOpen: 10,
       mondayClose: 17,
       tuesdayClose: 16,
       wednesdayClose: 15,
@@ -54,12 +54,11 @@ function dailySales(date) {
   };
 
   // Checks if website is in Luleå or Kiruna and then changes the opening hours accordingly
-  // Variable is dependent on the url, includes check if the url containts a word
   const locationOpeningHours = window.location.pathname.includes("lulea")
     ? openHours.lulea // In Luleas website
     : window.location.pathname.includes("kiruna")
-      ? openHours.kiruna // In Kirunas website
-      : console.log("location does not have openingHours for dailysailes");
+    ? openHours.kiruna //In Kirunas website
+    : console.log("location does not have openingHours for dailysailes");
 
   const weekday = date.getDay();
   const hour = date.getHours();
@@ -86,9 +85,8 @@ function dailySales(date) {
   switch (weekday) {
     case 1: // On Monday longhair is on sale
       if (
-        // If we are open
-        hour >= locationOpeningHours.weekdayOpen &&
-        locationOpeningHours.mondayClose > hour
+        //Before the store closes the sale will show
+        hour < locationOpeningHours.mondayClose
       ) {
         saleLongHair.style.display = "block";
         longHair.style.textDecoration = "line-through";
@@ -96,9 +94,8 @@ function dailySales(date) {
       break;
     case 2: // On Tuesday shorthair is on sale
       if (
-        // If we are open
-        hour >= locationOpeningHours.weekdayOpen &&
-        locationOpeningHours.tuesdayClose > hour
+        //Before the store closes the sale will show
+        hour < locationOpeningHours.tuesdayClose
       ) {
         saleShorthair.style.display = "block";
         shortHair.style.textDecoration = "line-through";
@@ -106,9 +103,8 @@ function dailySales(date) {
       break;
     case 3: // On Wednesday beard is on sale
       if (
-        // If we are open
-        hour >= locationOpeningHours.weekdayOpen &&
-        locationOpeningHours.tuesdayClose > hour
+        //Before the store closes the sale will show
+        hour < locationOpeningHours.wednesdayClose
       ) {
         saleBeard.style.display = "block";
         beard.style.textDecoration = "line-through";
@@ -116,9 +112,8 @@ function dailySales(date) {
       break;
     case 4: // On Thursday coloring is on sale
       if (
-        // If we are open
-        hour >= locationOpeningHours.weekdayOpen &&
-        locationOpeningHours.tuesdayClose > hour
+        //Before the store closes the sale will show
+        hour < locationOpeningHours.thursdayClose
       ) {
         saleColoring.style.display = "block";
         coloring.style.textDecoration = "line-through";
@@ -157,8 +152,7 @@ function mailLineBreak() {
   }
 }
 
-
-// Moves the table for prices when the window is smaller than 767px
+// Moves the table for prices when the window is smaller than 767px to haircut section
 function regularCustomerInfo() {
   const regularInfo = document.getElementById("regularCustomerInfo");
   const regularInfoOther = document.getElementById("regularCustomerInfoOther");
@@ -191,35 +185,24 @@ zipCodeListKiruna = [
   "98143",
   "98144",
   "98146",
-  "98147"
+  "98147",
 ];
-zipCodeListLulea = [
-  "96193",
-  "96194",
-  "96190",
-  "96191"
+zipCodeListLulea = ["96193", "96194", "96190", "96191"];
 
-]
-
-//  Runs when the document is fully loaded
+// Runs when the document is fully loaded
 document.addEventListener("DOMContentLoaded", (event) => {
   document
     .querySelector("#zipCodeCheck form")
     .addEventListener("submit", (event) => {
-      event.preventDefault(); // Prevents the default action
-      document.getElementById("outputAcceptedZipCode").style.display =
-        "none";
-      document.getElementById("outputNotValidZipCode").style.display =
-        "none";
-      document.getElementById("outputNonAcceptedZipCode").style.display =
-        "none";
+      event.preventDefault(); // Prevents the site from reloading
+      document.getElementById("outputValid").style.display = "none";
+      document.getElementById("outputNotValid").style.display = "none";
+      document.getElementById("outputNoDrive").style.display = "none";
 
-      // event.submitter.parentNode.querySelector("#number").value
       // Is what is written in the input
       let zipInput =
         event.submitter.parentNode.querySelector("#zipNumber").value;
       zipInput = zipInput.split(" ").join(""); //removes spaces from string
-
 
       if (zipInput.match(/\D/) != null) {
         // If there are no numbers
@@ -229,11 +212,17 @@ document.addEventListener("DOMContentLoaded", (event) => {
         // If there are more or less then 5 numbers
         document.getElementById("outputNotValidZipCode").style.display =
           "block";
-      } else if (zipCodeListKiruna.includes(zipInput) && window.location.pathname.includes("kiruna")) {
+      } else if (
+        zipCodeListKiruna.includes(zipInput) &&
+        window.location.pathname.includes("kiruna")
+      ) {
         // If the zip code is valid in kiruna
         document.getElementById("outputAcceptedZipCode").style.display =
           "block";
-      } else if (zipCodeListLulea.includes(zipInput) && window.location.pathname.includes("lulea")) {
+      } else if (
+        zipCodeListLulea.includes(zipInput) &&
+        window.location.pathname.includes("lulea")
+      ) {
         // If the zip code is valid in lulea
         document.getElementById("outputAcceptedZipCode").style.display =
           "block";
