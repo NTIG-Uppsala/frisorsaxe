@@ -11,23 +11,19 @@ h2 {
     font-family: 'Montserrat', sans-serif;
 }
 
-#makeAppoitment,
-#boka {
+.makeAppoitmentAnchor {
     scroll-margin-top: 100px;
 }
 
-#openingHours,
-#oppettider {
+.openingHoursAnchor {
     scroll-margin-top: 100px;
 }
 
-#prices,
-#priser {
+.pricesAnchor {
     scroll-margin-top: -20px;
 }
 
-#employees,
-#personal {
+.employeesAnchor {
     scroll-margin-top: 185px;
     font-family: Title;
     font-size: 8rem;
@@ -37,20 +33,19 @@ h2 {
 
 
 @media screen and (max-width:750px) {
-    #personal{
+    .employeesAnchor {
         font-size: 5rem;
     }
 }
 
 
 @media screen and (max-width:400px) {
-    #personal{
+    .employeesAnchor {
         font-size: 3rem;
     }
 }
 
-#findus,
-#hittaOss {
+.findus {
     scroll-margin-top: 30px;
 }
 
@@ -370,11 +365,11 @@ input[type=submit] {
     padding-right: 10px;
 
 }
+
 @media screen and (min-width:991px) {
-    #homeButton{
+    #homeButton {
         position: absolute;
         right: 0;
     }
-    
-}
 
+}
