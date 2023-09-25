@@ -72,15 +72,8 @@ h2 {
 }
 
 #thirdPage {
-    margin-top: 20vh;
-    margin-bottom: 10vh;
     background-color: #bab6ae;
     text-align: center;
-}
-
-#product {
-    margin-top: 20vh;
-    margin-bottom: 20vh;
 }
 
 
@@ -149,8 +142,6 @@ h2 {
     padding-top: 40px;
     background-color: #bab6ae;
     padding-bottom: 40px;
-    margin-top: 100vh;
-    margin-bottom: 100vh;
 }
 
 @font-face {
