@@ -202,11 +202,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
     .querySelector("#zipCodeCheck form")
     .addEventListener("submit", (event) => {
       event.preventDefault(); // Prevents the default action
-      document.getElementById("outputValid").style.display =
+      document.getElementById("outputAcceptedZipCode").style.display =
         "none";
-      document.getElementById("outputNotValid").style.display =
+      document.getElementById("outputNotValidZipCode").style.display =
         "none";
-      document.getElementById("outputNoDrive").style.display =
+      document.getElementById("outputNonAcceptedZipCode").style.display =
         "none";
 
       // event.submitter.parentNode.querySelector("#number").value
@@ -218,23 +218,23 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
       if (zipInput.match(/\D/) != null) {
         // If there are no numbers
-        document.getElementById("outputNotValid").style.display =
+        document.getElementById("outputNotValidZipCode").style.display =
           "block";
       } else if (zipInput.length != 5) {
         // If there are more or less then 5 numbers
-        document.getElementById("outputNotValid").style.display =
+        document.getElementById("outputNotValidZipCode").style.display =
           "block";
       } else if (zipCodeListKiruna.includes(zipInput) && window.location.pathname.includes("kiruna")) {
         // If the zip code is valid in kiruna
-        document.getElementById("outputValid").style.display =
+        document.getElementById("outputAcceptedZipCode").style.display =
           "block";
       } else if (zipCodeListLulea.includes(zipInput) && window.location.pathname.includes("lulea")) {
         // If the zip code is valid in lulea
-        document.getElementById("outputValid").style.display =
+        document.getElementById("outputAcceptedZipCode").style.display =
           "block";
       } else {
         // If the zip code is invalid
-        document.getElementById("outputNoDrive").style.display =
+        document.getElementById("outputNonAcceptedZipCode").style.display =
           "block";
       }
     });
