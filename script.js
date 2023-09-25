@@ -37,6 +37,17 @@ window.onscroll = function () {
   }
 };
 
+document.addEventListener("DOMContentLoaded", function () {
+  const Currentlanguage = document.getElementById("activeLang").alt;
+  if (Currentlanguage === "svenskaflaggan") {
+    localStorage.setItem("language", "swe");
+  } else if (Currentlanguage === "englishflag") {
+    localStorage.setItem("language", "eng");
+  }
+
+  const flagMenu = document.getElementById("flagMenu");
+});
+
 function dailySales(date) {
   const openHours = {
     kiruna: {
@@ -75,13 +86,13 @@ function dailySales(date) {
   const saleColoring = document.getElementById("saleColoring");
   const coloring = document.getElementById("coloring");
 
+  //Hide all elements so the tests can work
   saleColoring.style.display = "none";
   saleBeard.style.display = "none";
   saleLongHair.style.display = "none";
   saleShorthair.style.display = "none";
 
-  // Checks what day of the week it is and sets sales
-
+  // Checks what day of the week it is and sets sales for that day
   switch (weekday) {
     case 1: // On Monday longhair is on sale
       if (
