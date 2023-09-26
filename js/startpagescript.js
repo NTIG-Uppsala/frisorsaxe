@@ -4,10 +4,23 @@ function goToSite(place) {
 }
 
 function arrowShow() {
-  const arrow = document.getElementById("arrowForPhonesDown");
-  if (window.scrollY > 650) {
-    arrow.style.opacity = 0;
+  let limit = Math.max(
+    document.body.scrollHeight,
+    document.body.offsetHeight,
+    document.documentElement.clientHeight,
+    document.documentElement.scrollHeight,
+    document.documentElement.offsetHeight
+  );
+  const arrowDown = document.getElementById("arrowForPhonesDown");
+  const arrowUp = document.getElementById("arrowForPhonesUp");
+  console.log(limit - window.innerHeight);
+  console.log(window.scrollY);
+
+  if (limit - window.innerHeight - window.scrollY < 50) {
+    arrowDown.style.opacity = 0;
+    arrowUp.style.opacity = 1;
   } else {
-    arrow.style.opacity = 1;
+    arrowDown.style.opacity = 1;
+    arrowUp.style.opacity = 0;
   }
 }

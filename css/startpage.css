@@ -113,3 +113,20 @@ a {
         right: 0;
     }
 }
+
+#arrowForPhonesUp{
+    display: none;
+}
+@media screen and (max-width:576px) {
+    #arrowForPhonesUp {
+        display: block !important;
+        position: fixed;
+        color: red;
+        width: 50px;
+        margin-top: 20px;
+        margin-right: 5px;
+        height: 50px;
+        top: 0;
+        right: 0;
+    }
+}
