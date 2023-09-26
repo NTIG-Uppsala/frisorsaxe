@@ -146,7 +146,6 @@ function regularCustomerInfo() {
   const infoOnPhone = document.getElementById("infoOnPhone");
   const infoOnDesktop = document.getElementById("infoOnDesktop");
 
-  console.log(window.innerWidth);
   if (window.innerWidth <= 767) {
     infoOnPhone.style.display = "block";
     infoOnDesktop.style.display = "none";
