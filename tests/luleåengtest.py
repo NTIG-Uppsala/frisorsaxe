@@ -32,7 +32,7 @@ class TestHomepageNoScriptENG(TestCase):
         pass
 
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "luleaeng.html"))
+        self.browser.get(path.join(getcwd(), "subPages/luleaeng.html"))
 
     # After each test
     def tearDown(self):

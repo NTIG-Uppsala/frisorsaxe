@@ -35,7 +35,7 @@ class TestHomepageNoScript(TestCase):
 
     # Runs before every test
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "kirunaswe.html"))
+        self.browser.get(path.join(getcwd(), "subPages/kirunaswe.html"))
 
     # After each test
     def tearDown(self):

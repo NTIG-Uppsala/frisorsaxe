@@ -76,7 +76,7 @@ class TestHomepageENG(TestCase):
         pass
 
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "kirunaeng.html"))
+        self.browser.get(path.join(getcwd(), "subPages/kirunaeng.html"))
 
     def tearDown(self):
         self.browser.get("about:blank")
