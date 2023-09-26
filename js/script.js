@@ -7,21 +7,19 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-var navBarOpen = false; // Collapses the dropdown menu on the navbar in the mobile-port
+var navBarOpenMobile = false;
 
 function navBarToggled() {
-  navBarOpen = !navBarOpen; // If called it will switch the variable, if true to false and if false to true
+  navBarOpenMobile = !navBarOpenMobile; // If called it will switch the variable, if true to false and if false to true
 }
 
 var prevScrollPosition = window.scrollY;
 
 // Hides the navbar when scrolling down, shows when scrolling up.
 window.onscroll = function () {
-  // Will not hide navbar if its active on smaller screen
-  if (navBarOpen === false) {
-    let currentScrollPosition = window.scrollY;
+  if (navBarOpenMobile === false) {
+    let currentScrollPosition = window.scrollY; // Pixels that the document is currently scrolled vertically.
     if (currentScrollPosition === 0) {
-      // If the user at the top of the website show navbar
       document.getElementById("navbar").style.top = "0";
     } else if (prevScrollPosition > currentScrollPosition) {
       // Show navbar if user is scrolling up
@@ -47,16 +45,16 @@ document.addEventListener("DOMContentLoaded", function () {
 function dailySales(date) {
   const openHours = {
     kiruna: {
-      mondayClose: 16,
-      tuesdayClose: 16,
-      wednesdayClose: 16,
-      thursdayClose: 16,
+      mondayCloseHour: 16,
+      tuesdayCloseHour: 16,
+      wednesdayCloseHour: 16,
+      thursdayCloseHour: 16,
     },
     lulea: {
-      mondayClose: 17,
-      tuesdayClose: 16,
-      wednesdayClose: 15,
-      thursdayClose: 16,
+      mondayCloseHour: 17,
+      tuesdayCloseHour: 16,
+      wednesdayCloseHour: 15,
+      thursdayCloseHour: 16,
     },
   };
 
@@ -68,7 +66,7 @@ function dailySales(date) {
     : console.log("location does not have openingHours for dailysailes");
 
   const weekday = date.getDay();
-  const hour = date.getHours();
+  const currentHour = date.getHours();
 
   const saleLongHair = document.getElementById("saleLongHair");
   const longHair = document.getElementById("longHair");
@@ -88,40 +86,27 @@ function dailySales(date) {
   saleLongHair.style.display = "none";
   saleShorthair.style.display = "none";
 
-  // Checks what day of the week it is and sets sales for that day
   switch (weekday) {
     case 1: // On Monday longhair is on sale
-      if (
-        //Before the store closes the sale will show
-        hour < locationOpeningHours.mondayClose
-      ) {
+      if (currentHour < locationOpeningHours.mondayCloseHour) {
         saleLongHair.style.display = "block";
         longHair.style.textDecoration = "line-through";
       }
       break;
     case 2: // On Tuesday shorthair is on sale
-      if (
-        //Before the store closes the sale will show
-        hour < locationOpeningHours.tuesdayClose
-      ) {
+      if (currentHour < locationOpeningHours.tuesdayCloseHour) {
         saleShorthair.style.display = "block";
         shortHair.style.textDecoration = "line-through";
       }
       break;
     case 3: // On Wednesday beard is on sale
-      if (
-        //Before the store closes the sale will show
-        hour < locationOpeningHours.wednesdayClose
-      ) {
+      if (currentHour < locationOpeningHours.wednesdayCloseHour) {
         saleBeard.style.display = "block";
         beard.style.textDecoration = "line-through";
       }
       break;
     case 4: // On Thursday coloring is on sale
-      if (
-        //Before the store closes the sale will show
-        hour < locationOpeningHours.thursdayClose
-      ) {
+      if (currentHour < locationOpeningHours.thursdayCloseHour) {
         saleColoring.style.display = "block";
         coloring.style.textDecoration = "line-through";
         break;
