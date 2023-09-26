@@ -68,7 +68,7 @@ h2 {
 
 @font-face {
     font-family: nav-link;
-    src: url("fonts/Montserrat-VariableFont_wght.ttf");
+    src: url("../fonts/Montserrat-VariableFont_wght.ttf");
 }
 
 #thirdPage {
@@ -157,7 +157,7 @@ h2 {
 
 @font-face {
     font-family: Title;
-    src: url("fonts/Italianno-Regular.ttf");
+    src: url("../fonts/Italianno-Regular.ttf");
 }
 
 @media screen and (max-width:800px) {
