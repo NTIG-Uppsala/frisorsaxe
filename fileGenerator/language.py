@@ -4,7 +4,6 @@ fileNames = ["kuirnakurish"]
 with open("fileGenerator/template.html", "r", encoding="utf-8") as html_file:
     html_content = html_file.read()
 
-# Step 2: Read the text document with variable replacements
 for fileName in fileNames:
     with open(
         "fileGenerator/" + fileName + ".txt", "r", encoding="utf-8"

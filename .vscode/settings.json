@@ -8,9 +8,5 @@
     ],
     "python.testing.pytestEnabled": false,
     "python.testing.unittestEnabled": true,
-    "doki.background.enabled": true,
-    "doki.wallpaper.enabled": true,
-    "doki.wallpaper.path": "",
-    "doki.sticker.path": "C:\\Users\\robin.ofverbergrund\\Downloads\\mommy.jpg",
     "liveServer.settings.port": 5501
 }

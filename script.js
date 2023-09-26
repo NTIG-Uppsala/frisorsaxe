@@ -1,4 +1,5 @@
 // Displays all elements with class name "hasjs"
+// If javscript is on all elements with hasjs class will show. They are by default not displayed.
 document.addEventListener("DOMContentLoaded", function () {
   let hasjs = document.getElementsByClassName("hasjs");
 
@@ -8,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-var navBarOpen = false; // Collapses the dropdown menu on the navbar in the mobile-port 
+var navBarOpen = false; // Collapses the dropdown menu on the navbar in the mobile-port
 
 // Toggles the visibility of the navbar as needed
 function navBarToggled() {
