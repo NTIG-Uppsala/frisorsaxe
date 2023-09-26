@@ -372,6 +372,13 @@ input[type=submit] {
     border-radius: 10px;
 }
 
+@media screen and (max-width:286px) {
+    input[type=submit] {
+        margin-top: 7px;
+    }
+
+}
+
 .output {
     margin-top: 1vh;
     margin-bottom: 0;
