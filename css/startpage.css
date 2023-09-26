@@ -1,4 +1,4 @@
-.bigTitle{
+.bigTitle {
     font-size: 7rem;
     align-items: center;
     display: flex;
@@ -8,54 +8,57 @@
 
 @font-face {
     font-family: Italianno;
-    src: url("fonts/Italianno-Regular.ttf");
+    src: url("../fonts/Italianno-Regular.ttf");
 }
 
-@media screen and (max-width:450px){
-    .card-group{
-    width: 80% !important;
+@media screen and (max-width:450px) {
+    .card-group {
+        width: 80% !important;
     }
 }
 
 @media screen and (max-width:575px) {
-    .card-group{
+    .card-group {
         width: 60% !important;
     }
-    .bigTitle{
+
+    .bigTitle {
         font-size: 3rem;
     }
-    .card-text{
+
+    .card-text {
         font-size: 0.7rem;
     }
 }
 
 @media screen and (max-width:750px) {
-    .bigTitle{
+    .bigTitle {
         font-size: 4rem;
     }
-    .card-group{
+
+    .card-group {
         width: 80%;
     }
 }
 
-@media screen and (max-width:1000px){
-    .card-group{
+@media screen and (max-width:1000px) {
+    .card-group {
         width: 70% !important;
     }
 }
 
-*{
+* {
     transition: 0.2s ease-in-out;
 }
 
 
-.card-group{
-    width: 50%  ;
+.card-group {
+    width: 50%;
     margin: 0 auto;
     margin-bottom: 9%;
 }
 
-.card{
+.card {
     border-radius: 20px;
     cursor: pointer;
     padding: 20px;
@@ -63,50 +66,50 @@
 }
 
 
-.card:hover{
+.card:hover {
     transform: scale(1.04);
 }
 
-img{
+img {
     width: auto !important;
     height: auto !important;
 }
 
 
-.card-title{
+.card-title {
     text-align: center;
     font-size: 1.7rem;
     color: black !important;
-    text-decoration:none !important;
+    text-decoration: none !important;
 
 }
 
-.card-text{
+.card-text {
     text-align: center;
-    text-decoration:none !important;
+    text-decoration: none !important;
     color: black;
     font-size: 1.2rem;
 }
 
-a{
+a {
     text-decoration: none !important;
     background-color: transparent !important;
 }
 
-#arrowForPhonesDown{
+#arrowForPhonesDown {
     display: none;
 }
 
 @media screen and (max-width:576px) {
-    #arrowForPhonesDown{
+    #arrowForPhonesDown {
         display: block !important;
         position: fixed;
-        color:red;
+        color: red;
         width: 50px;
         margin-top: 5px;
         margin-right: 5px;
         height: 50px;
         bottom: 0;
         right: 0;
-    }  
+    }
 }
