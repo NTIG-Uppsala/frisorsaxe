@@ -162,15 +162,11 @@
 
                 <!-- Prices -->
                 <h2 class="mb-4 my-5 text-body">Haircut</h2>
-                <table>
-                    <tr>
-                        <td class="text-start ps-2" id="infoAboutLongHair">The limit for long hair starts at 20 cm</td>
-                    </tr>
-                    <tr>
-                        <td class="text-start ps-2" id="regularCustomerInfo">
-                            After 3 visits within 12 months you are considerd a regular customer</td>
-                    </tr>
-                </table>
+                <div id="infoOnPhone">
+                    <span class="text-center">The limit for long hair starts at 20 cm</span> <br>
+                    <span class="text-center">
+                        After 3 visits within 12 months you are considerd a regular customer</span>
+                </div>
                 <table class="table table-sm" style="table-layout: fixed;">
                     <thead>
 
@@ -201,11 +197,6 @@
                             </th>
                         </tr>
                         <tr>
-                            <th scope="col" class="text-start">Beard (20&nbsp;min)</th>
-                            <th scope="col" class="text-end"><span id="saleBeard" class="sale">Today
-                                    135&nbsp;kr</span><span id="beard">150&nbsp;kr</span></th>
-                        </tr>
-                        <tr>
                             <th scope="col" class="text-start">Children&nbsp;(0&#8209;13&nbsp;years) (20&nbsp;min)
                             </th>
                             <th scope="col" class="text-end">150&nbsp;kr</th>
@@ -217,12 +208,6 @@
             <div class="col-md-6 flex-column marginTop">
                 <img class="w-100" src="../pictures/other.jpg" alt="övrigt" style="border-radius: 7px;">
                 <h2 class="mb-4 my-5 text-body">Other</h2>
-                <table>
-                    <tr>
-                        <td class="text-start ps-2" id="regularCustomerInfoOther">
-                            After 3 visits within 12 months you are considered a regular customer</td>
-                    </tr>
-                </table>
                 <table class="table table-sm " style="table-layout: fixed;">
                     <thead>
                         <tr>
@@ -230,6 +215,11 @@
                             <th scope="col" class="text-end">200 kr</th>
                         </tr>
                     </thead>
+                    <tr>
+                        <th scope="col" class="text-start">Beard (20&nbsp;min)</th>
+                        <th scope="col" class="text-end"><span id="saleBeard" class="sale">Today
+                                135&nbsp;kr</span><span id="beard">150&nbsp;kr</span></th>
+                    </tr>
                     <tbody>
                         <tr>
                             <th scope="col" class="text-start">Coloring (90&nbsp;min)</th>
@@ -252,6 +242,10 @@
 
                     </tbody>
                 </table>
+            </div>
+            <div id="infoOnDesktop">
+                <span>The limit for long hair starts at 20 cm</span><br>
+                <span>After 3 visits within 12 months you are considered a regular customer</span>
             </div>
         </div>
     </div>
@@ -313,7 +307,7 @@
     <div class="container my-5 findusAnchor" id="findus">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h2 class="mb-4" style="color: white;">Find&nbsp;Us</h2>
+                <h2 class="mb-4">Find&nbsp;Us</h2>
                 <div class="hasjs"><iframe
                         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1503.2583513342254!2d20.2337795!3d67.8660232!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x45d0ba6368d7c9a3%3A0xe3887ef038c559b0!2sFj%C3%A4llgatan%2032%2C%20981%2039%20Kiruna!5e0!3m2!1ssv!2sse!4v1693397051519!5m2!1ssv!2sse"
                         width="450" height="450" style="border:0; width: 100%; max-width: 800px; border-radius: 7px;"
