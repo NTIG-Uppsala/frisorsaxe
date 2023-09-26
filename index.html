@@ -7,9 +7,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="pictures/icon.png">
-    <link rel="stylesheet" href="startpage.css">
-    <script src="startpagescript.js"></script>
-
+    <link rel="stylesheet" href="css/startpage.css">
+    <script src="js/startpagescript.js"></script>
 
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -23,25 +22,24 @@
 
 </head>
 
-<body>
-    <h1 class="bigTitle">Frisör&nbsp;Saxé</h1>
-
+<body onscroll="arrowShow()">
+    <h1 class="bigTitle" id="anchorUp">Frisör&nbsp;Saxé</h1>
     <div class="card-group">
         <!-- Lulea card -->
-        <a class="card" onclick="goToSite('lulea')" id="luleaLink">
-            <noscript>
-                <a class="card" href="luleaswe.html" id="luleaLink">
-            </noscript>
+        <a class="card" onclick="goToSite('lulea')">
             <img src="pictures/luleaCard.png" class="card-img-top rounded-3" alt="luleaCard">
             <div class="card-body">
                 <h5 class="card-title">Luleå</h5>
                 <p class="card-text">Färjledsvägen&nbsp;38</p>
             </div>
         </a>
+        <noscript>
+            <a class="card" href="luleaswe.html"></a>
+        </noscript>
         <!-- Kiruna card -->
-        <a class="card" onclick="goToSite('kiruna')" id="kirunaLink">
+        <a class="card" onclick="goToSite('kiruna')">
             <noscript>
-                <a class="card" href="kirunaswe.html" id="kirunaLink">
+                <a class="card" href="kirunaeng.html">
             </noscript>
             <img src="pictures/kirunaCard.jpg" class="card-img-top rounded-3" alt="kirunaCard" id="kirunaCard">
             <div class="card-body">
@@ -54,6 +52,12 @@
     <div id="arrowForPhonesDown">
         <a href="#kirunaCard">
             <img src="icons/arrow.svg" alt="arrow down" id="arrow">
+        </a>
+    </div>
+
+    <div id="arrowForPhonesUp">
+        <a href="#anchorUp">
+            <img src="icons/arrow_upward_FILL0_wght400_GRAD0_opsz24.svg" alt="arrow down" id="arrow">
         </a>
     </div>
 

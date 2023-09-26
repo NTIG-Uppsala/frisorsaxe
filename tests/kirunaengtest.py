@@ -32,7 +32,7 @@ class TestHomepageNoScriptENG(TestCase):
 
     # Before each test
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "kirunaeng.html"))
+        self.browser.get(path.join(getcwd(), "./kirunaeng.html"))
 
     # After each test
     def tearDown(self):
@@ -49,7 +49,9 @@ class TestHomepageNoScriptENG(TestCase):
 
             if is_loaded:
                 print(f"Image '{image_element.get_attribute('src')}' is loaded.")
+                print(image_element)
             else:
+                print(image_element)
                 self.fail(
                     f"Image '{image_element.get_attribute('src')}' is not loaded."
                 )
@@ -192,7 +194,7 @@ class TestHomepageENG(TestCase):
         self.helpDailySalesNotShow("2023-09-14T11:00:00", "saleColoring")  # On Thursday
         self.helpDailySalesNotShow("2023-09-15T11:00:00", "")  # On Friday
         self.helpDailySalesNotShow("2023-09-16T11:00:00", "")  # On Saturday
-        self.helpDailySalesNotShow("2023-09-17T11:00:00", "")  # On Saturday
+        self.helpDailySalesNotShow("2023-09-17T11:00:00", "")  # On Sunday
 
     def helpTestDailySales(self, date, id):
         self.browser.execute_script("dailySales(new Date('" + date + "'))")
@@ -200,7 +202,6 @@ class TestHomepageENG(TestCase):
         self.assertEqual("block", element)
 
     def helpDailySalesNotShow(self, date, expectedToShow):
-        self.browser.get(path.join(getcwd(), "kirunaeng.html"))
         self.browser.execute_script("dailySales(new Date('" + date + "'))")
         ids = ["saleBeard", "saleColoring", "saleLongHair", "saleShortHair"]
         # Removes the id that is supposed to be showing from the list

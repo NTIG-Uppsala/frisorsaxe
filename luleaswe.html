@@ -6,8 +6,8 @@
     <!-- Meta tags and links to CSS and JS -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js"></script>
 
     <!-- Favicon -->
     <link rel="icon" href="pictures/icon.png">
@@ -22,7 +22,6 @@
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
 
-    <!-- Google icons -->
     <!-- House icon -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
@@ -53,7 +52,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg" id="navbar">
         <div class="container-fluid navButtonRight">
-            <a class="material-symbols-outlined navbar-brand" id="homeButton" href="index.html">wifi_home</a>
+            <a class="material-symbols-outlined navbar-brand" id="homeButton" href="/index.html">wifi_home</a>
             <button class="navbar-toggler justify-content-end" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                 aria-label="Toggle navigation" onclick="navBarToggled()">
@@ -114,22 +113,19 @@
             <div class="col-md-6 flex-column">
                 <h2 class="mb-2 makeAppoitmentAnchor" id="boka">Boka tid</h2>
                 <div class="row justify-content-center">
-                    <div class="col-3 p-3 mb-2 text-start">
+                    <div class="col-10 p-3 mb-2 fs-4">
                         <p>Telefon</p>
+                        <p><a href="tel:0630555555">0630&#8209;555&#8209;555</a></p>
                         <p>E&#8209;post</p>
-                    </div>
-                    <div class="col-3 p-3 mb-2 text-start">
-                        <p><a href="tel:0640555333">0640&#8209;555&#8209;333</a></p>
-                        <p>
-                            <a id="mailLink" href="mailto:saxefrisor@gmail.com">saxefrisor@gmail.com</a>
-                        </p>
+                        <p><a href="mailto:saxefrisor@gmail.com">
+                                saxefrisor@gmail.com</a></p>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 flex-column">
                 <h2 class="mb-2 openingHoursAnchor" id="oppettider">Öppettider</h2>
                 <div class="row justify-content-center">
-                    <div class="col-3 p-3 mb-2 text-start">
+                    <div class="col-4 col-sm-4 col-md-5 col-lg-4 col-xl-3 p-3 mb-2 text-start fs-4">
                         <p>Måndag</p>
                         <p>Tisdag</p>
                         <p>Onsdag</p>
@@ -139,7 +135,7 @@
 
 
                     </div>
-                    <div class="col-3 p-3 mb-2 openHours">
+                    <div class="col-4 col-sm-4 col-md-5 col-lg-4 col-xl-3 p-3 mb-2 openHours text-end fs-4">
                         <p>10&nbsp;&#8209;&nbsp;17</p>
                         <p>10&nbsp;&#8209;&nbsp;16</p>
                         <p>10&nbsp;&#8209;&nbsp;15</p>
@@ -175,21 +171,18 @@
 
                 <!-- Prices -->
                 <h2 class="mb-4 my-5 text-body">Klippning</h2>
-                <table>
-                    <tr>
-                        <td class="text-start ps-2" id="infoAboutLongHair">Gränsen för långt hår går vid 20 cm</td>
-                    </tr>
-                    <tr>
-                        <td class="text-start ps-2" id="regularCustomerInfo">
-                            Man blir stamkund efter tre besök under 12 månader</td>
-                    </tr>
-                </table>
+                <div id="infoOnPhone">
+                    <span class="text-center">Gränsen för långt hår går vid 20 cm</span> <br>
+                    <span class="text-center">
+                        Man blir stamkund efter tre besök under 12 månader.</span>
+                </div>
                 <table class="table table-sm" style="table-layout: fixed;">
                     <thead>
                         <tr>
                             <th scope="col" class="text-start">Långt hår (60&nbsp;min)</th>
-                            <th scope="col" class="text-end"><span id="saleLongHair" class="sale">Idag
-                                    540&nbsp;kr</span><span id="longHair"> 600&nbsp;kr</span>
+                            <th scope="col" class="text-end">
+                                <span id="saleLongHair" class="sale">Idag 540&nbsp;kr</span><span id="longHair">
+                                    600&nbsp;kr</span>
                             </th>
 
                         </tr>
@@ -214,13 +207,6 @@
                             </th>
                         </tr>
                         <tr>
-                            <th scope="col" class="text-start">Skägg (20&nbsp;min)</th>
-                            <th scope="col" class="text-end">
-                                <span id="saleBeard" class="sale">Idag 135&nbsp;kr</span><span
-                                    id="beard">150&nbsp;kr</span>
-                            </th>
-                        </tr>
-                        <tr>
                             <th scope="col" class="text-start">Barn (0-13&nbsp;år) (20&nbsp;min)</th>
                             <th scope="col" class="text-end">150&nbsp;kr</th>
                         </tr>
@@ -231,13 +217,6 @@
             <div class="col-md-6 flex-column marginTop">
                 <img class="w-100" src="pictures/other.jpg" alt="övrigt" style="border-radius: 7px;">
                 <h2 class="mb-4 my-5 text-body">Annat</h2>
-                <table>
-                    <tr>
-                        <td class="text-start ps-2" id="regularCustomerInfoOther">Man blir stamkund efter tre besök
-                            under 12
-                            månader</td>
-                    </tr>
-                </table>
                 <table class="table table-sm " style="table-layout: fixed;">
                     <thead>
                         <tr>
@@ -245,11 +224,18 @@
                             <th scope="col" class="text-end">200 kr</th>
                         </tr>
                     </thead>
+                    <tr>
+                        <th scope="col" class="text-start">Skägg (20&nbsp;min)</th>
+                        <th scope="col" class="text-end">
+                            <span id="saleBeard" class="sale">Idag 135&nbsp;kr</span><span id="beard">150&nbsp;kr</span>
+                        </th>
+                    </tr>
                     <tbody>
                         <tr>
                             <th scope="col" class="text-start">Färgning (90&nbsp;min)</th>
-                            <th scope="col" class="text-end"><span class="sale" id="saleColoring">Idag
-                                    500&nbsp;kr</span><span id="coloring"> 560 kr</span>
+                            <th scope="col" class="text-end">
+                                <span class="sale" id="saleColoring">Idag 500&nbsp;kr</span><span id="coloring"> 560
+                                    kr</span>
                             </th>
                         </tr>
                         <tr>
@@ -266,6 +252,11 @@
                         </tr>
                     </tbody>
                 </table>
+
+            </div>
+            <div id="infoOnDesktop">
+                <span>Gränsen för långt hår går vid 20 cm</span><br>
+                <span>Man blir stamkund efter tre besök under 12 månader.</span>
             </div>
         </div>
     </div>
@@ -295,7 +286,7 @@
                 <div class="col-xl-4 col-md-6 my-5">
                     <div class="container d-flex justify-content-center">
                         <div class="card" style="width: 20rem; height: 70%;">
-                            <img src="pictures//employeePictures/annaAndersson.jpg" class="card-img-top"
+                            <img src="pictures/employeePictures/annaAndersson.jpg" class="card-img-top"
                                 alt="Anna Andersson">
                             <div class="card-body">
                                 <h5 class="card-title">Anna Andersson</h5>

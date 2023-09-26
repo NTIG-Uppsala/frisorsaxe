@@ -46,15 +46,17 @@ for path in paths:
     browser.find_element(By.ID, "doc").send_keys(os.path.abspath(path))
     browser.find_element(By.ID, "submit").click()
     # Remove inputmode warning
-    if checkbox_checked != True:  # only executes if inputmode isnt checked off
+    if checkbox_checked != True:  # Only executes if inputmode isnt checked off
         try:
             # Checks if messages filtering is available
-            browser.find_element(By.XPATH, '//*[@id="filters"]/h2/button')
+            messages_filtering = browser.find_element(
+                By.XPATH, '//*[@id="filters"]/h2/button'
+            )
         except NoSuchElementException:
             continue
         else:
             # Opens messages filtering
-            browser.find_element(By.XPATH, '//*[@id="filters"]/h2/button').click()
+            messages_filtering.click()
             # Locates the inputmode warning and then unchecks the checkbox
             code_elements = browser.find_elements(By.XPATH, "//code")
             for code_element in code_elements:
@@ -79,3 +81,4 @@ for path in paths:
                     ).click()
                     checkbox_checked = True
                     break
+            messages_filtering.click()

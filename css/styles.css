@@ -12,11 +12,11 @@ h2 {
 }
 
 .makeAppoitmentAnchor {
-    scroll-margin-top: 100px;
+    scroll-margin-top: 175px;
 }
 
 .openingHoursAnchor {
-    scroll-margin-top: 100px;
+    scroll-margin-top: 175px;
 }
 
 .pricesAnchor {
@@ -68,7 +68,7 @@ h2 {
 
 @font-face {
     font-family: nav-link;
-    src: url("fonts/Montserrat-VariableFont_wght.ttf");
+    src: url("../fonts/Montserrat-VariableFont_wght.ttf");
 }
 
 #thirdPage {
@@ -130,7 +130,7 @@ h2 {
 }
 
 #homePage {
-    background-image: url('pictures/mainBackground.jpg');
+    background-image: url('/pictures/mainBackground.jpg');
     background-position: center;
     background-size: cover;
     margin-bottom: 8vh;
@@ -157,7 +157,7 @@ h2 {
 
 @font-face {
     font-family: Title;
-    src: url("fonts/Italianno-Regular.ttf");
+    src: url("../fonts/Italianno-Regular.ttf");
 }
 
 @media screen and (max-width:800px) {
@@ -201,7 +201,7 @@ h2 {
         font-size: 1rem;
     }
 
-    #regularCustomerInfo {
+    #infoOnPhone {
         font-size: 1rem;
     }
 }
@@ -231,8 +231,8 @@ h2 {
         font-size: 0.7rem;
     }
 
-    #regularCustomerInfo {
-        font-size: 0.7rem;
+    #infoOnPhone {
+        font-size: 0.8rem;
     }
 }
 
@@ -288,12 +288,8 @@ footer {
     font-weight: bold !important;
 }
 
-#regularCustomerInfo {
-    font-weight: bold;
-}
-
-#regularCustomerInfoOther {
-    font-weight: bold;
+#infoOnPhone {
+    display: none;
 }
 
 .hasjs {
@@ -312,6 +308,8 @@ footer {
     position: absolute;
     left: 0px;
     margin-top: 6.5px;
+
+
 }
 
 @media screen and (max-width:991px) {
@@ -323,7 +321,6 @@ footer {
 
 #flagMenu {
     list-style: none;
-
 }
 
 .sale {
@@ -382,7 +379,7 @@ input[type=submit] {
 }
 
 #homeButton {
-    color: grey;
+    color: rgba(255, 255, 255, 0.733);
     font-size: 2rem;
     padding-right: 10px;
 

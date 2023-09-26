@@ -1,21 +1,18 @@
-// Displays all elements with class name "hasjs"
+// If javscript is on all elements with hasjs class will show. They are by default not displayed.
 document.addEventListener("DOMContentLoaded", function () {
   let hasjs = document.getElementsByClassName("hasjs");
 
-  // Loop through each element with the class "hasjs"
   for (let i = 0; i < hasjs.length; i++) {
     hasjs[i].style.display = "block"; // Block shows element
   }
 });
 
-var navBarOpen = false; // Collapses the dropdown menu on the navbar in the mobile-port 
+var navBarOpen = false; // Collapses the dropdown menu on the navbar in the mobile-port
 
-// Toggles the visibility of the navbar as needed
 function navBarToggled() {
   navBarOpen = !navBarOpen; // If called it will switch the variable, if true to false and if false to true
 }
 
-// Store the previous scroll position
 var prevScrollPosition = window.scrollY;
 
 // Hides the navbar when scrolling down, shows when scrolling up.
@@ -23,7 +20,6 @@ window.onscroll = function () {
   // Will not hide navbar if its active on smaller screen
   if (navBarOpen === false) {
     let currentScrollPosition = window.scrollY;
-    // Compare scroll positions to show or hide the navbar
     if (currentScrollPosition === 0) {
       // If the user at the top of the website show navbar
       document.getElementById("navbar").style.top = "0";
@@ -38,6 +34,7 @@ window.onscroll = function () {
   }
 };
 
+//Save the current used language in localstorage to be used later.
 document.addEventListener("DOMContentLoaded", function () {
   const Currentlanguage = document.getElementById("activeLang").alt;
   if (Currentlanguage === "svenskaflaggan") {
@@ -45,8 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
   } else if (Currentlanguage === "englishflag") {
     localStorage.setItem("language", "eng");
   }
-
-  const flagMenu = document.getElementById("flagMenu");
 });
 
 function dailySales(date) {
@@ -67,9 +62,9 @@ function dailySales(date) {
 
   // Checks if website is in Luleå or Kiruna and then changes the opening hours accordingly
   const locationOpeningHours = window.location.pathname.includes("lulea")
-    ? openHours.lulea // In Luleas website
+    ? openHours.lulea
     : window.location.pathname.includes("kiruna")
-      ? openHours.kiruna //In Kirunas website
+      ? openHours.kiruna
       : console.log("location does not have openingHours for dailysailes");
 
   const weekday = date.getDay();
@@ -148,17 +143,21 @@ function showFlags() {
 
 // Moves the table for prices when the window is smaller than 767px to haircut section
 function regularCustomerInfo() {
-  const regularInfo = document.getElementById("regularCustomerInfo");
-  const regularInfoOther = document.getElementById("regularCustomerInfoOther");
+  const infoOnPhone = document.getElementById("infoOnPhone");
+  const infoOnDesktop = document.getElementById("infoOnDesktop");
 
+  console.log(window.innerWidth)
   if (window.innerWidth <= 767) {
-    regularInfo.style.display = "block";
-    regularInfoOther.style.display = "none";
+    infoOnPhone.style.display = "block";
+    infoOnDesktop.style.display = "none";
   } else {
-    regularInfo.style.display = "none";
-    regularInfoOther.style.display = "block";
+    infoOnPhone.style.display = "none";
+    infoOnDesktop.style.display = "block";
   }
 }
+
+
+
 
 // Call the function when the page loads and when the window is resized
 window.addEventListener("load", regularCustomerInfo);
@@ -181,7 +180,6 @@ zipCodeListKiruna = [
 ];
 zipCodeListLulea = ["96190", "96191", "96193", "96194"];
 
-// Runs when the document is fully loaded
 document.addEventListener("DOMContentLoaded", (event) => {
   document
     .querySelector("#zipCodeCheck form")
@@ -189,9 +187,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
       event.preventDefault(); // Prevents the site from reloading
       document.getElementById("outputAcceptedZipCode").style.display = "none";
       document.getElementById("outputNotValidZipCode").style.display = "none";
-      document.getElementById("outputNonAcceptedZipCode").style.display = "none";
+      document.getElementById("outputNonAcceptedZipCode").style.display =
+        "none";
 
-      // Is what is written in the input
       let zipInput =
         event.submitter.parentNode.querySelector("#zipNumber").value;
       zipInput = zipInput.split(" ").join(""); //removes spaces from string
@@ -201,14 +199,20 @@ document.addEventListener("DOMContentLoaded", (event) => {
         document.getElementById("outputNotValidZipCode").style.display =
           "block";
       } else if (zipInput.length != 5) {
-        // If there are more or less then 5 numbers
+        // If the input isnt 5 numbers
         document.getElementById("outputNotValidZipCode").style.display =
           "block";
-      } else if (zipCodeListKiruna.includes(zipInput) && window.location.pathname.includes("kiruna")) {
+      } else if (
+        zipCodeListKiruna.includes(zipInput) &&
+        window.location.pathname.includes("kiruna")
+      ) {
         // If the zip code is valid in kiruna
         document.getElementById("outputAcceptedZipCode").style.display =
           "block";
-      } else if (zipCodeListLulea.includes(zipInput) && window.location.pathname.includes("lulea")) {
+      } else if (
+        zipCodeListLulea.includes(zipInput) &&
+        window.location.pathname.includes("lulea")
+      ) {
         // If the zip code is valid in lulea
         document.getElementById("outputAcceptedZipCode").style.display =
           "block";
