@@ -1,28 +1,28 @@
 function goToSite(place) {
-  // Goes to last used language if there is any else Swedish site
+  // Navigate to the previously selected language, or default to Swedish if none is available.
   const language = localStorage.getItem("language") || "swe";
   window.location.href = `${place}${language}.html`;
 }
-
 function arrowShow() {
+  // Calculate the maximum height of the webpage content
   let limit = Math.max(
-    // Max height of site
     document.body.scrollHeight,
     document.body.offsetHeight,
     document.documentElement.clientHeight,
     document.documentElement.scrollHeight,
     document.documentElement.offsetHeight
   );
+
+  // Get references to the arrow elements
   const arrowDown = document.getElementById("arrowForPhonesDown");
   const arrowUp = document.getElementById("arrowForPhonesUp");
 
-  // 50 pixels from the bottom of the screen
+  // (Limit - innerHeight) is how many pixels there is left to the bottom of the site.
+  // If there is 150px left to bottom and you then scroll 100px down the arrowDown will show.
   if (limit - window.innerHeight - window.scrollY < 50) {
-    // Shows arrow do go down
-    arrowDown.style.display = "none";
-    arrowUp.style.display = "block";
+    arrowDown.style.display = "none"; // Hide
+    arrowUp.style.display = "block"; // Show
   } else {
-    // Show arrow to go up
     arrowDown.style.display = "block";
     arrowUp.style.display = "none";
   }
