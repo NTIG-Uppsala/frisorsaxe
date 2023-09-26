@@ -78,7 +78,7 @@ h2 {
 }
 
 
-@media screen and (max-width:993px) {
+/* @media screen and (max-width:993px) {
     .nav-link {
         text-align: center;
     }
@@ -86,7 +86,7 @@ h2 {
     .col-3 {
         font-size: 1rem;
     }
-}
+} */
 
 @media screen and (max-width:360px) {
     .col-3 {
@@ -240,12 +240,6 @@ h2 {
     justify-content: center !important;
 }
 
-@media screen and (max-width: 992px) {
-    .navButtonRight {
-        justify-content: end !important;
-    }
-}
-
 .text-primary {
     color: #000000 !important;
 }
@@ -271,18 +265,10 @@ footer {
     background-size: cover;
 }
 
-@media screen and (max-width: 991px) {
-    .justify-content-center {
-        justify-content: end !important;
-    }
-}
-
 .navbar-toggler {
     color: white !important;
     background-color: rgba(211, 211, 211, 0.688) !important;
 }
-
-
 
 #infoAboutLongHair {
     font-weight: bold !important;
@@ -312,10 +298,29 @@ footer {
 
 }
 
+@media screen and (max-width:992px) {
+    .justify-content-center {
+        justify-content: end !important;
+    }
+}
+
 @media screen and (max-width:991px) {
     #langMenu {
         top: 0;
         left: -15px;
+    }
+    /* .justify-content-center {
+        justify-content: end !important;
+    } */
+    .navButtonRight {
+        justify-content: end !important;
+    }
+    .nav-link {
+        text-align: center;
+    }
+
+    .col-3 {
+        font-size: 1rem;
     }
 }
 
@@ -385,10 +390,9 @@ input[type=submit] {
 
 }
 
-@media screen and (min-width:991px) {
+@media screen and (min-width:992px) {
     #homeButton {
         position: absolute;
         right: 0;
     }
-
 }
