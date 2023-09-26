@@ -1,4 +1,4 @@
-// If javscript is on all elements with hasjs class will show. They are by default not displayed.
+// If javscript is on, all elements with hasjs class will show. They are by default not displayed.
 document.addEventListener("DOMContentLoaded", function () {
   let hasjs = document.getElementsByClassName("hasjs");
 
@@ -64,8 +64,8 @@ function dailySales(date) {
   const locationOpeningHours = window.location.pathname.includes("lulea")
     ? openHours.lulea
     : window.location.pathname.includes("kiruna")
-      ? openHours.kiruna
-      : console.log("location does not have openingHours for dailysailes");
+    ? openHours.kiruna
+    : console.log("location does not have openingHours for dailysailes");
 
   const weekday = date.getDay();
   const hour = date.getHours();
@@ -146,7 +146,7 @@ function regularCustomerInfo() {
   const infoOnPhone = document.getElementById("infoOnPhone");
   const infoOnDesktop = document.getElementById("infoOnDesktop");
 
-  console.log(window.innerWidth)
+  console.log(window.innerWidth);
   if (window.innerWidth <= 767) {
     infoOnPhone.style.display = "block";
     infoOnDesktop.style.display = "none";
@@ -155,9 +155,6 @@ function regularCustomerInfo() {
     infoOnDesktop.style.display = "block";
   }
 }
-
-
-
 
 // Call the function when the page loads and when the window is resized
 window.addEventListener("load", regularCustomerInfo);
