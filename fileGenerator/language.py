@@ -1,9 +1,4 @@
-fileNames = [
-    "kirunaeng",
-    "kirunaswe",
-    "luleaeng",
-    "luleaswe",
-]
+fileNames = ["kuirnakurish"]
 
 # Step 1: Read and parse the HTML file
 with open("fileGenerator/template.html", "r", encoding="utf-8") as html_file:

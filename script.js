@@ -37,6 +37,7 @@ window.onscroll = function () {
   }
 };
 
+//Save the current used language in localstorage to be used later.
 document.addEventListener("DOMContentLoaded", function () {
   const Currentlanguage = document.getElementById("activeLang").alt;
   if (Currentlanguage === "svenskaflaggan") {
@@ -44,8 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
   } else if (Currentlanguage === "englishflag") {
     localStorage.setItem("language", "eng");
   }
-
-  const flagMenu = document.getElementById("flagMenu");
 });
 
 function dailySales(date) {
@@ -68,8 +67,8 @@ function dailySales(date) {
   const locationOpeningHours = window.location.pathname.includes("lulea")
     ? openHours.lulea // In Luleas website
     : window.location.pathname.includes("kiruna")
-      ? openHours.kiruna //In Kirunas website
-      : console.log("location does not have openingHours for dailysailes");
+    ? openHours.kiruna //In Kirunas website
+    : console.log("location does not have openingHours for dailysailes");
 
   const weekday = date.getDay();
   const hour = date.getHours();
@@ -188,7 +187,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
       event.preventDefault(); // Prevents the site from reloading
       document.getElementById("outputAcceptedZipCode").style.display = "none";
       document.getElementById("outputNotValidZipCode").style.display = "none";
-      document.getElementById("outputNonAcceptedZipCode").style.display = "none";
+      document.getElementById("outputNonAcceptedZipCode").style.display =
+        "none";
 
       // Is what is written in the input
       let zipInput =
@@ -203,11 +203,17 @@ document.addEventListener("DOMContentLoaded", (event) => {
         // If there are more or less then 5 numbers
         document.getElementById("outputNotValidZipCode").style.display =
           "block";
-      } else if (zipCodeListKiruna.includes(zipInput) && window.location.pathname.includes("kiruna")) {
+      } else if (
+        zipCodeListKiruna.includes(zipInput) &&
+        window.location.pathname.includes("kiruna")
+      ) {
         // If the zip code is valid in kiruna
         document.getElementById("outputAcceptedZipCode").style.display =
           "block";
-      } else if (zipCodeListLulea.includes(zipInput) && window.location.pathname.includes("lulea")) {
+      } else if (
+        zipCodeListLulea.includes(zipInput) &&
+        window.location.pathname.includes("lulea")
+      ) {
         // If the zip code is valid in lulea
         document.getElementById("outputAcceptedZipCode").style.display =
           "block";
