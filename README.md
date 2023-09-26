@@ -24,7 +24,7 @@ Our website uses the software Selenium and Python's unittest library to run test
 #### Programming languages
 - HTML5 for creating websites
 - CSS3 and Bootstrap 5.2.1 for styling
-- Javascript
+- Javascript ECMAScript 2023
 - Python 3.11.5 and Selenium 4.11.2 for testing
 
 ### Documentation
