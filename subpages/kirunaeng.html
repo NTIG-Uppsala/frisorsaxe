@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en" id="language">
+
+<head>
+    <title>Frisör Saxé</title>
+    <!-- Meta tags and links to CSS and JS -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="pictures/icon.png">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Google icons -->
+    <!-- House icon -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+    </style>
+</head>
+
+<body onload="dailySales(new Date())">
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg" id="navbar">
+        <div class="container-fluid navButtonRight">
+            <a class="material-symbols-outlined navbar-brand" id="homeButton" href="index.html">wifi_home</a>
+            <button class="navbar-toggler justify-content-end" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation" onclick="navBarToggled()">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse flex-grow-0 fs-2" id="navbarNav">
+                <ul class="navbar-nav ">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#makeAppoitment">Appointment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#openingHours">Opening Hours</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#prices">Prices</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#employees">Staff</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#findus">Find Us</a>
+                    </li>
+                    <li id="langMenu">
+                        <div>
+                            <ul id="flagMenu">
+                                <li>
+                                    <a id="activeMenu" class="flag" onclick="showFlags()">
+                                        <img id="activeLang" src="pictures/engFlag.png" alt="englishflag"></a>
+                                </li>
+                                <li>
+                                    <a href="kirunaeng.html" class="inActiveMenu flag"><img src="pictures/engFlag.png"
+                                            alt="englishflag"></a>
+                                </li>
+                                <li>
+                                    <a class="inActiveMenu flag" href="kirunaswe.html"><img src="pictures/svFlag.png"
+                                            alt="swedishflag"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main header in the picture -->
+    <div style="height: 100vh;" id="homePage">
+        <div class="d-flex justify-content-center align-items-center">
+            <h1 class="text-light" id="centerText">Frisör&nbsp;Saxé</h1>
+        </div>
+    </div>
+
+    <!-- Opening hours and appointment info  -->
+    <div class="container text-center" id="secondRow">
+        <div class="row justify-content-center text-center">
+            <div class="col-md-6 flex-column">
+                <h2 class="mb-2 makeAppoitmentAnchor" id="makeAppoitment">Appointment</h2>
+                <div class="row justify-content-center">
+                    <div class="col-3 p-3 mb-2 text-start">
+                        <p>Phone</p>
+                        <p>Email</p>
+                    </div>
+                    <div class="col-3 p-3 mb-2 text-start">
+                        <p><a href="tel:0630555555">0630&#8209;555&#8209;555</a></p>
+                        <p><a id="mailLink" href="mailto:saxefrisor@gmail.com">
+                                saxefrisor@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 flex-column">
+                <h2 class="mb-2 openingHoursAnchor" id="openingHours">Opening Hours</h2>
+                <div class="row justify-content-center">
+                    <div class="col-3 p-3 mb-2 text-start">
+                        <p>Mon - Fri</p>
+                        <p>Saturday</p>
+                        <p>Sunday</p>
+                    </div>
+                    <div class="col-3 p-3 mb-2 openHours">
+                        <p>10&nbsp;&#8209;&nbsp;16</p>
+                        <p>12&nbsp;&#8209;&nbsp;15</p>
+                        <p>Closed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product and services -->
+
+    <div id="zipCodeCheck" class="zipInput container-fluid" style="text-align: center;">
+        <div id="jsCheck">
+            <h2>Bring the Salon to Your Home</h2>
+            <p>Check if you are within reach of a house appointment.</p>
+            <form><input class="zipCodeInput" type="text" inputmode="numeric" id="zipNumber"
+                    placeholder="Zip Code"><input class="checkNumber" id="submit" type="submit" value="Check"></form>
+            <p class="output" id="outputAcceptedZipCode">You are within reach. Call us to book a house appointment!</p>
+            <p class="output" id="outputNonAcceptedZipCode">Sorry, we cant offer this service to you.</p>
+            <p class="output" id="outputNotValidZipCode">Not a valid zipcode.</p>
+        </div>
+    </div>
+
+    <div class="container" id="pricingContainer">
+        <div class="row justify-content-center text-center">
+            <div class="col-md-6 flex-column">
+                <img class="w-100 pricesAnchor" id="prices" src="pictures/prices.jpg" alt="pris"
+                    style="border-radius: 7px;">
+
+                <!-- Prices -->
+                <h2 class="mb-4 my-5 text-body">Haircut</h2>
+                <table>
+                    <tr>
+                        <td class="text-start ps-2" id="infoAboutLongHair">The limit for long hair starts at 20 cm</td>
+                    </tr>
+                    <tr>
+                        <td class="text-start ps-2" id="regularCustomerInfo">
+                            After 3 visits within 12 months you are considerd a regular customer</td>
+                    </tr>
+                </table>
+                <table class="table table-sm" style="table-layout: fixed;">
+                    <thead>
+
+                        <tr>
+                            <th scope="col" class="text-start">Long hair (60&nbsp;min)</th>
+                            <th scope="col" class="text-end"><span id="saleLongHair" class="sale">Today
+                                    540&nbsp;kr</span><span id="longHair"> 600&nbsp;kr</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="col" class="text-start">Long hair regular&nbsp;customer</th>
+                            <th scope="col" class="text-end">500&nbsp;kr</th>
+                        </tr>
+                        <tr>
+
+                            <th scope="col" class="text-start">Short hair (30&nbsp;min)</th>
+                            <th scope="col" class="text-end ">
+                                <span id="saleShortHair" class="sale">Today 180&nbsp;kr</span>
+                                <span id="shortHair"> 200&nbsp;kr</span>
+                            </th>
+
+                        </tr>
+                        <tr>
+                            <th scope="col" class="text-start">Short hair regular&nbsp;customer</th>
+                            <th scope="col" class="text-end "><span>150&nbsp;kr</span>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th scope="col" class="text-start">Beard (20&nbsp;min)</th>
+                            <th scope="col" class="text-end"><span id="saleBeard" class="sale">Today
+                                    135&nbsp;kr</span><span id="beard">150&nbsp;kr</span></th>
+                        </tr>
+                        <tr>
+                            <th scope="col" class="text-start">Children&nbsp;(0&#8209;13&nbsp;years) (20&nbsp;min)
+                            </th>
+                            <th scope="col" class="text-end">150&nbsp;kr</th>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6 flex-column marginTop">
+                <img class="w-100" src="pictures/other.jpg" alt="övrigt" style="border-radius: 7px;">
+                <h2 class="mb-4 my-5 text-body">Other</h2>
+                <table>
+                    <tr>
+                        <td class="text-start ps-2" id="regularCustomerInfoOther">
+                            After 3 visits within 12 months you are considered a regular customer</td>
+                    </tr>
+                </table>
+                <table class="table table-sm " style="table-layout: fixed;">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-start">Trimming (15&nbsp;min)</th>
+                            <th scope="col" class="text-end">200 kr</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="col" class="text-start">Coloring (90&nbsp;min)</th>
+                            <th scope="col" class="text-end"><span class="sale" id="saleColoring">Today
+                                    500&nbsp;kr</span><span id="coloring"> 560 kr</span>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th scope="col" class="text-start">Extensions short&nbsp;(45&nbsp;min)</th>
+                            <th scope="col" class="text-end">300 kr</th>
+                        </tr>
+                        <tr>
+                            <th scope="col" class="text-start">Extensions standard&nbsp;(45&nbsp;min)</th>
+                            <th scope="col" class="text-end">400 kr</th>
+                        </tr>
+                        <tr>
+                            <th scope="col" class="text-start">Extensions long&nbsp;(45&nbsp;min)</th>
+                            <th scope="col" class="text-end">500 kr</th>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Employees -->
+    <div id="thirdPage" class="pt-5">
+        <h2 class="text-light pt-4 employeesAnchor" id="employees">Meet Our Staff</h2>
+
+        <div class="container pt-0 text-center">
+            <div class="row">
+                <div class="col-xl-4 col-md-6 my-5">
+                    <div class="container d-flex justify-content-center">
+                        <div class="card" style="width: 20rem; height: 70%;">
+                            <img src="pictures/employeePictures/annaPettersson.jpg" class="card-img-top" alt="Anna">
+                            <div class="card-body">
+                                <h5 class="card-title">Anna Pettersson</h5>
+                                <p class="card-text mb-2">Hairstylist</p>
+                                <a href="#"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6 my-5">
+                    <div class="container d-flex justify-content-center">
+                        <div class="card" style="width: 20rem; height: 70%;">
+                            <img src="pictures//employeePictures/fredrikOrtqvist.jpg" class="card-img-top"
+                                alt="Fredrik">
+                            <div class="card-body">
+                                <h5 class="card-title">Fredrik Örtqvist</h5>
+                                <p class="card-text mb-2">Barber</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6 my-5 ">
+                    <div class="container d-flex justify-content-center">
+                        <div class="card" style="width: 20rem; height: 70%;">
+                            <img src="pictures/employeePictures/orjanJohansson.jpg" class="card-img-top" alt="Örjan">
+                            <div class="card-body">
+                                <h5 class="card-title">Örjan Johansson</h5>
+                                <p class="card-text mb-2">Barber</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Instagram grid -->
+    <div id="instagramGrid" class="mb-5 mt-0">
+        <div class="embedsocial-hashtag" data-ref="a5cc0c78b0aaf9424825c47d23e67fc9efd05234"> <a
+                class="feed-powered-by-es" href="https://embedsocial.com/social-media-aggregator/" target="_blank"
+                title="Widget by EmbedSocial"> </a> </div>
+        <script> (function (d, s, id) { var js; if (d.getElementById(id)) { return; } js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/cdn/ht.js"; d.getElementsByTagName("head")[0].appendChild(js); }(document, "script", "EmbedSocialHashtagScript")); </script>
+    </div>
+
+    <!-- Footer with info -->
+    <div class="container my-5 findusAnchor" id="findus">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2 class="mb-4" style="color: white;">Find&nbsp;Us</h2>
+                <div class="hasjs"><iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1503.2583513342254!2d20.2337795!3d67.8660232!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x45d0ba6368d7c9a3%3A0xe3887ef038c559b0!2sFj%C3%A4llgatan%2032%2C%20981%2039%20Kiruna!5e0!3m2!1ssv!2sse!4v1693397051519!5m2!1ssv!2sse"
+                        width="450" height="450" style="border:0; width: 100%; max-width: 800px; border-radius: 7px;"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+                <noscript><img src="pictures/nojsmapKiruna.jpg" width="450" height="450" alt="noMapForNoJs"
+                        style="border: 0; width: 100%; max-width: 450px; border-radius: 7px;"></noscript>
+                <h2 class="mb-4 my-3" style="color: white;">Address </h2>
+                <h6 class=" text-black">Fjällgatan 32H</h6>
+                <h6 class="text-black">981 39 Kiruna</h6>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white-50 text-center">
+        <a href="tel:0630555555" class="text-white-50">0630&#8209;555&#8209;555</a> |
+        <a href="mailto:saxefrisor@gmail.com" class="text-white-50">saxefrisor@gmail.com</a>
+
+        <div class="container" style="padding: 20px 0;">
+            <a href="https://facebook.com/ntiuppsala" class="no-text-decoration social-icon" target="_blank">
+                <i class="fa-brands fa-facebook fa-2xl"></i>
+            </a>
+            <a href="https://twitter.com/ntiuppsala?lang=en" class="no-text-decoration social-icon" target="_blank">
+                <i class="fa-brands fa-x-twitter fa-2xl"></i>
+            </a>
+            <a href="https://www.instagram.com/frisorsaxe/" class="no-text-decoration social-icon" target="_blank">
+                <i class="fa-brands fa-instagram fa-2xl"></i>
+            </a>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
