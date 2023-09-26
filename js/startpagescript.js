@@ -1,10 +1,12 @@
 function goToSite(place) {
+  // Goes to last used language if there is any else Swedish site
   const language = localStorage.getItem("language") || "swe";
-  window.location.href = `subpages/${place}${language}.html`;
+  window.location.href = `${place}${language}.html`;
 }
 
 function arrowShow() {
   let limit = Math.max(
+    // Max height of site
     document.body.scrollHeight,
     document.body.offsetHeight,
     document.documentElement.clientHeight,
@@ -13,14 +15,15 @@ function arrowShow() {
   );
   const arrowDown = document.getElementById("arrowForPhonesDown");
   const arrowUp = document.getElementById("arrowForPhonesUp");
-  console.log(limit - window.innerHeight);
-  console.log(window.scrollY);
 
+  // 50 pixels from the bottom of the screen
   if (limit - window.innerHeight - window.scrollY < 50) {
-    arrowDown.style.opacity = 0;
-    arrowUp.style.opacity = 1;
+    // Shows arrow do go down
+    arrowDown.style.display = "none";
+    arrowUp.style.display = "block";
   } else {
-    arrowDown.style.opacity = 1;
-    arrowUp.style.opacity = 0;
+    // Show arrow to go up
+    arrowDown.style.display = "block";
+    arrowUp.style.display = "none";
   }
 }

@@ -32,7 +32,7 @@ class TestHomepageNoScriptENG(TestCase):
 
     # Before each test
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "kirunaeng.html"))
+        self.browser.get(path.join(getcwd(), "./kirunaeng.html"))
 
     # After each test
     def tearDown(self):
@@ -49,7 +49,9 @@ class TestHomepageNoScriptENG(TestCase):
 
             if is_loaded:
                 print(f"Image '{image_element.get_attribute('src')}' is loaded.")
+                print(image_element)
             else:
+                print(image_element)
                 self.fail(
                     f"Image '{image_element.get_attribute('src')}' is not loaded."
                 )
@@ -76,7 +78,7 @@ class TestHomepageENG(TestCase):
         pass
 
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "subPages/kirunaeng.html"))
+        self.browser.get(path.join(getcwd(), "kirunaeng.html"))
 
     def tearDown(self):
         self.browser.get("about:blank")

@@ -12,11 +12,11 @@ h2 {
 }
 
 .makeAppoitmentAnchor {
-    scroll-margin-top: 100px;
+    scroll-margin-top: 175px;
 }
 
 .openingHoursAnchor {
-    scroll-margin-top: 100px;
+    scroll-margin-top: 175px;
 }
 
 .pricesAnchor {
@@ -383,7 +383,7 @@ input[type=submit] {
 }
 
 #homeButton {
-    color: grey;
+    color: rgba(255, 255, 255, 0.733);
     font-size: 2rem;
     padding-right: 10px;
 

@@ -35,7 +35,7 @@ class TestHomepageNoScript(TestCase):
 
     # Runs before every test
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "subPages/kirunaswe.html"))
+        self.browser.get(path.join(getcwd(), "./subpages/kirunaswe.html"))
 
     # After each test
     def tearDown(self):
@@ -82,7 +82,7 @@ class TestHomepage(TestCase):
 
     # Runs before every test
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "kirunaswe.html"))
+        self.browser.get(path.join(getcwd(), "./kirunaswe.html"))
 
     # After each test
     def tearDown(self):
@@ -230,8 +230,7 @@ class TestHomepage(TestCase):
             self.browser.find_element(By.ID, "submit").click()
             zipOutput = self.browser.find_element(By.ID, "zipCodeCheck")
             self.assertIn(message, zipOutput.text)
-            self.browser.get("about:blank")
-            self.browser.get(path.join((getcwd()), "kirunaswe.html"))
+            self.browser.get(path.join((getcwd()), "./kirunaswe.html"))
 
     def testZipCodes(self):
         zipCodeListKiruna = [
