@@ -312,6 +312,8 @@ footer {
     position: absolute;
     left: 0px;
     margin-top: 6.5px;
+    
+
 }
 
 @media screen and (max-width:991px) {
@@ -323,7 +325,6 @@ footer {
 
 #flagMenu {
     list-style: none;
-
 }
 
 .sale {
