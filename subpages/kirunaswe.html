@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" id="language">
+<html lang="sv" id="language">
 
 <head>
     <title>Frisör Saxé</title>
@@ -50,7 +50,6 @@
         integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
         </script>
 
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg" id="navbar">
         <div class="container-fluid navButtonRight">
@@ -63,34 +62,35 @@
             <div class="collapse navbar-collapse flex-grow-0 fs-2" id="navbarNav">
                 <ul class="navbar-nav ">
                     <li class="nav-item">
-                        <a class="nav-link" href="#makeAppoitment">Appointment</a>
+                        <a class="nav-link me-5" href="#boka">Boka&nbsp;tid</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#openingHours">Opening Hours</a>
+                        <a class="nav-link me-5" href="#oppettider">Öppettider</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#prices">Prices</a>
+                        <a class="nav-link me-5" href="#priser">Priser</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#employees">Staff</a>
+                        <a class="nav-link me-5" href="#personal">Personal</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#findus">Find Us</a>
+                        <a class="nav-link me-5" href="#hittaoss">Hitta&nbsp;oss</a>
                     </li>
                     <li id="langMenu">
                         <div>
                             <ul id="flagMenu">
                                 <li>
                                     <a id="activeMenu" class="flag" onclick="showFlags()">
-                                        <img id="activeLang" src="pictures/engFlag.png" alt="englishflag"></a>
+                                        <img id="activeLang" src="pictures/svFlag.png" alt="svenskaflaggan"></a>
+                                </li>
+
+                                <li>
+                                    <a class="inActiveMenu flag" href="kirunaswe.html"><img src="pictures/svFlag.png"
+                                            alt="svenskaflaggan"></a>
                                 </li>
                                 <li>
                                     <a href="kirunaeng.html" class="inActiveMenu flag"><img src="pictures/engFlag.png"
-                                            alt="englishflag"></a>
-                                </li>
-                                <li>
-                                    <a class="inActiveMenu flag" href="kirunaswe.html"><img src="pictures/svFlag.png"
-                                            alt="swedishflag"></a>
+                                            alt="engelskaflaggan"></a>
                                 </li>
                             </ul>
                         </div>
@@ -111,105 +111,105 @@
     <div class="container text-center" id="secondRow">
         <div class="row justify-content-center text-center">
             <div class="col-md-6 flex-column">
-                <h2 class="mb-2 makeAppoitmentAnchor" id="makeAppoitment">Appointment</h2>
+                <h2 class="mb-2 makeAppoitmentAnchor" id="boka">Boka tid</h2>
                 <div class="row justify-content-center">
-                    <div class="col-3 p-3 mb-2 text-start">
-                        <p>Phone</p>
-                        <p>Email</p>
-                    </div>
-                    <div class="col-3 p-3 mb-2 text-start">
+                    <div class="col-10 p-3 mb-2 fs-4">
+                        <p>Telefon</p>
                         <p><a href="tel:0630555555">0630&#8209;555&#8209;555</a></p>
-                        <p><a id="mailLink" href="mailto:saxefrisor@gmail.com">
+                        <p>E&#8209;post</p>
+                        <p><a href="mailto:saxefrisor@gmail.com">
                                 saxefrisor@gmail.com</a></p>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 flex-column">
-                <h2 class="mb-2 openingHoursAnchor" id="openingHours">Opening Hours</h2>
+                <h2 class="mb-2 openingHoursAnchor" id="oppettider">Öppettider</h2>
                 <div class="row justify-content-center">
-                    <div class="col-3 p-3 mb-2 text-start">
-                        <p>Mon - Fri</p>
-                        <p>Saturday</p>
-                        <p>Sunday</p>
+                    <div class="col-4 col-sm-4 col-md-5 col-lg-4 col-xl-3 p-3 mb-2 text-start fs-4">
+                        <p>Mån&nbsp;&#8209;&nbsp;Fre</p>
+                        <p>Lördag</p>
+                        <p>Söndag</p>
                     </div>
-                    <div class="col-3 p-3 mb-2 openHours">
+                    <div class="col-4 col-sm-4 col-md-5 col-lg-4 col-xl-3 p-3 mb-2 openHours text-end fs-4">
                         <p>10&nbsp;&#8209;&nbsp;16</p>
                         <p>12&nbsp;&#8209;&nbsp;15</p>
-                        <p>Closed</p>
+                        <p>Stängt</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Product and services -->
-
     <div id="zipCodeCheck" class="zipInput container-fluid" style="text-align: center;">
         <div id="jsCheck">
-            <h2>Bring the Salon to Your Home</h2>
-            <p>Check if you are within reach of a house appointment.</p>
+            <h2>Proffsiga klippningar hemma - Boka din stil nu</h2>
+            <p>Kolla om vi når ut till dig.</p>
             <form><input class="zipCodeInput" type="text" inputmode="numeric" id="zipNumber"
-                    placeholder="Zip Code"><input class="checkNumber" id="submit" type="submit" value="Check"></form>
-            <p class="output" id="outputAcceptedZipCode">You are within reach. Call us to book a house appointment!</p>
-            <p class="output" id="outputNonAcceptedZipCode">Sorry, we cant offer this service to you.</p>
-            <p class="output" id="outputNotValidZipCode">Not a valid zipcode.</p>
+                    placeholder="Postnummer"><input class="checkNumber" id="submit" type="submit" value="Kolla">
+            </form>
+            <p class="output" id="outputAcceptedZipCode">Vi kör ut till dig. Ring oss för att boka tid!</p>
+            <p class="output" id="outputNonAcceptedZipCode">Vi kan tyvärr inte erbjuda denna service för detta
+                postnummer.</p>
+            <p class="output" id="outputNotValidZipCode">Inte ett riktigt postnummer.</p>
         </div>
     </div>
 
+    <!-- Product and services -->
     <div class="container" id="pricingContainer">
         <div class="row justify-content-center text-center">
             <div class="col-md-6 flex-column">
-                <img class="w-100 pricesAnchor" id="prices" src="pictures/prices.jpg" alt="pris"
+                <img class="w-100 pricesAnchor" id="priser" src="pictures/prices.jpg" alt="pris"
                     style="border-radius: 7px;">
 
                 <!-- Prices -->
-                <h2 class="mb-4 my-5 text-body">Haircut</h2>
+                <h2 class="mb-4 my-5 text-body">Klippning</h2>
                 <table>
                     <tr>
-                        <td class="text-start ps-2" id="infoAboutLongHair">The limit for long hair starts at 20 cm</td>
+                        <td class="text-start ps-2" id="infoAboutLongHair">Gränsen för långt hår går vid 20 cm</td>
                     </tr>
                     <tr>
-                        <td class="text-start ps-2" id="regularCustomerInfo">
-                            After 3 visits within 12 months you are considerd a regular customer</td>
+                        <td class="text-start ps-2" id="regularCustomerInfo">Man blir stamkund efter tre besök under 12
+                            månader</td>
                     </tr>
                 </table>
                 <table class="table table-sm" style="table-layout: fixed;">
                     <thead>
-
                         <tr>
-                            <th scope="col" class="text-start">Long hair (60&nbsp;min)</th>
-                            <th scope="col" class="text-end"><span id="saleLongHair" class="sale">Today
-                                    540&nbsp;kr</span><span id="longHair"> 600&nbsp;kr</span>
+                            <th scope="col" class="text-start">Långt hår (60&nbsp;min)</th>
+                            <th scope="col" class="text-end">
+                                <span id="saleLongHair" class="sale">Idag 540&nbsp;kr</span><span id="longHair">
+                                    600&nbsp;kr</span>
                             </th>
+
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="col" class="text-start">Long hair (regular&nbsp;customer)</th>
+                            <th scope="col" class="text-start">Långt hår (stamkund)</th>
                             <th scope="col" class="text-end">500&nbsp;kr</th>
                         </tr>
                         <tr>
 
-                            <th scope="col" class="text-start">Short hair (30&nbsp;min)</th>
+                            <th scope="col" class="text-start">Kort hår (30&nbsp;min)</th>
                             <th scope="col" class="text-end ">
-                                <span id="saleShortHair" class="sale">Today 180&nbsp;kr</span>
+                                <span id="saleShortHair" class="sale">Idag 180&nbsp;kr</span>
                                 <span id="shortHair"> 200&nbsp;kr</span>
                             </th>
 
                         </tr>
                         <tr>
-                            <th scope="col" class="text-start">Short hair (regular&nbsp;customer)</th>
+                            <th scope="col" class="text-start">Kort hår (stamkund)</th>
                             <th scope="col" class="text-end "><span>150&nbsp;kr</span>
                             </th>
                         </tr>
                         <tr>
-                            <th scope="col" class="text-start">Beard (20&nbsp;min)</th>
-                            <th scope="col" class="text-end"><span id="saleBeard" class="sale">Today
-                                    135&nbsp;kr</span><span id="beard">150&nbsp;kr</span></th>
+                            <th scope="col" class="text-start">Skägg (20&nbsp;min)</th>
+                            <th scope="col" class="text-end">
+                                <span id="saleBeard" class="sale">Idag 135&nbsp;kr</span><span
+                                    id="beard">150&nbsp;kr</span>
+                            </th>
                         </tr>
                         <tr>
-                            <th scope="col" class="text-start">Children&nbsp;(0&#8209;13&nbsp;years) (20&nbsp;min)
-                            </th>
+                            <th scope="col" class="text-start">Barn (0-13&nbsp;år) (20&nbsp;min)</th>
                             <th scope="col" class="text-end">150&nbsp;kr</th>
                         </tr>
 
@@ -218,40 +218,40 @@
             </div>
             <div class="col-md-6 flex-column marginTop">
                 <img class="w-100" src="pictures/other.jpg" alt="övrigt" style="border-radius: 7px;">
-                <h2 class="mb-4 my-5 text-body">Other</h2>
+                <h2 class="mb-4 my-5 text-body">Annat</h2>
                 <table>
                     <tr>
                         <td class="text-start ps-2" id="regularCustomerInfoOther">
-                            After 3 visits within 12 months you are considered a regular customer</td>
+                            Man blir stamkund efter tre besök under 12 månader</td>
                     </tr>
                 </table>
                 <table class="table table-sm " style="table-layout: fixed;">
                     <thead>
                         <tr>
-                            <th scope="col" class="text-start">Trimming (15&nbsp;min)</th>
+                            <th scope="col" class="text-start">Toppning (15&nbsp;min)</th>
                             <th scope="col" class="text-end">200 kr</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="col" class="text-start">Coloring (90&nbsp;min)</th>
-                            <th scope="col" class="text-end"><span class="sale" id="saleColoring">Today
-                                    500&nbsp;kr</span><span id="coloring"> 560 kr</span>
+                            <th scope="col" class="text-start">Färgning (90&nbsp;min)</th>
+                            <th scope="col" class="text-end">
+                                <span class="sale" id="saleColoring">Idag 500&nbsp;kr</span><span id="coloring"> 560
+                                    kr</span>
                             </th>
                         </tr>
                         <tr>
-                            <th scope="col" class="text-start">Extensions, short&nbsp;(45&nbsp;min)</th>
+                            <th scope="col" class="text-start">Förlängningar, kort&nbsp;(45&nbsp;min)</th>
                             <th scope="col" class="text-end">300 kr</th>
                         </tr>
                         <tr>
-                            <th scope="col" class="text-start">Extensions, standard&nbsp;(45&nbsp;min)</th>
+                            <th scope="col" class="text-start">Förlängningar, standard&nbsp;(45&nbsp;min)</th>
                             <th scope="col" class="text-end">400 kr</th>
                         </tr>
                         <tr>
-                            <th scope="col" class="text-start">Extensions, long&nbsp;(45&nbsp;min)</th>
+                            <th scope="col" class="text-start">Förlängningar, långt&nbsp;(45&nbsp;min)</th>
                             <th scope="col" class="text-end">500 kr</th>
                         </tr>
-
                     </tbody>
                 </table>
             </div>
@@ -259,8 +259,9 @@
     </div>
 
     <!-- Employees -->
-    <div id="thirdPage" class="pt-5">
-        <h2 class="text-light pt-4 employeesAnchor" id="employees">Meet Our Staff</h2>
+    <div id="thirdPage" class="pt-3">
+        <h2 class="text-light pt-3 employeesAnchor" id="personal">Möt vår personal</h2>
+
 
         <div class="container pt-0 text-center">
             <div class="row">
@@ -270,11 +271,12 @@
                             <img src="pictures/employeePictures/annaPettersson.jpg" class="card-img-top" alt="Anna">
                             <div class="card-body">
                                 <h5 class="card-title">Anna Pettersson</h5>
-                                <p class="card-text mb-2">Hairstylist</p>
+                                <p class="card-text mb-2">Hårstylist</p>
                                 <a href="#"></a>
                             </div>
                         </div>
                     </div>
+
                 </div>
                 <div class="col-xl-4 col-md-6 my-5">
                     <div class="container d-flex justify-content-center">
@@ -283,18 +285,19 @@
                                 alt="Fredrik">
                             <div class="card-body">
                                 <h5 class="card-title">Fredrik Örtqvist</h5>
-                                <p class="card-text mb-2">Barber</p>
+                                <p class="card-text mb-2">Barberare</p>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="col-xl-4 col-md-6 my-5 ">
                     <div class="container d-flex justify-content-center">
                         <div class="card" style="width: 20rem; height: 70%;">
                             <img src="pictures/employeePictures/orjanJohansson.jpg" class="card-img-top" alt="Örjan">
                             <div class="card-body">
                                 <h5 class="card-title">Örjan Johansson</h5>
-                                <p class="card-text mb-2">Barber</p>
+                                <p class="card-text mb-2">Barberare</p>
                             </div>
                         </div>
                     </div>
@@ -304,7 +307,7 @@
     </div>
 
     <!-- Instagram grid -->
-    <div id="instagramGrid" class="mb-5 mt-0">
+    <div id="instagramGrid">
         <div class="embedsocial-hashtag" data-ref="a5cc0c78b0aaf9424825c47d23e67fc9efd05234"> <a
                 class="feed-powered-by-es" href="https://embedsocial.com/social-media-aggregator/" target="_blank"
                 title="Widget by EmbedSocial"> </a> </div>
@@ -312,18 +315,18 @@
     </div>
 
     <!-- Footer with info -->
-    <div class="container my-5 findusAnchor" id="findus">
+    <div class="container my-5 findus" id="hittaoss">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h2 class="mb-4" style="color: white;">Find&nbsp;Us</h2>
+                <h2 class="mb-4">Hitta oss</h2>
                 <div class="hasjs"><iframe
                         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1503.2583513342254!2d20.2337795!3d67.8660232!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x45d0ba6368d7c9a3%3A0xe3887ef038c559b0!2sFj%C3%A4llgatan%2032%2C%20981%2039%20Kiruna!5e0!3m2!1ssv!2sse!4v1693397051519!5m2!1ssv!2sse"
                         width="450" height="450" style="border:0; width: 100%; max-width: 800px; border-radius: 7px;"
                         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
                 <noscript><img src="pictures/nojsmapKiruna.jpg" width="450" height="450" alt="noMapForNoJs"
                         style="border: 0; width: 100%; max-width: 450px; border-radius: 7px;"></noscript>
-                <h2 class="mb-4 my-3" style="color: white;">Address </h2>
-                <h6 class=" text-black">Fjällgatan 32H</h6>
+                <h2 class="mb-4 my-3">Adress </h2>
+                <h6 class="text-black">Fjällgatan 32H</h6>
                 <h6 class="text-black">981 39 Kiruna</h6>
             </div>
         </div>
@@ -345,6 +348,7 @@
             </a>
         </div>
     </footer>
+
 
 
 </body>
