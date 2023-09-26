@@ -64,8 +64,8 @@ function dailySales(date) {
   const locationOpeningHours = window.location.pathname.includes("lulea")
     ? openHours.lulea
     : window.location.pathname.includes("kiruna")
-    ? openHours.kiruna
-    : console.log("location does not have openingHours for dailysailes");
+      ? openHours.kiruna
+      : console.log("location does not have openingHours for dailysailes");
 
   const weekday = date.getDay();
   const hour = date.getHours();
@@ -143,17 +143,21 @@ function showFlags() {
 
 // Moves the table for prices when the window is smaller than 767px to haircut section
 function regularCustomerInfo() {
-  const regularInfo = document.getElementById("regularCustomerInfo");
-  const regularInfoOther = document.getElementById("regularCustomerInfoOther");
+  const infoOnPhone = document.getElementById("infoOnPhone");
+  const infoOnDesktop = document.getElementById("infoOnDesktop");
 
+  console.log(window.innerWidth)
   if (window.innerWidth <= 767) {
-    regularInfo.style.display = "block";
-    regularInfoOther.style.display = "none";
+    infoOnPhone.style.display = "block";
+    infoOnDesktop.style.display = "none";
   } else {
-    regularInfo.style.display = "none";
-    regularInfoOther.style.display = "block";
+    infoOnPhone.style.display = "none";
+    infoOnDesktop.style.display = "block";
   }
 }
+
+
+
 
 // Call the function when the page loads and when the window is resized
 window.addEventListener("load", regularCustomerInfo);

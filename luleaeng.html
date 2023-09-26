@@ -167,15 +167,11 @@
 
                 <!-- Prices -->
                 <h2 class="mb-4 my-5 text-body">Haircut</h2>
-                <table>
-                    <tr>
-                        <td class="text-start ps-2" id="infoAboutLongHair">The limit for long hair starts at 20 cm</td>
-                    </tr>
-                    <tr>
-                        <td class="text-start ps-2" id="regularCustomerInfo">
-                            After 3 visits within 12 months you are considerd a regular customer</td>
-                    </tr>
-                </table>
+                <div id="infoOnPhone">
+                    <span class="text-center">The limit for long hair starts at 20 cm</span> <br>
+                    <span class="text-center">
+                        After 3 visits within 12 months you are considerd a regular customer</span>
+                </div>
                 <table class="table table-sm" style="table-layout: fixed;">
                     <thead>
 
@@ -206,13 +202,6 @@
                             </th>
                         </tr>
                         <tr>
-                            <th scope="col" class="text-start">Beard (20&nbsp;min)</th>
-                            <th scope="col" class="text-end">
-                                <span id="saleBeard" class="sale">Today 135&nbsp;kr</span><span
-                                    id="beard">150&nbsp;kr</span>
-                            </th>
-                        </tr>
-                        <tr>
                             <th scope="col" class="text-start">Children&nbsp;(0&#8209;13&nbsp;years) (20&nbsp;min)
                             </th>
                             <th scope="col" class="text-end">150&nbsp;kr</th>
@@ -224,12 +213,6 @@
             <div class="col-md-6 flex-column marginTop">
                 <img class="w-100" src="pictures/other.jpg" alt="övrigt" style="border-radius: 7px;">
                 <h2 class="mb-4 my-5 text-body">Other</h2>
-                <table>
-                    <tr>
-                        <td class="text-start ps-2" id="regularCustomerInfoOther">
-                            After 3 visits within 12 months you are considered a regular customer</td>
-                    </tr>
-                </table>
                 <table class="table table-sm " style="table-layout: fixed;">
                     <thead>
                         <tr>
@@ -237,12 +220,16 @@
                             <th scope="col" class="text-end">200 kr</th>
                         </tr>
                     </thead>
+                    <tr>
+                        <th scope="col" class="text-start">Beard (20&nbsp;min)</th>
+                        <th scope="col" class="text-end"><span id="saleBeard" class="sale">Today
+                                135&nbsp;kr</span><span id="beard">150&nbsp;kr</span></th>
+                    </tr>
                     <tbody>
                         <tr>
                             <th scope="col" class="text-start">Coloring (90&nbsp;min)</th>
-                            <th scope="col" class="text-end">
-                                <span class="sale" id="saleColoring">Today 500&nbsp;kr</span><span id="coloring"> 560
-                                    kr</span>
+                            <th scope="col" class="text-end"><span class="sale" id="saleColoring">Today
+                                    500&nbsp;kr</span><span id="coloring"> 560 kr</span>
                             </th>
                         </tr>
                         <tr>
@@ -260,6 +247,10 @@
 
                     </tbody>
                 </table>
+            </div>
+            <div id="infoOnDesktop">
+                <span>The limit for long hair starts at 20 cm</span><br>
+                <span>After 3 visits within 12 months you are considered a regular customer</span>
             </div>
         </div>
     </div>
