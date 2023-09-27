@@ -39,6 +39,8 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem("language", "swe");
   } else if (Currentlanguage === "englishflag") {
     localStorage.setItem("language", "eng");
+  } else if (Currentlanguage === "suomenlippu") {
+    localStorage.setItem("language", "fin");
   }
 });
 
