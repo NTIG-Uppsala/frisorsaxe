@@ -26,22 +26,36 @@
     <h1 class="bigTitle" id="anchorUp">Frisör&nbsp;Saxé</h1>
     <div class="card-group">
         <!-- Lulea card -->
-        <a class="card" onclick="goToSite('lulea')">
+        <noscript>
+            <a class="card" href="luleaswe.html">
+                <img src="pictures/luleaCard.png" class="card-img-top rounded-3" alt="luleaCard">
+                <div class="card-body">
+                    <h5 class="card-title">Luleå</h5>
+                    <p class="card-text">Färjledsvägen&nbsp;38</p>
+                </div>
+            </a>
+        </noscript>
+        <!-- Kiruna card -->
+        <noscript>
+            <a class="card" href="kirunaeng.html">
+                <img src="pictures/kirunaCard.jpg" class="card-img-top rounded-3" alt="kirunaCard">
+                <div class="card-body">
+                    <h5 class="card-title">Kiruna</h5>
+                    <p class="card-text">Fjällgatan&nbsp;32H</p>
+                </div>
+            </a>
+        </noscript>
+        <a class="card hasjs" onclick="goToSite('lulea')">
             <img src="pictures/luleaCard.png" class="card-img-top rounded-3" alt="luleaCard">
             <div class="card-body">
                 <h5 class="card-title">Luleå</h5>
                 <p class="card-text">Färjledsvägen&nbsp;38</p>
             </div>
         </a>
-        <noscript>
-            <a class="card" href="luleaswe.html"></a>
-        </noscript>
-        <!-- Kiruna card -->
-        <a class="card" onclick="goToSite('kiruna')">
-            <noscript>
-                <a class="card" href="kirunaeng.html">
-            </noscript>
-            <img src="pictures/kirunaCard.jpg" class="card-img-top rounded-3" alt="kirunaCard" id="kirunaCard">
+
+
+        <a class="card hasjs" onclick="goToSite('kiruna')">
+            <img src="pictures/kirunaCard.jpg" class="card-img-top rounded-3" alt="kirunaCard">
             <div class="card-body">
                 <h5 class="card-title">Kiruna</h5>
                 <p class="card-text">Fjällgatan&nbsp;32H</p>
@@ -51,17 +65,15 @@
 
     <div id="arrowForPhonesDown">
         <a href="#kirunaCard">
-            <img src="icons/arrow.svg" alt="arrow down" id="arrow">
+            <img src="icons/arrowDown.svg" alt="arrowDown">
         </a>
     </div>
 
     <div id="arrowForPhonesUp">
         <a href="#anchorUp">
-            <img src="icons/arrow_upward_FILL0_wght400_GRAD0_opsz24.svg" alt="arrow down" id="arrow">
+            <img src="icons/arrowUp.svg" alt="arrowUp">
         </a>
     </div>
-
 </body>
-
 
 </html>
