@@ -1,14 +1,14 @@
 import json
-import shutil
 import os
+import shutil
 
 # Get the directory where the script is located
 script_directory = os.path.dirname(os.path.abspath(__file__))
 
 # Define the available languages and their corresponding locations
 languages_and_locations = {
-    "swe": {"lulea": "Luleå", "kiruna": "Kiruna"},
-    "eng": {"lulea": "Luleå", "kiruna": "Kiruna"},
+    "swe": {"lulea": "lulea"}
+    # "eng": {"lulea": "lulea", "kiruna": "kiruna"},
 }
 
 # Load the JSON data from the file
