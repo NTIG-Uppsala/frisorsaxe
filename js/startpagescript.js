@@ -27,3 +27,12 @@ function arrowShow() {
     arrowUp.style.display = "none";
   }
 }
+
+// If javscript is on, all elements with hasjs class will show. They are by default not displayed.
+document.addEventListener("DOMContentLoaded", function () {
+  let hasjs = document.getElementsByClassName("hasjs");
+
+  for (let i = 0; i < hasjs.length; i++) {
+    hasjs[i].style.visibility = "visible"; // Block shows element
+  }
+});
