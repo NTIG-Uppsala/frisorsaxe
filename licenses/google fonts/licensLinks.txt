@@ -10,6 +10,7 @@ Others:
 Icon - Made in Photoshop by Robin and Emil using all free to use tools.
 engFlag - Standard Images of flags are free to use as they are not edited.
 svFlag - Standard Images of flags are free to use as they are not edited.
+finFlag - Standard Images of flags are free to use as they are not edited.
 kirunaCard - https://unsplash.com/photos/jsuWg7IXx1k
 luleaCard - https://unsplash.com/photos/_C-S7LqxHPw
 mainBackground - https://unsplash.com/photos/fANekVYgCB0
