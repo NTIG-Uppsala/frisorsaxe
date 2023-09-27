@@ -132,3 +132,7 @@ a {
         right: 0;
     }
 }
+
+.hasjs{
+    visibility: hidden;
+}
