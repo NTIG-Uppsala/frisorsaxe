@@ -9,12 +9,19 @@ def replace_placeholders(html_template, language, location):
     # Get the translation for the selected language and location
     translation = translations.get(language, {}).get(location, {})
 
-    # Replace placeholders in the HTML template
-    for key, value in translation.items():
-        placeholder = f"*{key.upper()}*"
-        html_template = html_template.replace(
-            placeholder, str(value)
-        )  # Ensure the value is converted to a string
+    # Replace placeholders in the HTML template with values from OPENDAYS
+    if "OPENDAYS" in translation:
+        opendays = "\n".join(
+            [f"<p>{value}</p>" for value in translation["OPENDAYS"].values()]
+        )
+        html_template = html_template.replace("*OPENDAYS*", opendays)
+
+    # Replace placeholders in the HTML template with values from OPENDAYSTIME
+    if "OPENDAYSTIME" in translation:
+        opendaystime = "\n".join(
+            [f"<p>{value}</p>" for value in translation["OPENDAYSTIME"].values()]
+        )
+        html_template = html_template.replace("*OPENDAYSTIME*", opendaystime)
 
     return html_template
 
