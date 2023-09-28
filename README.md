@@ -39,8 +39,6 @@ Our website uses the software Selenium and Python's unittest library to run test
 
 ### Adding a language for Frisör Saxé
 
-# Adding a language for Frisör Saxé
-
 1. **Edit the translations.json file:**
 
    - Open the translations.json file.
