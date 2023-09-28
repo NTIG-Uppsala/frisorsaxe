@@ -26,6 +26,14 @@ window.onscroll = function () {
       document.getElementById("navbar").style.top = "0";
     } else {
       document.getElementById("navbar").style.top = "-35vh"; // Hide navbar if user is scrolling down
+      document.getElementById("activeMenu").style.display = "block";
+
+      const languages = document.getElementsByClassName("inActiveMenu");
+
+      // Show the languages that the user can select
+      for (const element of languages) {
+        element.style.display = "none";
+      }
     }
     // Update the previous scroll position
     prevScrollPosition = currentScrollPosition;
