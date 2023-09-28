@@ -70,11 +70,11 @@ Our website uses the software Selenium and Python's unittest library to run test
 
    - Finally, incorporate this code into the list (ul tag) identified by the id "flagMenu" in the template, replacing "FOURTHFLAG" as necessary.
 
-    `<li>`
+   ```<li>
           `<a` `class="inActiveMenu` `flag"` `href="*FOURTHVERSIONSITE*">`
         `<img` `src="pictures/*FOURTHFLAG*.png"` `alt="*FOURTHVERSIONALT*">`
          `</a>`
-    `</li>`
+   ```</li>
 
 5. **Change main language**
 
