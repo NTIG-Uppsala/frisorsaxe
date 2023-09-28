@@ -11,6 +11,7 @@ var navBarOpenMobile = false;
 
 function navBarToggled() {
   navBarOpenMobile = !navBarOpenMobile; // If called it will switch the variable, if true to false and if false to true
+  hideFlags();
 }
 
 var prevScrollPosition = window.scrollY;
@@ -26,19 +27,23 @@ window.onscroll = function () {
       document.getElementById("navbar").style.top = "0";
     } else {
       document.getElementById("navbar").style.top = "-35vh"; // Hide navbar if user is scrolling down
-      document.getElementById("activeMenu").style.display = "block";
-
-      const languages = document.getElementsByClassName("inActiveMenu");
-
-      // Show the languages that the user can select
-      for (const element of languages) {
-        element.style.display = "none";
-      }
+      hideFlags();
     }
     // Update the previous scroll position
     prevScrollPosition = currentScrollPosition;
   }
 };
+
+function hideFlags() {
+  document.getElementById("activeMenu").style.display = "block";
+
+  const languages = document.getElementsByClassName("inActiveMenu");
+
+  // Show the languages that the user can select
+  for (const element of languages) {
+    element.style.display = "none";
+  }
+}
 
 //Save the current used language in localstorage to be used later.
 document.addEventListener("DOMContentLoaded", function () {
