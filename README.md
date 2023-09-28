@@ -42,6 +42,8 @@ Our website uses the software Selenium and Python's unittest library to run test
 
 ### Adding a language for Frisör Saxé
 
+# Adding a language for Frisör Saxé
+
 1. **Edit the translations.json file:**
 
    - Open the translations.json file.
@@ -56,9 +58,9 @@ Our website uses the software Selenium and Python's unittest library to run test
 
 3. **Update generateFile.py:**
 
-   - Open the generateFile.py Python script.
+   - Open the generateFile.py script.
    - Locate the selectedLanguage array in the script.
-   - Add the language code (the same name used for the JSON object) to the selectedLanguage array.
+   - Add the language code (the same name used for the JSON object) to the selectedLanguage array as a string.
 
 4. **Add the Flag Image:**
 
@@ -67,36 +69,32 @@ Our website uses the software Selenium and Python's unittest library to run test
      - Resolution: 640x373 pixels
      - Format: PNG
 
-   - In the existing JSON objects, locate the "THIRDVERSIONALT" field and confirm that "THIRD" is indeed the latest version.
+   - In the existing JSON objects except for the newly created one, locate the "THIRDVERSIONALT" field and confirm that "THIRD" is indeed the latest version.
 
    - If "Third" is the latest version, proceed to add the following fields: "FOURTHVERSIONALT," "FOURTHVERSIONSITE," and "FOURTHFLAG" to all JSON objects except the one you just created.
 
    - In the "FOURTHFLAG" field, ensure that the alt attribute contains "englishflag" translated into the respective language, for example, "svenskaflaggan."
 
-   - Finally, incorporate this code into the list (ul tag) identified by the id "flagMenu" in the template, replacing "FOURTHFLAG" as necessary.
+   - Finally, incorporate this code into the list (ul tag) identified by the id "flagMenu" in the template, replace "FOURTHFLAG" if necessary.
 
 &#x20;
 
     <li>
-        <a class="inActiveMenu flag" href="*FOURTHVERSIONSITE*">
-        <img src="pictures/*FOURTHFLAG*.png" alt="*FOURTHVERSIONALT*">
+        <a class="inActiveMenu` `flag"href="*FOURTHVERSIONSITE*">
+            <img src="pictures/*FOURTHFLAG*.png" alt="*FOURTHVERSIONALT*">
         </a>
     </li>
 
 5. **Change main language**
 
-   - In the JSON object you created, change all the variables with MAIN to the version of the newly created things.
-   - The version of flags does not matter but make sure that all the languages have their own version, with alt and html file.
-
-<!---->
+   - In the JSON object you created, locate all the keys that start with MAIN and change their value so they fit the newly created language.
+   - The version of flags does not matter but make sure that all the languages have their own version, with alt and html file in all JSON objects.
 
 6. **Add language to localstorage**
 
-   - Open script.js and located the variable Currentlanguage
-   - Add another else if statement like the ones created
+   - Open script.js and located the variable Currentlanguage.
+   - Add another else if statement like the ones created before.
    - Make sure the new else if statement is looking for the newly created alt for the new flag.
-
-<!---->
 
 7. **Run generateFile.py:**
 
