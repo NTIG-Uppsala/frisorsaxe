@@ -362,6 +362,16 @@ input[type=text] {
     color: #000000;
 }
 
+.marginEnd{
+    margin-inline-end: 30px;
+}
+
+@media screen and (max-width:992px) {
+    .marginEnd{
+        margin-inline-end: 0px;
+    }
+}
+
 input[type=submit] {
     padding: 10px;
     border: 0;
