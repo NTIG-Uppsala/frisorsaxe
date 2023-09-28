@@ -30,7 +30,7 @@ Our website uses the software Selenium and Python's unittest library to run test
 - Javascript ECMAScript 2023
 - Python 3.11.5 and Selenium 4.11.2 for testing
 
-### License
+## License
 -  All images should be linked under the "licences" folder in "licenseLinks".
 - Licenses for google fonts exist in the "licenses" folder located in the root folder.
 - All of the photos are from either Unsplash and Pexels. Both of these websites exclusively have open licenses. (As long as you use the free version which we do.)
