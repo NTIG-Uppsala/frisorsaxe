@@ -109,6 +109,7 @@ class TestHomepageENG(TestCase):
                     f"Image '{image_element.get_attribute('src')}' is not loaded."
                 )
 
+    def testPrices(self):
         self.assertIn("600", self.browser.page_source)
         self.assertIn("500", self.browser.page_source)
         self.assertIn("200", self.browser.page_source)
@@ -119,60 +120,74 @@ class TestHomepageENG(TestCase):
         self.assertIn("500", self.browser.page_source)
 
     def testBookedTime(self):
-        self.assertIn("Puhelin", self.browser.page_source)
-        self.assertIn("Sähköposti", self.browser.page_source)
-        self.assertIn("Varaa aika", self.browser.page_source)
+        self.assertIn("Puhelin", self.browser.page_source)  # Phone
+        self.assertIn("Sähköposti", self.browser.page_source)  # Email
+        self.assertIn("Varaa aika", self.browser.page_source)  # Book an appointment
         self.assertIn("0640‑555‑333", self.browser.page_source)
         self.assertIn("saxefrisor@gmail.com", self.browser.page_source)
 
     def testOpeningHours(self):
-        self.assertIn("Tiistai", self.browser.page_source)
-        self.assertIn("Keskiviikko", self.browser.page_source)
-        self.assertIn("To - Pe", self.browser.page_source)
-        self.assertIn("Lauantai", self.browser.page_source)
-        self.assertIn("Sunnuntai", self.browser.page_source)
-        self.assertIn("Aukioloajat", self.browser.page_source)
-        self.assertIn("Maanantai", self.browser.page_source)
+        self.assertIn("Maanantai", self.browser.page_source)  # Monday
+        self.assertIn("Tiistai", self.browser.page_source)  # Tuesday
+        self.assertIn("Keskiviikko", self.browser.page_source)  # Wednesday
+        self.assertIn("To - Pe", self.browser.page_source)  # Thu - Fri
+        self.assertIn("Lauantai", self.browser.page_source)  # Saturday
+        self.assertIn("Sunnuntai", self.browser.page_source)  # Sunday
+        self.assertIn("Aukioloajat", self.browser.page_source)  # Opening hours
 
     def testInfo(self):
         self.assertIn(
             "Kolmen käynnin jälkeen 12 kuukauden aikana sinut katsotaan vakituiseksi asiakkaaksi",
             self.browser.page_source,
-        )
-        self.assertIn("Pitkien hiusten raja alkaa 20 cm:stä", self.browser.page_source)
+        )  # After three visits within 12 months, you will be considered a regular customer
+        self.assertIn(
+            "Pitkien hiusten raja alkaa 20 cm:stä", self.browser.page_source
+        )  # The limit for long hair starts at 20 cm
 
     def testProducts(self):
-        self.assertIn("Pitkät hiukset", self.browser.page_source)
-        self.assertIn("Tänään", self.browser.page_source)
-        self.assertIn("Lyhyet hiukset", self.browser.page_source)
-        self.assertIn("Parta", self.browser.page_source)
-        self.assertIn("Lapset", self.browser.page_source)
-        self.assertIn("vuotta", self.browser.page_source)
-        self.assertIn("Tasoittelu", self.browser.page_source)
-        self.assertIn("Värjäys", self.browser.page_source)
-        self.assertIn("Lyhyet pidennykset", self.browser.page_source)
-        self.assertIn("Normaalipituiset pidennykset", self.browser.page_source)
-        self.assertIn("Pitkät pidennykset", self.browser.page_source)
+        self.assertIn("Pitkät hiukset", self.browser.page_source)  # Long hair
+        self.assertIn("Tänään", self.browser.page_source)  # Today
+        self.assertIn("Lyhyet hiukset", self.browser.page_source)  # Short hair
+        self.assertIn("Parta", self.browser.page_source)  # Beard
+        self.assertIn("Lapset", self.browser.page_source)  # Children
+        self.assertIn("vuotta", self.browser.page_source)  # years
+        self.assertIn("Tasoittelu", self.browser.page_source)  # Straightening
+        self.assertIn("Värjäys", self.browser.page_source)  # Coloring
+        self.assertIn(
+            "Lyhyet pidennykset", self.browser.page_source
+        )  # Short extensions
+        self.assertIn(
+            "Normaalipituiset pidennykset", self.browser.page_source
+        )  # Medium-length extensions
+        self.assertIn("Pitkät pidennykset", self.browser.page_source)  # Long extensions
 
     def testNavbar(self):
         navBrand = self.browser.find_element(By.ID, "centerText")
-        self.assertIn("Frisör&nbsp;Saxé", navBrand.get_attribute("innerHTML"))
+        self.assertIn(
+            "Frisör&nbsp;Saxé", navBrand.get_attribute("innerHTML")
+        )  # Hairdresser Saxé
         element = self.browser.find_element(By.CLASS_NAME, "navbar-nav")
-        self.assertIn("Varaa aika", element.get_attribute("innerHTML"))
-        self.assertIn("Aukioloajat", element.get_attribute("innerHTML"))
-        self.assertIn("Hinnat", element.get_attribute("innerHTML"))
-        self.assertIn("Henkilökunta", element.get_attribute("innerHTML"))
-        self.assertIn("Tietoa meistä", element.get_attribute("innerHTML"))
+        self.assertIn(
+            "Varaa aika", element.get_attribute("innerHTML")
+        )  # Book an appointment
+        self.assertIn(
+            "Aukioloajat", element.get_attribute("innerHTML")
+        )  # Opening hours
+        self.assertIn("Hinnat", element.get_attribute("innerHTML"))  # Prices
+        self.assertIn("Henkilökunta", element.get_attribute("innerHTML"))  # Staff
+        self.assertIn("Tietoa meistä", element.get_attribute("innerHTML"))  # About us
 
     def testEmplyoeeHeader(self):
-        self.assertIn("Tapaa henkilökuntaamme", self.browser.page_source)
+        self.assertIn(
+            "Tapaa henkilökuntaamme", self.browser.page_source
+        )  # Meet our staff
 
     def testEmployeeJobs(self):
-        self.assertIn("Parturi", self.browser.page_source)
-        self.assertIn("Hiustyylisti", self.browser.page_source)
+        self.assertIn("Parturi", self.browser.page_source)  # Barber
+        self.assertIn("Hiustyylisti", self.browser.page_source)  # Hair stylist
 
     def testAddress(self):
-        self.assertIn("Osoite", self.browser.page_source)
+        self.assertIn("Osoite", self.browser.page_source)  # Address
 
     def testDailySales(self):
         self.helpTestDailySales("2023-09-11T11:00:00", "saleLongHair")  # Monday
