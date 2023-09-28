@@ -32,7 +32,7 @@ class TestHomepageNoScriptENG(TestCase):
 
     # Before each test
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "./kirunaeng.html"))
+        self.browser.get(path.join(getcwd(), "./kirunafin.html"))
 
     # After each test
     def tearDown(self):
@@ -78,7 +78,7 @@ class TestHomepageENG(TestCase):
         pass
 
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "kirunaeng.html"))
+        self.browser.get(path.join(getcwd(), "kirunafin.html"))
 
     def tearDown(self):
         self.browser.get("about:blank")
@@ -87,7 +87,7 @@ class TestHomepageENG(TestCase):
         self.assertEqual("Frisör Saxé", self.browser.title)
 
     def testMap(self):
-        self.browser.find_element(By.ID, "findus")
+        self.browser.find_element(By.ID, "tietoa-meistä")
         self.assertIn(
             "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1503.2583513342254!2d20.2337795!3d67.8660232!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x45d0ba6368d7c9a3%3A0xe3887ef038c559b0!2sFj%C3%A4llgatan%2032%2C%20981%2039%20Kiruna!5e0!3m2!1ssv!2sse!4v1693397051519!5m2!1ssv!2sse",
             self.browser.page_source,
@@ -119,67 +119,57 @@ class TestHomepageENG(TestCase):
         self.assertIn("500", self.browser.page_source)
 
     def testBookedTime(self):
-        self.assertIn("Appointment", self.browser.page_source)
-        self.assertIn("Phone", self.browser.page_source)
-        self.assertIn("Email", self.browser.page_source)
+        self.assertIn("Puhelin", self.browser.page_source)
+        self.assertIn("Sähköposti", self.browser.page_source)
+        self.assertIn("Varaa aika", self.browser.page_source)
         self.assertIn("0630‑555‑555", self.browser.page_source)
         self.assertIn("saxefrisor@gmail.com", self.browser.page_source)
 
     def testOpeningHours(self):
-        self.assertIn("Opening Hours", self.browser.page_source)
-        self.assertIn("Mon", self.browser.page_source)
-        self.assertIn("Fri", self.browser.page_source)
-        self.assertIn("Saturday", self.browser.page_source)
-        self.assertIn("Sunday", self.browser.page_source)
-        self.assertIn("Closed", self.browser.page_source)
+        self.assertIn("Ma - Pe", self.browser.page_source)
+        self.assertIn("Lauantai", self.browser.page_source)
+        self.assertIn("Sunnuntai", self.browser.page_source)
+        self.assertIn("Suljettu", self.browser.page_source)
 
     def testInfo(self):
         self.assertIn(
-            "After 3 visits within 12 months you are considered a regular customer",
+            "Kolmen käynnin jälkeen 12 kuukauden aikana sinut katsotaan vakituiseksi asiakkaaksi",
             self.browser.page_source,
         )
-        self.assertIn(
-            "The limit for long hair starts at 20 cm", self.browser.page_source
-        )
+        self.assertIn("Pitkien hiusten raja alkaa 20 cm:stä", self.browser.page_source)
 
     def testProducts(self):
-        self.assertIn("Haircut", self.browser.page_source)
-        self.assertIn("Long", self.browser.page_source)
-        self.assertIn("Other", self.browser.page_source)
-        self.assertIn("Coloring", self.browser.page_source)
-        self.assertIn("Extensions", self.browser.page_source)
-        self.assertIn("Short", self.browser.page_source)
-        self.assertIn("Beard", self.browser.page_source)
-        self.assertIn("Children", self.browser.page_source)
-        self.assertIn("Trimming", self.browser.page_source)
-        self.assertIn("regular&nbsp;customer", self.browser.page_source)
-        self.assertIn("hair", self.browser.page_source)
-        self.assertIn("Beard (20&nbsp;min)", self.browser.page_source)
+        self.assertIn("Pitkät hiukset", self.browser.page_source)
+        self.assertIn("Tänään", self.browser.page_source)
+        self.assertIn("Lyhyet hiukset", self.browser.page_source)
+        self.assertIn("Parta", self.browser.page_source)
+        self.assertIn("Lapset", self.browser.page_source)
+        self.assertIn("vuotta", self.browser.page_source)
+        self.assertIn("Tasoittelu", self.browser.page_source)
+        self.assertIn("Värjäys", self.browser.page_source)
+        self.assertIn("Lyhyet pidennykset", self.browser.page_source)
+        self.assertIn("Normaalipituiset pidennykset", self.browser.page_source)
+        self.assertIn("Pitkät pidennykset", self.browser.page_source)
 
     def testNavbar(self):
         navBrand = self.browser.find_element(By.ID, "centerText")
         self.assertIn("Frisör&nbsp;Saxé", navBrand.get_attribute("innerHTML"))
         element = self.browser.find_element(By.CLASS_NAME, "navbar-nav")
-        self.assertIn("Appointment", element.get_attribute("innerHTML"))
-        self.assertIn("Opening Hours", element.get_attribute("innerHTML"))
-        self.assertIn("Prices", element.get_attribute("innerHTML"))
-        self.assertIn("Staff", element.get_attribute("innerHTML"))
-        self.assertIn("Find Us", element.get_attribute("innerHTML"))
+        self.assertIn("Varaa aika", element.get_attribute("innerHTML"))
+        self.assertIn("Aukioloajat", element.get_attribute("innerHTML"))
+        self.assertIn("Hinnat", element.get_attribute("innerHTML"))
+        self.assertIn("Henkilökunta", element.get_attribute("innerHTML"))
+        self.assertIn("Tietoa meistä", element.get_attribute("innerHTML"))
 
     def testEmplyoeeHeader(self):
-        self.assertIn("Meet Our Staff", self.browser.page_source)
-
-    def testEmployeePictures(self):
-        self.assertIn('alt="Örjan Johansson"', self.browser.page_source)
-        self.assertIn('alt="Fredrik Örtqvist"', self.browser.page_source)
-        self.assertIn('alt="Anna Pettersson"', self.browser.page_source)
+        self.assertIn("Tapaa henkilökuntaamme", self.browser.page_source)
 
     def testEmployeeJobs(self):
-        self.assertIn("Hairstylist", self.browser.page_source)
-        self.assertIn("Barber", self.browser.page_source)
+        self.assertIn("Parturi", self.browser.page_source)
+        self.assertIn("Hiustyylisti", self.browser.page_source)
 
     def testAddress(self):
-        self.assertIn("Address", self.browser.page_source)
+        self.assertIn("Osoite", self.browser.page_source)
 
     def testDailySales(self):
         self.helpTestDailySales("2023-09-11T11:00:00", "saleLongHair")  # Monday
@@ -226,7 +216,7 @@ class TestHomepageENG(TestCase):
             zipOutput = self.browser.find_element(By.ID, "zipCodeCheck")
             self.assertIn(message, zipOutput.text)
             self.browser.get("about:blank")
-            self.browser.get(path.join((getcwd()), "kirunaeng.html"))
+            self.browser.get(path.join((getcwd()), "kirunafin.html"))
 
     def testZipCodes(self):
         zipCodeListKiruna = [
@@ -255,10 +245,13 @@ class TestHomepageENG(TestCase):
         ]
         self.helperZipCode(
             zipCodeListKiruna,
-            "You are within reach. Call us to book a house appointment!",
+            "Olet alueellamme. Soita ja varaa kotikäynti!",
         )
-        self.helperZipCode(notAcceptedZipcodes, "we cant offer this service to you.")
-        self.helperZipCode(nonWorkingZipcodes, "Not a valid zipcode.")
+        self.helperZipCode(
+            notAcceptedZipcodes,
+            "Valitettavasti emme voi tarjota tätä palvelua sinulle.",
+        )
+        self.helperZipCode(nonWorkingZipcodes, "Ei kelvollinen postinumero.")
 
 
 if __name__ == "__main__":

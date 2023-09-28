@@ -17,7 +17,7 @@ function arrowShow() {
   const arrowDown = document.getElementById("arrowForPhonesDown");
   const arrowUp = document.getElementById("arrowForPhonesUp");
 
-  // (Limit - innerHeight) is how many pixels there is left to the bottom of the site.
+  // (Limit - innerHeight) = (The websites height - The browsers height), how many pixels there is left to the bottom of the site.
   // If there is 150px left to bottom and you then scroll 100px down the arrowDown will show.
   if (limit - window.innerHeight - window.scrollY < 50) {
     arrowDown.style.display = "none"; // Hide

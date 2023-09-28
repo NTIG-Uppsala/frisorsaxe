@@ -145,7 +145,7 @@ class TestHomepageENG(TestCase):
         self.assertIn("Trimming", self.browser.page_source)
         self.assertIn("regular&nbsp;customer", self.browser.page_source)
         self.assertIn("hair", self.browser.page_source)
-        self.assertIn("beard", self.browser.page_source)
+        self.assertIn("Beard", self.browser.page_source)
 
     def testNavbar(self):
         navBrand = self.browser.find_element(By.ID, "centerText")
@@ -155,15 +155,15 @@ class TestHomepageENG(TestCase):
         self.assertIn("Opening Hours", element.get_attribute("innerHTML"))
         self.assertIn("Prices", element.get_attribute("innerHTML"))
         self.assertIn("Staff", element.get_attribute("innerHTML"))
-        self.assertIn("Find&nbsp;Us", element.get_attribute("innerHTML"))
+        self.assertIn("Find Us", element.get_attribute("innerHTML"))
 
     def testHeadHeader(self):
         self.assertIn("Meet Our Staff", self.browser.page_source)
 
     def testEmployeePictures(self):
-        self.assertIn('alt="Johan"', self.browser.page_source)
-        self.assertIn('alt="Elin"', self.browser.page_source)
-        self.assertIn('alt="Anna"', self.browser.page_source)
+        self.assertIn('alt="Johan Olsson"', self.browser.page_source)
+        self.assertIn('alt="Elin Nygård"', self.browser.page_source)
+        self.assertIn('alt="Anna Andersson"', self.browser.page_source)
 
     def testEmployeeJobs(self):
         self.assertIn("Hairstylist", self.browser.page_source)
@@ -222,12 +222,12 @@ class TestHomepageENG(TestCase):
     def helperZipCode(self, zipCodeList, message):
         for currentZip in zipCodeList:
             self.browser.find_element(By.ID, "zipNumber").send_keys(currentZip)
-            time.sleep(2)
+            time.sleep(0.5)
             self.browser.find_element(By.ID, "submit").click()
             zipOutput = self.browser.find_element(By.ID, "zipCodeCheck")
             self.assertIn(message, zipOutput.text)
             self.browser.get("about:blank")
-            self.browser.get(path.join((getcwd()), "luleaeng.html"))
+            self.browser.get(path.join((getcwd()), "./luleaeng.html"))
 
     def testZipCodes(self):
         zipCodeListLulea = ["96190", "96191", "96193", "96194"]

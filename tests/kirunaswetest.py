@@ -117,7 +117,7 @@ class TestHomepage(TestCase):
     def testBookedTime(self):
         self.assertIn("Boka tid", self.browser.page_source)
         self.assertIn("Telefon", self.browser.page_source)
-        self.assertIn("E‑post", self.browser.page_source)
+        self.assertIn("E-post", self.browser.page_source)
         self.assertIn("0630‑555‑555", self.browser.page_source)
         self.assertIn("saxefrisor@gmail.com", self.browser.page_source)
 
@@ -154,19 +154,19 @@ class TestHomepage(TestCase):
         nabBrand = self.browser.find_element(By.ID, "centerText")
         self.assertIn("Frisör&nbsp;Saxé", nabBrand.get_attribute("innerHTML"))
         element = self.browser.find_element(By.CLASS_NAME, "navbar-nav")
-        self.assertIn("Boka&nbsp;tid", element.get_attribute("innerHTML"))
+        self.assertIn("Boka tid", element.get_attribute("innerHTML"))
         self.assertIn("Öppettider", element.get_attribute("innerHTML"))
         self.assertIn("Priser", element.get_attribute("innerHTML"))
         self.assertIn("Personal", element.get_attribute("innerHTML"))
-        self.assertIn("Hitta&nbsp;oss", element.get_attribute("innerHTML"))
+        self.assertIn("Hitta oss", element.get_attribute("innerHTML"))
 
     def testHeadHeader(self):
         self.assertIn("Möt vår personal", self.browser.page_source)
 
     def testEmployeePictures(self):
-        self.assertIn('alt="Örjan"', self.browser.page_source)
-        self.assertIn('alt="Fredrik"', self.browser.page_source)
-        self.assertIn('alt="Anna"', self.browser.page_source)
+        self.assertIn('alt="Örjan Johansson"', self.browser.page_source)
+        self.assertIn('alt="Fredrik Örtqvist"', self.browser.page_source)
+        self.assertIn('alt="Anna Pettersson"', self.browser.page_source)
 
     def testEmployeeJobs(self):
         self.assertIn("Hårstylist", self.browser.page_source)

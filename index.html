@@ -22,7 +22,7 @@
 
 </head>
 
-<body onscroll="arrowShow()">
+<body onscroll="arrowShow()" onload="arrowShow()">
     <h1 class="bigTitle" id="anchorUp">Frisör&nbsp;Saxé</h1>
     <div class="card-group">
         <!-- Lulea card -->
@@ -53,7 +53,6 @@
             </div>
         </a>
 
-
         <a class="card hasjs" onclick="goToSite('kiruna')">
             <img src="pictures/kirunaCard.jpg" class="card-img-top rounded-3" alt="kirunaCard">
             <div class="card-body">
@@ -63,8 +62,10 @@
         </a>
     </div>
 
+    <div id="bottomAnchor"></div>
+
     <div id="arrowForPhonesDown">
-        <a href="#kirunaCard">
+        <a href="#bottomAnchor">
             <img src="icons/arrowDown.svg" alt="arrowDown">
         </a>
     </div>

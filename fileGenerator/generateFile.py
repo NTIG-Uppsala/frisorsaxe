@@ -33,7 +33,6 @@ def replacePlaceholders(htmlTemplate, language, location):
     return htmlTemplate
 
 
-# Example usage
 selectedLanguage = ["eng", "swe", "fin"]  # Change this to the desired language
 selectedLocation = ["lulea", "kiruna"]  # Change this to the desired location
 for language in selectedLanguage:

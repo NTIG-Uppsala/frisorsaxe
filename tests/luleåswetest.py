@@ -115,7 +115,7 @@ class TestHomepage(TestCase):
                 )
 
     def testBookedTime(self):
-        self.assertIn("Boka&nbsp;tid", self.browser.page_source)
+        self.assertIn("Boka tid", self.browser.page_source)
         self.assertIn("Telefon", self.browser.page_source)
         self.assertIn("E‑post", self.browser.page_source)
         self.assertIn("0640‑555‑333", self.browser.page_source)
@@ -200,11 +200,11 @@ class TestHomepage(TestCase):
         nabBrand = self.browser.find_element(By.ID, "centerText")
         self.assertIn("Frisör&nbsp;Saxé", nabBrand.get_attribute("innerHTML"))
         element = self.browser.find_element(By.CLASS_NAME, "navbar-nav")
-        self.assertIn("Boka&nbsp;tid", element.get_attribute("innerHTML"))
+        self.assertIn("Boka tid", element.get_attribute("innerHTML"))
         self.assertIn("Öppettider", element.get_attribute("innerHTML"))
         self.assertIn("Priser", element.get_attribute("innerHTML"))
         self.assertIn("Personal", element.get_attribute("innerHTML"))
-        self.assertIn("Hitta&nbsp;oss", element.get_attribute("innerHTML"))
+        self.assertIn("Hitta oss", element.get_attribute("innerHTML"))
 
     def testEmployeeHeader(self):
         self.assertIn("Möt vår personal", self.browser.page_source)
