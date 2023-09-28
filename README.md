@@ -27,12 +27,74 @@ Our website uses the software Selenium and Python's unittest library to run test
 - Javascript ECMAScript 2023
 - Python 3.11.5 and Selenium 4.11.2 for testing
 
-### Documentation
-- Translation system documentation: [Document](https://pastebin.com/8iLqHQLd)
-
 ### License
 -  All images should be linked under the "licences" folder in "licenseLinks".
 
 - Licenses for google fonts exist in the "licenses" folder located in the root folder.
 
 - All of the photos are from either Unsplash and Pexels. Both of these websites exclusively have open licenses. (As long as you use the free version which we do.)
+
+### Documentation
+# Adding a language for Frisör Saxé
+
+1. **Edit the translations.json file:**
+
+   - Open the translations.json file.
+   - Locate the "swe" object within the JSON structure.
+   - Copy the entire "swe" object, including all its keys and values.
+   - Paste the copied object right after the last object in the list (make sure to maintain proper JSON formatting with commas).
+   - The JSON object name should be the new language created, like “fre” for French.
+
+2. **Translate the Values:**
+
+   - Within the newly created object for the new language, change the values for each key so that they match the desired translations for that language. Replace the values with the translated text.
+
+3. **Update generateFile.py:**
+
+   - Open the generateFile.py Python script.
+   - Locate the selectedLanguage array in the script.
+   - Add the language code (the same name used for the JSON object) to the selectedLanguage array.
+
+4. **Add the Flag Image:**
+
+   - Place the picture of the country's flag in the "pictures" folder. Ensure that the image has the following properties:
+
+     - Resolution: 640x373 pixels
+     - Format: PNG
+
+   - In the existing JSON objects, locate the "THIRDVERSIONALT" field and confirm that "THIRD" is indeed the latest version. 
+
+   - If "Third" is the latest version, proceed to add the following fields: "FOURTHVERSIONALT," "FOURTHVERSIONSITE," and "FOURTHFLAG" to all JSON objects except the one you just created. 
+
+   - In the "FOURTHFLAG" field, ensure that the alt attribute contains "englishflag" translated into the respective language, for example, "svenskaflaggan." 
+
+   - Finally, incorporate this code into the list (ul tag) identified by the id "flagMenu" in the template, replacing "FOURTHFLAG" as necessary.
+
+    `<li>`
+          `<a` `class="inActiveMenu` `flag"` `href="*FOURTHVERSIONSITE*">`
+        `<img` `src="pictures/*FOURTHFLAG*.png"` `alt="*FOURTHVERSIONALT*">`
+         `</a>`
+    `</li>`
+
+5. **Change main language**
+
+   - In the JSON object you created, change all the variables with MAIN to the version of the newly created things. 
+   - The version of flags does not matter but make sure that all the languages have their own version, with alt and html file.
+
+6. **Add language to localstorage**
+
+   - Open script.js and located the variable Currentlanguage
+   - Add another else if statement like the ones created
+   - Make sure the new else if statement is looking for the newly created alt for the new flag.
+
+
+7. **Run generateFile.py:**
+
+   - Execute the generateFile.py script.
+   - Check how the newly added language appears on the generated HTML page.
+
+**Note: Please ensure that you maintain the proper JSON structure and formatting when editing the translations.json file.**  
+
+**Occasionally, adjustments may be necessary, depending on the linguistic structure, especially when dealing with languages outside the Latin alphabet, which have not undergone extensive testing.**
+
+****
