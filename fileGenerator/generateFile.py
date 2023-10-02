@@ -25,7 +25,7 @@ def replacePlaceholders(htmlTemplate, language, location):
 
     # Replace placeholders in the HTML template
     for key, value in translation.items():
-        placeholder = f"*{key.upper()}*"
+        placeholder = f"*{key}*"
         htmlTemplate = htmlTemplate.replace(
             placeholder, str(value)
         )  # Ensure the value is converted to a string
