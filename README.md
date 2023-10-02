@@ -75,7 +75,7 @@ Our website uses the software Selenium and Python's unittest library to run test
 &#x20;
 
     <li>
-        <a class="inActiveMenu` `flag"href="*FOURTHVERSIONSITE*">
+        <a class="inActiveMenu flag" href="*FOURTHVERSIONSITE*">
             <img src="pictures/*FOURTHFLAG*.png" alt="*FOURTHVERSIONALT*">
         </a>
     </li>
