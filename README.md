@@ -49,7 +49,7 @@ Our website uses the software Selenium and Python's unittest library to run test
 
 2. **Translate the Values:**
 
-   - Within the newly created object for the new language, change the values for each key so that they match the desired translations for that language. Replace the values with the translated text.
+   - Within the newly created object for the new language, change the values for each key so that they match the desired translations for that language.
 
 3. **Update generateFile.py:**
 
