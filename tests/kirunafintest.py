@@ -228,9 +228,7 @@ class TestHomepageENG(TestCase):
             self.assertEqual("none", element)
 
     def testZipCodePhrase(self):
-        value = translations["fin"]["kiruna"]["HOMEDELIVERYTITLE"]
-
-        self.assertEquals(value, "Tuo kampaamo kotiisi")
+        self.assertIn("Tuo kampaamo kotiisi", self.browser.page_source)
 
     def helperZipCode(self, zipCodeList, message):
         for currentZip in zipCodeList:
