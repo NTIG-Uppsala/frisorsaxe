@@ -1,3 +1,5 @@
+import json
+import re
 import time
 from os import getcwd, path
 from unittest import TestCase, main
@@ -5,6 +7,8 @@ from unittest import TestCase, main
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
+
+translations = json.load(open("fileGenerator/translations.json"))
 
 
 class TestHomepageNoScript(TestCase):
@@ -177,9 +181,9 @@ class TestHomepage(TestCase):
         self.assertIn("Stängt", self.browser.page_source)
 
     def testInfo(self):
-        self.assertIn("Gränsen för långt hår går vid 20 cm.", self.browser.page_source)
+        self.assertIn("Gränsen för långt hår går vid 20 cm", self.browser.page_source)
         self.assertIn(
-            "Man blir stamkund efter tre besök under 12 månader.",
+            "Man blir stamkund efter tre besök under 12 månader",
             self.browser.page_source,
         )
 
@@ -221,6 +225,11 @@ class TestHomepage(TestCase):
     def testAddress(self):
         self.assertIn("Adress", self.browser.page_source)
 
+    def testZipCodePhrase(self):
+        value = translations["swe"]["lulea"]["HOMEDELIVERYTITLE"]
+
+        self.assertEquals(value, "Ta salongen till ditt hem")
+
     def helperZipCode(self, zipCodeList, message):
         for currentZip in zipCodeList:
             self.browser.find_element(By.ID, "zipNumber").send_keys(currentZip)
@@ -252,6 +261,19 @@ class TestHomepage(TestCase):
             "Vi kan tyvärr inte erbjuda denna service för detta postnummer.",
         )
         self.helperZipCode(nonWorkingZipcodes, "Inte ett riktigt postnummer.")
+
+    def testPlaceholderForFileGenerator(self):
+        error_messages = []  # Create a list to collect error messages
+        matches = re.findall(
+            "\*[A-Z]+\*", self.browser.page_source
+        )  # Check if placeholders from template exist.
+        for match in matches:
+            error_messages.append(match)  # Append error messages to the list
+            print(match)
+
+        if error_messages:
+            # If there are errors, print them and fail the test
+            self.fail(error_messages)
 
 
 if __name__ == "__main__":

@@ -47,7 +47,7 @@ function hideFlags() {
 
 //Save the current used language in localstorage to be used later.
 document.addEventListener("DOMContentLoaded", function () {
-  const Currentlanguage = document.getElementById("activeLang").alt; //Switch to html lang
+  const Currentlanguage = document.getElementById("activeLang").alt;
   if (Currentlanguage === "svenskaflaggan") {
     localStorage.setItem("language", "swe");
   } else if (Currentlanguage === "englishflag") {

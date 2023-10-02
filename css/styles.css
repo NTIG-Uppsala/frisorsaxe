@@ -77,17 +77,6 @@ h2 {
     margin-bottom: 8vh;
 }
 
-
-/* @media screen and (max-width:993px) {
-    .nav-link {
-        text-align: center;
-    }
-
-    .col-3 {
-        font-size: 1rem;
-    }
-} */
-
 @media screen and (max-width:360px) {
     .col-3 {
         font-size: 0.80rem !important;
@@ -127,6 +116,10 @@ h2 {
     left: 25vw;
     width: 50vw;
     height: auto;
+}
+
+#zipCodeCheckerHeight {
+    height: 150px;
 }
 
 #homePage {
@@ -309,12 +302,11 @@ footer {
         top: 0;
         left: -15px;
     }
-    /* .justify-content-center {
-        justify-content: end !important;
-    } */
+
     .navButtonRight {
         justify-content: end !important;
     }
+
     .nav-link {
         text-align: center;
     }
@@ -362,12 +354,12 @@ input[type=text] {
     color: #000000;
 }
 
-.marginEnd{
+.marginEnd {
     margin-inline-end: 30px;
 }
 
 @media screen and (max-width:992px) {
-    .marginEnd{
+    .marginEnd {
         margin-inline-end: 0px;
     }
 }

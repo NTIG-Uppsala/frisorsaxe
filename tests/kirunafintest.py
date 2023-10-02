@@ -1,3 +1,5 @@
+import json
+import re
 import time
 from os import getcwd, path
 from unittest import TestCase, main
@@ -5,6 +7,8 @@ from unittest import TestCase, main
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
+
+translations = json.load(open("fileGenerator/translations.json"))
 
 
 class TestHomepageNoScriptENG(TestCase):
@@ -134,11 +138,11 @@ class TestHomepageENG(TestCase):
 
     def testInfo(self):
         self.assertIn(
-            "Kolmen käynnin jälkeen 12 kuukauden aikana sinut katsotaan vakituiseksi asiakkaaksi.",
+            "Kolmen käynnin jälkeen 12 kuukauden aikana sinut katsotaan vakituiseksi asiakkaaksi",
             self.browser.page_source,
         )  # After three visits within 12 months, you will be considered a regular customer
         self.assertIn(
-            "Pitkien hiusten raja alkaa 20 cm:stä.", self.browser.page_source
+            "Pitkien hiusten raja alkaa 20 cm:stä", self.browser.page_source
         )  # The limit for long hair starts at 20 cm
 
     def testProducts(self):
@@ -223,6 +227,11 @@ class TestHomepageENG(TestCase):
             )
             self.assertEqual("none", element)
 
+    def testZipCodePhrase(self):
+        value = translations["fin"]["kiruna"]["HOMEDELIVERYTITLE"]
+
+        self.assertEquals(value, "Tuo kampaamo kotiisi")
+
     def helperZipCode(self, zipCodeList, message):
         for currentZip in zipCodeList:
             self.browser.find_element(By.ID, "zipNumber").send_keys(currentZip)
@@ -267,6 +276,19 @@ class TestHomepageENG(TestCase):
             "Valitettavasti emme voi tarjota tätä palvelua sinulle.",
         )
         self.helperZipCode(nonWorkingZipcodes, "Ei kelvollinen postinumero.")
+
+    def testPlaceholderForFileGenerator(self):
+        error_messages = []  # Create a list to collect error messages
+        matches = re.findall(
+            "\*[A-Z]+\*", self.browser.page_source
+        )  # Check if placeholders from template exist.
+        for match in matches:
+            error_messages.append(match)  # Append error messages to the list
+            print(match)
+
+        if error_messages:
+            # If there are errors, print them and fail the test
+            self.fail(error_messages)
 
 
 if __name__ == "__main__":
