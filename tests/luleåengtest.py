@@ -1,7 +1,9 @@
+import json
+import re
 import time
 from os import getcwd, path
 from unittest import TestCase, main
-import json
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
@@ -254,6 +256,19 @@ class TestHomepageENG(TestCase):
         )
         self.helperZipCode(notAcceptedZipcodes, "we cant offer this service to you.")
         self.helperZipCode(nonWorkingZipcodes, "Not a valid zipcode.")
+
+    def testPlaceholderForFileGenerator(self):
+        error_messages = []  # Create a list to collect error messages
+        matches = re.findall(
+            "\*[A-Z]+\*", self.browser.page_source
+        )  # Check if placeholders from template exist.
+        for match in matches:
+            error_messages.append(match)  # Append error messages to the list
+            print(match)
+
+        if error_messages:
+            # If there are errors, print them and fail the test
+            self.fail(error_messages)
 
 
 if __name__ == "__main__":
