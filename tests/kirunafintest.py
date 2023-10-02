@@ -134,11 +134,11 @@ class TestHomepageENG(TestCase):
 
     def testInfo(self):
         self.assertIn(
-            "Kolmen käynnin jälkeen 12 kuukauden aikana sinut katsotaan vakituiseksi asiakkaaksi",
+            "Kolmen käynnin jälkeen 12 kuukauden aikana sinut katsotaan vakituiseksi asiakkaaksi.",
             self.browser.page_source,
         )  # After three visits within 12 months, you will be considered a regular customer
         self.assertIn(
-            "Pitkien hiusten raja alkaa 20 cm:stä", self.browser.page_source
+            "Pitkien hiusten raja alkaa 20 cm:stä.", self.browser.page_source
         )  # The limit for long hair starts at 20 cm
 
     def testProducts(self):

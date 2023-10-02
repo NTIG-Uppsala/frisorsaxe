@@ -130,9 +130,9 @@ class TestHomepage(TestCase):
         self.assertIn("Stängt", self.browser.page_source)
 
     def testInfo(self):
-        self.assertIn("Gränsen för långt hår går vid 20 cm", self.browser.page_source)
+        self.assertIn("Gränsen för långt hår går vid 20 cm.", self.browser.page_source)
         self.assertIn(
-            "Man blir stamkund efter tre besök under 12 månader",
+            "Man blir stamkund efter tre besök under 12 månader.",
             self.browser.page_source,
         )
 
