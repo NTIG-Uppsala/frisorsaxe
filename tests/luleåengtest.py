@@ -1,7 +1,8 @@
+import json
 import time
 from os import getcwd, path
 from unittest import TestCase, main
-import json
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
@@ -159,7 +160,7 @@ class TestHomepageENG(TestCase):
         self.assertIn("Staff", element.get_attribute("innerHTML"))
         self.assertIn("Find Us", element.get_attribute("innerHTML"))
 
-    def testHeadHeader(self):
+    def testEmployeeHeader(self):
         self.assertIn("Meet Our Staff", self.browser.page_source)
 
     def testEmployeePictures(self):
