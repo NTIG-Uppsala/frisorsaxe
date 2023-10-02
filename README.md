@@ -37,7 +37,7 @@ Our website uses the software Selenium and Python's unittest library to run test
 
 ## Documentation
 
-### Adding a language for Frisör Saxé
+## Adding a language for Frisör Saxé
 
 1. **Edit the translations.json file:**
 
@@ -55,7 +55,7 @@ Our website uses the software Selenium and Python's unittest library to run test
 
    - Open the generateFile.py script.
    - Locate the selectedLanguage array in the script.
-   - Add the language code (the same name used for the JSON object) to the selectedLanguage array as a string.
+   - Add the language code (the same name used for the JSON object) to the selectedLanguage array as a string. Do not remove previous languages or locations in the array.
 
 4. **Add the Flag Image:**
 
@@ -83,7 +83,7 @@ Our website uses the software Selenium and Python's unittest library to run test
 5. **Change main language**
 
    - In the JSON object you created, locate all the keys that start with MAIN and change their value so they fit the newly created language.
-   - The version of flags does not matter but make sure that all the languages have their own version, with alt and html file in all JSON objects.
+   - The appearance of the flag does not affect the code. However make sure that all the languages have their own version, with alt and html file in all JSON objects.
 
 6. **Add language to localstorage**
 
