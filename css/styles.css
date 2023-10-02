@@ -77,17 +77,6 @@ h2 {
     margin-bottom: 8vh;
 }
 
-
-/* @media screen and (max-width:993px) {
-    .nav-link {
-        text-align: center;
-    }
-
-    .col-3 {
-        font-size: 1rem;
-    }
-} */
-
 @media screen and (max-width:360px) {
     .col-3 {
         font-size: 0.80rem !important;
@@ -314,9 +303,6 @@ footer {
         left: -15px;
     }
 
-    /* .justify-content-center {
-        justify-content: end !important;
-    } */
     .navButtonRight {
         justify-content: end !important;
     }
