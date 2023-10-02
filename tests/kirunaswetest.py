@@ -160,7 +160,7 @@ class TestHomepage(TestCase):
         self.assertIn("Personal", element.get_attribute("innerHTML"))
         self.assertIn("Hitta oss", element.get_attribute("innerHTML"))
 
-    def testHeadHeader(self):
+    def testEmployeeHeader(self):
         self.assertIn("Möt vår personal", self.browser.page_source)
 
     def testEmployeePictures(self):
