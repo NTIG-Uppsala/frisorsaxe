@@ -1,10 +1,12 @@
 import time
 from os import getcwd, path
 from unittest import TestCase, main
-
+import json
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
+
+translations = json.load(open("fileGenerator/translations.json"))
 
 
 class TestHomepageNoScript(TestCase):
@@ -220,6 +222,11 @@ class TestHomepage(TestCase):
 
     def testAddress(self):
         self.assertIn("Adress", self.browser.page_source)
+
+    def testZipCodePhrase(self):
+        value = translations["swe"]["lulea"]["HOMEDELIVERYTITLE"]
+
+        self.assertEquals(value, "Ta salongen till ditt hem")
 
     def helperZipCode(self, zipCodeList, message):
         for currentZip in zipCodeList:
