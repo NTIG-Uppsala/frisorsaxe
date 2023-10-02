@@ -13,6 +13,7 @@ def replacePlaceholders(htmlTemplate, language, location):
     translation = translations.get(language, {}).get(location, {})
 
     # Replace placeholders in the HTML template with values from OPENDAYS
+    # For every value in OPENDAYS, it creates a new <p> tag with the corresponding value on a new line.
     if "OPENDAYS" in translation:
         opendays = "\n".join(
             [f"<p>{value}</p>" for value in translation["OPENDAYS"].values()]

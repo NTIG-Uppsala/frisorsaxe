@@ -235,9 +235,7 @@ class TestHomepageENG(TestCase):
         # Bring the value of HOMEDELIVERYTITLE and check
 
     def testZipCodePhrase(self):
-        value = translations["eng"]["kiruna"]["HOMEDELIVERYTITLE"]
-
-        self.assertEquals(value, "Bring the Salon to Your Home")
+        self.assertIn("Bring the Salon to Your Home", self.browser.page_source)
 
     def testZipCodes(self):
         zipCodeListKiruna = [
