@@ -1,8 +1,5 @@
 import json
 
-selectedLanguage = ["eng", "swe", "fin"]  # Change this to the desired language
-selectedLocation = ["lulea", "kiruna"]  # Change this to the desired location
-
 # Load the JSON translation file
 translations = json.load(open("fileGenerator/translations.json"))
 
@@ -36,6 +33,8 @@ def replacePlaceholders(htmlTemplate, language, location):
     return htmlTemplate
 
 
+selectedLanguage = ["eng", "swe", "fin"]  # Change this to the desired language
+selectedLocation = ["lulea", "kiruna"]  # Change this to the desired location
 for language in selectedLanguage:
     for location in selectedLocation:
         htmlTemplate = open("fileGenerator/template.html", "r").read()

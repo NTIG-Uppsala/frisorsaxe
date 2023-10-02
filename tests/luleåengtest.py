@@ -128,11 +128,11 @@ class TestHomepageENG(TestCase):
 
     def testInfo(self):
         self.assertIn(
-            "After 3 visits within 12 months you are considered a regular customer.",
+            "After 3 visits within 12 months you are considered a regular customer",
             self.browser.page_source,
         )
         self.assertIn(
-            "The limit for long hair starts at 20 cm.", self.browser.page_source
+            "The limit for long hair starts at 20 cm", self.browser.page_source
         )
 
     def testProducts(self):
@@ -159,7 +159,7 @@ class TestHomepageENG(TestCase):
         self.assertIn("Staff", element.get_attribute("innerHTML"))
         self.assertIn("Find Us", element.get_attribute("innerHTML"))
 
-    def testEmployeeHeader(self):
+    def testHeadHeader(self):
         self.assertIn("Meet Our Staff", self.browser.page_source)
 
     def testEmployeePictures(self):
