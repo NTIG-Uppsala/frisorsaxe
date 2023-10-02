@@ -6,8 +6,6 @@
     font-family: Italianno;
 }
 
-
-
 @font-face {
     font-family: Italianno;
     src: url("../fonts/Italianno-Regular.ttf");
@@ -116,9 +114,10 @@ a {
     }
 }
 
-#arrowForPhonesUp{
+#arrowForPhonesUp {
     display: none;
 }
+
 @media screen and (max-width:576px) {
     #arrowForPhonesUp {
         display: none;
@@ -133,6 +132,6 @@ a {
     }
 }
 
-.hasjs{
+.hasJS {
     visibility: hidden;
 }
