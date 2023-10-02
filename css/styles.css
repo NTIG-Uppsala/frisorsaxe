@@ -129,6 +129,10 @@ h2 {
     height: auto;
 }
 
+#jsCheck {
+    height: 150px;
+}
+
 #homePage {
     background-image: url('../pictures/mainBackground.jpg');
     background-position: center;
@@ -309,12 +313,14 @@ footer {
         top: 0;
         left: -15px;
     }
+
     /* .justify-content-center {
         justify-content: end !important;
     } */
     .navButtonRight {
         justify-content: end !important;
     }
+
     .nav-link {
         text-align: center;
     }
@@ -362,12 +368,12 @@ input[type=text] {
     color: #000000;
 }
 
-.marginEnd{
+.marginEnd {
     margin-inline-end: 30px;
 }
 
 @media screen and (max-width:992px) {
-    .marginEnd{
+    .marginEnd {
         margin-inline-end: 0px;
     }
 }
