@@ -178,7 +178,7 @@ class TestHomepageENG(TestCase):
         self.assertIn("Henkilökunta", element.get_attribute("innerHTML"))  # Staff
         self.assertIn("Tietoa meistä", element.get_attribute("innerHTML"))  # About us
 
-    def testEmplyoeeHeader(self):
+    def testEmployeeHeader(self):
         self.assertIn(
             "Tapaa henkilökuntaamme", self.browser.page_source
         )  # Meet our staff
