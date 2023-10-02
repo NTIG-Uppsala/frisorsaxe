@@ -136,11 +136,11 @@ class TestHomepageENG(TestCase):
 
     def testInfo(self):
         self.assertIn(
-            "Kolmen käynnin jälkeen 12 kuukauden aikana sinut katsotaan vakituiseksi asiakkaaksi",
+            "Kolmen käynnin jälkeen 12 kuukauden aikana sinut katsotaan vakituiseksi asiakkaaksi.",
             self.browser.page_source,
         )  # After three visits within 12 months, you will be considered a regular customer
         self.assertIn(
-            "Pitkien hiusten raja alkaa 20 cm:stä", self.browser.page_source
+            "Pitkien hiusten raja alkaa 20 cm:stä.", self.browser.page_source
         )  # The limit for long hair starts at 20 cm
 
     def testProducts(self):
@@ -176,7 +176,7 @@ class TestHomepageENG(TestCase):
         self.assertIn("Henkilökunta", element.get_attribute("innerHTML"))  # Staff
         self.assertIn("Tietoa meistä", element.get_attribute("innerHTML"))  # About us
 
-    def testEmplyoeeHeader(self):
+    def testEmployeeHeader(self):
         self.assertIn(
             "Tapaa henkilökuntaamme", self.browser.page_source
         )  # Meet our staff
