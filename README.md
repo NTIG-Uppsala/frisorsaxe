@@ -30,16 +30,14 @@ Our website uses the software Selenium and Python's unittest library to run test
 - Javascript ECMAScript 2023
 - Python 3.11.5 and Selenium 4.11.2 for testing
 
-### License
+## License
 -  All images should be linked under the "licences" folder in "licenseLinks".
 - Licenses for google fonts exist in the "licenses" folder located in the root folder.
 - All of the photos are from either Unsplash and Pexels. Both of these websites exclusively have open licenses. (As long as you use the free version which we do.)
 
 ## Documentation
 
-### Adding a language for Frisör Saxé
-
-# Adding a language for Frisör Saxé
+## Adding a language for Frisör Saxé
 
 1. **Edit the translations.json file:**
 
@@ -51,13 +49,13 @@ Our website uses the software Selenium and Python's unittest library to run test
 
 2. **Translate the Values:**
 
-   - Within the newly created object for the new language, change the values for each key so that they match the desired translations for that language. Replace the values with the translated text.
+   - Within the newly created object for the new language, change the values for each key so that they match the desired translations for that language.
 
 3. **Update generateFile.py:**
 
    - Open the generateFile.py script.
    - Locate the selectedLanguage array in the script.
-   - Add the language code (the same name used for the JSON object) to the selectedLanguage array as a string.
+   - Add the language code (the same name used for the JSON object) to the selectedLanguage array as a string. Do not remove previous languages or locations in the array.
 
 4. **Add the Flag Image:**
 
@@ -77,7 +75,7 @@ Our website uses the software Selenium and Python's unittest library to run test
 &#x20;
 
     <li>
-        <a class="inActiveMenu` `flag"href="*FOURTHVERSIONSITE*">
+        <a class="inActiveMenu flag" href="*FOURTHVERSIONSITE*">
             <img src="pictures/*FOURTHFLAG*.png" alt="*FOURTHVERSIONALT*">
         </a>
     </li>
@@ -85,7 +83,7 @@ Our website uses the software Selenium and Python's unittest library to run test
 5. **Change main language**
 
    - In the JSON object you created, locate all the keys that start with MAIN and change their value so they fit the newly created language.
-   - The version of flags does not matter but make sure that all the languages have their own version, with alt and html file in all JSON objects.
+   - The appearance of the flag does not affect the code. However make sure that all the languages have their own version, with alt and html file in all JSON objects.
 
 6. **Add language to localstorage**
 
