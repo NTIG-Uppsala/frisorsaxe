@@ -75,7 +75,7 @@ Our website uses the software Selenium and Python's unittest library to run test
 &#x20;
 
     <li>
-        <a class="inActiveMenu` `flag"href="*FOURTHVERSIONSITE*">
+        <a class="inActiveMenu flag" href="*FOURTHVERSIONSITE*">
             <img src="pictures/*FOURTHFLAG*.png" alt="*FOURTHVERSIONALT*">
         </a>
     </li>
@@ -83,7 +83,7 @@ Our website uses the software Selenium and Python's unittest library to run test
 5. **Change main language**
 
    - In the JSON object you created, locate all the keys that start with MAIN and change their value so they fit the newly created language.
-   - The version of flags does not matter but make sure that all the languages have their own version, with alt and html file in all JSON objects.
+   - The appearance of the flag does not affect the code. However make sure that all the languages have their own version, with alt and html file in all JSON objects.
 
 6. **Add language to localstorage**
 
