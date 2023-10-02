@@ -161,7 +161,7 @@ class TestHomepageENG(TestCase):
         self.assertIn("Staff", element.get_attribute("innerHTML"))
         self.assertIn("Find Us", element.get_attribute("innerHTML"))
 
-    def testHeadHeader(self):
+    def testEmployeeHeader(self):
         self.assertIn("Meet Our Staff", self.browser.page_source)
 
     def testEmployeePictures(self):
