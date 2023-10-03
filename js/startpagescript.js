@@ -17,7 +17,7 @@ function arrowShow() {
   const arrowDown = document.getElementById("arrowForPhonesDown");
   const arrowUp = document.getElementById("arrowForPhonesUp");
 
-  // (Limit - innerHeight) = (The websites height - The browsers height), how many pixels there is left to the bottom of the site.
+  // (Limit - innerHeight) = (The websites height - The browsers height), how many pixels there are left to the bottom of the site.
   // If there is 150px left to bottom and you then scroll 100px down the arrowDown will show.
   if (limit - window.innerHeight - window.scrollY < 50) {
     arrowDown.style.display = "none"; // Hide
@@ -28,11 +28,11 @@ function arrowShow() {
   }
 }
 
-// If javscript is on, all elements with hasjs class will show. They are by default not displayed.
+// If javscript is on, all elements with hasJS class will show. They are by default not displayed.
 document.addEventListener("DOMContentLoaded", function () {
-  let hasjs = document.getElementsByClassName("hasjs");
+  let hasJS = document.getElementsByClassName("hasJS");
 
-  for (let i = 0; i < hasjs.length; i++) {
-    hasjs[i].style.visibility = "visible"; // Block shows element
+  for (let i = 0; i < hasJS.length; i++) {
+    hasJS[i].style.visibility = "visible"; // Block shows element
   }
 });
