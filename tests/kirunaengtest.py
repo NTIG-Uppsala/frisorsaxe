@@ -8,8 +8,6 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 
-translations = json.load(open("fileGenerator/translations.json"))
-
 
 class TestHomepageNoScriptENG(TestCase):
     doNotCloseBrowser = False
@@ -36,7 +34,7 @@ class TestHomepageNoScriptENG(TestCase):
 
     # Before each test
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "./kirunaeng.html"))
+        self.browser.get(path.join(getcwd(), "./kirunaen.html"))
 
     # After each test
     def tearDown(self):
@@ -82,7 +80,7 @@ class TestHomepageENG(TestCase):
         pass
 
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "kirunaeng.html"))
+        self.browser.get(path.join(getcwd(), "./kirunaen.html"))
 
     def tearDown(self):
         self.browser.get("about:blank")
@@ -232,7 +230,7 @@ class TestHomepageENG(TestCase):
             postalOutput = self.browser.find_element(By.ID, "postalCodeCheck")
             self.assertIn(message, postalOutput.text)
             self.browser.get("about:blank")
-            self.browser.get(path.join((getcwd()), "kirunaeng.html"))
+            self.browser.get(path.join((getcwd()), "kirunaen.html"))
 
         # Bring the value of HOMEDELIVERYTITLE and check
 

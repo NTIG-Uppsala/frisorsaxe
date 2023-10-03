@@ -1,0 +1,294 @@
+{
+    "COMMON": {
+        "@MAIL": "saxefrisor@gmail.com"
+    },
+    "LOCATIONS": {
+        "LULEA": {
+            "STREET": "Färjledsvägen 38",
+            "POSTALCODE": "961 93 Luleå",
+            "NUMBER": "0640&#8209;555&#8209;333",
+            "@NUMBER": "0630555555",
+            "MAP": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1643.085861319367!2d21.851066699999997!3d65.68080189999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x467f677c34b6b1af%3A0x493f441e2dee92f!2sF%C3%A4rjledsv%C3%A4gen%2038%2C%20961%2093%20S%C3%B6dra%20Sunderbyn!5e0!3m2!1ssv!2sse!4v1694676621148!5m2!1ssv!2sse",
+            "NOJSMAP": "nojsmapLulea",
+            "PERS1": "Johan Olsson",
+            "PERS1IMG": "johanOlsson",
+            "PERS2": "Anna Andersson",
+            "PERS2IMG": "annaAndersson",
+            "PERS3": "Elin Nygård",
+            "PERS3IMG": "elinNygard",
+            "OPENDAYSTIME": {
+                "MONDAYTIME": "10 - 17",
+                "TUESDAYTIME": "10 - 16",
+                "WEDNESDAYTIME": "10 - 15",
+                "THUFRITIME": "10 - 16",
+                "SATURDAYTIME": "12 - 15"
+            }
+        },
+        "KIRUNA": {
+            "STREET": "Fjällgatan 32H",
+            "POSTALCODE": "981 39 Kiruna",
+            "NUMBER": "0630&#8209;555&#8209;555",
+            "@NUMBER": "0630555555",
+            "MAP": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1503.2583513342254!2d20.2337795!3d67.8660232!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x45d0ba6368d7c9a3%3A0xe3887ef038c559b0!2sFj%C3%A4llgatan%2032%2C%20981%2039%20Kiruna!5e0!3m2!1ssv!2sse!4v1693397051519!5m2!1ssv!2sse",
+            "NOJSMAP": "nojsmapkiruna",
+            "PERS1": "Anna Pettersson",
+            "PERS1IMG": "annaPettersson",
+            "PERS2": "Fredrik Örtqvist",
+            "PERS2IMG": "fredrikOrtqvist",
+            "PERS3": "Örjan Johansson",
+            "PERS3IMG": "orjanJohansson",
+            "OPENDAYSTIME": {
+                "MONFRITIME": "10 - 16",
+                "SATURDAYTIME": "12 - 15"
+            }
+        }
+    },
+    "LANGS": {
+        "sv": {
+            "HTMLLANGUAGE": "sv",
+            "FLAGALT": "svenska flaggan",
+            "BOOK": "Boka tid",
+            "OPENHOURS": "Öppettider",
+            "SUNDAYCLOSED": "Stängt",
+            "PRICES": "Priser",
+            "MAINVERSIONSITE": "luleasv.html",
+            "SECONDVERSIONSITE": "luleaen.html",
+            "THIRDVERSIONSITE": "luleafi.html",
+            "MAINVERSIONALT": "svenska flaggan",
+            "SECONDVERSIONALT": "english flag",
+            "THIRDVERSIONALT": "suomen lippu",
+            "EMPLOYEES": "Personal",
+            "BOOKANCHOR": "boka",
+            "OPENINGHOURSANCHOR": "oppetider",
+            "PRICESANCHOR": "priser",
+            "EMPLOYEESANCHOR": "personal",
+            "FINDUSANCHOR": "hittaoss",
+            "ADDRESS": "Adress",
+            "FINDUS": "Hitta oss",
+            "PHONE": "Telefon",
+            "MAINLANGFLAGALT": "svenska flaggan",
+            "MAINFLAG": "svFlag",
+            "SECONDFLAG": "enFlag",
+            "THIRDFLAG": "fiFlag",
+            "MAIL": "E&#8209;post",
+            "HOMEDELIVERYTITLE": "Proffsiga klippningar hemma - Boka din stil nu",
+            "CHECKIFREACH": "Kolla om vi når ut till dig.",
+            "CALLTOBOOK": "Vi kör ut till dig. Ring oss för att boka tid!",
+            "TOOFARAWAY": "Vi kan tyvärr inte erbjuda denna service för detta postnummer.",
+            "NOTVALIDPOSTAL": "Inte ett riktigt postnummer.",
+            "HAIRCUT": "Klippning",
+            "TODAY": "Idag",
+            "TIMEUNTILLREGULAR": "Man blir stamkund efter tre besök under 12 månader **",
+            "LIMITFORLONGHAIR": "Gränsen för långt hår går vid 20 cm *",
+            "LONGHAIR": "Långt hår",
+            "LONGHAIRREGULAR": "Långt hår (stamkund)",
+            "SHORTHAIR": "Kort hår",
+            "SHORTHAIRREGULAR": "Kort hår (stamkund)",
+            "BEARD": "Skägg",
+            "CHILD": "Barn",
+            "YEARS": "år",
+            "OTHER": "Annat",
+            "TRIMMING": "Toppning",
+            "COLORING": "Färgning",
+            "EXTENSIONSSHORT": "Förlängningar, kort",
+            "EXTENSIONSNORMAL": "Förlängningar, standard",
+            "EXTENSIONSLONG": "Förlängningar, lång",
+            "MEETEMPLOYEES": "Möt vår personal",
+            "@MAIL": "saxefrisor@gmail.com",
+            "POSTALCODETEXT": "Postnummer",
+            "CHECK": "Kolla",
+            "CLOSED": "Stängt",
+            "LULEA": {
+                "EMPLOYEESWORK": {
+                    "PERS1JOB": "Hårstylist",
+                    "PERS2JOB": "Barberare",
+                    "PERS3JOB": "Hairstylist"
+                },
+                "OPENDAYS": {
+                    "MONDAY": "Måndag",
+                    "TUESDAY": "Tisdag",
+                    "WEDNESDAY": "Onsdag",
+                    "THUFRI": "Tor - Fre",
+                    "SATURDAY": "Lördag",
+                    "SUNDAY": "Söndag"
+                }
+            },
+            "KIRUNA": {
+                "EMPLOYEESWORK": {
+                    "PERS1JOB": "Hårstylist",
+                    "PERS2JOB": "Barberare",
+                    "PERS3JOB": "Barberare"
+                },
+                "OPENDAYS": {
+                    "MONFRI": "Mån - Fre",
+                    "SATURDAY": "Lördag",
+                    "SUNDAY": "Söndag"
+                }
+            }
+        },
+        "en": {
+            "HTMLLANGUAGE": "en",
+            "FLAGALT": "english flag",
+            "BOOK": "Book Appointment",
+            "OPENHOURS": "Opening Hours",
+            "SUNDAYCLOSED": "Closed",
+            "PRICES": "Prices",
+            "MAINVERSIONSITE": "luleaen.html",
+            "SECONDVERSIONSITE": "luleasv.html",
+            "THIRDVERSIONSITE": "luleafi.html",
+            "MAINVERSIONALT": "Svenska Flaggan",
+            "SECONDVERSIONALT": "English Flag",
+            "THIRDVERSIONALT": "Suomen Lippu",
+            "EMPLOYEES": "Staff",
+            "BOOKANCHOR": "book",
+            "OPENINGHOURSANCHOR": "openinghours",
+            "PRICESANCHOR": "prices",
+            "EMPLOYEESANCHOR": "staff",
+            "FINDUSANCHOR": "findus",
+            "FINDUS": "Find Us",
+            "ADDRESS": "Address",
+            "PHONE": "Phone",
+            "MAINLANGFLAGALT": "Swedish Flag",
+            "MAINFLAG": "svFlag",
+            "SECONDFLAG": "enFlag",
+            "THIRDFLAG": "fiFlag",
+            "MAIL": "Email",
+            "HOMEDELIVERYTITLE": "Bring the Salon to Your Home",
+            "CHECKIFREACH": "Check if you are within reach of a house appointment.",
+            "CALLTOBOOK": "You are within reach. Call us to book a house appointment!",
+            "TOOFARAWAY": "Sorry, we can't offer this service for your location.",
+            "NOTVALIDPOSTAL": "Not a valid postal code.",
+            "HAIRCUT": "Haircut",
+            "TODAY": "Today",
+            "TIMEUNTILLREGULAR": "After 3 visits within 12 months you are considered a regular customer **",
+            "LIMITFORLONGHAIR": "The limit for long hair starts at 20 cm *",
+            "LONGHAIR": "Long Hair",
+            "LONGHAIRREGULAR": "Long Hair (regular&nbsp;customer)",
+            "SHORTHAIR": "Short Hair",
+            "SHORTHAIRREGULAR": "Short Hair (regular&nbsp;customer)",
+            "BEARD": "Beard",
+            "CHILD": "Children",
+            "YEARS": "years",
+            "OTHER": "Other",
+            "TRIMMING": "Trimming",
+            "COLORING": "Coloring",
+            "EXTENSIONSSHORT": "Extensions, Short",
+            "EXTENSIONSNORMAL": "Extensions, Standard",
+            "EXTENSIONSLONG": "Extensions, Long",
+            "MEETEMPLOYEES": "Meet Our Staff",
+            "@MAIL": "saxefrisor@gmail.com",
+            "POSTALCODETEXT": "Postal Code",
+            "CHECK": "Check",
+            "CLOSED": "Closed",
+            "LULEA": {
+                "EMPLOYEESWORK": {
+                    "PERS1JOB": "Hairstylist",
+                    "PERS2JOB": "Barber",
+                    "PERS3JOB": "Hairstylist"
+                },
+                "OPENDAYS": {
+                    "MONDAY": "Monday",
+                    "TUESDAY": "Tuesday",
+                    "WEDNESDAY": "Wednesday",
+                    "THUFRI": "Thu - Fri",
+                    "SATURDAY": "Saturday",
+                    "SUNDAY": "Sunday"
+                }
+            },
+            "KIRUNA": {
+                "EMPLOYEESWORK": {
+                    "PERS1JOB": "Hairstylist",
+                    "PERS2JOB": "Barber",
+                    "PERS3JOB": "Barber"
+                },
+                "OPENDAYS": {
+                    "MONFRI": "Mon - Fri",
+                    "SATURDAY": "Saturday",
+                    "SUNDAY": "Sunday"
+                }
+            }
+        },
+        "fi": {
+            "HTMLLANGUAGE": "fi",
+            "FLAGALT": "suomiin lippu",
+            "BOOK": "Varaa aika",
+            "OPENHOURS": "Aukioloajat",
+            "SUNDAYCLOSED": "Suljettu",
+            "PRICES": "Hinnat",
+            "MAINVERSIONSITE": "luleafi.html",
+            "SECONDVERSIONSITE": "luleaen.html",
+            "THIRDVERSIONSITE": "luleasv.html",
+            "MAINVERSIONALT": "Ruotsin lippu",
+            "SECONDVERSIONALT": "Englannin lippu",
+            "THIRDVERSIONALT": "Suomen lippu",
+            "EMPLOYEES": "Henkilökunta",
+            "BOOKANCHOR": "varaa",
+            "OPENINGHOURSANCHOR": "aukioloajat",
+            "PRICESANCHOR": "hinnat",
+            "EMPLOYEESANCHOR": "henkilokunta",
+            "FINDUSANCHOR": "loyda-meidat",
+            "ADDRESS": "Osoite",
+            "FINDUS": "Löydä meidät",
+            "PHONE": "Puhelin",
+            "MAINLANGFLAGALT": "Ruotsin lippu",
+            "MAINFLAG": "svFlag",
+            "SECONDFLAG": "enFlag",
+            "THIRDFLAG": "fiFlag",
+            "MAIL": "Sähköposti",
+            "HOMEDELIVERYTITLE": "Ammattimaiset hiustenleikkaukset kotiin",
+            "CHECKIFREACH": "Tarkista, palvelemmeko aluettasi.",
+            "CALLTOBOOK": "Toimitamme kotiin. Soita meille ajanvarauksesta!",
+            "TOOFARAWAY": "Valitettavasti emme voi tarjota tätä palvelua tällä postinumerolla.",
+            "NOTVALIDPOSTAL": "Ei voimassa oleva postinumero.",
+            "HAIRCUT": "Hiustenleikkaus",
+            "TODAY": "Tänään",
+            "TIMEUNTILLREGULAR": "Kolmen käynnin jälkeen 12 kuukauden aikana sinut katsotaan vakituiseksi asiakkaaksi **",
+            "LIMITFORLONGHAIR": "Pitkien hiusten raja alkaa 20 cm:stä *",
+            "LONGHAIR": "Pitkät hiukset",
+            "LONGHAIRREGULAR": "Pitkät hiukset (Säännöllinen)",
+            "SHORTHAIR": "Lyhyet hiukset",
+            "SHORTHAIRREGULAR": "Lyhyet hiukset (Säännöllinen)",
+            "BEARD": "Parta",
+            "CHILD": "Lapsi",
+            "YEARS": "vuotta",
+            "OTHER": "Muu",
+            "TRIMMING": "Trimmaus",
+            "COLORING": "Värjäys",
+            "EXTENSIONSSHORT": "Pidennykset, lyhyet",
+            "EXTENSIONSNORMAL": "Pidennykset, tavalliset",
+            "EXTENSIONSLONG": "Pidennykset, pitkät",
+            "MEETEMPLOYEES": "Tapaa henkilökuntaamme",
+            "@MAIL": "saxefrisor@gmail.com",
+            "POSTALCODETEXT": "Postinumero",
+            "CHECK": "Tarkista",
+            "CLOSED": "Suljettu",
+            "LULEA": {
+                "EMPLOYEESWORK": {
+                    "PERS1JOB": "Hiusmuotoilija",
+                    "PERS2JOB": "Parturi",
+                    "PERS3JOB": "Hiusmuotoilija"
+                },
+                "OPENDAYS": {
+                    "MONDAY": "Maanantai",
+                    "TUESDAY": "Tiistai",
+                    "WEDNESDAY": "Keskiviikko",
+                    "THUFRI": "To - Pe",
+                    "SATURDAY": "Lauantai",
+                    "SUNDAY": "Sunnuntai"
+                }
+            },
+            "KIRUNA": {
+                "EMPLOYEESWORK": {
+                    "PERS1JOB": "Hiusmuotoilija",
+                    "PERS2JOB": "Parturi",
+                    "PERS3JOB": "Parturi"
+                },
+                "OPENDAYS": {
+                    "MONFRI": "Ma - Pe",
+                    "SATURDAY": "Lauantai",
+                    "SUNDAY": "Sunnuntai"
+                }
+            }
+        }
+    }
+}

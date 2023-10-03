@@ -39,7 +39,7 @@ class TestHomepageNoScript(TestCase):
 
     # Runs before every test
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "./subpages/kirunaswe.html"))
+        self.browser.get(path.join(getcwd(), "./kirunasv.html"))
 
     # After each test
     def tearDown(self):
@@ -86,7 +86,7 @@ class TestHomepage(TestCase):
 
     # Runs before every test
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "./kirunaswe.html"))
+        self.browser.get(path.join(getcwd(), "./kirunasv.html"))
 
     # After each test
     def tearDown(self):
@@ -121,7 +121,7 @@ class TestHomepage(TestCase):
     def testBookedTime(self):
         self.assertIn("Boka tid", self.browser.page_source)
         self.assertIn("Telefon", self.browser.page_source)
-        self.assertIn("E-post", self.browser.page_source)
+        self.assertIn("E‑post", self.browser.page_source)
         self.assertIn("0630‑555‑555", self.browser.page_source)
         self.assertIn("saxefrisor@gmail.com", self.browser.page_source)
 
@@ -239,7 +239,7 @@ class TestHomepage(TestCase):
             self.browser.find_element(By.ID, "submit").click()
             postalOutput = self.browser.find_element(By.ID, "postalCodeCheck")
             self.assertIn(message, postalOutput.text)
-            self.browser.get(path.join((getcwd()), "./kirunaswe.html"))
+            self.browser.get(path.join((getcwd()), "./kirunasv.html"))
 
     def testPostalCodes(self):
         postalCodeListKiruna = [

@@ -36,7 +36,7 @@ class TestHomepageNoScriptENG(TestCase):
         pass
 
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "subPages/luleaeng.html"))
+        self.browser.get(path.join(getcwd(), "./luleaen.html"))
 
     # After each test
     def tearDown(self):
@@ -81,7 +81,7 @@ class TestHomepageENG(TestCase):
 
     # Before each test
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "luleaeng.html"))
+        self.browser.get(path.join(getcwd(), "./luleaen.html"))
 
     # After each test
     def tearDown(self):
@@ -235,7 +235,7 @@ class TestHomepageENG(TestCase):
             self.browser.find_element(By.ID, "submit").click()
             postalOutput = self.browser.find_element(By.ID, "postalCodeCheck")
             self.assertIn(message, postalOutput.text)
-            self.browser.get(path.join((getcwd()), "./luleaeng.html"))
+            self.browser.get(path.join((getcwd()), "./luleaen.html"))
 
     def testPostalCodes(self):
         postalCodeListLulea = ["96190", "96191", "96193", "96194"]

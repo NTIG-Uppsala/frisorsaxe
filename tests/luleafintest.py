@@ -36,7 +36,7 @@ class TestHomepageNoScriptENG(TestCase):
 
     # Before each test
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "./luleafin.html"))
+        self.browser.get(path.join(getcwd(), "./luleafi.html"))
 
     # After each test
     def tearDown(self):
@@ -82,7 +82,7 @@ class TestHomepageENG(TestCase):
         pass
 
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "./luleafin.html"))
+        self.browser.get(path.join(getcwd(), "./luleafi.html"))
 
     def tearDown(self):
         self.browser.get("about:blank")
@@ -91,7 +91,6 @@ class TestHomepageENG(TestCase):
         self.assertEqual("Frisör Saxé", self.browser.title)
 
     def testMap(self):
-        self.browser.find_element(By.ID, "tietoa-meistä")
         self.assertIn(
             "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1643.085861319367!2d21.851066699999997!3d65.68080189999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x467f677c34b6b1af%3A0x493f441e2dee92f!2sF%C3%A4rjledsv%C3%A4gen%2038%2C%20961%2093%20S%C3%B6dra%20Sunderbyn!5e0!3m2!1ssv!2sse!4v1694676621148!5m2!1ssv!2sse",
             self.browser.page_source,
@@ -153,17 +152,19 @@ class TestHomepageENG(TestCase):
         self.assertIn("Tänään", self.browser.page_source)  # Today
         self.assertIn("Lyhyet hiukset", self.browser.page_source)  # Short hair
         self.assertIn("Parta", self.browser.page_source)  # Beard
-        self.assertIn("Lapset", self.browser.page_source)  # Children
+        self.assertIn("Lapsi", self.browser.page_source)  # Children
         self.assertIn("vuotta", self.browser.page_source)  # years
-        self.assertIn("Tasoittelu", self.browser.page_source)  # Straightening
+        self.assertIn("Trimmaus", self.browser.page_source)  # trim
         self.assertIn("Värjäys", self.browser.page_source)  # Coloring
         self.assertIn(
-            "Lyhyet pidennykset", self.browser.page_source
+            "Pidennykset, lyhyet", self.browser.page_source
         )  # Short extensions
         self.assertIn(
-            "Normaalipituiset pidennykset", self.browser.page_source
+            "Pidennykset, tavalliset", self.browser.page_source
         )  # Medium-length extensions
-        self.assertIn("Pitkät pidennykset", self.browser.page_source)  # Long extensions
+        self.assertIn(
+            "Pidennykset, pitkät", self.browser.page_source
+        )  # Long extensions
 
     def testNavbar(self):
         navBrand = self.browser.find_element(By.ID, "centerText")
@@ -179,7 +180,7 @@ class TestHomepageENG(TestCase):
         )  # Opening hours
         self.assertIn("Hinnat", element.get_attribute("innerHTML"))  # Prices
         self.assertIn("Henkilökunta", element.get_attribute("innerHTML"))  # Staff
-        self.assertIn("Tietoa meistä", element.get_attribute("innerHTML"))  # About us
+        self.assertIn("loyda-meidat", element.get_attribute("innerHTML"))  # Find Us
 
     def testEmployeeHeader(self):
         self.assertIn(
@@ -188,7 +189,7 @@ class TestHomepageENG(TestCase):
 
     def testEmployeeJobs(self):
         self.assertIn("Parturi", self.browser.page_source)  # Barber
-        self.assertIn("Hiustyylisti", self.browser.page_source)  # Hair stylist
+        self.assertIn("Hiusmuotoilija", self.browser.page_source)  # Hair stylist
 
     def testAddress(self):
         self.assertIn("Osoite", self.browser.page_source)  # Address
@@ -232,7 +233,9 @@ class TestHomepageENG(TestCase):
             self.assertEqual("none", element)
 
     def testPostalCodePhrase(self):
-        self.assertIn("Tuo kampaamo kotiisi", self.browser.page_source)
+        self.assertIn(
+            "Ammattimaiset hiustenleikkaukset kotiin", self.browser.page_source
+        )
 
     def helperPostalCode(self, postalCodeList, message):
         for currentPostalCode in postalCodeList:
@@ -243,7 +246,7 @@ class TestHomepageENG(TestCase):
             self.browser.find_element(By.ID, "submit").click()
             postalOutput = self.browser.find_element(By.ID, "postalCodeCheck")
             self.assertIn(message, postalOutput.text)
-            self.browser.get(path.join((getcwd()), "./luleafin.html"))
+            self.browser.get(path.join((getcwd()), "./luleafi.html"))
 
     def testPostalCodes(self):
         postalCodeListLulea = ["96190", "96191", "96193", "96194"]
@@ -260,13 +263,13 @@ class TestHomepageENG(TestCase):
         ]
         self.helperPostalCode(
             postalCodeListLulea,
-            "Olet alueellamme. Soita ja varaa kotikäynti!",
+            "Toimitamme kotiin. Soita meille ajanvarauksesta!",
         )
         self.helperPostalCode(
             notAcceptedPostalCodes,
-            "Valitettavasti emme voi tarjota tätä palvelua sinulle.",
+            "Valitettavasti emme voi tarjota tätä palvelua tällä postinumerolla.",
         )
-        self.helperPostalCode(nonWorkingPostalCodes, "Ei kelvollinen postinumero.")
+        self.helperPostalCode(nonWorkingPostalCodes, "Ei voimassa oleva postinumero.")
 
     def testPlaceholderForFileGenerator(self):
         error_messages = []  # Create a list to collect error messages
