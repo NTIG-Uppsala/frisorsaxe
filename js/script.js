@@ -159,8 +159,8 @@ function regularCustomerInfo() {
 window.addEventListener("load", regularCustomerInfo);
 window.addEventListener("resize", regularCustomerInfo);
 
-// List of accepted zip codes
-zipCodeListKiruna = [
+// List of accepted postal codes
+postalCodeListKiruna = [
   "98132",
   "98135",
   "98136",
@@ -174,47 +174,49 @@ zipCodeListKiruna = [
   "98146",
   "98147",
 ];
-zipCodeListLulea = ["96190", "96191", "96193", "96194"];
+postalCodeListLulea = ["96190", "96191", "96193", "96194"];
 
 document.addEventListener("DOMContentLoaded", (event) => {
   document
-    .querySelector("#zipCodeCheck form")
+    .querySelector("#postalCodeCheck form")
     .addEventListener("submit", (event) => {
       event.preventDefault(); // Prevents the site from reloading
-      document.getElementById("outputAcceptedZipCode").style.display = "none";
-      document.getElementById("outputNotValidZipCode").style.display = "none";
-      document.getElementById("outputNonAcceptedZipCode").style.display =
+      document.getElementById("outputAcceptedPostalCode").style.display =
+        "none";
+      document.getElementById("outputNotValidPostalCode").style.display =
+        "none";
+      document.getElementById("outputNonAcceptedPostalCode").style.display =
         "none";
 
-      let zipInput =
-        event.submitter.parentNode.querySelector("#zipNumber").value;
-      zipInput = zipInput.split(" ").join(""); //removes spaces from string
+      let postalInput =
+        event.submitter.parentNode.querySelector("#postalCodeNumber").value;
+      postalInput = postalInput.split(" ").join(""); //removes spaces from string
 
-      if (zipInput.match(/\D/) != null) {
+      if (postalInput.match(/\D/) != null) {
         // If there are no numbers
-        document.getElementById("outputNotValidZipCode").style.display =
+        document.getElementById("outputNotValidPostalCode").style.display =
           "block";
-      } else if (zipInput.length != 5) {
+      } else if (postalInput.length != 5) {
         // If the input isnt 5 numbers
-        document.getElementById("outputNotValidZipCode").style.display =
+        document.getElementById("outputNotValidPostalCode").style.display =
           "block";
       } else if (
-        zipCodeListKiruna.includes(zipInput) &&
+        postalCodeListKiruna.includes(postalInput) &&
         window.location.pathname.includes("kiruna")
       ) {
-        // If the zip code is valid in kiruna
-        document.getElementById("outputAcceptedZipCode").style.display =
+        // If the postal code is valid in kiruna
+        document.getElementById("outputAcceptedPostalCode").style.display =
           "block";
       } else if (
-        zipCodeListLulea.includes(zipInput) &&
+        postalCodeListLulea.includes(postalInput) &&
         window.location.pathname.includes("lulea")
       ) {
-        // If the zip code is valid in lulea
-        document.getElementById("outputAcceptedZipCode").style.display =
+        // If the postal code is valid in lulea
+        document.getElementById("outputAcceptedPostalCode").style.display =
           "block";
       } else {
-        // If zipcode is valid but out of range for house appointment
-        document.getElementById("outputNonAcceptedZipCode").style.display =
+        // If PostalCode is valid but out of range for house appointment
+        document.getElementById("outputNonAcceptedPostalCode").style.display =
           "block";
       }
     });

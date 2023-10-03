@@ -149,16 +149,16 @@
     </div>
 
     <!-- ZIP Code checker -->
-    <div id="zipCodeCheck" class="zipInput container-fluid hasjs" style="text-align: center;">
-        <div id="zipCodeCheckerHeight">
+    <div id="postalCodeCheck" class="container-fluid hasjs" style="text-align: center;">
+        <div id="postalCodeCheckerHeight">
             <h2>Bring the Salon to Your Home</h2>
             <p>Check if you are within reach of a house appointment.</p>
-            <form><input class="zipCodeInput" type="text" inputmode="numeric" id="zipNumber"
-                    placeholder="Postal Code"><input class="checkNumber" id="submit" type="submit" value="Check">
+            <form><input type="text" inputmode="numeric" id="postalCodeNumber" placeholder="Postal Code"><input
+                    class="checkNumber" id="submit" type="submit" value="Check">
             </form>
-            <p class="output" id="outputAcceptedZipCode">You are within reach. Call us to book a house appointment!</p>
-            <p class="output" id="outputNonAcceptedZipCode">Sorry, we can't offer this service to you.</p>
-            <p class="output" id="outputNotValidZipCode">Not a valid zipcode.</p>
+            <p class="output" id="outputAcceptedPostalCode">You are within reach. Call us to book a house appointment!</p>
+            <p class="output" id="outputNonAcceptedPostalCode">Sorry, we can't offer this service for your location.</p>
+            <p class="output" id="outputNotValidPostalCode">Not a valid postal code.</p>
 
         </div>
     </div>
