@@ -194,8 +194,8 @@ document.addEventListener("DOMContentLoaded", () => {
       displayOutput(notValidPostalCodeOutput);
       //If postal code is valid
     } else if (
-      (PostalCodeListKiruna.includes(postalCodeInput) && window.location.pathname.includes("kiruna")) ||
-      (PostalCodeListLulea.includes(postalCodeInput) && window.location.pathname.includes("lulea"))
+      (postalCodeListKiruna.includes(postalCodeInput) && window.location.pathname.includes("kiruna")) ||
+      (postalCodeListLulea.includes(postalCodeInput) && window.location.pathname.includes("lulea"))
     ) {
       displayOutput(acceptedPostalCodeOutput);
       //If postal code is valid but not near
