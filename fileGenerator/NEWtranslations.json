@@ -1,6 +1,9 @@
 {
     "COMMON": {
-        "@MAIL": "saxefrisor@gmail.com"
+        "@MAIL": "saxefrisor@gmail.com",
+        "svALT": "svenska flaggan",
+        "enALT": "english flag",
+        "fiALT": "suomen lippu"
     },
     "LULEA": {
         "STREET": "Färjledsvägen 38",

@@ -1,7 +1,9 @@
 import json
 
-selectedLanguage = ["eng", "swe", "fin"]  # Change this to the desired language
+selectedLanguage = ["en", "sv", "fi"]  # Change this to the desired language
 selectedLocation = ["lulea", "kiruna"]  # Change this to the desired location
+language_to_flag = {"fi": "suomen lippu", "sv": "svenska flaggan", "en": "english flag"}
+
 
 # Load the JSON translation file
 translations = json.load(open("fileGenerator/translations.json"))
@@ -26,6 +28,12 @@ def replacePlaceholders(htmlTemplate, language, location):
             [f"<p>{value}</p>" for value in translation["OPENDAYSTIME"].values()]
         )
         htmlTemplate = htmlTemplate.replace("*OPENDAYSTIME*", openDaysTime)
+
+    getMainAltText = translation.get("FLAGALT", "Unknown language")
+
+    htmlTemplate = htmlTemplate.replace("*MAINFLAG*", language + "Flag")
+
+    htmlTemplate = htmlTemplate.replace("*MAINLANGFLAGALT*", getMainAltText)
 
     # Replace placeholders in the HTML template
     for key, value in translation.items():
