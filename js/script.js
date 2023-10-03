@@ -53,14 +53,17 @@ function hideFlags() {
 
 //Save the current used language in localstorage to be used later.
 document.addEventListener("DOMContentLoaded", function () {
-  const Currentlanguage = document.getElementById("activeLang").alt;
-  if (Currentlanguage === "svenska flaggan") {
-    localStorage.setItem("language", "sv");
-  } else if (Currentlanguage === "english flag") {
-    localStorage.setItem("language", "en");
-  } else if (Currentlanguage === "suomen lippu") {
-    localStorage.setItem("language", "fi");
-  }
+  // const Currentlanguage = document.getElementById("activeLang").alt;
+  // if (Currentlanguage === "svenskaflaggan") {
+  //   localStorage.setItem("language", "swe");
+  // } else if (Currentlanguage === "englishflag") {
+  //   localStorage.setItem("language", "eng");
+  // } else if (Currentlanguage === "suomenlippu") {
+  //   localStorage.setItem("language", "fin");
+  // }
+
+  const currentLanguage = document.getElementsByTagName('html')[0].getAttribute('lang');
+  localStorage.setItem("language", currentLanguage);
 });
 
 function dailySales(date) {

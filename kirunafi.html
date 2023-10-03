@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" id="language">
+<html lang="fi" id="language">
 
 <head>
     <title>Frisör Saxé</title>
@@ -61,38 +61,38 @@
             <div class="collapse navbar-collapse flex-grow-0 fs-2" id="navbarNav">
                 <ul class="navbar-nav ">
                     <li class="nav-item">
-                        <a class="nav-link marginEnd" href="#makeappoitment">Appointment</a>
+                        <a class="nav-link marginEnd" href="#varaa-aika">Varaa aika</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link marginEnd" href="#openinghours">Opening Hours</a>
+                        <a class="nav-link marginEnd" href="#aukioloajat">Aukioloajat</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link marginEnd" href="#prices">Prices</a>
+                        <a class="nav-link marginEnd" href="#hinnat">Hinnat</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link marginEnd" href="#employees">Staff</a>
+                        <a class="nav-link marginEnd" href="#henkilökunta">Henkilökunta</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link marginEnd" href="#findus">Find Us</a>
+                        <a class="nav-link marginEnd" href="#tietoa-meistä">Tietoa meistä</a>
                     </li>
                     <li id="langMenu">
                         <div>
                             <ul id="flagMenu">
                                 <li>
                                     <a id="activeMenu" class="flag" onclick="showFlags()"><img id="activeLang"
-                                            src="pictures/engFlag.png" alt="englishflag"></a>
+                                            src="pictures/fiFlag.png" alt="suomen - lippu"></a>
                                 </li>
                                 <li>
-                                    <a href="kirunaeng.html" class="inActiveMenu flag"><img
-                                            src="pictures/engFlag.png" alt="englishflag"></a>
+                                    <a href="kirunafi.html" class="inActiveMenu flag"><img
+                                            src="pictures/fiFlag.png" alt="suomen lippu"></a>
                                 </li>
                                 <li>
-                                    <a class="inActiveMenu flag" href="kirunaswe.html"><img
-                                            src="pictures/svFlag.png" alt="svenskaflaggan"></a>
+                                    <a class="inActiveMenu flag" href="kirunaen.html"><img
+                                            src="pictures/enFlag.png" alt="enlish flag"></a>
                                 </li>
                                 <li>
-                                    <a class="inActiveMenu flag" href="kirunafin.html"><img
-                                            src="pictures/finFlag.png" alt="suomenlippu"></a>
+                                    <a class="inActiveMenu flag" href="kirunasv.html"><img
+                                            src="pictures/svFlag.png" alt="svenska flaggan"></a>
                                 </li>
                             </ul>
                         </div>
@@ -113,29 +113,29 @@
     <div class="container text-center" id="secondRow">
         <div class="row justify-content-center text-center">
             <div class="col-md-6 flex-column">
-                <h2 class="mb-2 makeAppoitmentAnchor" id="makeappoitment">Appointment</h2>
+                <h2 class="mb-2 makeAppoitmentAnchor" id="varaa-aika">Varaa aika</h2>
                 <div class="row justify-content-center">
                     <div class="col-10 p-3 mb-2 fs-4">
-                        <p>Phone</p>
+                        <p>Puhelin</p>
                         <p><a href="tel:0630555555">0630&#8209;555&#8209;555</a></p>
-                        <p>Email</p>
+                        <p>Sähköposti</p>
                         <p><a href="mailto:saxefrisor@gmail.com">
                                 saxefrisor@gmail.com</a></p>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 flex-column">
-                <h2 class="mb-2 openingHoursAnchor" id="openinghours">Opening Hours</h2>
+                <h2 class="mb-2 openingHoursAnchor" id="aukioloajat">Aukioloajat</h2>
                 <div class="row justify-content-center">
                     <div class="col-4 col-sm-4 col-md-5 col-lg-4 col-xl-3 p-3 mb-2 text-start fs-4">
-                        <p>Mon - Fri</p>
-<p>Saturday</p>
-<p>Sunday</p>
+                        <p>Ma - Pe</p>
+<p>Lauantai</p>
+<p>Sunnuntai</p>
                     </div>
                     <div class="col-4 col-sm-4 col-md-5 col-lg-4 col-xl-3 p-3 mb-2 openHours text-end fs-4">
                         <p>10 - 16</p>
 <p>12 - 15</p>
-<p>Closed</p>
+<p>Suljettu</p>
                     </div>
                 </div>
             </div>
@@ -145,14 +145,14 @@
     <!-- Postal Code checker -->
     <div id="postalCodeCheck" class="container-fluid hasjs" style="text-align: center;">
         <div id="postalCodeCheckerHeight">
-            <h2>Bring the Salon to Your Home</h2>
-            <p>Check if you are within reach of a house appointment.</p>
-            <form><input type="text" inputmode="numeric" id="postalCodeNumber" placeholder="Postal Code"><input
-                    class="checkNumber" id="submit" type="submit" value="Check">
+            <h2>Tuo kampaamo kotiisi</h2>
+            <p>Tarkista, oletko alueellamme</p>
+            <form><input type="text" inputmode="numeric" id="postalCodeNumber" placeholder="Postinumero"><input
+                    class="checkNumber" id="submit" type="submit" value="Tarkistaa">
             </form>
-            <p class="output" id="outputAcceptedPostalCode">You are within reach. Call us to book a house appointment!</p>
-            <p class="output" id="outputNonAcceptedPostalCode">Sorry, we can't offer this service for your location.</p>
-            <p class="output" id="outputNotValidPostalCode">Not a valid postal code.</p>
+            <p class="output" id="outputAcceptedPostalCode">Olet alueellamme. Soita ja varaa kotikäynti!</p>
+            <p class="output" id="outputNonAcceptedPostalCode">Valitettavasti emme voi tarjota tätä palvelua sinulle.</p>
+            <p class="output" id="outputNotValidPostalCode">Ei kelvollinen postinumero.</p>
 
         </div>
     </div>
@@ -161,49 +161,49 @@
     <div class="container" id="pricingContainer">
         <div class="row justify-content-center text-center">
             <div class="col-md-6 flex-column">
-                <img class="w-100" id="prices" src="pictures/prices.jpg" alt="pris" style="border-radius: 7px;">
+                <img class="w-100" id="hinnat" src="pictures/prices.jpg" alt="pris" style="border-radius: 7px;">
                 <!-- Prices -->
-                <h2 class="mb-4 my-5 text-body">Haircut</h2>
+                <h2 class="mb-4 my-5 text-body">Hiustenleikkaus</h2>
                 <div id="infoOnPhone">
-                    <span class="text-center">The limit for long hair starts at 20 cm *</span> <br>
-                    <span class="text-center">After 3 visits within 12 months you are considered a regular customer **</span>
+                    <span class="text-center">Pitkien hiusten raja alkaa 20 cm:stä *</span> <br>
+                    <span class="text-center">Kolmen käynnin jälkeen 12 kuukauden aikana sinut katsotaan vakituiseksi asiakkaaksi **</span>
                 </div>
                 <table class="table table-sm" style="table-layout: fixed;">
                     <thead>
 
                         <tr>
-                            <th scope="col" class="text-start">Long hair (60&nbsp;min)&nbsp;*</th>
-                            <th scope="col" class="text-end"><span id="saleLongHair" class="sale">Today
+                            <th scope="col" class="text-start">Pitkät hiukset (60&nbsp;min)&nbsp;*</th>
+                            <th scope="col" class="text-end"><span id="saleLongHair" class="sale">Tänään
                                     540&nbsp;kr</span><span id="longHair"> 600&nbsp;kr</span>
                             </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="col" class="text-start">Long hair (regular&nbsp;customer)&nbsp;**</th>
+                            <th scope="col" class="text-start">Pitkät hiukset (vakioasiakas)&nbsp;**</th>
                             <th scope="col" class="text-end">500&nbsp;kr</th>
                         </tr>
                         <tr>
 
-                            <th scope="col" class="text-start">Short hair (30&nbsp;min)&nbsp;*</th>
+                            <th scope="col" class="text-start">Lyhyet hiukset (30&nbsp;min)&nbsp;*</th>
                             <th scope="col" class="text-end ">
-                                <span id="saleShortHair" class="sale">Today 180&nbsp;kr</span>
+                                <span id="saleShortHair" class="sale">Tänään 180&nbsp;kr</span>
                                 <span id="shortHair"> 200&nbsp;kr</span>
                             </th>
 
                         </tr>
                         <tr>
-                            <th scope="col" class="text-start">Short hair (regular&nbsp;customer)&nbsp;**</th>
+                            <th scope="col" class="text-start">Lyhyet hiukset (vakioasiakas)&nbsp;**</th>
                             <th scope="col" class="text-end "><span>150&nbsp;kr</span>
                             </th>
                         </tr>
                         <tr>
-                            <th scope="col" class="text-start">Beard (20&nbsp;min)</th>
-                            <th scope="col" class="text-end"><span id="saleBeard" class="sale">Today
+                            <th scope="col" class="text-start">Parta (20&nbsp;min)</th>
+                            <th scope="col" class="text-end"><span id="saleBeard" class="sale">Tänään
                                     135&nbsp;kr</span><span id="beard">150&nbsp;kr</span></th>
                         </tr>
                         <tr>
-                            <th scope="col" class="text-start">Children&nbsp;(0&#8209;13&nbsp;years) (20&nbsp;min)
+                            <th scope="col" class="text-start">Lapset&nbsp;(0&#8209;13&nbsp;vuotta) (20&nbsp;min)
                             </th>
                             <th scope="col" class="text-end">150&nbsp;kr</th>
                         </tr>
@@ -213,31 +213,31 @@
             </div>
             <div class="col-md-6 flex-column marginTop">
                 <img class="w-100" src="pictures/other.jpg" alt="övrigt" style="border-radius: 7px;">
-                <h2 class="mb-4 my-5 text-body">Other</h2>
+                <h2 class="mb-4 my-5 text-body">Muu</h2>
                 <table class="table table-sm " style="table-layout: fixed;">
                     <thead>
                         <tr>
-                            <th scope="col" class="text-start">Trimming (15&nbsp;min)</th>
+                            <th scope="col" class="text-start">Tasoittelu (15&nbsp;min)</th>
                             <th scope="col" class="text-end">200 kr</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="col" class="text-start">Coloring (90&nbsp;min)</th>
-                            <th scope="col" class="text-end"><span class="sale" id="saleColoring">Today
+                            <th scope="col" class="text-start">Värjäys (90&nbsp;min)</th>
+                            <th scope="col" class="text-end"><span class="sale" id="saleColoring">Tänään
                                     500&nbsp;kr</span><span id="coloring"> 560 kr</span>
                             </th>
                         </tr>
                         <tr>
-                            <th scope="col" class="text-start">Extensions, short&nbsp;(45&nbsp;min)</th>
+                            <th scope="col" class="text-start">Lyhyet pidennykset&nbsp;(45&nbsp;min)</th>
                             <th scope="col" class="text-end">300 kr</th>
                         </tr>
                         <tr>
-                            <th scope="col" class="text-start">Extensions, standard&nbsp;(45&nbsp;min)</th>
+                            <th scope="col" class="text-start">Normaalipituiset pidennykset&nbsp;(45&nbsp;min)</th>
                             <th scope="col" class="text-end">400 kr</th>
                         </tr>
                         <tr>
-                            <th scope="col" class="text-start">Extensions, long&nbsp;(45&nbsp;min)</th>
+                            <th scope="col" class="text-start">Pitkät pidennykset&nbsp;(45&nbsp;min)</th>
                             <th scope="col" class="text-end">500 kr</th>
                         </tr>
 
@@ -245,15 +245,15 @@
                 </table>
             </div>
             <div id="infoOnDesktop">
-                <span>The limit for long hair starts at 20 cm *</span><br>
-                <span>After 3 visits within 12 months you are considered a regular customer **</span>
+                <span>Pitkien hiusten raja alkaa 20 cm:stä *</span><br>
+                <span>Kolmen käynnin jälkeen 12 kuukauden aikana sinut katsotaan vakituiseksi asiakkaaksi **</span>
             </div>
         </div>
     </div>
 
     <!-- Employees -->
     <div id="thirdPage" class="pt-3">
-        <h2 class="text-light mt-3 employeesAnchor" id="employees">Meet Our Staff</h2>
+        <h2 class="text-light mt-3 employeesAnchor" id="henkilökunta">Tapaa henkilökuntaamme</h2>
 
         <div class="container pt-0 text-center">
             <div class="row">
@@ -263,7 +263,7 @@
                             <img src="pictures/employeePictures/annaPettersson.jpg" class="card-img-top" alt="Anna Pettersson">
                             <div class="card-body">
                                 <h5 class="card-title">Anna Pettersson</h5>
-                                <p class="card-text mb-2">Hairstylist</p>
+                                <p class="card-text mb-2">Hiustyylisti</p>
                                 <a href="#"></a>
                             </div>
                         </div>
@@ -275,7 +275,7 @@
                             <img src="pictures//employeePictures/fredrikOrtqvist.jpg" class="card-img-top" alt="Fredrik Örtqvist">
                             <div class="card-body">
                                 <h5 class="card-title">Fredrik Örtqvist</h5>
-                                <p class="card-text mb-2">Barber</p>
+                                <p class="card-text mb-2">Parturi</p>
                             </div>
                         </div>
                     </div>
@@ -286,7 +286,7 @@
                             <img src="pictures/employeePictures/orjanJohansson.jpg" class="card-img-top" alt="Örjan Johansson">
                             <div class="card-body">
                                 <h5 class="card-title">Örjan Johansson</h5>
-                                <p class="card-text mb-2">Barber</p>
+                                <p class="card-text mb-2">Parturi</p>
                             </div>
                         </div>
                     </div>
@@ -304,10 +304,10 @@
     </div>
 
     <!-- Footer with info -->
-    <div class="container my-5" id="findus">
+    <div class="container my-5" id="tietoa-meistä">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h2 class="mb-4">Find Us</h2>
+                <h2 class="mb-4">Tietoa meistä</h2>
                 <div class=" hasJS"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1503.2583513342254!2d20.2337795!3d67.8660232!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x45d0ba6368d7c9a3%3A0xe3887ef038c559b0!2sFj%C3%A4llgatan%2032%2C%20981%2039%20Kiruna!5e0!3m2!1ssv!2sse!4v1693397051519!5m2!1ssv!2sse" width="450" height="450"
                         style="border:0; width: 100%; max-width: 800px; border-radius: 7px;" allowfullscreen=""
                         loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -315,7 +315,7 @@
                 <noscript>
                     <img src="pictures/nojsmapKiruna.png" class="img-thumbnail" alt="...">
                 </noscript>
-                <h2 class="mb-4 my-3">Address </h2>
+                <h2 class="mb-4 my-3">Osoite </h2>
                 <h6 class=" text-black">Fjällgatan 32H</h6>
                 <h6 class="text-black">981 39 Kiruna</h6>
             </div>
