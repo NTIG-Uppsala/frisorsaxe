@@ -159,8 +159,8 @@ function regularCustomerInfo() {
 window.addEventListener("load", regularCustomerInfo);
 window.addEventListener("resize", regularCustomerInfo);
 
-// List of accepted zip codes
-zipCodeListKiruna = [
+// List of accepted postal codes
+postalCodeListKiruna = [
   "98132",
   "98135",
   "98136",
@@ -174,40 +174,40 @@ zipCodeListKiruna = [
   "98146",
   "98147",
 ];
-zipCodeListLulea = ["96190", "96191", "96193", "96194"];
+postalCodeListLulea = ["96190", "96191", "96193", "96194"];
 
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.querySelector("#zipCodeCheck form");
-  const acceptedZipCodeOutput = document.getElementById("outputAcceptedZipCode");
-  const notValidZipCodeOutput = document.getElementById("outputNotValidZipCode");
-  const nonAcceptedZipCodeOutput = document.getElementById("outputNonAcceptedZipCode");
+  const form = document.querySelector("#postalCodeCheck form");
+  const acceptedPostalCodeOutput = document.getElementById("outputAcceptedPostalCode");
+  const notValidPostalCodeOutput = document.getElementById("outputNotValidPostalCode");
+  const nonAcceptedPostalCodeOutput = document.getElementById("outputNonAcceptedPostalCode");
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     hideOutputs();
 
-    let zipInput = event.submitter.parentNode.querySelector("#zipNumber").value;
-    zipInput = zipInput.split(" ").join("");
+    let postalCodeInput = event.submitter.parentNode.querySelector("#postalCodeNumber").value;
+    postalCodeInput = postalCodeInput.split(" ").join("");
 
     //If postal code is invalid
-    if (zipInput.match(/\D/) !== null || zipInput.length !== 5) {
-      displayOutput(notValidZipCodeOutput);
+    if (postalCodeInput.match(/\D/) !== null || postalCodeInput.length !== 5) {
+      displayOutput(notValidPostalCodeOutput);
       //If postal code is valid
     } else if (
-      (zipCodeListKiruna.includes(zipInput) && window.location.pathname.includes("kiruna")) ||
-      (zipCodeListLulea.includes(zipInput) && window.location.pathname.includes("lulea"))
+      (PostalCodeListKiruna.includes(postalCodeInput) && window.location.pathname.includes("kiruna")) ||
+      (PostalCodeListLulea.includes(postalCodeInput) && window.location.pathname.includes("lulea"))
     ) {
-      displayOutput(acceptedZipCodeOutput);
+      displayOutput(acceptedPostalCodeOutput);
       //If postal code is valid but not near
     } else {
-      displayOutput(nonAcceptedZipCodeOutput);
+      displayOutput(nonAcceptedPostalCodeOutput);
     }
   });
 
   function hideOutputs() {
-    acceptedZipCodeOutput.style.display = "none";
-    notValidZipCodeOutput.style.display = "none";
-    nonAcceptedZipCodeOutput.style.display = "none";
+    acceptedPostalCodeOutput.style.display = "none";
+    notValidPostalCodeOutput.style.display = "none";
+    nonAcceptedPostalCodeOutput.style.display = "none";
   }
 
   function displayOutput(outputElement) {

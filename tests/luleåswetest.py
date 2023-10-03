@@ -225,40 +225,41 @@ class TestHomepage(TestCase):
     def testAddress(self):
         self.assertIn("Adress", self.browser.page_source)
 
-    def testZipCodePhrase(self):
+    def testPostalCodePhrase(self):
         self.assertIn("Proffsiga klippningar hemma", self.browser.page_source)
 
-    def helperZipCode(self, zipCodeList, message):
-        for currentZip in zipCodeList:
-            self.browser.find_element(By.ID, "zipNumber").send_keys(currentZip)
+    def helperPostalCode(self, postalCodeList, message):
+        for currentPostalCode in postalCodeList:
+            self.browser.find_element(By.ID, "postalCodeNumber").send_keys(
+                currentPostalCode
+            )
             time.sleep(1)
             self.browser.find_element(By.ID, "submit").click()
-            zipOutput = self.browser.find_element(By.ID, "zipCodeCheck")
-            self.assertIn(message, zipOutput.text)
-            self.browser.get("about:blank")
+            postalOutput = self.browser.find_element(By.ID, "postalCodeCheck")
+            self.assertIn(message, postalOutput.text)
             self.browser.get(path.join((getcwd()), "luleaswe.html"))
 
-    def testZipCodes(self):
-        zipCodeListLulea = ["96190", "96191", "96193", "96194"]
+    def testPostalCodes(self):
+        postalCodeListLulea = ["96190", "96191", "96193", "96194"]
 
-        notAcceptedZipcodes = [
+        notAcceptedPostalCodes = [
             "12345",
             "55555",
             "92347",
         ]
-        nonWorkingZipcodes = [
+        nonWorkingPostalCodes = [
             "1234",
             "hej",
             "xxxxx",
         ]
-        self.helperZipCode(
-            zipCodeListLulea, "Vi kör ut till dig. Ring oss för att boka tid!"
+        self.helperPostalCode(
+            postalCodeListLulea, "Vi kör ut till dig. Ring oss för att boka tid!"
         )
-        self.helperZipCode(
-            notAcceptedZipcodes,
+        self.helperPostalCode(
+            notAcceptedPostalCodes,
             "Vi kan tyvärr inte erbjuda denna service för detta postnummer.",
         )
-        self.helperZipCode(nonWorkingZipcodes, "Inte ett riktigt postnummer.")
+        self.helperPostalCode(nonWorkingPostalCodes, "Inte ett riktigt postnummer.")
 
     def testPlaceholderForFileGenerator(self):
         error_messages = []  # Create a list to collect error messages

@@ -231,40 +231,42 @@ class TestHomepageENG(TestCase):
             )
             self.assertEqual("none", element)
 
-    def testZipCodePhrase(self):
+    def testPostalCodePhrase(self):
         self.assertIn("Tuo kampaamo kotiisi", self.browser.page_source)
 
-    def helperZipCode(self, zipCodeList, message):
-        for currentZip in zipCodeList:
-            self.browser.find_element(By.ID, "zipNumber").send_keys(currentZip)
+    def helperPostalCode(self, postalCodeList, message):
+        for currentPostalCode in postalCodeList:
+            self.browser.find_element(By.ID, "postalCodeNumber").send_keys(
+                currentPostalCode
+            )
             time.sleep(0.5)
             self.browser.find_element(By.ID, "submit").click()
-            zipOutput = self.browser.find_element(By.ID, "zipCodeCheck")
-            self.assertIn(message, zipOutput.text)
+            postalOutput = self.browser.find_element(By.ID, "postalCodeCheck")
+            self.assertIn(message, postalOutput.text)
             self.browser.get(path.join((getcwd()), "./luleafin.html"))
 
-    def testZipCodes(self):
-        zipCodeListLulea = ["96190", "96191", "96193", "96194"]
+    def testPostalCodes(self):
+        postalCodeListLulea = ["96190", "96191", "96193", "96194"]
 
-        notAcceptedZipcodes = [
+        notAcceptedPostalCodes = [
             "12345",
             "55555",
             "92347",
         ]
-        nonWorkingZipcodes = [
+        nonWorkingPostalCodes = [
             "1234",
             "hej",
             "xxxxx",
         ]
-        self.helperZipCode(
-            zipCodeListLulea,
+        self.helperPostalCode(
+            postalCodeListLulea,
             "Olet alueellamme. Soita ja varaa kotikäynti!",
         )
-        self.helperZipCode(
-            notAcceptedZipcodes,
+        self.helperPostalCode(
+            notAcceptedPostalCodes,
             "Valitettavasti emme voi tarjota tätä palvelua sinulle.",
         )
-        self.helperZipCode(nonWorkingZipcodes, "Ei kelvollinen postinumero.")
+        self.helperPostalCode(nonWorkingPostalCodes, "Ei kelvollinen postinumero.")
 
     def testPlaceholderForFileGenerator(self):
         error_messages = []  # Create a list to collect error messages
