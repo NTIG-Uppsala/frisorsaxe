@@ -34,9 +34,9 @@ window.onscroll = function () {
   }
 };
 
-function test() {}
+function test() { }
 
-function makeSecondaryAltText() {}
+function makeSecondaryAltText() { }
 
 function hideFlags() {
   document.getElementById("activeMenu").style.display = "block";
@@ -77,8 +77,8 @@ function dailySales(date) {
   const locationOpeningHours = window.location.pathname.includes("lulea")
     ? openHours.lulea
     : window.location.pathname.includes("kiruna")
-    ? openHours.kiruna
-    : console.log("location does not have openingHours for dailysailes");
+      ? openHours.kiruna
+      : console.log("location does not have openingHours for dailysailes");
 
   const weekday = date.getDay();
   const currentHour = date.getHours();
@@ -95,11 +95,18 @@ function dailySales(date) {
   const saleColoring = document.getElementById("saleColoring");
   const coloring = document.getElementById("coloring");
 
+  const currentlyOpen = document.getElementById("displayIfOpen");
+  const currentlyClosed = document.getElementById("displayIfClosed");
+
+
   //Hide all elements so the tests can work
   saleColoring.style.display = "none";
   saleBeard.style.display = "none";
   saleLongHair.style.display = "none";
   saleShorthair.style.display = "none";
+  currentlyOpen.style.display = "none";
+  currentlyClosed.style.display = "none";
+
 
   switch (weekday) {
     case 1: // On Monday longhair is on sale
@@ -223,3 +230,4 @@ document.addEventListener("DOMContentLoaded", () => {
     outputElement.style.display = "block";
   }
 });
+
