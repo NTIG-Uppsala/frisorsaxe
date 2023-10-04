@@ -37,7 +37,7 @@ def replacePlaceholders(htmlTemplate, language, location):
 
     mainFlagAlt = langsInfo["FLAGALT"]
 
-    htmlTemplate.replace("*MAINLANGFLAGALT*", mainFlagAlt)
+    htmlTemplate = htmlTemplate.replace("*MAINLANGFLAGALT*", mainFlagAlt)
     htmlTemplate = htmlTemplate.replace("*MAINFLAG*", language + "Flag")
 
     flagList = []
