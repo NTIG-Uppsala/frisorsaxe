@@ -9,7 +9,7 @@ from selenium.webdriver.chrome.options import Options
 
 class screenshotNoJs(TestCase):
     doNotCloseBrowser = True
-    hideWindow = True
+    hideWindow = False
 
     @classmethod
     def setUpClass(cls):
@@ -94,7 +94,7 @@ class screenshot(TestCase):
         cls.browser = webdriver.Chrome(options=chr_options)
 
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "kirunaswe.html"))
+        self.browser.get(path.join(getcwd(), "kirunasv.html"))
 
     def tearDown(self):
         self.browser.get("about:blank")
