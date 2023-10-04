@@ -51,12 +51,12 @@ def replacePlaceholders(htmlTemplate, language, location):
             # Insert the HTML list item with 'mainFlagAlt' at the beginning of 'flagList' to ensure it appears first in the flag menu on the website.
             flagList.insert(
                 0,
-                f'<li><a href="{location.lower() + language}.html" class="inActiveMenu flag"><img src="pictures/{language}Flag.png" alt="{altText}"></a></li>',
+                f'<li><a href="{location.lower() + language}.html" class="inActiveMenu flag"><img src="pictures/{language}Flag.svg" alt="{altText}"></a></li>',
             )
         else:
             # Append the HTML list item to 'flagList'
             flagList.append(
-                f'<li><a href="{location.lower() + languageUsed}.html" class="inActiveMenu flag"><img src="pictures/{languageUsed}Flag.png" alt="{altText}"></a></li>'
+                f'<li><a href="{location.lower() + languageUsed}.html" class="inActiveMenu flag"><img src="pictures/{languageUsed}Flag.svg" alt="{altText}"></a></li>'
             )
 
     # Join the list of HTML list items into a single string, separated by newline characters
