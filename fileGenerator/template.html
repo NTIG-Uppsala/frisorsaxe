@@ -76,26 +76,15 @@
                         <a class="nav-link marginEnd" href="#*FINDUSANCHOR*">*FINDUS*</a>
                     </li>
                     <li id="langMenu">
-                        <div>
-                            <ul id="flagMenu">
-                                <li>
-                                    <a id="activeMenu" class="flag" onclick="showFlags()"><img id="activeLang"
-                                            src="pictures/*MAINFLAG*.png" alt="*MAINLANGFLAGALT*"></a>
-                                </li>
-                                <li>
-                                    <a href="*MAINVERSIONSITE*" class="inActiveMenu flag"><img
-                                            src="pictures/*MAINFLAG*.png" alt="*MAINVERSIONALT*"></a>
-                                </li>
-                                <li>
-                                    <a class="inActiveMenu flag" href="*SECONDVERSIONSITE*"><img
-                                            src="pictures/*SECONDFLAG*.png" alt="*SECONDVERSIONALT*"></a>
-                                </li>
-                                <li>
-                                    <a class="inActiveMenu flag" href="*THIRDVERSIONSITE*"><img
-                                            src="pictures/*THIRDFLAG*.png" alt="*THIRDVERSIONALT*"></a>
-                                </li>
-                            </ul>
-                        </div>
+                        <ul id="flagMenu">
+                            <li>
+                                <a id="activeMenu" class="flag" onclick="showFlags()"><img id="activeLang"
+                                        src="pictures/*MAINFLAG*.svg" alt="*MAINLANGFLAGALT*"></a>
+                            </li>
+
+                            *FLAGLIST*
+
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -132,23 +121,24 @@
                     </div>
                     <div class="col-4 col-sm-4 col-md-5 col-lg-4 col-xl-3 p-3 mb-2 openHours text-end fs-4">
                         *OPENDAYSTIME*
+                        <p>*SUNDAYCLOSED*</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- ZIP Code checker -->
-    <div id="zipCodeCheck" class="zipInput container-fluid hasjs" style="text-align: center;">
-        <div id="zipCodeCheckerHeight">
+    <!-- Postal Code checker -->
+    <div id="postalCodeCheck" class="container-fluid hasjs" style="text-align: center;">
+        <div id="postalCodeCheckerHeight">
             <h2>*HOMEDELIVERYTITLE*</h2>
             <p>*CHECKIFREACH*</p>
-            <form><input class="zipCodeInput" type="text" inputmode="numeric" id="zipNumber"
-                    placeholder="*POSTALCODE*"><input class="checkNumber" id="submit" type="submit" value="*CHECK*">
+            <form><input type="text" inputmode="numeric" id="postalCodeNumber" placeholder="*POSTALCODETEXT*"><input
+                    class="checkNumber" id="submit" type="submit" value="*CHECK*">
             </form>
-            <p class="output" id="outputAcceptedZipCode">*CALLTOBOOK*</p>
-            <p class="output" id="outputNonAcceptedZipCode">*TOOFARAWAY*</p>
-            <p class="output" id="outputNotValidZipCode">*NOTVALIDZIP*</p>
+            <p class="output" id="outputAcceptedPostalCode">*CALLTOBOOK*</p>
+            <p class="output" id="outputNonAcceptedPostalCode">*TOOFARAWAY*</p>
+            <p class="output" id="outputNotValidPostalCode">*NOTVALIDPOSTAL*</p>
 
         </div>
     </div>
@@ -157,7 +147,8 @@
     <div class="container" id="pricingContainer">
         <div class="row justify-content-center text-center">
             <div class="col-md-6 flex-column">
-                <img class="w-100" id="*PRICESANCHOR*" src="pictures/prices.jpg" alt="pris" style="border-radius: 7px;">
+                <img class="w-100" id="*PRICESANCHOR*" src="pictures/prices.webp" alt="pris"
+                    style="border-radius: 7px;">
                 <!-- Prices -->
                 <h2 class="mb-4 my-5 text-body">*HAIRCUT*</h2>
                 <div id="infoOnPhone">
@@ -176,7 +167,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="col" class="text-start">*LONGHAIRREGULAR*</th>
+                            <th scope="col" class="text-start">*LONGHAIRREGULAR*&nbsp;**</th>
                             <th scope="col" class="text-end">500&nbsp;kr</th>
                         </tr>
                         <tr>
@@ -189,7 +180,7 @@
 
                         </tr>
                         <tr>
-                            <th scope="col" class="text-start">*SHORTHAIRREGULAR*</th>
+                            <th scope="col" class="text-start">*SHORTHAIRREGULAR*&nbsp;**</th>
                             <th scope="col" class="text-end "><span>150&nbsp;kr</span>
                             </th>
                         </tr>
@@ -208,7 +199,7 @@
                 </table>
             </div>
             <div class="col-md-6 flex-column marginTop">
-                <img class="w-100" src="pictures/other.jpg" alt="övrigt" style="border-radius: 7px;">
+                <img class="w-100" src="pictures/other.webp" alt="övrigt" style="border-radius: 7px;">
                 <h2 class="mb-4 my-5 text-body">*OTHER*</h2>
                 <table class="table table-sm " style="table-layout: fixed;">
                     <thead>
@@ -256,7 +247,7 @@
                 <div class="col-xl-4 col-md-6 my-5">
                     <div class="container d-flex justify-content-center">
                         <div class="card" style="width: 20rem; height: 70%;">
-                            <img src="pictures/employeePictures/*PERS1IMG*.jpg" class="card-img-top" alt="*PERS1*">
+                            <img src="pictures/employeePictures/*PERS1IMG*.webp" class="card-img-top" alt="*PERS1*">
                             <div class="card-body">
                                 <h5 class="card-title">*PERS1*</h5>
                                 <p class="card-text mb-2">*PERS1JOB*</p>
@@ -268,7 +259,7 @@
                 <div class="col-xl-4 col-md-6 my-5">
                     <div class="container d-flex justify-content-center">
                         <div class="card" style="width: 20rem; height: 70%;">
-                            <img src="pictures//employeePictures/*PERS2IMG*.jpg" class="card-img-top" alt="*PERS2*">
+                            <img src="pictures//employeePictures/*PERS2IMG*.webp" class="card-img-top" alt="*PERS2*">
                             <div class="card-body">
                                 <h5 class="card-title">*PERS2*</h5>
                                 <p class="card-text mb-2">*PERS2JOB*</p>
@@ -279,7 +270,7 @@
                 <div class="col-xl-4 col-md-6 my-5 ">
                     <div class="container d-flex justify-content-center">
                         <div class="card" style="width: 20rem; height: 70%;">
-                            <img src="pictures/employeePictures/*PERS3IMG*.jpg" class="card-img-top" alt="*PERS3*">
+                            <img src="pictures/employeePictures/*PERS3IMG*.webp" class="card-img-top" alt="*PERS3*">
                             <div class="card-body">
                                 <h5 class="card-title">*PERS3*</h5>
                                 <p class="card-text mb-2">*PERS3JOB*</p>
@@ -304,7 +295,7 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <h2 class="mb-4">*FINDUS*</h2>
-                <div class=" hasjs"><iframe src="*MAP*" width="450" height="450"
+                <div class=" hasJS"><iframe src="*MAP*" width="450" height="450"
                         style="border:0; width: 100%; max-width: 800px; border-radius: 7px;" allowfullscreen=""
                         loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
@@ -313,7 +304,7 @@
                 </noscript>
                 <h2 class="mb-4 my-3">*ADDRESS* </h2>
                 <h6 class=" text-black">*STREET*</h6>
-                <h6 class="text-black">*ZIPCODE*</h6>
+                <h6 class="text-black">*POSTALCODE*</h6>
             </div>
         </div>
     </div>

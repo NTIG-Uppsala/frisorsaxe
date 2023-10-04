@@ -37,66 +37,34 @@ Our website uses the software Selenium and Python's unittest library to run test
 
 ## Documentation
 
-## Adding a language for Frisör Saxé
+### Adding a language for Frisör Saxé
 
-1. **Edit the translations.json file:**
+1. **Edit the data.json file:**
 
-   - Open the translations.json file.
-   - Locate the "swe" object within the JSON structure.
-   - Copy the entire "swe" object, including all its keys and values.
+   - Open the "data.json" file located in the fileGenerator folder.
+   - Locate the "sv" object within the JSON structure.
+   - Copy the entire "sv" object, including all its keys and values.
    - Paste the copied object right after the last object in the list (make sure to maintain proper JSON formatting with commas).
-   - The JSON object name should be the new language created, like “fre” for French.
+   - The JSON object name should be the new language created in HTML standard format, like “fr” for French.
 
 2. **Translate the Values:**
 
    - Within the newly created object for the new language, change the values for each key so that they match the desired translations for that language.
 
-3. **Update generateFile.py:**
+3. **Add the Flag Image:**
 
-   - Open the generateFile.py script.
-   - Locate the selectedLanguage array in the script.
-   - Add the language code (the same name used for the JSON object) to the selectedLanguage array as a string. Do not remove previous languages or locations in the array.
-
-4. **Add the Flag Image:**
-
+   Use this website to find your flag: https://flagpedia.net/index
+   
    - Place the picture of the country's flag in the "pictures" folder. Ensure that the image has the following properties:
+     - Flagname should be named after HTML-lang-standard + "Flag". ex "frFlag" for French.
+     - svg format
 
-     - Resolution: 640x373 pixels
-     - Format: PNG
+5. **Run generateFile.py:**
 
-   - In the existing JSON objects except for the newly created one, locate the "THIRDVERSIONALT" field and confirm that "THIRD" is indeed the latest version.
-
-   - If "Third" is the latest version, proceed to add the following fields: "FOURTHVERSIONALT," "FOURTHVERSIONSITE," and "FOURTHFLAG" to all JSON objects except the one you just created.
-
-   - In the "FOURTHFLAG" field, ensure that the alt attribute contains "englishflag" translated into the respective language, for example, "svenskaflaggan."
-
-   - Finally, incorporate this code into the list (ul tag) identified by the id "flagMenu" in the template, replace "FOURTHFLAG" if necessary.
-
-&#x20;
-
-    <li>
-        <a class="inActiveMenu flag" href="*FOURTHVERSIONSITE*">
-            <img src="pictures/*FOURTHFLAG*.png" alt="*FOURTHVERSIONALT*">
-        </a>
-    </li>
-
-5. **Change main language**
-
-   - In the JSON object you created, locate all the keys that start with MAIN and change their value so they fit the newly created language.
-   - The appearance of the flag does not affect the code. However make sure that all the languages have their own version, with alt and html file in all JSON objects.
-
-6. **Add language to localstorage**
-
-   - Open script.js and located the variable Currentlanguage.
-   - Add another else if statement like the ones created before.
-   - Make sure the new else if statement is looking for the newly created alt for the new flag.
-
-7. **Run generateFile.py:**
-
-   - Execute the generateFile.py script.
+   - Execute the generateFile.py script located fileGenerator folder.
    - Check how the newly added language appears on the generated HTML page.
 
-**Note: Please ensure that you maintain the proper JSON structure and formatting when editing the translations.json file.**
+**Note: Please ensure that you maintain the proper JSON structure and formatting when editing the data.json file.**
 
 **Occasionally, adjustments may be necessary, depending on the linguistic structure, especially when dealing with languages outside the Latin alphabet, which have not undergone extensive testing.**
 

@@ -118,15 +118,15 @@ h2 {
     height: auto;
 }
 
-#zipCodeCheckerHeight {
+#postalCodeCheckerHeight {
     height: 150px;
 }
 
 #homePage {
-    background-image: url('../pictures/mainBackground.jpg');
+    background-image: url('../pictures/mainBackground.webp');
     background-position: center;
     background-size: cover;
-    margin-bottom: 8vh;
+    margin-bottom: 5vh;
 }
 
 #centerText {
@@ -137,7 +137,7 @@ h2 {
 }
 
 
-#zipCodeCheck {
+#postalCodeCheck {
     padding-top: 80px;
     background-color: #bab6ae;
     padding-bottom: 80px;
@@ -271,7 +271,7 @@ footer {
     display: none;
 }
 
-.hasjs {
+.hasJS {
     display: none;
 }
 
@@ -286,8 +286,7 @@ footer {
 #langMenu {
     position: absolute;
     left: 0px;
-    margin-top: 6.5px;
-
+    margin-top: 0.2%;
 
 }
 
@@ -386,9 +385,9 @@ input[type=submit] {
     margin-bottom: 0;
 }
 
-#outputAcceptedZipCode,
-#outputNonAcceptedZipCode,
-#outputNotValidZipCode {
+#outputAcceptedPostalCode,
+#outputNonAcceptedPostalCode,
+#outputNotValidPostalCode {
     display: none;
 }
 

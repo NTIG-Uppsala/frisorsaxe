@@ -1,4 +1,3 @@
-import json
 import re
 import time
 from os import getcwd, path
@@ -8,18 +7,14 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 
-translations = json.load(open("fileGenerator/translations.json"))
 
-
-class TestHomepageNoScript(TestCase):
+class TestHomepageNoScriptENG(TestCase):
     doNotCloseBrowser = False
-    hideWindow = True
+    hideWindow = False
 
-    # Before the first test
     @classmethod
     def setUpClass(cls):
         chrome_options = webdriver.ChromeOptions()
-
         chrome_options.add_experimental_option(
             "prefs", {"profile.managed_default_content_settings.javascript": 2}
         )
@@ -32,14 +27,13 @@ class TestHomepageNoScript(TestCase):
 
         cls.browser = webdriver.Chrome(options=chrome_options)
 
-    # After last test
     @classmethod
     def tearDownClass(cls):
         pass
 
-    # Runs before every test
+    # Before each test
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "./subpages/kirunaswe.html"))
+        self.browser.get(path.join(getcwd(), "./luleafi.html"))
 
     # After each test
     def tearDown(self):
@@ -50,23 +44,24 @@ class TestHomepageNoScript(TestCase):
 
         for image_element in image_elements:
             is_loaded = self.browser.execute_script(
-                "return arguments[0].complete && typeof arguments[0].naturalWidth != 'undefined' && arguments[0].naturalWidth > 0;",
+                "return arguments[0].complete && typeof arguments[0].naturalWidth != 'undefined' && arguments[0].naturalWidth > 0;",  ##The pictures exists, has a naturalwidth and its longer then 0
                 image_element,
             )
 
             if is_loaded:
                 print(f"Image '{image_element.get_attribute('src')}' is loaded.")
+                print(image_element)
             else:
+                print(image_element)
                 self.fail(
                     f"Image '{image_element.get_attribute('src')}' is not loaded."
                 )
 
 
-class TestHomepage(TestCase):
+class TestHomepageENG(TestCase):
     doNotCloseBrowser = False
     hideWindow = True
 
-    # Runs before the first test
     @classmethod
     def setUpClass(cls):
         chr_options = Options()
@@ -79,16 +74,13 @@ class TestHomepage(TestCase):
 
         cls.browser = webdriver.Chrome(options=chr_options)
 
-    # After last test
     @classmethod
     def tearDownClass(cls):
         pass
 
-    # Runs before every test
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "./kirunaswe.html"))
+        self.browser.get(path.join(getcwd(), "./luleafi.html"))
 
-    # After each test
     def tearDown(self):
         self.browser.get("about:blank")
 
@@ -96,9 +88,8 @@ class TestHomepage(TestCase):
         self.assertEqual("Frisör Saxé", self.browser.title)
 
     def testMap(self):
-        self.browser.find_element(By.ID, "hittaoss")
         self.assertIn(
-            "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1503.2583513342254!2d20.2337795!3d67.8660232!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x45d0ba6368d7c9a3%3A0xe3887ef038c559b0!2sFj%C3%A4llgatan%2032%2C%20981%2039%20Kiruna!5e0!3m2!1ssv!2sse!4v1693397051519!5m2!1ssv!2sse",
+            "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1643.085861319367!2d21.851066699999997!3d65.68080189999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x467f677c34b6b1af%3A0x493f441e2dee92f!2sF%C3%A4rjledsv%C3%A4gen%2038%2C%20961%2093%20S%C3%B6dra%20Sunderbyn!5e0!3m2!1ssv!2sse!4v1694676621148!5m2!1ssv!2sse",
             self.browser.page_source,
         )
 
@@ -118,67 +109,6 @@ class TestHomepage(TestCase):
                     f"Image '{image_element.get_attribute('src')}' is not loaded."
                 )
 
-    def testBookedTime(self):
-        self.assertIn("Boka tid", self.browser.page_source)
-        self.assertIn("Telefon", self.browser.page_source)
-        self.assertIn("E-post", self.browser.page_source)
-        self.assertIn("0630‑555‑555", self.browser.page_source)
-        self.assertIn("saxefrisor@gmail.com", self.browser.page_source)
-
-    def testOppeningHours(self):
-        self.assertIn("Öppettider", self.browser.page_source)
-        self.assertIn("Mån", self.browser.page_source)
-        self.assertIn("Fre", self.browser.page_source)
-        self.assertIn("Lördag", self.browser.page_source)
-        self.assertIn("Söndag", self.browser.page_source)
-        self.assertIn("Stängt", self.browser.page_source)
-
-    def testInfo(self):
-        self.assertIn("Gränsen för långt hår går vid 20 cm", self.browser.page_source)
-        self.assertIn(
-            "Man blir stamkund efter tre besök under 12 månader",
-            self.browser.page_source,
-        )
-
-    def testProducts(self):
-        self.assertIn("Klippning", self.browser.page_source)
-        self.assertIn("Långt", self.browser.page_source)
-        self.assertIn("Annat", self.browser.page_source)
-        self.assertIn("Färgning", self.browser.page_source)
-        self.assertIn("Förlängningar", self.browser.page_source)
-        self.assertIn("Kort", self.browser.page_source)
-        self.assertIn("Skägg", self.browser.page_source)
-        self.assertIn("Barn", self.browser.page_source)
-        self.assertIn("Toppning", self.browser.page_source)
-        self.assertIn("stamkund", self.browser.page_source)
-        self.assertIn("hår", self.browser.page_source)
-        self.assertIn("Skägg", self.browser.page_source)
-
-    def testNavbar(self):
-        nabBrand = self.browser.find_element(By.ID, "centerText")
-        self.assertIn("Frisör&nbsp;Saxé", nabBrand.get_attribute("innerHTML"))
-        element = self.browser.find_element(By.CLASS_NAME, "navbar-nav")
-        self.assertIn("Boka tid", element.get_attribute("innerHTML"))
-        self.assertIn("Öppettider", element.get_attribute("innerHTML"))
-        self.assertIn("Priser", element.get_attribute("innerHTML"))
-        self.assertIn("Personal", element.get_attribute("innerHTML"))
-        self.assertIn("Hitta oss", element.get_attribute("innerHTML"))
-
-    def testEmployeeHeader(self):
-        self.assertIn("Möt vår personal", self.browser.page_source)
-
-    def testEmployeePictures(self):
-        self.assertIn('alt="Örjan Johansson"', self.browser.page_source)
-        self.assertIn('alt="Fredrik Örtqvist"', self.browser.page_source)
-        self.assertIn('alt="Anna Pettersson"', self.browser.page_source)
-
-    def testEmployeeJobs(self):
-        self.assertIn("Hårstylist", self.browser.page_source)
-        self.assertIn("Barberare", self.browser.page_source)
-
-    def testAddress(self):
-        self.assertIn("Adress", self.browser.page_source)
-
     def testPrices(self):
         self.assertIn("600", self.browser.page_source)
         self.assertIn("500", self.browser.page_source)
@@ -188,6 +118,78 @@ class TestHomepage(TestCase):
         self.assertIn("560", self.browser.page_source)
         self.assertIn("300", self.browser.page_source)
         self.assertIn("500", self.browser.page_source)
+
+    def testBookedTime(self):
+        self.assertIn("Puhelin", self.browser.page_source)  # Phone
+        self.assertIn("Sähköposti", self.browser.page_source)  # Email
+        self.assertIn("Varaa aika", self.browser.page_source)  # Book an appointment
+        self.assertIn("0640‑555‑333", self.browser.page_source)
+        self.assertIn("saxefrisor@gmail.com", self.browser.page_source)
+
+    def testOpeningHours(self):
+        self.assertIn("Maanantai", self.browser.page_source)  # Monday
+        self.assertIn("Tiistai", self.browser.page_source)  # Tuesday
+        self.assertIn("Keskiviikko", self.browser.page_source)  # Wednesday
+        self.assertIn("To - Pe", self.browser.page_source)  # Thu - Fri
+        self.assertIn("Lauantai", self.browser.page_source)  # Saturday
+        self.assertIn("Sunnuntai", self.browser.page_source)  # Sunday
+        self.assertIn("Aukioloajat", self.browser.page_source)  # Opening hours
+
+    def testInfo(self):
+        self.assertIn(
+            "Kolmen käynnin jälkeen 12 kuukauden aikana sinut katsotaan vakituiseksi asiakkaaksi",
+            self.browser.page_source,
+        )  # After three visits within 12 months, you will be considered a regular customer
+        self.assertIn(
+            "Pitkien hiusten raja alkaa 20 cm:stä", self.browser.page_source
+        )  # The limit for long hair starts at 20 cm
+
+    def testProducts(self):
+        self.assertIn("Pitkät hiukset", self.browser.page_source)  # Long hair
+        self.assertIn("Tänään", self.browser.page_source)  # Today
+        self.assertIn("Lyhyet hiukset", self.browser.page_source)  # Short hair
+        self.assertIn("Parta", self.browser.page_source)  # Beard
+        self.assertIn("Lapsi", self.browser.page_source)  # Children
+        self.assertIn("vuotta", self.browser.page_source)  # years
+        self.assertIn("Trimmaus", self.browser.page_source)  # trim
+        self.assertIn("Värjäys", self.browser.page_source)  # Coloring
+        self.assertIn(
+            "Pidennykset, lyhyet", self.browser.page_source
+        )  # Short extensions
+        self.assertIn(
+            "Pidennykset, tavalliset", self.browser.page_source
+        )  # Medium-length extensions
+        self.assertIn(
+            "Pidennykset, pitkät", self.browser.page_source
+        )  # Long extensions
+
+    def testNavbar(self):
+        navBrand = self.browser.find_element(By.ID, "centerText")
+        self.assertIn(
+            "Frisör&nbsp;Saxé", navBrand.get_attribute("innerHTML")
+        )  # Hairdresser Saxé
+        element = self.browser.find_element(By.CLASS_NAME, "navbar-nav")
+        self.assertIn(
+            "Varaa aika", element.get_attribute("innerHTML")
+        )  # Book an appointment
+        self.assertIn(
+            "Aukioloajat", element.get_attribute("innerHTML")
+        )  # Opening hours
+        self.assertIn("Hinnat", element.get_attribute("innerHTML"))  # Prices
+        self.assertIn("Henkilökunta", element.get_attribute("innerHTML"))  # Staff
+        self.assertIn("loyda-meidat", element.get_attribute("innerHTML"))  # Find Us
+
+    def testEmployeeHeader(self):
+        self.assertIn(
+            "Tapaa henkilökuntaamme", self.browser.page_source
+        )  # Meet our staff
+
+    def testEmployeeJobs(self):
+        self.assertIn("Parturi", self.browser.page_source)  # Barber
+        self.assertIn("Hiusmuotoilija", self.browser.page_source)  # Hair stylist
+
+    def testAddress(self):
+        self.assertIn("Osoite", self.browser.page_source)  # Address
 
     def testDailySales(self):
         self.helpTestDailySales("2023-09-11T11:00:00", "saleLongHair")  # Monday
@@ -207,7 +209,6 @@ class TestHomepage(TestCase):
     def helpTestDailySales(self, date, id):
         self.browser.execute_script("dailySales(new Date('" + date + "'))")
         element = self.browser.find_element(By.ID, id).value_of_css_property("display")
-        # Checks if the element is displayed
         self.assertEqual("block", element)
 
     def helpDailySalesNotShow(self, date, expectedToShow):
@@ -219,7 +220,8 @@ class TestHomepage(TestCase):
         elif expectedToShow == "":
             pass
         else:
-            self.fail()
+            self.fail()  ##If the id passed in was not accepted or empty
+
         # Checks that non of the ids in the list is showing
         for id in ids:
             element = self.browser.find_element(By.ID, id).value_of_css_property(
@@ -227,53 +229,44 @@ class TestHomepage(TestCase):
             )
             self.assertEqual("none", element)
 
-    def testZipCodePhrase(self):
-        value = translations["swe"]["kiruna"]["HOMEDELIVERYTITLE"]
+    def testPostalCodePhrase(self):
+        self.assertIn(
+            "Ammattimaiset hiustenleikkaukset kotiin", self.browser.page_source
+        )
 
-        self.assertEquals(value, "Ta salongen till ditt hem")
-
-    def helperZipCode(self, zipCodeList, message):
-        for currentZip in zipCodeList:
-            self.browser.find_element(By.ID, "zipNumber").send_keys(currentZip)
+    def helperPostalCode(self, postalCodeList, message):
+        for currentPostalCode in postalCodeList:
+            self.browser.find_element(By.ID, "postalCodeNumber").send_keys(
+                currentPostalCode
+            )
             time.sleep(0.5)
             self.browser.find_element(By.ID, "submit").click()
-            zipOutput = self.browser.find_element(By.ID, "zipCodeCheck")
-            self.assertIn(message, zipOutput.text)
-            self.browser.get(path.join((getcwd()), "./kirunaswe.html"))
+            postalOutput = self.browser.find_element(By.ID, "postalCodeCheck")
+            self.assertIn(message, postalOutput.text)
+            self.browser.get(path.join((getcwd()), "./luleafi.html"))
 
-    def testZipCodes(self):
-        zipCodeListKiruna = [
-            "98132",
-            "98135",
-            "98136",
-            "98137",
-            "98138",
-            "98139",
-            "98140",
-            "98142",
-            "98143",
-            "98144",
-            "98146",
-            "98147",
-        ]
-        notAcceptedZipcodes = [
+    def testPostalCodes(self):
+        postalCodeListLulea = ["96190", "96191", "96193", "96194"]
+
+        notAcceptedPostalCodes = [
             "12345",
             "55555",
             "92347",
         ]
-        nonWorkingZipcodes = [
+        nonWorkingPostalCodes = [
             "1234",
             "hej",
             "xxxxx",
         ]
-        self.helperZipCode(
-            zipCodeListKiruna, "Vi kör ut till dig. Ring oss för att boka tid!"
+        self.helperPostalCode(
+            postalCodeListLulea,
+            "Toimitamme kotiin. Soita meille ajanvarauksesta!",
         )
-        self.helperZipCode(
-            notAcceptedZipcodes,
-            "Vi kan tyvärr inte erbjuda denna service för detta postnummer.",
+        self.helperPostalCode(
+            notAcceptedPostalCodes,
+            "Valitettavasti emme voi tarjota tätä palvelua tällä postinumerolla.",
         )
-        self.helperZipCode(nonWorkingZipcodes, "Inte ett riktigt postnummer.")
+        self.helperPostalCode(nonWorkingPostalCodes, "Ei voimassa oleva postinumero.")
 
     def testPlaceholderForFileGenerator(self):
         error_messages = []  # Create a list to collect error messages
