@@ -42,25 +42,19 @@ Our website uses the software Selenium and Python's unittest library to run test
 1. **Edit the translations.json file:**
 
    - Open the translations.json file.
-   - Locate the "swe" object within the JSON structure.
-   - Copy the entire "swe" object, including all its keys and values.
+   - Locate the "sv" object within the JSON structure.
+   - Copy the entire "sv" object, including all its keys and values.
    - Paste the copied object right after the last object in the list (make sure to maintain proper JSON formatting with commas).
-   - The JSON object name should be the new language created, like “fre” for French.
+   - The JSON object name should be the new language created, like “fr” for French.
 
 2. **Translate the Values:**
 
    - Within the newly created object for the new language, change the values for each key so that they match the desired translations for that language.
 
-3. **Update generateFile.py:**
-
-   - Open the generateFile.py script.
-   - Locate the selectedLanguage array in the script.
-   - Add the language code (the same name used for the JSON object) to the selectedLanguage array as a string. Do not remove previous languages or locations in the array.
-
-4. **Add the Flag Image:**
+3. **Add the Flag Image:**
 
    - Place the picture of the country's flag in the "pictures" folder. Ensure that the image has the following properties:
-
+     - Flagname should be "(Language code)Flag" ex. "fiFlag.png"
      - Resolution: 640x373 pixels
      - Format: PNG
 
