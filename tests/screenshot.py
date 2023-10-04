@@ -32,7 +32,7 @@ class screenshotNoJs(TestCase):
         pass
 
     def setUp(self):
-        self.browser.get(path.join(getcwd(), "subPages/kirunaswe.html"))
+        self.browser.get(path.join(getcwd(), "kirunasv.html"))
 
     def tearDown(self):
         self.browser.get("about:blank")
