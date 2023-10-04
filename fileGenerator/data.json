@@ -1,14 +1,7 @@
 {
     "COMMON": {
-        "@MAIL": "saxefrisor@gmail.com",
-        "LANG":{
-            "SVFLAG":"svFlag",
-            "SVFLAGALT":"svenska flaggan",
-            "ENFLAG":"enFlag",
-            "ENFLAGALT":"english flag",
-            "FIFLAG":"fiFlag",
-            "FIFLAGALT":"suomen lippu"
-        }
+        "@MAIL": "saxefrisor@gmail.com"
+      
     },
     "LOCATIONS": {
         "LULEA": {

@@ -35,7 +35,7 @@ def replacePlaceholders(htmlTemplate, language, location):
     ):
         htmlTemplate = htmlTemplate.replace(f"*PERS{i}JOB*", employeeWork)
 
-    mainFlagAlt = common["LANG"][language.upper() + "FLAGALT"]
+    mainFlagAlt = langsInfo["FLAGALT"]
 
     htmlTemplate.replace("*MAINLANGFLAGALT*", mainFlagAlt)
     htmlTemplate = htmlTemplate.replace("*MAINFLAG*", language + "Flag")
@@ -44,7 +44,7 @@ def replacePlaceholders(htmlTemplate, language, location):
 
     for languageUsed in langs.keys():
         # Get the alternative text for the flag image from the 'common' dictionary
-        altText = common["LANG"].get(languageUsed.upper() + "FLAGALT")
+        altText = langs[languageUsed]["FLAGALT"]
 
         # Check if the current language matches the 'language' variable
         if languageUsed == language:
