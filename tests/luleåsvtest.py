@@ -1,4 +1,3 @@
-import json
 import re
 import time
 from os import getcwd, path
@@ -7,8 +6,6 @@ from unittest import TestCase, main
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
-
-translations = json.load(open("fileGenerator/translations.json"))
 
 
 class TestHomepageNoScript(TestCase):
