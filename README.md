@@ -53,12 +53,13 @@ Our website uses the software Selenium and Python's unittest library to run test
 
 3. **Add the Flag Image:**
 
+   Use this website to find your flag: https://flagpedia.net/index
+   
    - Place the picture of the country's flag in the "pictures" folder. Ensure that the image has the following properties:
      - Flagname should be named after HTML-lang-standard + "Flag". ex "frFlag" for French.
-     - Resolution: 150x87 pixels 
-     - Format: PNG
+     - svg format
 
-4. **Run generateFile.py:**
+5. **Run generateFile.py:**
 
    - Execute the generateFile.py script located fileGenerator folder.
    - Check how the newly added language appears on the generated HTML page.
