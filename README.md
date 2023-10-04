@@ -37,15 +37,15 @@ Our website uses the software Selenium and Python's unittest library to run test
 
 ## Documentation
 
-## Adding a language for Frisör Saxé
+### Adding a language for Frisör Saxé
 
-1. **Edit the translations.json file:**
+1. **Edit the data.json file:**
 
-   - Open the "data.json" file.
+   - Open the "data.json" file located in the fileGenerator folder.
    - Locate the "sv" object within the JSON structure.
    - Copy the entire "sv" object, including all its keys and values.
    - Paste the copied object right after the last object in the list (make sure to maintain proper JSON formatting with commas).
-   - The JSON object name should be the new language created in HTML format, like “fr” for French.
+   - The JSON object name should be the new language created in HTML standard format, like “fr” for French.
 
 2. **Translate the Values:**
 
@@ -60,10 +60,10 @@ Our website uses the software Selenium and Python's unittest library to run test
 
 4. **Run generateFile.py:**
 
-   - Execute the generateFile.py script.
+   - Execute the generateFile.py script located fileGenerator folder.
    - Check how the newly added language appears on the generated HTML page.
 
-**Note: Please ensure that you maintain the proper JSON structure and formatting when editing the translations.json file.**
+**Note: Please ensure that you maintain the proper JSON structure and formatting when editing the data.json file.**
 
 **Occasionally, adjustments may be necessary, depending on the linguistic structure, especially when dealing with languages outside the Latin alphabet, which have not undergone extensive testing.**
 
