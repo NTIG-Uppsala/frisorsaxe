@@ -123,7 +123,7 @@ h2 {
 }
 
 #homePage {
-    background-image: url('../pictures/mainBackground.jpg');
+    background-image: url('../pictures/mainBackground.webp');
     background-position: center;
     background-size: cover;
     margin-bottom: 5vh;
