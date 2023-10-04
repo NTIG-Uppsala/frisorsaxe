@@ -1,6 +1,6 @@
 function goToSite(place) {
   // Navigate to the previously selected language, or default to Swedish if none is available.
-  const language = localStorage.getItem("language") || "swe";
+  const language = localStorage.getItem("language") || "sv";
   window.location.href = `${place}${language}.html`;
 }
 function arrowShow() {
