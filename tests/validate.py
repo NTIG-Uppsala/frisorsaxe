@@ -81,4 +81,15 @@ for path in paths:
                     ).click()
                     checkbox_checked = True
                     break
+            for code_element in code_elements:
+                if code_element.text == "ul":
+                    grandparent_element = code_element.find_element(
+                        By.XPATH, "../../.."
+                    )
+                    time.sleep(1)
+                    grandparent_element.find_element(
+                        By.XPATH, './/input[@type="checkbox"]'
+                    ).click()
+                    checkbox_checked = True
+                    break
             messages_filtering.click()
