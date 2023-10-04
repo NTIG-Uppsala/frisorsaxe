@@ -282,6 +282,11 @@ class TestHomepageENG(TestCase):
             # If there are errors, print them and fail the test
             self.fail(error_messages)
 
+    # def testWeAreCurrently(self):
+    #     # Function to select date
+    #     self.browser.refresh()
+    #     self.assertIn("open",self.browser.page_source)
+
 
 if __name__ == "__main__":
     main(verbosity=2)
