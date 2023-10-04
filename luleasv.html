@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/script.js"></script>
+    <script src="js/liveOpenHours.js"></script>
 
     <!-- Favicon -->
     <link rel="icon" href="pictures/icon.png">
@@ -39,7 +40,7 @@
     </style>
 </head>
 
-<body onload="dailySales(new Date())">
+<body onload="dailySales(new Date()),setLiveOpeningHours(new Date())">
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">

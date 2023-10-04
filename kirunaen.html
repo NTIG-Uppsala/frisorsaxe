@@ -40,7 +40,7 @@
     </style>
 </head>
 
-<body onload="dailySales(new Date()),setOpeningStatus(new Date());">
+<body onload="dailySales(new Date()),setLiveOpeningHours(new Date())">
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
@@ -83,12 +83,9 @@
                                         src="pictures/enFlag.svg" alt="english flag"></a>
                             </li>
 
-                            <li><a href="kirunaen.html" class="inActiveMenu flag"><img src="pictures/enFlag.svg"
-                                        alt="english flag"></a></li>
-                            <li><a href="kirunasv.html" class="inActiveMenu flag"><img src="pictures/svFlag.svg"
-                                        alt="svenska flaggan"></a></li>
-                            <li><a href="kirunafi.html" class="inActiveMenu flag"><img src="pictures/fiFlag.svg"
-                                        alt="suomiin lippu"></a></li>
+                            <li><a href="kirunaen.html" class="inActiveMenu flag"><img src="pictures/enFlag.svg" alt="english flag"></a></li>
+<li><a href="kirunasv.html" class="inActiveMenu flag"><img src="pictures/svFlag.svg" alt="svenska flaggan"></a></li>
+<li><a href="kirunafi.html" class="inActiveMenu flag"><img src="pictures/fiFlag.svg" alt="suomiin lippu"></a></li>
 
                         </ul>
                     </li>
@@ -102,12 +99,6 @@
         <div class="d-flex justify-content-center align-items-center">
             <h1 class="text-light" id="centerText">Frisör&nbsp;Saxé</h1>
         </div>
-    </div>
-
-    <div id="areWeOpen" class="text-center">
-        <h2 class="padding">We Are Currently:</h2>
-        <p id="displayedIfClosed" class="fs-4">Closed</p>
-        <p id="displayedIfOpen" class="fs-4">Open</p>
     </div>
 
     <!-- Opening hours and appointment info  -->
@@ -130,12 +121,12 @@
                 <div class="row justify-content-center">
                     <div class="col-4 col-sm-4 col-md-5 col-lg-4 col-xl-3 p-3 mb-2 text-start fs-4">
                         <p>Mon - Fri</p>
-                        <p>Saturday</p>
-                        <p>Sunday</p>
+<p>Saturday</p>
+<p>Sunday</p>
                     </div>
                     <div class="col-4 col-sm-4 col-md-5 col-lg-4 col-xl-3 p-3 mb-2 openHours text-end fs-4">
                         <p>10 - 16</p>
-                        <p>12 - 15</p>
+<p>12 - 15</p>
                         <p>Closed</p>
                     </div>
                 </div>
@@ -151,8 +142,7 @@
             <form><input type="text" inputmode="numeric" id="postalCodeNumber" placeholder="Postal Code"><input
                     class="checkNumber" id="submit" type="submit" value="Check">
             </form>
-            <p class="output" id="outputAcceptedPostalCode">You are within reach. Call us to book a house appointment!
-            </p>
+            <p class="output" id="outputAcceptedPostalCode">You are within reach. Call us to book a house appointment!</p>
             <p class="output" id="outputNonAcceptedPostalCode">Sorry, we can't offer this service for your location.</p>
             <p class="output" id="outputNotValidPostalCode">Not a valid postal code.</p>
 
@@ -163,13 +153,13 @@
     <div class="container" id="pricingContainer">
         <div class="row justify-content-center text-center">
             <div class="col-md-6 flex-column">
-                <img class="w-100" id="prices" src="pictures/prices.webp" alt="pris" style="border-radius: 7px;">
+                <img class="w-100" id="prices" src="pictures/prices.webp" alt="pris"
+                    style="border-radius: 7px;">
                 <!-- Prices -->
                 <h2 class="mb-4 my-5 text-body">Haircut</h2>
                 <div id="infoOnPhone">
                     <span class="text-center">The limit for long hair starts at 20 cm *</span> <br>
-                    <span class="text-center">After 3 visits within 12 months you are considered a regular customer
-                        **</span>
+                    <span class="text-center">After 3 visits within 12 months you are considered a regular customer **</span>
                 </div>
                 <table class="table table-sm" style="table-layout: fixed;">
                     <thead>
@@ -263,8 +253,7 @@
                 <div class="col-xl-4 col-md-6 my-5">
                     <div class="container d-flex justify-content-center">
                         <div class="card" style="width: 20rem; height: 70%;">
-                            <img src="pictures/employeePictures/annaPettersson.webp" class="card-img-top"
-                                alt="Anna Pettersson">
+                            <img src="pictures/employeePictures/annaPettersson.webp" class="card-img-top" alt="Anna Pettersson">
                             <div class="card-body">
                                 <h5 class="card-title">Anna Pettersson</h5>
                                 <p class="card-text mb-2">Hairstylist</p>
@@ -276,9 +265,7 @@
                 <div class="col-xl-4 col-md-6 my-5">
                     <div class="container d-flex justify-content-center">
                         <div class="card" style="width: 20rem; height: 70%;">
-                            <img src="pictures//employeePictures/fredrikOrtqvist.webp" class="card-img-top"
-                                alt="Fredrik Örtqvist">
-
+                            <img src="pictures//employeePictures/fredrikOrtqvist.webp" class="card-img-top" alt="Fredrik Örtqvist">
                             <div class="card-body">
                                 <h5 class="card-title">Fredrik Örtqvist</h5>
                                 <p class="card-text mb-2">Barber</p>
@@ -289,8 +276,7 @@
                 <div class="col-xl-4 col-md-6 my-5 ">
                     <div class="container d-flex justify-content-center">
                         <div class="card" style="width: 20rem; height: 70%;">
-                            <img src="pictures/employeePictures/orjanJohansson.jpg" class="card-img-top"
-                                alt="Örjan Johansson">
+                            <img src="pictures/employeePictures/orjanJohansson.webp" class="card-img-top" alt="Örjan Johansson">
                             <div class="card-body">
                                 <h5 class="card-title">Örjan Johansson</h5>
                                 <p class="card-text mb-2">Barber</p>
@@ -315,10 +301,9 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <h2 class="mb-4">Find Us</h2>
-                <div class=" hasJS"><iframe
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1503.2583513342254!2d20.2337795!3d67.8660232!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x45d0ba6368d7c9a3%3A0xe3887ef038c559b0!2sFj%C3%A4llgatan%2032%2C%20981%2039%20Kiruna!5e0!3m2!1ssv!2sse!4v1693397051519!5m2!1ssv!2sse"
-                        width="450" height="450" style="border:0; width: 100%; max-width: 800px; border-radius: 7px;"
-                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class=" hasJS"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1503.2583513342254!2d20.2337795!3d67.8660232!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x45d0ba6368d7c9a3%3A0xe3887ef038c559b0!2sFj%C3%A4llgatan%2032%2C%20981%2039%20Kiruna!5e0!3m2!1ssv!2sse!4v1693397051519!5m2!1ssv!2sse" width="450" height="450"
+                        style="border:0; width: 100%; max-width: 800px; border-radius: 7px;" allowfullscreen=""
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <noscript>
                     <img src="pictures/nojsmapkiruna.png" class="img-thumbnail" alt="...">
