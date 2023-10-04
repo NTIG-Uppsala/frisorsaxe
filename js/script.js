@@ -34,10 +34,9 @@ window.onscroll = function () {
   }
 };
 
-function makeSecondaryAltText() {
+function test() {}
 
-}
-
+function makeSecondaryAltText() {}
 
 function hideFlags() {
   document.getElementById("activeMenu").style.display = "block";
@@ -50,19 +49,11 @@ function hideFlags() {
   }
 }
 
-
 //Save the current used language in localstorage to be used later.
 document.addEventListener("DOMContentLoaded", function () {
-  // const Currentlanguage = document.getElementById("activeLang").alt;
-  // if (Currentlanguage === "svenskaflaggan") {
-  //   localStorage.setItem("language", "swe");
-  // } else if (Currentlanguage === "englishflag") {
-  //   localStorage.setItem("language", "eng");
-  // } else if (Currentlanguage === "suomenlippu") {
-  //   localStorage.setItem("language", "fin");
-  // }
-
-  const currentLanguage = document.getElementsByTagName('html')[0].getAttribute('lang');
+  const currentLanguage = document
+    .getElementsByTagName("html")[0]
+    .getAttribute("lang");
   localStorage.setItem("language", currentLanguage);
 });
 
@@ -86,8 +77,8 @@ function dailySales(date) {
   const locationOpeningHours = window.location.pathname.includes("lulea")
     ? openHours.lulea
     : window.location.pathname.includes("kiruna")
-      ? openHours.kiruna
-      : console.log("location does not have openingHours for dailysailes");
+    ? openHours.kiruna
+    : console.log("location does not have openingHours for dailysailes");
 
   const weekday = date.getDay();
   const currentHour = date.getHours();
@@ -187,15 +178,22 @@ postalCodeListLulea = ["96190", "96191", "96193", "96194"];
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("#postalCodeCheck form");
-  const acceptedPostalCodeOutput = document.getElementById("outputAcceptedPostalCode");
-  const notValidPostalCodeOutput = document.getElementById("outputNotValidPostalCode");
-  const nonAcceptedPostalCodeOutput = document.getElementById("outputNonAcceptedPostalCode");
+  const acceptedPostalCodeOutput = document.getElementById(
+    "outputAcceptedPostalCode"
+  );
+  const notValidPostalCodeOutput = document.getElementById(
+    "outputNotValidPostalCode"
+  );
+  const nonAcceptedPostalCodeOutput = document.getElementById(
+    "outputNonAcceptedPostalCode"
+  );
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     hideOutputs();
 
-    let postalCodeInput = event.submitter.parentNode.querySelector("#postalCodeNumber").value;
+    let postalCodeInput =
+      event.submitter.parentNode.querySelector("#postalCodeNumber").value;
     postalCodeInput = postalCodeInput.split(" ").join("");
 
     //If postal code is invalid
@@ -203,8 +201,10 @@ document.addEventListener("DOMContentLoaded", () => {
       displayOutput(notValidPostalCodeOutput);
       //If postal code is valid
     } else if (
-      (postalCodeListKiruna.includes(postalCodeInput) && window.location.pathname.includes("kiruna")) ||
-      (postalCodeListLulea.includes(postalCodeInput) && window.location.pathname.includes("lulea"))
+      (postalCodeListKiruna.includes(postalCodeInput) &&
+        window.location.pathname.includes("kiruna")) ||
+      (postalCodeListLulea.includes(postalCodeInput) &&
+        window.location.pathname.includes("lulea"))
     ) {
       displayOutput(acceptedPostalCodeOutput);
       //If postal code is valid but not near
@@ -223,4 +223,3 @@ document.addEventListener("DOMContentLoaded", () => {
     outputElement.style.display = "block";
   }
 });
-

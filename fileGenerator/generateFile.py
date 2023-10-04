@@ -10,53 +10,67 @@ langs = data["LANGS"]
 
 # Function to replace placeholders in the HTML template
 def replacePlaceholders(htmlTemplate, language, location):
-    # Get the translation for the selected language and location
     locationInfo = locations[location]
     langsInfo = langs[language]
 
     # Replace placeholders in the HTML template with values from OPENDAYS
     # For every value in OPENDAYS, it creates a new <p> tag with the corresponding value on a new line.
-    if "OPENDAYS" in langsInfo[location]:
-        opendays = "\n".join(
-            [f"<p>{value}</p>" for value in langsInfo[location]["OPENDAYS"].values()]
-        )
-        htmlTemplate = htmlTemplate.replace("*OPENDAYS*", opendays)
+    openDays = "\n".join(
+        [
+            f"<p>{value}</p>"
+            for value in langsInfo[location].get("OPENDAYS", {}).values()
+        ]
+    )
+    htmlTemplate = htmlTemplate.replace("*OPENDAYS*", openDays)
 
-    # Replace placeholders in the HTML template with values from OPENDAYSTIME
-    if "OPENDAYSTIME" in locationInfo:
-        openDaysTime = "\n".join(
-            [f"<p>{value}</p>" for value in locationInfo["OPENDAYSTIME"].values()]
-        )
-        htmlTemplate = htmlTemplate.replace("*OPENDAYSTIME*", openDaysTime)
+    # Same principle as openDays.
+    openDaysTime = "\n".join(
+        [f"<p>{value}</p>" for value in locationInfo.get("OPENDAYSTIME", {}).values()]
+    )
+    htmlTemplate = htmlTemplate.replace("*OPENDAYSTIME*", openDaysTime)
 
-    employee = 1  # The current employee number
-    for employeeWork in langsInfo[location]["EMPLOYEESWORK"].values():
-        # Replace placeholders in the HTML template with values from EMPLOYEESWORK
-        htmlTemplate = htmlTemplate.replace(f"*PERS{employee}JOB*", employeeWork)
-        employee += 1
+    # Looks for Employeeswork object
+    for i, employeeWork in enumerate(
+        langsInfo[location]["EMPLOYEESWORK"].values(), start=1
+    ):
+        htmlTemplate = htmlTemplate.replace(f"*PERS{i}JOB*", employeeWork)
 
-    getMainAltText = langsInfo.get("FLAGALT", "Unknown language")
+    mainFlagAlt = common["LANG"][language.upper() + "FLAGALT"]
 
+    htmlTemplate.replace("*MAINLANGFLAGALT*", mainFlagAlt)
     htmlTemplate = htmlTemplate.replace("*MAINFLAG*", language + "Flag")
 
-    htmlTemplate = htmlTemplate.replace("*MAINLANGFLAGALT*", getMainAltText)
+    flagList = []
 
-    # Replace placeholders in the HTML template
+    for languageUsed in langs.keys():
+        # Get the alternative text for the flag image from the 'common' dictionary
+        altText = common["LANG"].get(languageUsed.upper() + "FLAGALT")
+
+        # Check if the current language matches the 'language' variable
+        if languageUsed == language:
+            # Insert the HTML list item with 'mainFlagAlt' at the beginning of 'flagList' to ensure it appears first in the flag menu on the website.
+            flagList.insert(
+                0,
+                f'<li><a href="{location.lower() + language}.html" class="inActiveMenu flag"><img src="pictures/{language}Flag.png" alt="{altText}"></a></li>',
+            )
+        else:
+            # Append the HTML list item to 'flagList'
+            flagList.append(
+                f'<li><a href="{location.lower() + languageUsed}.html" class="inActiveMenu flag"><img src="pictures/{languageUsed}Flag.png" alt="{altText}"></a></li>'
+            )
+
+    # Join the list of HTML list items into a single string, separated by newline characters
+    flagList = "\n".join(flagList)
+
+    htmlTemplate = htmlTemplate.replace("*FLAGLIST*", flagList)
+
     for key, value in common.items():
-        placeholder = f"*{key}*"
-        htmlTemplate = htmlTemplate.replace(
-            placeholder, str(value)
-        )  # Ensure the value is converted to a string
+        htmlTemplate = htmlTemplate.replace(f"*{key}*", str(value))
     for key, value in langsInfo.items():
-        placeholder = f"*{key}*"
-        htmlTemplate = htmlTemplate.replace(
-            placeholder, str(value)
-        )  # Ensure the value is converted to a string
+        htmlTemplate = htmlTemplate.replace(f"*{key}*", str(value))
     for key, value in locationInfo.items():
-        placeholder = f"*{key}*"
-        htmlTemplate = htmlTemplate.replace(
-            placeholder, str(value)
-        )  # Ensure the value is converted to a string
+        htmlTemplate = htmlTemplate.replace(f"*{key}*", str(value))
+
     return htmlTemplate
 
 
@@ -64,8 +78,6 @@ for language in langs:
     for location in locations:
         htmlTemplate = open("fileGenerator/template.html", "r").read()
         translatedHtml = replacePlaceholders(htmlTemplate, language, location)
-
-        # Define the file name for the translated HTML
         translatedFileName = location.lower() + language + ".html"
 
         # Create the translated HTML file and write the content
