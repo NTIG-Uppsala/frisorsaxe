@@ -282,10 +282,15 @@ class TestHomepageENG(TestCase):
             # If there are errors, print them and fail the test
             self.fail(error_messages)
 
-    # def testWeAreCurrently(self):
-    #     # Function to select date
-    #     self.browser.refresh()
-    #     self.assertIn("open",self.browser.page_source)
+    def helperWeAreCurrently(self, date, expectedResult):
+        self.browser.execute_script(f'updateCurrentlyOpen(new Date("{date}"));')
+        self.browser.refresh()
+        self.assertIn(expectedResult, self.browser.page_source)
+
+        def testWeAreCurrently(self):
+        Function to select date
+        self.browser.refresh()
+        self.assertIn("open", self.browser.page_source)
 
 
 if __name__ == "__main__":
