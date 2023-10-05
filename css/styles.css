@@ -95,17 +95,7 @@ h2 {
 }
 
 
-@media screen and (max-width:1360px) {
-    .nav-link {
-        font-size: 1.5rem !important;
-    }
-}
 
-@media screen and (max-width:1110px) {
-    .nav-link {
-        font-size: 1.2rem !important;
-    }
-}
 
 #secondRow {
     margin-bottom: 8vh;
@@ -346,6 +336,7 @@ footer {
 
 #activeMenu {
     cursor: pointer;
+    font-size: 2.25rem;
 }
 
 .openHours {
@@ -414,5 +405,25 @@ input[type=submit] {
     #homeButton {
         position: absolute;
         right: 0;
+    }
+}
+
+@media screen and (max-width:1360px) {
+    .nav-link {
+        font-size: 1.5rem !important;
+    }
+
+    #activeMenu {
+        font-size: 1.9rem;
+    }
+}
+
+@media screen and (max-width:1110px) {
+    .nav-link {
+        font-size: 1.2rem !important;
+    }
+
+    #activeMenu {
+        font-size: 1.5rem;
     }
 }
