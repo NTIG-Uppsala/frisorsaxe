@@ -270,11 +270,13 @@ footer {
 
 #areWeOpen {
     background-color: #bab6ae;
-    padding-top: 5vh;
-    padding-bottom: 4vh;
     margin-bottom: 10vh;
     box-shadow: 0px 5px 10px #d2d2d2;
     height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 #displayedIfOpen {
