@@ -273,17 +273,131 @@ class TestHomepage(TestCase):
         self.helperPostalCode(nonWorkingPostalCodes, "Inte ett riktigt postnummer.")
 
     def testPlaceholderForFileGenerator(self):
-        error_messages = []  # Create a list to collect error messages
+        errorMessages = []  # Create a list to collect error messages
         matches = re.findall(
             "\*[A-Z]+\*", self.browser.page_source
         )  # Check if placeholders from template exist.
         for match in matches:
-            error_messages.append(match)  # Append error messages to the list
+            errorMessages.append(match)  # Append error messages to the list
             print(match)
 
-        if error_messages:
+        if errorMessages:
             # If there are errors, print them and fail the test
-            self.fail(error_messages)
+            self.fail(errorMessages)
+
+    def helperAreWeOpen(self, date, expectedResult, openTime):
+        self.browser.execute_script(f'setOpeningStatus(new Date("{date}"));')
+
+        displayed_elements = {
+            "IfClosed": self.browser.find_element(By.ID, "displayedIfClosed"),
+            "IfOpen": self.browser.find_element(By.ID, "displayedIfOpen"),
+            "IfOpenTom": self.browser.find_element(By.ID, "displayedIfOpenTom"),
+            "IfOpenToDay": self.browser.find_element(By.ID, "displayedIfOpenToDay"),
+            "IfOpenMonday": self.browser.find_element(By.ID, "displayedIfSaturdayAfterHours"),
+        }
+
+        if (
+            expectedResult == "Closed"
+            and displayed_elements["IfClosed"].value_of_css_property("display")
+            == "block"
+            and displayed_elements["IfOpen"].value_of_css_property("display") == "none"
+        ):
+            if (
+                displayed_elements["IfOpenTom"].value_of_css_property("display")
+                == "block"
+                and displayed_elements["IfOpenToDay"].value_of_css_property("display")
+                == "none"
+                and displayed_elements["IfOpenMonday"].value_of_css_property("display")
+                == "none"
+            ):
+                self.assertEqual(
+                    displayed_elements["IfOpenTom"].text,
+                    f"Vi öppnar imorgon kl. {openTime}",
+                )
+            elif (
+                displayed_elements["IfOpenToDay"].value_of_css_property("display")
+                == "block"
+                and displayed_elements["IfOpenTom"].value_of_css_property("display")
+                == "none"
+                and displayed_elements["IfOpenMonday"].value_of_css_property("display")
+                == "none"
+            ):
+                self.assertEqual(
+                    displayed_elements["IfOpenToDay"].text,
+                    f"Vi öppnar idag kl. {openTime}",
+                )
+            elif (
+                displayed_elements["IfOpenMonday"].value_of_css_property("display")
+                == "block"
+                and displayed_elements["IfOpenToDay"].value_of_css_property("display")
+                == "none"
+                and displayed_elements["IfOpenTom"].value_of_css_property("display")
+                == "none"
+            ):
+                self.assertEqual(
+                    displayed_elements["IfOpenMonday"].text,
+                    f"Vi öppnar på måndag kl. {openTime}",
+                )
+            else:
+                self.fail("fel")
+        elif (
+            expectedResult == "Open"
+            and displayed_elements["IfOpen"].value_of_css_property("display") == "block"
+            and displayed_elements["IfClosed"].value_of_css_property("display")
+            == "none"
+            and displayed_elements["IfOpenToDay"].value_of_css_property("display")
+            == "none"
+            and displayed_elements["IfOpenTom"].value_of_css_property("display")
+            == "none"
+            and displayed_elements["IfOpenMonday"].value_of_css_property("display")
+            == "none"
+        ):
+            return
+        else:
+            self.fail("fel2")
+
+    def testAreWeOpen(self):
+        # Monday
+        self.helperAreWeOpen("2023-10-02T09:59:00", "Closed", "10")
+        self.helperAreWeOpen("2023-10-02T10:01:00", "Open", None)
+        self.helperAreWeOpen("2023-10-02T15:59:00", "Open", None)
+        self.helperAreWeOpen("2023-10-02T16:01:00", "Closed", "10")
+
+        # Tuesday
+        self.helperAreWeOpen("2023-10-03T09:59:00", "Closed", "10")
+        self.helperAreWeOpen("2023-10-03T10:01:00", "Open", None)
+        self.helperAreWeOpen("2023-10-03T15:59:00", "Open", None)
+        self.helperAreWeOpen("2023-10-03T16:01:00", "Closed", "10")
+
+        # Wendsday
+        self.helperAreWeOpen("2023-10-04T09:59:00", "Closed", "10")
+        self.helperAreWeOpen("2023-10-04T10:01:00", "Open", None)
+        self.helperAreWeOpen("2023-10-04T15:59:00", "Open", None)
+        self.helperAreWeOpen("2023-10-04T16:01:00", "Closed", "10")
+
+        # Thursday
+        self.helperAreWeOpen("2023-10-05T09:59:00", "Closed", "10")
+        self.helperAreWeOpen("2023-10-05T10:01:00", "Open", None)
+        self.helperAreWeOpen("2023-10-05T15:59:00", "Open", None)
+        self.helperAreWeOpen("2023-10-05T16:01:00", "Closed", "10")
+
+        # Friday
+        self.helperAreWeOpen("2023-10-06T09:59:00", "Closed", "10")
+        self.helperAreWeOpen("2023-10-06T10:01:00", "Open", None)
+        self.helperAreWeOpen("2023-10-06T15:59:00", "Open", None)
+        self.helperAreWeOpen("2023-10-06T16:01:00", "Closed", "12")
+
+        # Saturday
+        self.helperAreWeOpen("2023-10-07T11:59:00", "Closed", "12")
+        self.helperAreWeOpen("2023-10-07T12:01:00", "Open", None)
+        self.helperAreWeOpen("2023-10-07T14:59:00", "Open", None)
+        self.helperAreWeOpen("2023-10-07T15:01:00", "Closed", "10")
+
+        # Sunday
+        self.helperAreWeOpen("2023-10-08T09:59:00", "Closed", "10")
+        self.helperAreWeOpen("2023-10-08T12:01:00", "Closed", "10")
+        self.helperAreWeOpen("2023-10-08T14:59:00", "Closed", "10")
+        self.helperAreWeOpen("2023-10-08T15:01:00", "Closed", "10")
 
 
 if __name__ == "__main__":

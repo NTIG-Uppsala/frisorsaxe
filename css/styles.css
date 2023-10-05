@@ -16,7 +16,7 @@ h2 {
 }
 
 .openingHoursAnchor {
-    scroll-margin-top: 175px;
+    scroll-margin-top: 375px;
 }
 
 .pricesAnchor {
@@ -42,6 +42,14 @@ h2 {
 @media screen and (max-width:400px) {
     .employeesAnchor {
         font-size: 3rem;
+    }
+
+    .openingHoursAnchor {
+        scroll-margin-top: 580px;
+    }
+
+    #areWeOpen {
+        height: 400px;
     }
 }
 
@@ -95,17 +103,7 @@ h2 {
 }
 
 
-@media screen and (max-width:1360px) {
-    .nav-link {
-        font-size: 1.5rem !important;
-    }
-}
 
-@media screen and (max-width:1110px) {
-    .nav-link {
-        font-size: 1.2rem !important;
-    }
-}
 
 #secondRow {
     margin-bottom: 8vh;
@@ -126,7 +124,6 @@ h2 {
     background-image: url('../pictures/mainBackground.webp');
     background-position: center;
     background-size: cover;
-    margin-bottom: 5vh;
 }
 
 #centerText {
@@ -271,6 +268,37 @@ footer {
     display: none;
 }
 
+#areWeOpen {
+    background-color: #bab6ae;
+    margin-bottom: 10vh;
+    box-shadow: 0px 5px 10px #d2d2d2;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#displayedIfOpen {
+    display: none;
+}
+
+#displayedIfClosed {
+    display: none;
+}
+
+#displayedIfOpenTom {
+    display: none;
+}
+
+#displayedIfOpenToDay {
+    display: none;
+}
+
+#displayedIfSaturdayAfterHours {
+    display: none;
+}
+
 .hasJS {
     display: none;
 }
@@ -334,6 +362,7 @@ footer {
 
 #activeMenu {
     cursor: pointer;
+    font-size: 2.1rem;
 }
 
 .openHours {
@@ -395,12 +424,45 @@ input[type=submit] {
     color: rgba(255, 255, 255, 0.733);
     font-size: 2rem;
     padding-right: 10px;
+}
 
+@media screen and (max-width:1360px) {
+    .nav-link {
+        font-size: 1.5rem !important;
+    }
+
+    #activeMenu {
+        font-size: 1.9rem;
+    }
+}
+
+@media screen and (max-width:1110px) {
+    .nav-link {
+        font-size: 1.2rem !important;
+    }
+
+    #activeMenu {
+        font-size: 1.5rem;
+    }
 }
 
 @media screen and (min-width:992px) {
     #homeButton {
         position: absolute;
         right: 0;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .employeesAnchor {
+        font-size: 3rem;
+    }
+
+    .openingHoursAnchor {
+        scroll-margin-top: 580px;
+    }
+
+    #areWeOpen {
+        height: 200px;
     }
 }

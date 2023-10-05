@@ -35,13 +35,12 @@ def replacePlaceholders(htmlTemplate, language, location):
     ):
         htmlTemplate = htmlTemplate.replace(f"*PERS{i}JOB*", employeeWork)
 
+    # Applies the right flag for the languagemenu button
     mainFlagAlt = langsInfo["FLAGALT"]
-
-    htmlTemplate = htmlTemplate.replace("*MAINLANGFLAGALT*", mainFlagAlt)
     htmlTemplate = htmlTemplate.replace("*MAINFLAG*", language + "Flag")
+    htmlTemplate = htmlTemplate.replace("*MAINLANGFLAGALT*", mainFlagAlt)
 
     flagList = []
-
     for languageUsed in langs.keys():
         # Get the alternative text for the flag image from the 'common' dictionary
         altText = langs[languageUsed]["FLAGALT"]
