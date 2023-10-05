@@ -92,6 +92,7 @@
             "OPEN": "Öppet",
             "OPENTOM": "Vi öppnar imorgon kl. ",
             "OPENTODAY": "Vi öppnar idag kl. ",
+            "OPENMONDAY": "Vi öppnar på måndag kl. ",
             "LULEA": {
                 "EMPLOYEESWORK": {
                     "PERS1JOB": "Hårstylist",
@@ -168,6 +169,7 @@
             "OPEN": "Open",
             "OPENTOM": "We open tomorrow at: ",
             "OPENTODAY": "We open today at: ",
+            "OPENMONDAY": "We open on Monday at:",
             "LULEA": {
                 "EMPLOYEESWORK": {
                     "PERS1JOB": "Hairstylist",
@@ -244,6 +246,7 @@
             "OPEN": "Avoinna",
             "OPENTOM": "Avaamme huomenna klo: ",
             "OPENTODAY": "Avaamme tänään klo: ",
+            "OPENMONDAY": "Avaamme maanantaina klo: ",
             "LULEA": {
                 "EMPLOYEESWORK": {
                     "PERS1JOB": "Hiusmuotoilija",
