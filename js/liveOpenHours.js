@@ -33,7 +33,7 @@ const openHours = {
         saturday: { open: 12, close: 15 },
     },
 };
-
+// Checks what location the user is in
 const local = window.location.pathname.includes("lulea")
     ? openHours.lulea
     : window.location.pathname.includes("kiruna")
