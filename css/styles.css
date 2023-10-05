@@ -293,6 +293,10 @@ footer {
     display: none;
 }
 
+#displayedIfOpenMonday {
+    display: none;
+}
+
 .hasJS {
     display: none;
 }

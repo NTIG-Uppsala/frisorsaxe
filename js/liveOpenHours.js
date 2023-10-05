@@ -47,7 +47,7 @@ function setOpeningStatus(date) {
     const weekday = days[day];
 
     if (weekday === "sunday") {
-        displayOpeningStatus(false);
+        displayOpeningStatus("tom", local.monday.open);
         return;
     }
 
@@ -59,9 +59,12 @@ function setOpeningStatus(date) {
     } else if (hour < locationHours.open) {
         displayOpeningStatus("day", locationHours.open);
     } else {
-        // Check if it's Saturday (6) and adjust for Sunday (0) or continue to the next day
-        const nextDayIndex = (day === 6) ? 0 : (day + 1);
-        displayOpeningStatus("tom", local[days[nextDayIndex]].open);
+        if (weekday === "saturday") {
+            displayOpeningStatus("saturday", local.monday.open);
+            return;
+        } else {
+            displayOpeningStatus("tom", local[days[day + 1]].open);
+        }
     }
 }
 
@@ -70,6 +73,7 @@ let originalClosedContent;
 let originalOpenContent;
 let originalOpenTomContent;
 let originalOpenToDayContent;
+let originalOpenSaturdayContent;
 
 // Displays the opening status on the page
 function displayOpeningStatus(status, time) {
@@ -77,6 +81,7 @@ function displayOpeningStatus(status, time) {
     const openElement = document.getElementById("displayedIfOpen");
     const openTomElement = document.getElementById("displayedIfOpenTom");
     const openToDayElement = document.getElementById("displayedIfOpenToDay");
+    const openSaturdayElement = document.getElementById("displayedIfOpenMonday");
 
     if (originalClosedContent === undefined) {
         // Store the original content on the first function call
@@ -84,6 +89,7 @@ function displayOpeningStatus(status, time) {
         originalOpenContent = openElement.innerHTML;
         originalOpenTomContent = openTomElement.innerHTML;
         originalOpenToDayContent = openToDayElement.innerHTML;
+        originalOpenSaturdayContent = openSaturdayElement.innerHTML;
     }
 
     if (status === true) {
@@ -94,13 +100,22 @@ function displayOpeningStatus(status, time) {
         closedElement.style.display = "block";
         openElement.style.display = "none";
         if (status === "day") {
-            openTomElement.style.display = "none";
             openToDayElement.style.display = "block";
+            openTomElement.style.display = "none";
+            openSaturdayElement.style.display = "none";
             openToDayElement.innerHTML = originalOpenToDayContent + " " + time;
-        } else {
+        } else if (status === "tom") {
             openTomElement.style.display = "block";
             openToDayElement.style.display = "none";
+            openSaturdayElement.style.display = "none";
             openTomElement.innerHTML = originalOpenTomContent + " " + time;
+        } else if (status === "saturday") {
+            openSaturdayElement.style.display = "block";
+            openToDayElement.style.display = "none";
+            openTomElement.style.display = "none";
+            openSaturdayElement.innerHTML = originalOpenSaturdayContent + " " + time;
+        } else {
+            console.log("something went wrong")
         }
     }
 }
