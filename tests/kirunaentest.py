@@ -272,15 +272,15 @@ class TestHomepageENG(TestCase):
         self.helperPostalCode(nonWorkingPostalCodes, "Not a valid postal code.")
 
     def testPlaceholderForFileGenerator(self):
-        error_messages = []  # Create a list to collect error messages
+        errorMessages = []  # Create a list to collect error messages
         matches = re.findall("\*[A-Z]+\*", self.browser.page_source)
         for match in matches:
-            error_messages.append(match)  # Append error messages to the list
+            errorMessages.append(match)  # Append error messages to the list
             print(match)
 
-        if error_messages:
+        if errorMessages:
             # If there are errors, print them and fail the test
-            self.fail(error_messages)
+            self.fail(errorMessages)
 
     def helperWeAreCurrently(self, date, expectedResult):
         self.browser.execute_script(f'setOpeningStatus(new Date("{date}"));')
