@@ -272,7 +272,7 @@ footer {
 }
 
 #areWeOpen {
-    height: 100px;
+    height: 150px;
 }
 
 #displayedIfOpen {
@@ -280,6 +280,14 @@ footer {
 }
 
 #displayedIfClosed {
+    display: none;
+}
+
+#displayedIfOpenTom {
+    display: none;
+}
+
+#displayedIfOpenToDay {
     display: none;
 }
 
