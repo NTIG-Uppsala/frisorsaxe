@@ -343,6 +343,12 @@ class TestHomepageENG(TestCase):
         self.helperWeAreCurrently("2023-10-07T14:59:00", "Open")
         self.helperWeAreCurrently("2023-10-07T15:01:00", "Closed")
 
+        # Sunday
+        self.helperWeAreCurrently("2023-10-08T09:59:00", "Closed")
+        self.helperWeAreCurrently("2023-10-08T12:01:00", "Closed")
+        self.helperWeAreCurrently("2023-10-08T14:59:00", "Closed")
+        self.helperWeAreCurrently("2023-10-08T15:01:00", "Closed")
+
 
 if __name__ == "__main__":
     main(verbosity=2)

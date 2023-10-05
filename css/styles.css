@@ -262,7 +262,7 @@ footer {
 }
 
 #areWeOpen {
-    height: 100px;
+    height: 150px;
 }
 
 #displayedIfOpen {
@@ -270,6 +270,14 @@ footer {
 }
 
 #displayedIfClosed {
+    display: none;
+}
+
+#displayedIfOpenTom {
+    display: none;
+}
+
+#displayedIfOpenToDay {
     display: none;
 }
 
@@ -336,7 +344,7 @@ footer {
 
 #activeMenu {
     cursor: pointer;
-    font-size: 2.25rem;
+    font-size: 2.1rem;
 }
 
 .openHours {
@@ -401,12 +409,11 @@ input[type=submit] {
 
 }
 
-@media screen and (min-width:992px) {
-    #homeButton {
-        position: absolute;
-        right: 0;
+/* @media screen and (max-width:2000px) {
+    #activeMenu {
+        font-size: 1.9rem;
     }
-}
+} */
 
 @media screen and (max-width:1360px) {
     .nav-link {
@@ -425,5 +432,12 @@ input[type=submit] {
 
     #activeMenu {
         font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width:992px) {
+    #homeButton {
+        position: absolute;
+        right: 0;
     }
 }
