@@ -273,54 +273,70 @@ class TestHomepage(TestCase):
 
     def helperAreWeOpen(self, date, expectedResult, openTime):
         self.browser.execute_script(f'setOpeningStatus(new Date("{date}"));')
-        displayedIfClosed = self.browser.find_element(
-            By.ID, "displayedIfClosed"
-        ).value_of_css_property("display")
-        displayedIfOpen = self.browser.find_element(
-            By.ID, "displayedIfOpen"
-        ).value_of_css_property("display")
-        diplayedIfOpenTom = self.browser.find_element(By.ID, "displayedIfOpenTom")
-        displayedIfOpenToDay = self.browser.find_element(By.ID, "displayedIfOpenToDay")
-        displayedIfOpenMonday = self.browser.find_element(
-            By.ID, "displayedIfOpenMonday"
-        )
+
+        displayed_elements = {
+            "IfClosed": self.browser.find_element(By.ID, "displayedIfClosed"),
+            "IfOpen": self.browser.find_element(By.ID, "displayedIfOpen"),
+            "IfOpenTom": self.browser.find_element(By.ID, "displayedIfOpenTom"),
+            "IfOpenToDay": self.browser.find_element(By.ID, "displayedIfOpenToDay"),
+            "IfOpenMonday": self.browser.find_element(By.ID, "displayedIfOpenMonday"),
+        }
 
         if (
             expectedResult == "Closed"
-            and displayedIfClosed == "block"
-            and displayedIfOpen == "none"
+            and displayed_elements["IfClosed"].value_of_css_property("display")
+            == "block"
+            and displayed_elements["IfOpen"].value_of_css_property("display") == "none"
         ):
             if (
-                diplayedIfOpenTom.value_of_css_property("display") == "block"
-                and displayedIfOpenToDay.value_of_css_property("display") == "none"
-                and displayedIfOpenMonday.value_of_css_property("display") == "none"
+                displayed_elements["IfOpenTom"].value_of_css_property("display")
+                == "block"
+                and displayed_elements["IfOpenToDay"].value_of_css_property("display")
+                == "none"
+                and displayed_elements["IfOpenMonday"].value_of_css_property("display")
+                == "none"
             ):
                 self.assertEqual(
-                    diplayedIfOpenTom.text, "Vi öppnar imorgon kl. " + openTime
+                    displayed_elements["IfOpenTom"].text,
+                    f"Vi öppnar imorgon kl. {openTime}",
                 )
             elif (
-                displayedIfOpenToDay.value_of_css_property("display") == "block"
-                and diplayedIfOpenTom.value_of_css_property("display") == "none"
-                and displayedIfOpenMonday.value_of_css_property("display") == "none"
+                displayed_elements["IfOpenToDay"].value_of_css_property("display")
+                == "block"
+                and displayed_elements["IfOpenTom"].value_of_css_property("display")
+                == "none"
+                and displayed_elements["IfOpenMonday"].value_of_css_property("display")
+                == "none"
             ):
                 self.assertEqual(
-                    displayedIfOpenToDay.text, "Vi öppnar idag kl. " + openTime
+                    displayed_elements["IfOpenToDay"].text,
+                    f"Vi öppnar idag kl. {openTime}",
                 )
             elif (
-                displayedIfOpenMonday.value_of_css_property("display") == "block"
-                and displayedIfOpenToDay.value_of_css_property("display") == "none"
-                and diplayedIfOpenTom.value_of_css_property("display") == "none"
+                displayed_elements["IfOpenMonday"].value_of_css_property("display")
+                == "block"
+                and displayed_elements["IfOpenToDay"].value_of_css_property("display")
+                == "none"
+                and displayed_elements["IfOpenTom"].value_of_css_property("display")
+                == "none"
             ):
                 self.assertEqual(
-                    displayedIfOpenMonday.text, "Vi öppnar på måndag kl. " + openTime
+                    displayed_elements["IfOpenMonday"].text,
+                    f"Vi öppnar på måndag kl. {openTime}",
                 )
             else:
                 self.fail("fel")
-
         elif (
             expectedResult == "Open"
-            and displayedIfClosed == "none"
-            and displayedIfOpen == "block"
+            and displayed_elements["IfOpen"].value_of_css_property("display") == "block"
+            and displayed_elements["IfClosed"].value_of_css_property("display")
+            == "none"
+            and displayed_elements["IfOpenToDay"].value_of_css_property("display")
+            == "none"
+            and displayed_elements["IfOpenTom"].value_of_css_property("display")
+            == "none"
+            and displayed_elements["IfOpenMonday"].value_of_css_property("display")
+            == "none"
         ):
             return
         else:
