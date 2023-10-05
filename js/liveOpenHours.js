@@ -5,7 +5,7 @@ window.setInterval(function () {
 const days = [
     "sunday",
     "monday",
-    "tuseday",
+    "tuesday",
     "wednesday",
     "thursday",
     "friday",
