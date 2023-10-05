@@ -16,7 +16,7 @@ h2 {
 }
 
 .openingHoursAnchor {
-    scroll-margin-top: 175px;
+    scroll-margin-top: 375px;
 }
 
 .pricesAnchor {
@@ -42,6 +42,14 @@ h2 {
 @media screen and (max-width:400px) {
     .employeesAnchor {
         font-size: 3rem;
+    }
+
+    .openingHoursAnchor {
+        scroll-margin-top: 580px;
+    }
+
+    #areWeOpen {
+        height: 400px;
     }
 }
 
@@ -116,7 +124,6 @@ h2 {
     background-image: url('../pictures/mainBackground.webp');
     background-position: center;
     background-size: cover;
-    margin-bottom: 5vh;
 }
 
 #centerText {
@@ -262,7 +269,12 @@ footer {
 }
 
 #areWeOpen {
-    height: 150px;
+    background-color: #bab6ae;
+    padding-top: 5vh;
+    padding-bottom: 4vh;
+    margin-bottom: 10vh;
+    box-shadow: 0px 5px 10px #d2d2d2;
+    height: 300px;
 }
 
 #displayedIfOpen {
@@ -406,14 +418,7 @@ input[type=submit] {
     color: rgba(255, 255, 255, 0.733);
     font-size: 2rem;
     padding-right: 10px;
-
 }
-
-/* @media screen and (max-width:2000px) {
-    #activeMenu {
-        font-size: 1.9rem;
-    }
-} */
 
 @media screen and (max-width:1360px) {
     .nav-link {
@@ -439,5 +444,19 @@ input[type=submit] {
     #homeButton {
         position: absolute;
         right: 0;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .employeesAnchor {
+        font-size: 3rem;
+    }
+
+    .openingHoursAnchor {
+        scroll-margin-top: 580px;
+    }
+
+    #areWeOpen {
+        height: 200px;
     }
 }

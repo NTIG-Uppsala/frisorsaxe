@@ -90,6 +90,8 @@
             "LIVEOPEN": "Just nu har vi:",
             "CLOSED": "Stängt",
             "OPEN": "Öppet",
+            "OPENTOM": "Vi öppnar imorgon kl. ",
+            "OPENTODAY": "Vi öppnar idag kl. ",
             "LULEA": {
                 "EMPLOYEESWORK": {
                     "PERS1JOB": "Hårstylist",
@@ -164,6 +166,8 @@
             "LIVEOPEN": "We are currently:",
             "CLOSED": "Closed",
             "OPEN": "Open",
+            "OPENTOM": "We open tomorrow at: ",
+            "OPENTODAY": "We open today at: ",
             "LULEA": {
                 "EMPLOYEESWORK": {
                     "PERS1JOB": "Hairstylist",
@@ -238,6 +242,8 @@
             "LIVEOPEN": "Juuri nyt meillä on:",
             "CLOSED": "Suljettu",
             "OPEN": "Avoinna",
+            "OPENTOM": "Avaamme huomenna klo: ",
+            "OPENTODAY": "Avaamme tänään klo: ",
             "LULEA": {
                 "EMPLOYEESWORK": {
                     "PERS1JOB": "Hiusmuotoilija",
