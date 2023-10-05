@@ -282,8 +282,7 @@ class TestHomepageENG(TestCase):
             # If there are errors, print them and fail the test
             self.fail(errorMessages)
 
-
-    def helperAreWeOpen(self, date, expectedResult, openTime):  
+    def helperAreWeOpen(self, date, expectedResult, openTime):
         self.browser.execute_script(f'setOpeningStatus(new Date("{date}"));')
 
         displayed_elements = {
@@ -291,23 +290,28 @@ class TestHomepageENG(TestCase):
             "IfOpen": self.browser.find_element(By.ID, "displayedIfOpen"),
             "IfOpenTom": self.browser.find_element(By.ID, "displayedIfOpenTom"),
             "IfOpenToDay": self.browser.find_element(By.ID, "displayedIfOpenToDay"),
-            "IfOpenMonday": self.browser.find_element(By.ID, "displayedIfOpenMonday"),
+            "IfOpenMonday": self.browser.find_element(
+                By.ID, "displayedIfSaturdayAfterHours"
+            ),
         }
 
         if (
             expectedResult == "Closed"
-            and displayed_elements["IfClosed"].value_of_css_property("display") == "block"
+            and displayed_elements["IfClosed"].value_of_css_property("display")
+            == "block"
             and displayed_elements["IfOpen"].value_of_css_property("display") == "none"
         ):
             if (
-                displayed_elements["IfOpenTom"].value_of_css_property("display") == "block"
+                displayed_elements["IfOpenTom"].value_of_css_property("display")
+                == "block"
                 and displayed_elements["IfOpenToDay"].value_of_css_property("display")
                 == "none"
                 and displayed_elements["IfOpenMonday"].value_of_css_property("display")
                 == "none"
             ):
                 self.assertEqual(
-                    displayed_elements["IfOpenTom"].text, f"We open tomorrow at: {openTime}"
+                    displayed_elements["IfOpenTom"].text,
+                    f"We open tomorrow at: {openTime}",
                 )
             elif (
                 displayed_elements["IfOpenToDay"].value_of_css_property("display")
@@ -318,7 +322,8 @@ class TestHomepageENG(TestCase):
                 == "none"
             ):
                 self.assertEqual(
-                    displayed_elements["IfOpenToDay"].text, f"We open today at: {openTime}"
+                    displayed_elements["IfOpenToDay"].text,
+                    f"We open today at: {openTime}",
                 )
             elif (
                 displayed_elements["IfOpenMonday"].value_of_css_property("display")
@@ -337,9 +342,12 @@ class TestHomepageENG(TestCase):
         elif (
             expectedResult == "Open"
             and displayed_elements["IfOpen"].value_of_css_property("display") == "block"
-            and displayed_elements["IfClosed"].value_of_css_property("display") == "none"
-            and displayed_elements["IfOpenToDay"].value_of_css_property("display") == "none"
-            and displayed_elements["IfOpenTom"].value_of_css_property("display") == "none"
+            and displayed_elements["IfClosed"].value_of_css_property("display")
+            == "none"
+            and displayed_elements["IfOpenToDay"].value_of_css_property("display")
+            == "none"
+            and displayed_elements["IfOpenTom"].value_of_css_property("display")
+            == "none"
             and displayed_elements["IfOpenMonday"].value_of_css_property("display")
             == "none"
         ):

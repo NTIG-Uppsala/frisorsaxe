@@ -55,15 +55,15 @@ function setOpeningStatus(date) {
     const locationHours = local[weekday];
 
     if (hour >= locationHours.open && hour < locationHours.close) {
-        displayOpeningStatus(true);
+        displayOpeningStatus("open");
     } else if (hour < locationHours.open) {
-        displayOpeningStatus("day", locationHours.open);
+        displayOpeningStatus("preOpening", locationHours.open);
     } else {
         if (weekday === "saturday") {
             displayOpeningStatus("saturday", local.monday.open);
             return;
         } else {
-            displayOpeningStatus("tom", local[days[day + 1]].open);
+            displayOpeningStatus("afterHours", local[days[day + 1]].open);
         }
     }
 }
@@ -81,7 +81,7 @@ function displayOpeningStatus(status, time) {
     const openElement = document.getElementById("displayedIfOpen");
     const openTomElement = document.getElementById("displayedIfOpenTom");
     const openToDayElement = document.getElementById("displayedIfOpenToDay");
-    const openSaturdayElement = document.getElementById("displayedIfOpenMonday");
+    const openOnMonday = document.getElementById("displayedIfSaturdayAfterHours");
 
     if (originalClosedContent === undefined) {
         // Store the original content on the first function call
@@ -89,31 +89,40 @@ function displayOpeningStatus(status, time) {
         originalOpenContent = openElement.innerHTML;
         originalOpenTomContent = openTomElement.innerHTML;
         originalOpenToDayContent = openToDayElement.innerHTML;
-        originalOpenSaturdayContent = openSaturdayElement.innerHTML;
+        originalOpenSaturdayContent = openOnMonday.innerHTML;
     }
 
-    if (status === true) {
+    // If open, display the open element and hide the closed element
+    if (status === "open") {
         openElement.style.display = "block";
         closedElement.style.display = "none";
         openToDayElement.style.display = "none";
-    } else {
+
+    }
+    // If closed check when we open next and display the closed element
+    else {
         closedElement.style.display = "block";
         openElement.style.display = "none";
-        if (status === "day") {
+        // If we open later today, display the openToDay element and add when we open
+        if (status === "preOpening") {
             openToDayElement.style.display = "block";
             openTomElement.style.display = "none";
-            openSaturdayElement.style.display = "none";
+            openOnMonday.style.display = "none";
             openToDayElement.innerHTML = originalOpenToDayContent + " " + time;
-        } else if (status === "tom") {
+        }
+        // If we open tomorrow, display the openTom element and add when we open
+        else if (status === "afterHours") {
             openTomElement.style.display = "block";
             openToDayElement.style.display = "none";
-            openSaturdayElement.style.display = "none";
+            openOnMonday.style.display = "none";
             openTomElement.innerHTML = originalOpenTomContent + " " + time;
-        } else if (status === "saturday") {
-            openSaturdayElement.style.display = "block";
+        }
+        // If we open on monday, display the openSaturday element and add when we open
+        else if (status === "saturday") {
+            openOnMonday.style.display = "block";
             openToDayElement.style.display = "none";
             openTomElement.style.display = "none";
-            openSaturdayElement.innerHTML = originalOpenSaturdayContent + " " + time;
+            openOnMonday.innerHTML = originalOpenSaturdayContent + " " + time;
         } else {
             console.log("something went wrong")
         }

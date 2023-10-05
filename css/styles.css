@@ -295,7 +295,7 @@ footer {
     display: none;
 }
 
-#displayedIfOpenMonday {
+#displayedIfSaturdayAfterHours {
     display: none;
 }
 

@@ -298,7 +298,7 @@ class TestHomepageENG(TestCase):
             "IfOpen": self.browser.find_element(By.ID, "displayedIfOpen"),
             "IfOpenTom": self.browser.find_element(By.ID, "displayedIfOpenTom"),
             "IfOpenToDay": self.browser.find_element(By.ID, "displayedIfOpenToDay"),
-            "IfOpenMonday": self.browser.find_element(By.ID, "displayedIfOpenMonday"),
+            "IfOpenMonday": self.browser.find_element(By.ID, "displayedIfSaturdayAfterHours"),
         }
 
         if (
