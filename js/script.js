@@ -73,8 +73,8 @@ function dailySales(date) {
   const locationOpeningHours = window.location.pathname.includes("lulea")
     ? openHours.lulea
     : window.location.pathname.includes("kiruna")
-    ? openHours.kiruna
-    : console.log("location does not have openingHours for dailysailes");
+      ? openHours.kiruna
+      : console.log("location does not have openingHours for dailysailes");
 
   const weekday = date.getDay();
   const currentHour = date.getHours();

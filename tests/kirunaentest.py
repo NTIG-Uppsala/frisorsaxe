@@ -282,16 +282,66 @@ class TestHomepageENG(TestCase):
             # If there are errors, print them and fail the test
             self.fail(error_messages)
 
-    # def helperWeAreCurrently(self, date, expectedResult):
-    #     self.browser.execute_script(f'updateCurrentlyOpen(new Date("{date}"));')
-    #     self.browser.refresh()
-    #     self.assertIn(expectedResult, self.browser.page_source)
+    def helperWeAreCurrently(self, date, expectedResult):
+        self.browser.execute_script(f'setOpeningStatus(new Date("{date}"));')
+        displayedIfClosed = self.browser.find_element(
+            By.ID, "displayedIfClosed"
+        ).value_of_css_property("display")
+        displayedIfOpen = self.browser.find_element(
+            By.ID, "displayedIfOpen"
+        ).value_of_css_property("display")
 
-    # def testWeAreCurrently(self):
-    #     closedText = ""
-    #     openText = ""
-    #     helperWeAreCurrently("2023-09-08T09:59:00", closedText)
-    #     helperWeAreCurrently("2023-09-08T09:59:00", openText)
+        if (
+            expectedResult == "Closed"
+            and displayedIfClosed == "block"
+            and displayedIfOpen == "none"
+        ):
+            return
+        elif (
+            expectedResult == "Open"
+            and displayedIfClosed == "none"
+            and displayedIfOpen == "block"
+        ):
+            return
+        else:
+            self.fail("fel")
+
+    def testWeAreCurrently(self):
+        # Monday
+        self.helperWeAreCurrently("2023-10-02T09:59:00", "Closed")
+        self.helperWeAreCurrently("2023-10-02T10:01:00", "Open")
+        self.helperWeAreCurrently("2023-10-02T15:59:00", "Open")
+        self.helperWeAreCurrently("2023-10-02T16:01:00", "Closed")
+
+        # Tuesday
+        self.helperWeAreCurrently("2023-10-03T09:59:00", "Closed")
+        self.helperWeAreCurrently("2023-10-03T10:01:00", "Open")
+        self.helperWeAreCurrently("2023-10-03T15:59:00", "Open")
+        self.helperWeAreCurrently("2023-10-03T16:01:00", "Closed")
+
+        # Wendsday
+        self.helperWeAreCurrently("2023-10-04T09:59:00", "Closed")
+        self.helperWeAreCurrently("2023-10-04T10:01:00", "Open")
+        self.helperWeAreCurrently("2023-10-04T15:59:00", "Open")
+        self.helperWeAreCurrently("2023-10-04T16:01:00", "Closed")
+
+        # Thursday
+        self.helperWeAreCurrently("2023-10-05T09:59:00", "Closed")
+        self.helperWeAreCurrently("2023-10-05T10:01:00", "Open")
+        self.helperWeAreCurrently("2023-10-05T15:59:00", "Open")
+        self.helperWeAreCurrently("2023-10-05T16:01:00", "Closed")
+
+        # Friday
+        self.helperWeAreCurrently("2023-10-06T09:59:00", "Closed")
+        self.helperWeAreCurrently("2023-10-06T10:01:00", "Open")
+        self.helperWeAreCurrently("2023-10-06T15:59:00", "Open")
+        self.helperWeAreCurrently("2023-10-06T16:01:00", "Closed")
+
+        # Saturday
+        self.helperWeAreCurrently("2023-10-07T11:59:00", "Closed")
+        self.helperWeAreCurrently("2023-10-07T12:01:00", "Open")
+        self.helperWeAreCurrently("2023-10-07T14:59:00", "Open")
+        self.helperWeAreCurrently("2023-10-07T15:01:00", "Closed")
 
 
 if __name__ == "__main__":

@@ -1,7 +1,6 @@
 {
     "COMMON": {
         "@MAIL": "saxefrisor@gmail.com"
-      
     },
     "LOCATIONS": {
         "LULEA": {
@@ -62,7 +61,7 @@
             "FINDUS": "Hitta oss",
             "PHONE": "Telefon",
             "MAIL": "E&#8209;post",
-            "HOMEDELIVERYTITLE": "Proffsiga klippningar hemma - Boka din stil nu",
+            "HOMEDELIVERYTITLE": "Proffsiga klippningar hemma",
             "CHECKIFREACH": "Kolla om vi når ut till dig.",
             "CALLTOBOOK": "Vi kör ut till dig. Ring oss för att boka tid!",
             "TOOFARAWAY": "Vi kan tyvärr inte erbjuda denna service för detta postnummer.",
@@ -88,7 +87,9 @@
             "@MAIL": "saxefrisor@gmail.com",
             "POSTALCODETEXT": "Postnummer",
             "CHECK": "Kolla",
+            "LIVEOPEN": "Just nu har vi:",
             "CLOSED": "Stängt",
+            "OPEN": "Öppet",
             "LULEA": {
                 "EMPLOYEESWORK": {
                     "PERS1JOB": "Hårstylist",
@@ -160,7 +161,9 @@
             "@MAIL": "saxefrisor@gmail.com",
             "POSTALCODETEXT": "Postal Code",
             "CHECK": "Check",
+            "LIVEOPEN": "We are currently:",
             "CLOSED": "Closed",
+            "OPEN": "Open",
             "LULEA": {
                 "EMPLOYEESWORK": {
                     "PERS1JOB": "Hairstylist",
@@ -232,7 +235,9 @@
             "@MAIL": "saxefrisor@gmail.com",
             "POSTALCODETEXT": "Postinumero",
             "CHECK": "Tarkista",
+            "LIVEOPEN": "Juuri nyt meillä on:",
             "CLOSED": "Suljettu",
+            "OPEN": "Avoinna",
             "LULEA": {
                 "EMPLOYEESWORK": {
                     "PERS1JOB": "Hiusmuotoilija",

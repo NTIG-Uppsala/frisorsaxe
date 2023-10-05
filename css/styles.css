@@ -271,6 +271,18 @@ footer {
     display: none;
 }
 
+#areWeOpen {
+    height: 100px;
+}
+
+#displayedIfOpen {
+    display: none;
+}
+
+#displayedIfClosed {
+    display: none;
+}
+
 .hasJS {
     display: none;
 }
