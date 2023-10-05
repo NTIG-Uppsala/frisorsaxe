@@ -281,7 +281,7 @@ class TestHomepageENG(TestCase):
             # If there are errors, print them and fail the test
             self.fail(errorMessages)
 
-    def helperWeAreCurrently(self, date, expectedResult):
+    def helperAreWeOpen(self, date, expectedResult, openTime):
         self.browser.execute_script(f'setOpeningStatus(new Date("{date}"));')
         displayedIfClosed = self.browser.find_element(
             By.ID, "displayedIfClosed"
@@ -289,13 +289,44 @@ class TestHomepageENG(TestCase):
         displayedIfOpen = self.browser.find_element(
             By.ID, "displayedIfOpen"
         ).value_of_css_property("display")
+        diplayedIfOpenTom = self.browser.find_element(By.ID, "displayedIfOpenTom")
+        displayedIfOpenToDay = self.browser.find_element(By.ID, "displayedIfOpenToDay")
+        displayedIfOpenMonday = self.browser.find_element(
+            By.ID, "displayedIfOpenMonday"
+        )
 
         if (
             expectedResult == "Closed"
             and displayedIfClosed == "block"
             and displayedIfOpen == "none"
         ):
-            return
+            if (
+                diplayedIfOpenTom.value_of_css_property("display") == "block"
+                and displayedIfOpenToDay.value_of_css_property("display") == "none"
+                and displayedIfOpenMonday.value_of_css_property("display") == "none"
+            ):
+                self.assertEqual(
+                    diplayedIfOpenTom.text, "Avaamme huomenna klo: " + openTime
+                )
+            elif (
+                displayedIfOpenToDay.value_of_css_property("display") == "block"
+                and diplayedIfOpenTom.value_of_css_property("display") == "none"
+                and displayedIfOpenMonday.value_of_css_property("display") == "none"
+            ):
+                self.assertEqual(
+                    displayedIfOpenToDay.text, "Avaamme tänään klo: " + openTime
+                )
+            elif (
+                displayedIfOpenMonday.value_of_css_property("display") == "block"
+                and displayedIfOpenToDay.value_of_css_property("display") == "none"
+                and diplayedIfOpenTom.value_of_css_property("display") == "none"
+            ):
+                self.assertEqual(
+                    displayedIfOpenMonday.text, "Avaamme maanantaina klo: " + openTime
+                )
+            else:
+                self.fail("fel")
+
         elif (
             expectedResult == "Open"
             and displayedIfClosed == "none"
@@ -303,50 +334,50 @@ class TestHomepageENG(TestCase):
         ):
             return
         else:
-            self.fail("fel")
+            self.fail("fel2")
 
-    def testWeAreCurrently(self):
+    def testAreWeOpen(self):
         # Monday
-        self.helperWeAreCurrently("2023-10-02T09:59:00", "Closed")
-        self.helperWeAreCurrently("2023-10-02T10:01:00", "Open")
-        self.helperWeAreCurrently("2023-10-02T16:59:00", "Open")
-        self.helperWeAreCurrently("2023-10-02T17:01:00", "Closed")
+        self.helperAreWeOpen("2023-10-02T09:59:00", "Closed", "10")
+        self.helperAreWeOpen("2023-10-02T10:01:00", "Open", None)
+        self.helperAreWeOpen("2023-10-02T16:59:00", "Open", None)
+        self.helperAreWeOpen("2023-10-02T17:01:00", "Closed", "10")
 
         # Tuesday
-        self.helperWeAreCurrently("2023-10-03T09:59:00", "Closed")
-        self.helperWeAreCurrently("2023-10-03T10:01:00", "Open")
-        self.helperWeAreCurrently("2023-10-03T15:59:00", "Open")
-        self.helperWeAreCurrently("2023-10-03T16:01:00", "Closed")
+        self.helperAreWeOpen("2023-10-03T09:59:00", "Closed", "10")
+        self.helperAreWeOpen("2023-10-03T10:01:00", "Open", None)
+        self.helperAreWeOpen("2023-10-03T15:59:00", "Open", None)
+        self.helperAreWeOpen("2023-10-03T16:01:00", "Closed", "10")
 
         # Wendsday
-        self.helperWeAreCurrently("2023-10-04T09:59:00", "Closed")
-        self.helperWeAreCurrently("2023-10-04T10:01:00", "Open")
-        self.helperWeAreCurrently("2023-10-04T14:59:00", "Open")
-        self.helperWeAreCurrently("2023-10-04T15:01:00", "Closed")
+        self.helperAreWeOpen("2023-10-04T09:59:00", "Closed", "10")
+        self.helperAreWeOpen("2023-10-04T10:01:00", "Open", None)
+        self.helperAreWeOpen("2023-10-04T14:59:00", "Open", None)
+        self.helperAreWeOpen("2023-10-04T15:01:00", "Closed", "10")
 
         # Thursday
-        self.helperWeAreCurrently("2023-10-05T09:59:00", "Closed")
-        self.helperWeAreCurrently("2023-10-05T10:01:00", "Open")
-        self.helperWeAreCurrently("2023-10-05T15:59:00", "Open")
-        self.helperWeAreCurrently("2023-10-05T16:01:00", "Closed")
+        self.helperAreWeOpen("2023-10-05T09:59:00", "Closed", "10")
+        self.helperAreWeOpen("2023-10-05T10:01:00", "Open", None)
+        self.helperAreWeOpen("2023-10-05T15:59:00", "Open", None)
+        self.helperAreWeOpen("2023-10-05T16:01:00", "Closed", "10")
 
         # Friday
-        self.helperWeAreCurrently("2023-10-06T09:59:00", "Closed")
-        self.helperWeAreCurrently("2023-10-06T10:01:00", "Open")
-        self.helperWeAreCurrently("2023-10-06T15:59:00", "Open")
-        self.helperWeAreCurrently("2023-10-06T16:01:00", "Closed")
+        self.helperAreWeOpen("2023-10-06T09:59:00", "Closed", "10")
+        self.helperAreWeOpen("2023-10-06T10:01:00", "Open", None)
+        self.helperAreWeOpen("2023-10-06T15:59:00", "Open", None)
+        self.helperAreWeOpen("2023-10-06T16:01:00", "Closed", "12")
 
         # Saturday
-        self.helperWeAreCurrently("2023-10-07T11:59:00", "Closed")
-        self.helperWeAreCurrently("2023-10-07T12:01:00", "Open")
-        self.helperWeAreCurrently("2023-10-07T14:59:00", "Open")
-        self.helperWeAreCurrently("2023-10-07T15:01:00", "Closed")
+        self.helperAreWeOpen("2023-10-07T11:59:00", "Closed", "12")
+        self.helperAreWeOpen("2023-10-07T12:01:00", "Open", None)
+        self.helperAreWeOpen("2023-10-07T14:59:00", "Open", None)
+        self.helperAreWeOpen("2023-10-07T15:01:00", "Closed", "10")
 
         # Sunday
-        self.helperWeAreCurrently("2023-10-08T09:59:00", "Closed")
-        self.helperWeAreCurrently("2023-10-08T12:01:00", "Closed")
-        self.helperWeAreCurrently("2023-10-08T14:59:00", "Closed")
-        self.helperWeAreCurrently("2023-10-08T15:01:00", "Closed")
+        self.helperAreWeOpen("2023-10-08T09:59:00", "Closed", "10")
+        self.helperAreWeOpen("2023-10-08T12:01:00", "Closed", "10")
+        self.helperAreWeOpen("2023-10-08T14:59:00", "Closed", "10")
+        self.helperAreWeOpen("2023-10-08T15:01:00", "Closed", "10")
 
 
 if __name__ == "__main__":
