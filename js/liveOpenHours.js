@@ -47,7 +47,7 @@ function setOpeningStatus(date) {
     const weekday = days[day];
 
     if (weekday === "sunday") {
-        displayOpeningStatus("tom", local.monday.open);
+        displayOpeningStatus("afterHours", local.monday.open);
         return;
     }
 
